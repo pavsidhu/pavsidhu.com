@@ -39,7 +39,4 @@ Thumbs.db
 # Other #
 ######################
 node_modules
-/source
-/public
-.cache
 *.sketch
