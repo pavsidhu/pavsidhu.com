@@ -1,3 +1,9 @@
-# pavsidhu.com
+# [pavsidhu.com](https://pavsidhu.com)
 
-There's nothing much to see here 😐
+> My place on the internet 😎
+
+![Website preview](./preview.png)
+
+## License
+
+MIT © [Pav Sidhu](https://pavsidhu.com)
