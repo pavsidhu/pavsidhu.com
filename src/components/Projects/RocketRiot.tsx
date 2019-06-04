@@ -1,11 +1,14 @@
 import React from "react"
 import styled, { css } from "styled-components"
 
-import stars from "../../images/rocket-riot/stars.svg"
+import asteroid from "../../images/rocket-riot/asteroid.svg"
+import planet1 from "../../images/rocket-riot/planet-1.svg"
+import planet2 from "../../images/rocket-riot/planet-2.svg"
 import rocket1 from "../../images/rocket-riot/rocket-1.svg"
 import rocket2 from "../../images/rocket-riot/rocket-2.svg"
 import rocket3 from "../../images/rocket-riot/rocket-3.svg"
-import rocket4 from "../../images/rocket-riot/rocket-4.svg"
+import stars from "../../images/rocket-riot/stars.svg"
+import preview from "../../images/rocket-riot/preview.gif"
 
 const Container = styled.div`
   display: flex;
@@ -23,6 +26,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1;
 `
 
 const Text = styled.div`
@@ -64,12 +68,14 @@ const Button = styled.a`
 const PhotoContainer = styled.div`
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  z-index: 1;
 `
 
 const Photo = styled.img`
   height: 70vh;
-  max-height: 800px;
+  max-height: 360px;
+  border: 8px solid rgba(255, 255, 255, 0.05);
 `
 
 const Background = styled.div`
@@ -78,27 +84,37 @@ const Background = styled.div`
   height: 100%;
 `
 
-const Rocket = styled.img`
-  height: 120px;
+const Entity = styled.img`
   position: absolute;
 
-  ${props => css`
+  ${(props: IEntityProps) => css`
     left: ${props.x};
     top: ${props.y};
     transform: rotate(${props.rotate});
   `}
 `
 
+interface IEntityProps {
+  x: string
+  y: string
+  rotate: string
+}
+
+const Rocket = styled(Entity)`
+  height: 120px;
+`
+
+const Asteroid = styled(Entity)`
+  height: 120px;
+`
+
+const Planet = styled(Entity)`
+  height: 120px;
+`
+
 function RocketRiot({ project }) {
   return (
     <Container>
-      <Background>
-        <Rocket src={rocket1} alt="Rocket 1" x="0" y="90%" rotate="0deg" />
-        <Rocket src={rocket2} alt="Rocket 2" x="0" y="0" rotate="90deg" />
-        <Rocket src={rocket3} alt="Rocket 3" x="0" y="0" rotate="180deg" />
-        <Rocket src={rocket4} alt="Rocket 4" x="0" y="0" rotate="270deg" />
-      </Background>
-
       <TextContainer>
         <Text>
           <Name>{project.name}</Name>
@@ -113,7 +129,24 @@ function RocketRiot({ project }) {
           </Button>
         </Text>
       </TextContainer>
-      <PhotoContainer />
+      <PhotoContainer>
+        <Photo src={preview} alt="Rocket Riot Preview" />
+      </PhotoContainer>
+
+      <Background>
+        <Rocket src={rocket1} alt="Rocket 1" x="5%" y="10%" rotate="150deg" />
+        <Rocket src={rocket2} alt="Rocket 2" x="90%" y="0" rotate="240deg" />
+        <Rocket src={rocket3} alt="Rocket 3" x="85%" y="80%" rotate="340deg" />
+        <Asteroid
+          src={asteroid}
+          alt="Asteroid"
+          x="15%"
+          y="75%"
+          rotate="340deg"
+        />
+        <Planet src={planet1} alt="Planet 1" x="45%" y="5%" rotate="340deg" />
+        <Planet src={planet2} alt="Planet 2" x="55%" y="80%" rotate="340deg" />
+      </Background>
     </Container>
   )
 }
