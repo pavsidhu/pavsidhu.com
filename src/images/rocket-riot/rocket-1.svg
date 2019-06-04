@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="233px" viewBox="0 0 100 233" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Artboard Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M56.7445055,155.012397 L21.1401099,155.012397 C10.7554945,117.120478 0,88.7015381 0,69.7555785 C0,57.1249388 12.9807692,33.8730793 38.9423077,0 C64.9038462,33.8730793 77.8846154,57.1249388 77.8846154,69.7555785 C77.8846154,88.7015381 67.1291209,117.120478 56.7445055,155.012397 Z" id="path-1"></path>
+    </defs>
+    <g id="Artboard-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-6">
+            <polygon id="Triangle" fill="#FFD048" fill-rule="nonzero" transform="translate(50.000000, 194.006198) scale(1, -1) translate(-50.000000, -194.006198) " points="50 155.012397 72.1153846 233 27.8846154 233"></polygon>
+            <polygon id="Triangle-Copy" fill="#FFD048" fill-rule="nonzero" transform="translate(33.346331, 188.619493) scale(1, -1) rotate(-16.000000) translate(-33.346331, -188.619493) " points="33.3210969 155.327007 50.0111888 221.91198 16.6814734 221.899363"></polygon>
+            <polygon id="Triangle-Copy-2" fill="#FFD048" fill-rule="nonzero" transform="translate(66.653669, 188.619493) scale(-1, -1) rotate(-16.000000) translate(-66.653669, -188.619493) " points="66.6284346 155.327007 83.3185266 221.91198 49.9888112 221.899363"></polygon>
+            <path d="M1.54939167,110.72314 L32.6538462,110.72314 C33.2061309,110.72314 33.6538462,111.170856 33.6538462,111.72314 L33.6538462,165.566116 C33.6538462,166.1184 33.2061309,166.566116 32.6538462,166.566116 L25.8857992,166.566116 C25.4928874,166.566116 25.136386,166.336025 24.9745571,165.977987 L0.638149511,112.135012 C0.410679433,111.631746 0.634255512,111.039368 1.13752066,110.811898 C1.26694964,110.753398 1.4073559,110.72314 1.54939167,110.72314 Z" id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" transform="translate(16.826923, 138.644628) scale(1, -1) translate(-16.826923, -138.644628) "></path>
+            <path d="M67.3461538,110.72314 L98.4506083,110.72314 C99.0028931,110.72314 99.4506083,111.170856 99.4506083,111.72314 C99.4506083,111.865176 99.4203509,112.005583 99.3618505,112.135012 L75.0254429,165.977987 C74.863614,166.336025 74.5071126,166.566116 74.1142008,166.566116 L67.3461538,166.566116 C66.7938691,166.566116 66.3461538,166.1184 66.3461538,165.566116 L66.3461538,111.72314 C66.3461538,111.170856 66.7938691,110.72314 67.3461538,110.72314 Z" id="Rectangle-Copy-3" fill="#FFFFFF" fill-rule="nonzero" transform="translate(83.173077, 138.644628) scale(1, -1) translate(-83.173077, -138.644628) "></path>
+            <g id="Oval" transform="translate(11.538462, 0.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#FF3C48" fill-rule="nonzero" xlink:href="#path-1"></use>
+                <ellipse fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-2)" cx="38.9423077" cy="13.8403926" rx="27.8159341" ry="13.8403926"></ellipse>
+            </g>
+            <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" x="44.2307692" y="110.72314" width="11.5384615" height="55.8429752" rx="1"></rect>
+            <ellipse id="Oval" stroke-opacity="0.1" stroke="#001B4C" stroke-width="2" fill="#001D4B" fill-rule="nonzero" cx="50.4807692" cy="66.9152893" rx="17.8269231" ry="17.8491736"></ellipse>
+        </g>
+    </g>
+</svg>
