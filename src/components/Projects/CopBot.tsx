@@ -8,6 +8,7 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
+  max-width: 1300px;
 `
 
 const TextContainer = styled.div`
@@ -55,11 +56,11 @@ const Button = styled.a`
 const PhotoContainer = styled.div`
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 `
 
 const Photo = styled.img`
-  height: 70vh;
+  height: 68vh;
   max-height: 800px;
 `
 
