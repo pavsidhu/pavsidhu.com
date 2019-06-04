@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import Seo from "../components/Seo"
-import RandomShapes from "../components/RandomShapes"
+import RandomShapes from "./RandomShapes"
 import { size } from "../styles"
 
 import profileImage from "../images/intro/profile.jpg"
@@ -62,8 +61,6 @@ const ListItem = styled.ul`
 const Intro = () => (
   <RandomShapes>
     <Container>
-      <Seo title="Home" />
-
       <Content>
         <Photo src={profileImage} />
         <Heading>Hey I’m Pav</Heading>

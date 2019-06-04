@@ -41,13 +41,14 @@ const Paragraph = styled.p`
 const Button = styled.a`
   display: inline-block;
   color: #fefefe;
-  padding: 16px;
+  padding: 16px 24px;
   font-size: 1.6rem;
-  background-color: #3c247f;
+  background-color: #c4105a;
   border-radius: 4px;
+  transition: all 80ms;
 
   &:hover {
-    filter: brightness(115%);
+    transform: scale(1.05);
   }
 `
 const PhotoContainer = styled.div`
@@ -56,16 +57,7 @@ const PhotoContainer = styled.div`
   justify-content: flex-end;
 `
 
-const Photo = styled.img`
-  height: 70vh;
-  max-height: 800px;
-  border: 5px solid #0b0b0b;
-  box-shadow: 15px 15px 0px #0b0b0b;
-  position: relative;
-  left: 5px;
-`
-
-function Bulb({ project }) {
+function Revisify({ project }) {
   return (
     <Container>
       <TextContainer>
@@ -77,11 +69,7 @@ function Bulb({ project }) {
             <Paragraph key={index}>{paragraph}</Paragraph>
           ))}
 
-          <Button
-            href="https://github.com/aledjackson/Hackference-2018"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Button href={project.link} target="_blank" rel="noopener noreferrer">
             View on GitHub
           </Button>
         </Text>
@@ -91,4 +79,4 @@ function Bulb({ project }) {
   )
 }
 
-export default Bulb
+export default Revisify
