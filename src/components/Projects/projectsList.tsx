@@ -1,20 +1,21 @@
 import React from "react"
-import SpotiParty from "./SpotiParty"
-import WhatsTrending from "./WhatsTrending"
+
 import Bulb from "./Bulb"
 import CopBot from "./CopBot"
-import RocketRiot from "./RocketRiot"
-import Revisify from "./Revisify"
 import DayNote from "./DayNote"
+import Revisify from "./Revisify"
+import RocketRiot from "./RocketRiot"
+import SpotiParty from "./SpotiParty"
 import TeaBot from "./TeaBot"
+import WhatsTrending from "./WhatsTrending"
 
-const projectsList = [
+const projectsList: IProject[] = [
   {
     id: 0,
     name: "Rocket Riot",
     description: "Turn by turn space game with real time minigames 🚀",
     fullDescription: [
-      "Labore et consectetur dolore cupidatat laborum ullamco dolore elit veniam non commodo est dolore commodo."
+      "As part of a university project, I worked in a team of 6 to build a Java based multiplayer game."
     ],
     link: "https://github.com/rocketriot/game",
     theme: {
@@ -37,19 +38,6 @@ const projectsList = [
   },
   {
     id: 2,
-    name: "DayNote",
-    description: "Your personal development journal ✏️",
-    fullDescription: [
-      "Labore et consectetur dolore cupidatat laborum ullamco dolore elit veniam non commodo est dolore commodo."
-    ],
-    link: "https://github.com/pavsidhu/daynote",
-    theme: {
-      background: "#FF785A"
-    },
-    render: project => <DayNote project={project} />
-  },
-  {
-    id: 3,
     name: "Cop Bot",
     description: "Supreme bot for Chrome 🛒",
     fullDescription: [
@@ -62,20 +50,7 @@ const projectsList = [
     render: project => <CopBot project={project} />
   },
   {
-    id: 4,
-    name: "Tea Bot",
-    description: "Tea, made simple 🍵",
-    fullDescription: [
-      "Labore et consectetur dolore cupidatat laborum ullamco dolore elit veniam non commodo est dolore commodo."
-    ],
-    link: "https://github.com/pavsidhu/tea-bot",
-    theme: {
-      background: "#16A1A5"
-    },
-    render: project => <TeaBot project={project} />
-  },
-  {
-    id: 5,
+    id: 3,
     name: "SpotiParty",
     description: "Queue songs on Spotify with your friends 🎵",
     fullDescription: [
@@ -88,7 +63,7 @@ const projectsList = [
     render: project => <SpotiParty project={project} />
   },
   {
-    id: 6,
+    id: 4,
     name: "Bulb",
     description: "An alarm app for Android that works with LIFX 💡",
     fullDescription: [
@@ -99,6 +74,32 @@ const projectsList = [
       background: "#180652"
     },
     render: project => <Bulb project={project} />
+  },
+  {
+    id: 5,
+    name: "Tea Bot",
+    description: "Tea, made simple 🍵",
+    fullDescription: [
+      "Labore et consectetur dolore cupidatat laborum ullamco dolore elit veniam non commodo est dolore commodo."
+    ],
+    link: "https://github.com/pavsidhu/tea-bot",
+    theme: {
+      background: "#16A1A5"
+    },
+    render: project => <TeaBot project={project} />
+  },
+  {
+    id: 6,
+    name: "DayNote",
+    description: "Your personal development journal ✏️",
+    fullDescription: [
+      "Labore et consectetur dolore cupidatat laborum ullamco dolore elit veniam non commodo est dolore commodo."
+    ],
+    link: "https://github.com/pavsidhu/daynote",
+    theme: {
+      background: "#FF785A"
+    },
+    render: project => <DayNote project={project} />
   },
   {
     id: 7,
