@@ -15,6 +15,10 @@ const Container = styled.div`
 const Text = styled.div`
   max-width: 350px;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 const Name = styled.h2`
@@ -58,7 +62,7 @@ const PhotoContainer = styled.div`
 
 const Photo = styled.img`
   height: 100%;
-  max-height: 240px;
+  max-height: 280px;
 `
 
 function WhatsTrending({ project }) {
