@@ -4,6 +4,7 @@
   "rules": {
     "prettier": true,
     "jsx-no-multiline-js": false,
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false,
+    "object-literal-sort-keys": false
   }
 }
