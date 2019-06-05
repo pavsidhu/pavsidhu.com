@@ -66,6 +66,7 @@ const PhotoContainer = styled.div`
 
 const Photo = styled.img`
   height: 80vh;
+  max-height: 750px;
 `
 
 function DayNote({ project }) {
