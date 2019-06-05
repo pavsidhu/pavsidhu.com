@@ -63,7 +63,7 @@ const PhotoContainer = styled.div`
 
 const Photo = styled.img`
   height: 70vh;
-  max-height: 800px;
+  max-height: 650px;
   border: 5px solid #0b0b0b;
   box-shadow: 15px 15px 0px #0b0b0b;
   position: relative;

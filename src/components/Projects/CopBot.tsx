@@ -61,7 +61,7 @@ const PhotoContainer = styled.div`
 
 const Photo = styled.img`
   height: 68vh;
-  max-height: 800px;
+  max-height: 550px;
 `
 
 function CopBot({ project }) {
