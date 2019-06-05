@@ -105,7 +105,9 @@ const projectsList: IProject[] = [
     id: 7,
     name: "What's Trending",
     description: "See what's trending on Twitter via Alexa 🐦",
-    fullDescription: [""],
+    fullDescription: [
+      "Labore et consectetur dolore cupidatat laborum ullamco dolore elit veniam non commodo est dolore commodo."
+    ],
     link: "https://github.com/pavsidhu/whats-trending",
     theme: {
       background: "#00C9FF"
