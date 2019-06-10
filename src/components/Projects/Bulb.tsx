@@ -1,45 +1,55 @@
 import React from "react"
 import styled from "styled-components"
 
-const Container = styled.div`
+import moon from "../../images/bulb/moon.svg"
+import preview from "../../images/bulb/preview.svg"
+import stars from "../../images/bulb/stars.svg"
+import { size } from "../../styles"
+import {
+  Description as CommonDescription,
+  MobileContainer as Container,
+  Name as CommonName,
+  Paragraph as CommonParagraph,
+  Text
+} from "./common"
+
+const Background = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
-`
-
-const TextContainer = styled.div`
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-image: url("${stars}");
+  background-size: 400px;
+  background-repeat: repeat;
+  position: relative;
 `
 
-const Text = styled.div`
-  max-width: 350px;
+const Moon = styled.img`
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: 40px;
+  top: 24px;
+
+  @media (max-width: ${size.medium}) {
+    display: none;
+  }
 `
 
-const Name = styled.h2`
-  font-size: 5.6rem;
-  color: #fefefe;
-  margin-bottom: 16px;
+const Name = styled(CommonName)`
+  background-color: #180652;
 `
 
-const Description = styled.h3`
-  font-size: 2.4rem;
-  color: #fefefe;
-  margin-bottom: 16px;
+const Description = styled(CommonDescription)`
+  background-color: #180652;
 `
 
-const Paragraph = styled.p`
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  color: #fefefe;
-  margin-bottom: 16px;
+const Paragraph = styled(CommonParagraph)`
+  background-color: #180652;
 `
 
 const Button = styled.a`
-  display: inline-block;
   color: #fefefe;
   padding: 16px;
   font-size: 1.6rem;
@@ -50,15 +60,25 @@ const Button = styled.a`
     filter: brightness(115%);
   }
 `
-const PhotoContainer = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+
+const Photo = styled.img`
+  align-self: center;
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 24px;
+
+  @media (min-width: ${size.medium}) {
+    justify-self: start;
+    max-width: 300px;
+  }
 `
+
 function Bulb({ project }) {
   return (
-    <Container>
-      <TextContainer>
+    <Background>
+      <Moon src={moon} alt="Moon" />
+
+      <Container>
         <Text>
           <Name>{project.name}</Name>
           <Description>{project.description}</Description>
@@ -75,9 +95,9 @@ function Bulb({ project }) {
             View on GitHub
           </Button>
         </Text>
-      </TextContainer>
-      <PhotoContainer />
-    </Container>
+        <Photo src={preview} alt="Bulb app preview" />
+      </Container>
+    </Background>
   )
 }
 
