@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import styled, { css } from "styled-components"
+
+import { size } from "../../styles"
 import projectsList from "./projectsList"
 
 const Container = styled.div`
@@ -7,7 +9,12 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+
+  @media (min-width: ${size.medium}) {
+    height: 100vh;
+  }
 
   ${({ theme }) =>
     css`

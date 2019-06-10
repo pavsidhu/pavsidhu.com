@@ -2,46 +2,16 @@ import React from "react"
 import styled from "styled-components"
 
 import preview from "../../images/spotiparty/preview.png"
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-`
-
-const TextContainer = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
-const Text = styled.div`
-  max-width: 350px;
-`
-
-const Name = styled.h2`
-  font-size: 5.6rem;
-  color: #fefefe;
-  margin-bottom: 16px;
-`
-
-const Description = styled.h3`
-  font-size: 2.4rem;
-  color: #fefefe;
-  margin-bottom: 16px;
-`
-
-const Paragraph = styled.p`
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  color: #fefefe;
-  margin-bottom: 16px;
-`
+import { size } from "../../styles"
+import {
+  Description,
+  Name,
+  Paragraph,
+  Text,
+  WebContainer as Container
+} from "./common"
 
 const Button = styled.a`
-  display: inline-block;
   color: black;
   padding: 16px;
   font-size: 1.6rem;
@@ -55,41 +25,36 @@ const Button = styled.a`
     transform: translateX(-2px) translateY(-2px) scale(1.03);
   }
 `
-const PhotoContainer = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-`
 
 const Photo = styled.img`
-  height: 70vh;
-  max-height: 650px;
+  align-self: center;
+  width: 100%;
+  max-width: 600px;
   border: 5px solid #0b0b0b;
   box-shadow: 15px 15px 0px #0b0b0b;
-  position: relative;
-  left: 5px;
+
+  @media (min-width: ${size.medium}) {
+    max-width: none;
+  }
 `
 
 function SpotiParty({ project }) {
   return (
     <Container>
-      <TextContainer>
-        <Text>
-          <Name>{project.name}</Name>
-          <Description>{project.description}</Description>
+      <Text>
+        <Name>{project.name}</Name>
+        <Description>{project.description}</Description>
 
-          {project.fullDescription.map((paragraph, index) => (
-            <Paragraph key={index}>{paragraph}</Paragraph>
-          ))}
+        {project.fullDescription.map((paragraph: string, index: number) => (
+          <Paragraph key={index}>{paragraph}</Paragraph>
+        ))}
 
-          <Button href={project.link} target="_blank" rel="noopener noreferrer">
-            View on GitHub
-          </Button>
-        </Text>
-      </TextContainer>
-      <PhotoContainer>
-        <Photo src={preview} />
-      </PhotoContainer>
+        <Button href={project.link} target="_blank" rel="noopener noreferrer">
+          View on GitHub
+        </Button>
+      </Text>
+
+      <Photo src={preview} />
     </Container>
   )
 }

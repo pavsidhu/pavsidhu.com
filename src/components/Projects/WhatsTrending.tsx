@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 
 import echoDot from "../../images/whats-trending/echo-dot.png"
+import { size } from "../../styles"
+import { Description, Name, Paragraph, Text as CommonText } from "./common"
 
 const Container = styled.div`
   display: flex;
@@ -9,35 +11,16 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
-`
-
-const Text = styled.div`
-  max-width: 350px;
+  padding: 0 24px;
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+  @media (min-width: ${size.medium}) {
+    padding: 0;
+  }
 `
 
-const Name = styled.h2`
-  font-size: 5.6rem;
-  color: #fefefe;
-  margin-bottom: 16px;
-`
-
-const Description = styled.h3`
-  font-size: 2.4rem;
-  color: #fefefe;
-  margin-bottom: 16px;
-`
-
-const Paragraph = styled.p`
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  color: #fefefe;
-  margin-bottom: 16px;
+const Text = styled(CommonText)`
+  flex: 1;
 `
 
 const Button = styled.a`
@@ -61,8 +44,10 @@ const PhotoContainer = styled.div`
 `
 
 const Photo = styled.img`
+  max-height: 250px;
   height: 100%;
-  max-height: 280px;
+  width: 100%;
+  object-fit: contain;
 `
 
 function WhatsTrending({ project }) {

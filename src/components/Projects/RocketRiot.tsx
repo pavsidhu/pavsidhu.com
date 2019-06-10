@@ -4,17 +4,18 @@ import styled, { css } from "styled-components"
 import asteroid from "../../images/rocket-riot/asteroid.svg"
 import planet1 from "../../images/rocket-riot/planet-1.svg"
 import planet2 from "../../images/rocket-riot/planet-2.svg"
+import preview from "../../images/rocket-riot/preview.gif"
 import rocket1 from "../../images/rocket-riot/rocket-1.svg"
 import rocket2 from "../../images/rocket-riot/rocket-2.svg"
 import rocket3 from "../../images/rocket-riot/rocket-3.svg"
 import stars from "../../images/rocket-riot/stars.svg"
-import preview from "../../images/rocket-riot/preview.gif"
+import { Description, Name, Paragraph, Text } from "./common"
 
 const Container = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 100%;
+  flex: 1;
   background-image: url("${stars}");
   background-size: contain;
   background-repeat: repeat;
@@ -27,29 +28,6 @@ const TextContainer = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: 1;
-`
-
-const Text = styled.div`
-  max-width: 350px;
-`
-
-const Name = styled.h2`
-  font-size: 5.6rem;
-  color: #fefefe;
-  margin-bottom: 16px;
-`
-
-const Description = styled.h3`
-  font-size: 2.4rem;
-  color: #fefefe;
-  margin-bottom: 16px;
-`
-
-const Paragraph = styled.p`
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  color: #fefefe;
-  margin-bottom: 16px;
 `
 
 const Button = styled.a`

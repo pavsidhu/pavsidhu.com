@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
+import preview from "../../images/tea-bot/preview-1.jpg"
+
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -52,10 +54,16 @@ const Button = styled.a`
     transform: scale(1.05);
   }
 `
+
 const PhotoContainer = styled.div`
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+`
+
+const Photo = styled.img`
+  height: 80vh;
+  max-height: 700px;
 `
 
 function TeaBot({ project }) {
@@ -75,7 +83,9 @@ function TeaBot({ project }) {
           </Button>
         </Text>
       </TextContainer>
-      <PhotoContainer />
+      <PhotoContainer>
+        <Photo src={preview} />
+      </PhotoContainer>
     </Container>
   )
 }

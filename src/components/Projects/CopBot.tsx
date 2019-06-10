@@ -2,50 +2,19 @@ import React from "react"
 import styled from "styled-components"
 
 import preview from "../../images/copbot/preview.png"
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  max-width: 1300px;
-`
-
-const TextContainer = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
-const Text = styled.div`
-  max-width: 350px;
-`
-
-const Name = styled.h2`
-  font-size: 5.6rem;
-  color: #fefefe;
-  margin-bottom: 16px;
-`
-
-const Description = styled.h3`
-  font-size: 2.4rem;
-  color: #fefefe;
-  margin-bottom: 16px;
-`
-
-const Paragraph = styled.p`
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  color: #fefefe;
-  margin-bottom: 16px;
-`
+import { size } from "../../styles"
+import {
+  Description,
+  Name,
+  Paragraph,
+  Text,
+  WebContainer as Container
+} from "./common"
 
 const Button = styled.a`
-  display: inline-block;
-  color: #fefefe;
   padding: 16px;
   font-size: 1.6rem;
+  color: #fefefe;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 4px;
 
@@ -53,37 +22,34 @@ const Button = styled.a`
     background-color: rgba(255, 255, 255, 0.3);
   }
 `
-const PhotoContainer = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-`
 
 const Photo = styled.img`
-  height: 68vh;
-  max-height: 550px;
+  align-self: center;
+  width: 100%;
+  max-width: 600px;
+
+  @media (min-width: ${size.medium}) {
+    max-width: none;
+  }
 `
 
 function CopBot({ project }) {
   return (
     <Container>
-      <TextContainer>
-        <Text>
-          <Name>{project.name}</Name>
-          <Description>{project.description}</Description>
+      <Text>
+        <Name>{project.name}</Name>
+        <Description>{project.description}</Description>
 
-          {project.fullDescription.map((paragraph, index) => (
-            <Paragraph key={index}>{paragraph}</Paragraph>
-          ))}
+        {project.fullDescription.map((paragraph: string, index: number) => (
+          <Paragraph key={index}>{paragraph}</Paragraph>
+        ))}
 
-          <Button href={project.link} target="_blank" rel="noopener noreferrer">
-            View on GitHub
-          </Button>
-        </Text>
-      </TextContainer>
-      <PhotoContainer>
-        <Photo src={preview} />
-      </PhotoContainer>
+        <Button href={project.link} target="_blank" rel="noopener noreferrer">
+          View on GitHub
+        </Button>
+      </Text>
+
+      <Photo src={preview} />
     </Container>
   )
 }

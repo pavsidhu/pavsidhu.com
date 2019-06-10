@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="361px" height="436px" viewBox="0 0 361 436" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Artboard Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.972687037 0.031 355.205518 0.031 355.205518 434.999778 0.972687037 434.999778"></polygon>
+        <polygon id="path-3" points="0 0.0257 28.5979 0.0257 28.5979 16.9817 0 16.9817"></polygon>
+    </defs>
+    <g id="Artboard-Copy-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-33">
+            <g id="Group-3" transform="translate(5.000000, 0.969000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M355.1379,364.8565 C355.4219,365.9185 354.7849,367.0205 353.7219,367.3045 L100.5429,434.9325 C99.4799,435.2155 98.3779,434.5795 98.0939,433.5165 L1.0399,70.1745 C0.7569,69.1125 1.3939,68.0105 2.4559,67.7265 L255.6359,0.0985 C256.6989,-0.1855 257.8009,0.4525 258.0839,1.5145 L355.1379,364.8565 Z" id="Fill-1" fill="#7CB342" mask="url(#mask-2)"></path>
+            </g>
+            <g id="Group-6" transform="translate(0.000000, 81.969000)">
+                <mask id="mask-4" fill="white">
+                    <use xlink:href="#path-3"></use>
+                </mask>
+                <g id="Clip-5"></g>
+                <polygon id="Fill-4" fill="#F1F8E9" mask="url(#mask-4)" points="28.5979 10.0587 2.6799 16.9817 -0.0001 6.9487 25.9179 0.0257"></polygon>
+            </g>
+            <polygon id="Fill-7" fill="#F1F8E9" points="36.445 121.4036 10.527 128.3266 7.847 118.2946 33.765 111.3706"></polygon>
+            <polygon id="Fill-9" fill="#F1F8E9" points="44.2917 150.7806 18.3737 157.7036 15.6937 147.6706 41.6117 140.7476"></polygon>
+            <polygon id="Fill-11" fill="#F1F8E9" points="52.1384 180.1566 26.2204 187.0796 23.5404 177.0476 49.4584 170.1236"></polygon>
+            <polygon id="Fill-13" fill="#F1F8E9" points="59.9855 209.5335 34.0675 216.4565 31.3875 206.4235 57.3055 199.5005"></polygon>
+            <polygon id="Fill-15" fill="#F1F8E9" points="67.8322 238.9095 41.9142 245.8325 39.2342 235.8005 65.1522 228.8765"></polygon>
+            <polygon id="Fill-17" fill="#F1F8E9" points="75.6794 268.2855 49.7614 275.2095 47.0814 265.1765 72.9994 258.2535"></polygon>
+            <polygon id="Fill-19" fill="#F1F8E9" points="83.5261 297.6624 57.6081 304.5854 54.9281 294.5534 80.8461 287.6294"></polygon>
+            <polygon id="Fill-21" fill="#F1F8E9" points="91.3732 327.0384 65.4552 333.9624 62.7752 323.9294 88.6932 317.0064"></polygon>
+            <polygon id="Fill-23" fill="#F1F8E9" points="99.2199 356.4154 73.3019 363.3384 70.6219 353.3064 96.5399 346.3824"></polygon>
+            <polygon id="Fill-25" fill="#F1F8E9" points="107.0666 385.7913 81.1486 392.7153 78.4686 382.6823 104.3866 375.7593"></polygon>
+            <polygon id="Fill-27" fill="#F1F8E9" points="114.9138 415.1683 88.9958 422.0913 86.3158 412.0593 112.2338 405.1353"></polygon>
+            <path d="M244.7688,119.387 C251.9388,146.229 235.9918,173.801 209.1488,180.971 C182.3068,188.141 154.7348,172.194 147.5648,145.352 C140.3948,118.51 156.3428,90.938 183.1848,83.768 C210.0268,76.598 237.5988,92.545 244.7688,119.387" id="Fill-29" fill="#689F38"></path>
+            <polygon id="Fill-31" fill="#558B2F" points="96.7399 111.0404 124.8519 216.2824 230.0939 188.1714 229.9509 187.6384 95.9339 111.2564"></polygon>
+        </g>
+    </g>
+</svg>
