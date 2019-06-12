@@ -5,6 +5,7 @@ import RandomShapes from "./RandomShapes"
 import { size } from "../styles"
 
 import profileImage from "../images/intro/profile.jpg"
+import scatterBackground from "../images/intro/scatter.svg"
 
 const Container = styled.div`
   display: flex;
@@ -13,6 +14,8 @@ const Container = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
+  background: url('${scatterBackground}');
+  background-repeat: repeat;
 `
 
 const Content = styled.div`
@@ -37,6 +40,7 @@ const Heading = styled.h1`
   font-size: 4.8rem;
   color: #1b1b1b;
   margin-bottom: 40px;
+  background-color: #fefefe;
 `
 
 const List = styled.ul`
@@ -52,6 +56,7 @@ const List = styled.ul`
 
 const ListItem = styled.ul`
   margin: 0 24px 16px;
+  background-color: #fefefe;
 
   @media (min-width: ${size.medium}) {
     margin-bottom: 0;
@@ -59,32 +64,30 @@ const ListItem = styled.ul`
 `
 
 const Intro = () => (
-  <RandomShapes>
-    <Container>
-      <Content>
-        <Photo src={profileImage} />
-        <Heading>Hey I’m Pav</Heading>
-        <List>
-          <ListItem>
-            <a href="https://github.com/pavsidhu">Developer</a>
-          </ListItem>
-          <ListItem>UX Designer</ListItem>
-          <ListItem>
-            <a href="https://www.instagram.com/p/BrIiwq9hAbV/">Powerlifter</a>
-          </ListItem>
-        </List>
+  <Container>
+    <Content>
+      <Photo src={profileImage} />
+      <Heading>Hey I’m Pav</Heading>
+      <List>
+        <ListItem>
+          <a href="https://github.com/pavsidhu">Developer</a>
+        </ListItem>
+        <ListItem>UX Designer</ListItem>
+        <ListItem>
+          <a href="https://www.instagram.com/p/BrIiwq9hAbV/">Powerlifter</a>
+        </ListItem>
+      </List>
 
-        <List>
-          <ListItem>Cardiff / Birmingham</ListItem>
-          <ListItem>
-            <a href="https://www.cs.bham.ac.uk/admissions/undergraduate/degrees/cs">
-              Computer Science
-            </a>
-          </ListItem>
-        </List>
-      </Content>
-    </Container>
-  </RandomShapes>
+      <List>
+        <ListItem>Cardiff / Birmingham</ListItem>
+        <ListItem>
+          <a href="https://www.cs.bham.ac.uk/admissions/undergraduate/degrees/cs">
+            Computer Science
+          </a>
+        </ListItem>
+      </List>
+    </Content>
+  </Container>
 )
 
 export default Intro

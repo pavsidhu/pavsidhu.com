@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
+import scatterBackground from "../images/intro/scatter.svg"
 import blogIcon from "../images/social/blog.svg"
 import emailIcon from "../images/social/email.svg"
 import gitHubIcon from "../images/social/github.svg"
@@ -55,6 +56,8 @@ const Container = styled.div`
   min-height: 100vh;
   width: 100%;
   align-items: center;
+  background: url('${scatterBackground}');
+  background-repeat: repeat;
 `
 
 const Contents = styled.div`
