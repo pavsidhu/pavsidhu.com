@@ -1,8 +1,7 @@
-import React from "react"
 import PropTypes from "prop-types"
+import React from "react"
 import { createGlobalStyle } from "styled-components"
 
-import Footer from "./Footer"
 import CircularBold from "../fonts/circular-bold.otf"
 import CircularBook from "../fonts/circular-book.otf"
 
@@ -39,7 +38,6 @@ const Layout = ({ children }) => (
   <>
     <GlobalStyle />
     <main>{children}</main>
-    <Footer />
   </>
 )
 
