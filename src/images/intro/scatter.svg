@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="1080px" viewBox="0 0 1920 1080" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="x" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FEFEFE" x="0" y="0" width="1920" height="1080"></rect>
+        <circle id="Oval" stroke="#F25E38" stroke-width="6" transform="translate(1124.325361, 744.520201) rotate(-254.000000) translate(-1124.325361, -744.520201) " cx="1124.32536" cy="744.520201" r="12"></circle>
+        <path d="M1435,901.970328 L1435,869.990109" id="Path" stroke="#F25E38" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(1435.000000, 885.990109) rotate(-234.000000) translate(-1435.000000, -885.990109) "></path>
+        <path d="M645.826979,895.568044 L645.826979,863.587825" id="Path" stroke="#F25E38" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(645.826979, 879.587825) rotate(-248.000000) translate(-645.826979, -879.587825) "></path>
+        <rect id="Rectangle" stroke="#F25E38" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(592.446288, 68.560359) rotate(-134.000000) translate(-592.446288, -68.560359) " x="580.446288" y="56.5603591" width="24" height="24"></rect>
+        <polygon id="Path" stroke="#F25E38" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(1565.394143, 419.626742) rotate(-211.000000) translate(-1565.394143, -419.626742) " points="1565.39414 407.626742 1551.89414 431.626742 1578.89414 431.626742"></polygon>
+        <polygon id="Path" stroke="#F25E38" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(1056.500000, 301.000000) rotate(-52.000000) translate(-1056.500000, -301.000000) " points="1056.5 289 1043 313 1070 313"></polygon>
+        <polyline id="Path" stroke="#F25E38" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(176.926583, 926.924917) rotate(-202.000000) translate(-176.926583, -926.924917) " points="172.926583 942.924917 180.926583 934.924917 172.926583 926.924917 180.926583 918.924917 172.926583 910.924917"></polyline>
+        <circle id="Oval" stroke="#EBEBEB" stroke-width="6" transform="translate(1798.217690, 113.480116) rotate(-183.000000) translate(-1798.217690, -113.480116) " cx="1798.21769" cy="113.480116" r="13.5"></circle>
+        <circle id="Oval" stroke="#EBEBEB" stroke-width="6" transform="translate(678.000000, 538.000000) rotate(-308.000000) translate(-678.000000, -538.000000) " cx="678" cy="538" r="12"></circle>
+        <circle id="Oval" stroke="#EBEBEB" stroke-width="6" transform="translate(123.265527, 457.421161) rotate(-75.000000) translate(-123.265527, -457.421161) " cx="123.265527" cy="457.421161" r="11.5"></circle>
+        <rect id="Rectangle" stroke="#EBEBEB" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(1249.396079, 81.495800) rotate(-338.000000) translate(-1249.396079, -81.495800) " x="1235.39608" y="67.4957998" width="28" height="28"></rect>
+        <rect id="Rectangle" stroke="#EBEBEB" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(424.040258, 249.744028) rotate(-64.000000) translate(-424.040258, -249.744028) " x="411.040258" y="236.744028" width="26" height="26"></rect>
+        <polygon id="Path" stroke="#EBEBEB" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(1898.176162, 1047.560521) rotate(-203.000000) translate(-1898.176162, -1047.560521) " points="1898.17616 1035.56052 1884.67616 1059.56052 1911.67616 1059.56052"></polygon>
+        <polyline id="Path" stroke="#EBEBEB" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(1486.000000, 729.500000) rotate(-41.000000) translate(-1486.000000, -729.500000) " points="1483 742 1489 735.75 1483 729.5 1489 723.25 1483 717"></polyline>
+    </g>
+</svg>
