@@ -80,6 +80,13 @@ const Item = styled.a`
   align-items: center;
   margin-bottom: 8px;
   padding: 16px;
+  transition: all 100ms ease-in-out;
+  color: #1b1b1b;
+
+  &:hover {
+    transform: translateY(-2px) scale(1.03);
+    color: #f25e38;
+  }
 `
 
 const Icon = styled.img`
@@ -90,7 +97,6 @@ const Icon = styled.img`
 
 const Name = styled.p`
   font-size: 1.8rem;
-  color: #1b1b1b;
 `
 
 const Handle = styled.p`

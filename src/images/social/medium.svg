@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
-    <title>x copy 3</title>
+    <title>medium</title>
     <desc>Created with Sketch.</desc>
-    <g id="x-copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect fill="#FEFEFE" x="0" y="0" width="100" height="100"></rect>
-        <g id="medium" transform="translate(0.000000, 10.000000)" fill="#1B1B1B" fill-rule="nonzero">
-            <path d="M11.9,16.5 C12,15.3 11.6,14.1 10.6,13.2 L1.3,2 L1.3,0.3 L30.3,0.3 L52.7,49.4 L72.4,0.3 L100,0.3 L100,2 L92,9.7 C91.3,10.2 91,11.1 91.1,11.9 L91.1,68.1 C91,69 91.3,69.8 92,70.4 L99.8,78.1 L99.8,79.8 L60.6,79.8 L60.6,78 L68.7,70.2 C69.5,69.4 69.5,69.2 69.5,68 L69.5,22.5 L47,79.5 L44,79.5 L17.9,22.5 L17.9,60.7 C17.7,62.3 18.2,63.9 19.3,65.1 L29.8,77.8 L29.8,79.5 L0,79.5 L0,77.8 L10.5,65.1 C11.6,63.9 12.1,62.3 11.9,60.7 L11.9,16.5 Z" id="Path"></path>
-        </g>
+    <g id="medium" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M11.9,26.5 C12,25.3 11.6,24.1 10.6,23.2 L1.3,12 L1.3,10.3 L30.3,10.3 L52.7,59.4 L72.4,10.3 L100,10.3 L100,12 L92,19.7 C91.3,20.2 91,21.1 91.1,21.9 L91.1,78.1 C91,79 91.3,79.8 92,80.4 L99.8,88.1 L99.8,89.8 L60.6,89.8 L60.6,88 L68.7,80.2 C69.5,79.4 69.5,79.2 69.5,78 L69.5,32.5 L47,89.5 L44,89.5 L17.9,32.5 L17.9,70.7 C17.7,72.3 18.2,73.9 19.3,75.1 L29.8,87.8 L29.8,89.5 L0,89.5 L0,87.8 L10.5,75.1 C11.6,73.9 12.1,72.3 11.9,70.7 L11.9,26.5 Z" id="Path" fill="#1B1B1B" fill-rule="nonzero"></path>
     </g>
 </svg>
