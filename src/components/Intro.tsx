@@ -13,7 +13,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background: url('${scatterBackground}');
   background-repeat: repeat;
 `
@@ -69,11 +69,21 @@ const Intro = () => (
       <Heading>Hey I’m Pav</Heading>
       <List>
         <ListItem>
-          <Link href="https://github.com/pavsidhu">Developer</Link>
+          <Link
+            href="https://github.com/pavsidhu"
+            target="_blank"
+            rel="noopener"
+          >
+            Developer
+          </Link>
         </ListItem>
         <ListItem>UX Designer</ListItem>
         <ListItem>
-          <Link href="https://www.instagram.com/p/BrIiwq9hAbV/">
+          <Link
+            href="https://www.instagram.com/p/BrIiwq9hAbV/"
+            target="_blank"
+            rel="noopener"
+          >
             Powerlifter
           </Link>
         </ListItem>
@@ -82,7 +92,11 @@ const Intro = () => (
       <List>
         <ListItem>Cardiff / Birmingham</ListItem>
         <ListItem>
-          <Link href="https://www.cs.bham.ac.uk/admissions/undergraduate/degrees/cs">
+          <Link
+            href="https://www.cs.bham.ac.uk/admissions/undergraduate/degrees/cs"
+            target="_blank"
+            rel="noopener"
+          >
             Computer Science
           </Link>
         </ListItem>

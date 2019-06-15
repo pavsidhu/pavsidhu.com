@@ -35,7 +35,13 @@ const Footer = () => (
   <Container>
     <Source>
       👨🏼‍💻 Source code is available on{" "}
-      <Link href="https://github.com/pavsidhu/pavsidhu.com">GitHub</Link>
+      <Link
+        href="https://github.com/pavsidhu/pavsidhu.com"
+        target="_blank"
+        rel="noopener"
+      >
+        GitHub
+      </Link>
     </Source>
     <Credit>Made with 💛 by Pav Sidhu</Credit>
   </Container>

@@ -10,11 +10,8 @@ const Container = styled.div`
   align-items: center;
   width: 100vw;
   min-height: 100vh;
+  height: 100vh;
   position: relative;
-
-  @media (min-width: ${size.medium}) {
-    height: 100vh;
-  }
 
   ${({ theme }) =>
     css`
