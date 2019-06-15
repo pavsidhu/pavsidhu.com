@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { size } from "../styles"
+import Link from "./Link"
 
 const Container = styled.footer`
   display: flex;
@@ -32,8 +33,9 @@ const Credit = styled.p``
 
 const Footer = () => (
   <Container>
-    <Source href="https://github.com/pavsidhu/pavsidhu.com">
-      👨🏼‍💻 Source code is available on GitHub
+    <Source>
+      👨🏼‍💻 Source code is available on{" "}
+      <Link href="https://github.com/pavsidhu/pavsidhu.com">GitHub</Link>
     </Source>
     <Credit>Made with 💛 by Pav Sidhu</Credit>
   </Container>

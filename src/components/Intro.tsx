@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 
-import RandomShapes from "./RandomShapes"
-import { size } from "../styles"
-
 import profileImage from "../images/intro/profile.jpg"
 import scatterBackground from "../images/intro/scatter.svg"
+import { size } from "../styles"
+import Link from "./Link"
+import RandomShapes from "./RandomShapes"
 
 const Container = styled.div`
   display: flex;
@@ -32,7 +32,6 @@ const Photo = styled.img`
   height: 140px;
   border-radius: 50%;
   margin-bottom: 40px;
-  /* border: 3px solid #1b1b1b; */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 `
 
@@ -70,20 +69,22 @@ const Intro = () => (
       <Heading>Hey I’m Pav</Heading>
       <List>
         <ListItem>
-          <a href="https://github.com/pavsidhu">Developer</a>
+          <Link href="https://github.com/pavsidhu">Developer</Link>
         </ListItem>
         <ListItem>UX Designer</ListItem>
         <ListItem>
-          <a href="https://www.instagram.com/p/BrIiwq9hAbV/">Powerlifter</a>
+          <Link href="https://www.instagram.com/p/BrIiwq9hAbV/">
+            Powerlifter
+          </Link>
         </ListItem>
       </List>
 
       <List>
         <ListItem>Cardiff / Birmingham</ListItem>
         <ListItem>
-          <a href="https://www.cs.bham.ac.uk/admissions/undergraduate/degrees/cs">
+          <Link href="https://www.cs.bham.ac.uk/admissions/undergraduate/degrees/cs">
             Computer Science
-          </a>
+          </Link>
         </ListItem>
       </List>
     </Content>
