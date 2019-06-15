@@ -27,6 +27,7 @@ const Photo = styled.img`
   align-self: center;
   width: 100%;
   max-width: 600px;
+  margin-bottom: 24px;
 
   @media (min-width: ${size.medium}) {
     max-width: none;
