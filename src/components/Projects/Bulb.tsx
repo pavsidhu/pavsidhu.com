@@ -6,12 +6,12 @@ import preview from "../../images/bulb/preview.svg"
 import stars from "../../images/bulb/stars.svg"
 import { size } from "../../styles"
 import {
-  Description as CommonDescription,
-  MobileContainer as Container,
-  Name as CommonName,
-  Paragraph as CommonParagraph,
-  Text
-} from "./common"
+  Description as BaseDescription,
+  MobileContainer,
+  Name as BaseName,
+  Paragraph as BaseParagraph,
+  Text as BaseText
+} from "./Common"
 
 const Background = styled.div`
   display: flex;
@@ -25,27 +25,45 @@ const Background = styled.div`
   position: relative;
 `
 
-const Moon = styled.img`
-  width: 180px;
-  height: 180px;
-  position: absolute;
-  left: 40px;
-  top: 24px;
+const Container = styled(MobileContainer)`
+  display: grid;
 
-  @media (max-width: ${size.medium}) {
-    display: none;
+  @media (min-width: ${size.medium}) {
+    grid-template-columns:
+      minmax(0, 180px) minmax(400px, 1fr) 56px minmax(200px, 1fr)
+      minmax(0, 180px);
+    grid-template-areas: "moon text space preview moon-space";
+    grid-gap: 24px;
+    max-width: 1600px;
   }
 `
 
-const Name = styled(CommonName)`
+const Moon = styled.img`
+  display: none;
+
+  @media (min-width: ${size.medium}) {
+    grid-area: moon;
+    display: block;
+    width: 100%;
+    justify-self: start;
+  }
+`
+
+const Text = styled(BaseText)`
+  @media (min-width: ${size.medium}) {
+    grid-area: text;
+  }
+`
+
+const Name = styled(BaseName)`
   background-color: #180652;
 `
 
-const Description = styled(CommonDescription)`
+const Description = styled(BaseDescription)`
   background-color: #180652;
 `
 
-const Paragraph = styled(CommonParagraph)`
+const Paragraph = styled(BaseParagraph)`
   background-color: #180652;
 `
 
@@ -68,6 +86,7 @@ const Photo = styled.img`
   margin-bottom: 24px;
 
   @media (min-width: ${size.medium}) {
+    grid-area: preview;
     justify-self: start;
     max-width: 300px;
   }
@@ -76,9 +95,9 @@ const Photo = styled.img`
 function Bulb({ project }) {
   return (
     <Background>
-      <Moon src={moon} alt="Moon" />
-
       <Container>
+        <Moon src={moon} alt="Moon" />
+
         <Text>
           <Name>{project.name}</Name>
           <Description>{project.description}</Description>
