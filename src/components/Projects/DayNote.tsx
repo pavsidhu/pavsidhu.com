@@ -5,10 +5,10 @@ import preview from "../../images/daynote/preview.png"
 import { size } from "../../styles"
 import {
   Description,
+  MobileContainer as Container,
   Name,
   Paragraph,
-  Text,
-  MobileContainer as Container
+  Text
 } from "./common"
 
 const Button = styled.a`
