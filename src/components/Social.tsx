@@ -10,6 +10,7 @@ import mediumIcon from "../images/social/medium.svg"
 import twitterIcon from "../images/social/twitter.svg"
 import { size } from "../styles"
 import Footer from "./Footer"
+import Link from "./Link"
 
 const socialNetworks = [
   {
@@ -74,7 +75,7 @@ const Heading = styled.h2`
   margin-bottom: 40px;
 `
 
-const Item = styled.a`
+const Item = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -109,13 +110,15 @@ const Social = () => (
     <Contents>
       <Heading>Social</Heading>
       {socialNetworks.map((socialNetwork, index) => (
-        <Item href={socialNetwork.link} key={index}>
-          <Icon src={socialNetwork.icon} />
-          <div>
-            <Name>{socialNetwork.name}</Name>
-            <Handle>{socialNetwork.handle}</Handle>
-          </div>
-        </Item>
+        <Link href={socialNetwork.link} underline={false} key={index}>
+          <Item>
+            <Icon src={socialNetwork.icon} />
+            <div>
+              <Name>{socialNetwork.name}</Name>
+              <Handle>{socialNetwork.handle}</Handle>
+            </div>
+          </Item>
+        </Link>
       ))}
     </Contents>
     <Footer />
