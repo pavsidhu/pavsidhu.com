@@ -19,6 +19,7 @@ const Button = styled.a`
   border: 5px solid #0b0b0b;
   box-shadow: 8px 8px 0px #0b0b0b;
   transition: all 100ms;
+  margin-bottom: 16px;
 
   &:hover {
     box-shadow: 12px 12px 0px #0b0b0b;
@@ -32,6 +33,7 @@ const Photo = styled.img`
   max-width: 600px;
   border: 5px solid #0b0b0b;
   box-shadow: 15px 15px 0px #0b0b0b;
+  margin-bottom: 40px;
 
   @media (min-width: ${size.medium}) {
     max-width: none;
