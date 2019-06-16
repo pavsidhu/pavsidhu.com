@@ -5,12 +5,10 @@ import { size } from "../../styles"
 import projectsList from "./projectsList"
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-rows: auto 1fr;
   width: 100vw;
   min-height: 100vh;
-  height: 100vh;
   position: relative;
 
   ${({ theme }) =>
@@ -36,8 +34,8 @@ const NavigatorItem = styled.li`
   white-space: nowrap;
   cursor: pointer;
 
-  ${({ selected }) =>
-    selected &&
+  ${(props: INavigatorItemProps) =>
+    props.selected &&
     css`
       background: black;
       color: white;
@@ -49,6 +47,10 @@ const NavigatorItem = styled.li`
       }
     `};
 `
+
+interface INavigatorItemProps {
+  selected: boolean
+}
 
 function Projects() {
   const [project, setProject] = useState(projectsList[0])
