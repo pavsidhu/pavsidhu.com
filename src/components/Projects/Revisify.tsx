@@ -1,7 +1,6 @@
 import React from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
-import folders from "../../images/revisify/folders.svg"
 import laptop from "../../images/revisify/laptop.svg"
 import notepad from "../../images/revisify/notebook.svg"
 import preview from "../../images/revisify/preview.png"
@@ -10,9 +9,31 @@ import {
   Description,
   Name,
   Paragraph,
-  Text,
-  WebContainer as Container
+  Text as BaseText,
+  WebContainer
 } from "./common"
+
+const Container = styled(WebContainer)`
+  grid-template-rows: minmax(100px, 20vw) auto;
+  padding-bottom: 24px;
+
+  @media (min-width: ${size.medium}) {
+    padding: 24px;
+    grid-template-columns: minmax(400px, 1fr) 1fr;
+    grid-template-rows: minmax(100px, 200px) auto minmax(100px, 200px);
+    grid-gap: 0;
+    grid-column-gap: 24px;
+  }
+`
+
+const Text = styled(BaseText)`
+  @media (min-width: ${size.medium}) {
+    align-self: center;
+    justify-self: center;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+`
 
 const Button = styled.a`
   color: #fefefe;
@@ -31,36 +52,46 @@ const Photo = styled.img`
   align-self: center;
   width: 100%;
   max-width: 600px;
+  object-fit: contain;
 
   @media (min-width: ${size.medium}) {
+    justify-self: center;
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
     max-width: none;
   }
 `
 
-const Background = styled.div`
-  position: absolute;
-  width: 100%;
+const Laptop = styled.img`
+  justify-self: start;
   height: 100%;
+  max-width: 100%;
+
+  @media (min-width: ${size.medium}) {
+    margin-left: 24px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
 `
 
-const Entity = styled.img`
-  position: absolute;
-  height: 220px;
+const NotePad = styled.img`
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  justify-self: end;
+  height: 100%;
+  max-width: 100%;
 
-  ${(props: IEntityProps) => css`
-    left: ${props.x};
-    top: ${props.y};
-  `}
+  @media (max-width: ${size.medium}) {
+    display: none;
+  }
 `
-
-interface IEntityProps {
-  x: string
-  y: string
-}
 
 function Revisify({ project }) {
   return (
     <Container>
+      <Laptop src={laptop} alt="Laptop" />
+      <NotePad src={notepad} alt="Notepad" />
+
       <Text>
         <Name>{project.name}</Name>
         <Description>{project.description}</Description>
@@ -74,13 +105,7 @@ function Revisify({ project }) {
         </Button>
       </Text>
 
-      <Photo src={preview} alt="Revisify home page preview" />
-
-      <Background>
-        <Entity src={laptop} alt="Laptop" x="2%" y="0%" />
-        <Entity src={folders} alt="Folders" x="78%" y="8%" />
-        <Entity src={notepad} alt="Notepad" x="22%" y="60%" />
-      </Background>
+      <Photo src={preview} />
     </Container>
   )
 }
