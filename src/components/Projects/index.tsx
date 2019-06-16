@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import styled, { css } from "styled-components"
 
-import { size } from "../../styles"
 import projectsList from "./projectsList"
 
 const Container = styled.div`
@@ -18,11 +17,17 @@ const Container = styled.div`
 `
 
 const Navigator = styled.ul`
-  margin: 24px;
   display: flex;
+  max-width: 100vw;
+  padding: 24px;
   list-style-type: none;
   overflow-y: scroll;
-  max-width: 100vw;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
 
 const NavigatorItem = styled.li`
