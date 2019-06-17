@@ -1,4 +1,5 @@
 import React from "react"
+import { useSpring } from "react-spring"
 import styled from "styled-components"
 
 import preview from "../../images/copbot/preview.png"
@@ -35,8 +36,23 @@ const Photo = styled.img`
 `
 
 function CopBot({ project }) {
+  const spring = useSpring({
+    opacity: 1,
+    yPosition: 0,
+    from: {
+      opacity: 0,
+      yPosition: 50
+    },
+    duration: 50
+  })
+
   return (
-    <Container>
+    <Container
+      style={{
+        opacity: spring.opacity,
+        transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+      }}
+    >
       <Text>
         <Name>{project.name}</Name>
         <Description>{project.description}</Description>

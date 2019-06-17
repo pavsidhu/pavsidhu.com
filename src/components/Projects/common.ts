@@ -1,8 +1,9 @@
+import { animated } from "react-spring"
 import styled from "styled-components"
 
 import { size } from "../../styles"
 
-const WebContainer = styled.div`
+const WebContainer = styled(animated.div)`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
@@ -19,7 +20,7 @@ const WebContainer = styled.div`
   }
 `
 
-const MobileContainer = styled.div`
+const MobileContainer = styled(animated.div)`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
@@ -35,7 +36,7 @@ const MobileContainer = styled.div`
   }
 `
 
-const Text = styled.div`
+const Text = styled(animated.div)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;

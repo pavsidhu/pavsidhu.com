@@ -1,4 +1,5 @@
 import React from "react"
+import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
 
 import laptop from "../../images/revisify/laptop.svg"
@@ -48,7 +49,7 @@ const Button = styled.a`
   }
 `
 
-const Photo = styled.img`
+const Photo = styled(animated.img)`
   align-self: center;
   width: 100%;
   max-width: 600px;
@@ -87,12 +88,27 @@ const NotePad = styled.img`
 `
 
 function Revisify({ project }) {
+  const spring = useSpring({
+    opacity: 1,
+    yPosition: 0,
+    from: {
+      opacity: 0,
+      yPosition: 50
+    },
+    duration: 50
+  })
+
   return (
     <Container>
       <Laptop src={laptop} alt="Laptop" />
       <NotePad src={notepad} alt="Notepad" />
 
-      <Text>
+      <Text
+        style={{
+          opacity: spring.opacity,
+          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+        }}
+      >
         <Name>{project.name}</Name>
         <Description>{project.description}</Description>
 
@@ -105,7 +121,13 @@ function Revisify({ project }) {
         </Button>
       </Text>
 
-      <Photo src={preview} />
+      <Photo
+        src={preview}
+        style={{
+          opacity: spring.opacity,
+          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+        }}
+      />
     </Container>
   )
 }
