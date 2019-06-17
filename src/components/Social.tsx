@@ -8,7 +8,6 @@ import gitHubIcon from "../images/social/github.svg"
 import linkedInIcon from "../images/social/linkedin.svg"
 import mediumIcon from "../images/social/medium.svg"
 import twitterIcon from "../images/social/twitter.svg"
-import { size } from "../styles"
 import Footer from "./Footer"
 import Link from "./Link"
 
@@ -106,30 +105,32 @@ const Handle = styled.p`
   color: #adadad;
 `
 
-const Social = () => (
-  <Container>
-    <Contents>
-      <Heading>Social</Heading>
-      {socialNetworks.map((socialNetwork, index) => (
-        <Link
-          href={socialNetwork.link}
-          target="_blank"
-          rel="noopener"
-          underline={false}
-          key={index}
-        >
-          <Item>
-            <Icon src={socialNetwork.icon} />
-            <div>
-              <Name>{socialNetwork.name}</Name>
-              <Handle>{socialNetwork.handle}</Handle>
-            </div>
-          </Item>
-        </Link>
-      ))}
-    </Contents>
-    <Footer />
-  </Container>
-)
+function Social() {
+  return (
+    <Container>
+      <Contents>
+        <Heading>Social</Heading>
+        {socialNetworks.map((socialNetwork, index) => (
+          <Link
+            href={socialNetwork.link}
+            target="_blank"
+            rel="noopener"
+            underline={false}
+            key={index}
+          >
+            <Item>
+              <Icon src={socialNetwork.icon} />
+              <div>
+                <Name>{socialNetwork.name}</Name>
+                <Handle>{socialNetwork.handle}</Handle>
+              </div>
+            </Item>
+          </Link>
+        ))}
+      </Contents>
+      <Footer />
+    </Container>
+  )
+}
 
 export default Social

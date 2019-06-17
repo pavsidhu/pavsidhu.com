@@ -1,11 +1,12 @@
 import React from "react"
+import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
 
 import echoDot from "../../images/whats-trending/echo-dot.png"
 import { size } from "../../styles"
 import { Description, Name, Paragraph, Text as CommonText } from "./common"
 
-const Container = styled.div`
+const Container = styled(animated.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,8 +52,23 @@ const Photo = styled.img`
 `
 
 function WhatsTrending({ project }) {
+  const spring = useSpring({
+    opacity: 1,
+    yPosition: 0,
+    from: {
+      opacity: 0,
+      yPosition: 50
+    },
+    duration: 50
+  })
+
   return (
-    <Container>
+    <Container
+      style={{
+        opacity: spring.opacity,
+        transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+      }}
+    >
       <Text>
         <Name>{project.name}</Name>
         <Description>{project.description}</Description>

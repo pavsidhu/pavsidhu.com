@@ -1,4 +1,5 @@
 import React from "react"
+import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
 
 import moon from "../../images/bulb/moon.svg"
@@ -79,7 +80,7 @@ const Button = styled.a`
   }
 `
 
-const Photo = styled.img`
+const Photo = styled(animated.img)`
   align-self: center;
   width: 100%;
   max-width: 250px;
@@ -93,12 +94,27 @@ const Photo = styled.img`
 `
 
 function Bulb({ project }) {
+  const spring = useSpring({
+    opacity: 1,
+    yPosition: 0,
+    from: {
+      opacity: 0,
+      yPosition: 50
+    },
+    duration: 50
+  })
+
   return (
     <Background>
       <Container>
         <Moon src={moon} alt="Moon" />
 
-        <Text>
+        <Text
+          style={{
+            opacity: spring.opacity,
+            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          }}
+        >
           <Name>{project.name}</Name>
           <Description>{project.description}</Description>
 
@@ -114,7 +130,14 @@ function Bulb({ project }) {
             View on GitHub
           </Button>
         </Text>
-        <Photo src={preview} alt="Bulb app preview" />
+        <Photo
+          src={preview}
+          alt="Bulb app preview"
+          style={{
+            opacity: spring.opacity,
+            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          }}
+        />
       </Container>
     </Background>
   )

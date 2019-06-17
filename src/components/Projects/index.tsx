@@ -5,10 +5,13 @@ import projectsList from "./projectsList"
 
 const Container = styled.div`
   display: grid;
+  justify-items: center;
   grid-template-rows: auto 1fr;
   width: 100vw;
   min-height: 100vh;
   position: relative;
+  transition: background 100ms;
+  overflow: hidden;
 
   ${({ theme }) =>
     css`
