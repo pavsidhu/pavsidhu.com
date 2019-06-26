@@ -5,7 +5,7 @@ import styled from "styled-components"
 import moon from "../../images/bulb/moon.svg"
 import preview from "../../images/bulb/preview.svg"
 import stars from "../../images/bulb/stars.svg"
-import { size } from "../../styles"
+import { projectSpring, size } from "../../styles"
 import {
   Description as BaseDescription,
   MobileContainer,
@@ -94,24 +94,19 @@ const Photo = styled(animated.img)`
 `
 
 function Bulb({ project }) {
-  const spring = useSpring({
-    opacity: 1,
-    yPosition: 0,
-    from: {
-      opacity: 0,
-      yPosition: 50
-    },
-    duration: 50
-  })
+  const spring = useSpring(projectSpring)
 
   return (
     <Background>
-      <Container>
+      <Container
+        style={{
+          opacity: spring.opacity
+        }}
+      >
         <Moon src={moon} alt="Moon" />
 
         <Text
           style={{
-            opacity: spring.opacity,
             transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
           }}
         >
@@ -134,7 +129,6 @@ function Bulb({ project }) {
           src={preview}
           alt="Bulb app preview"
           style={{
-            opacity: spring.opacity,
             transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
           }}
         />

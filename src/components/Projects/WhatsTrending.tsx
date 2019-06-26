@@ -3,7 +3,7 @@ import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
 
 import echoDot from "../../images/whats-trending/echo-dot.png"
-import { size } from "../../styles"
+import { projectSpring, size } from "../../styles"
 import { Description, Name, Paragraph, Text as CommonText } from "./common"
 
 const Container = styled(animated.div)`
@@ -52,15 +52,7 @@ const Photo = styled.img`
 `
 
 function WhatsTrending({ project }) {
-  const spring = useSpring({
-    opacity: 1,
-    yPosition: 0,
-    from: {
-      opacity: 0,
-      yPosition: 50
-    },
-    duration: 50
-  })
+  const spring = useSpring(projectSpring)
 
   return (
     <Container
