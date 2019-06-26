@@ -5,7 +5,7 @@ import styled from "styled-components"
 import laptop from "../../images/revisify/laptop.svg"
 import notepad from "../../images/revisify/notebook.svg"
 import preview from "../../images/revisify/preview.png"
-import { size } from "../../styles"
+import { projectSpring, size } from "../../styles"
 import {
   Description,
   Name,
@@ -88,24 +88,19 @@ const NotePad = styled.img`
 `
 
 function Revisify({ project }) {
-  const spring = useSpring({
-    opacity: 1,
-    yPosition: 0,
-    from: {
-      opacity: 0,
-      yPosition: 50
-    },
-    duration: 50
-  })
+  const spring = useSpring(projectSpring)
 
   return (
-    <Container>
+    <Container
+      style={{
+        opacity: spring.opacity
+      }}
+    >
       <Laptop src={laptop} alt="Laptop" />
       <NotePad src={notepad} alt="Notepad" />
 
       <Text
         style={{
-          opacity: spring.opacity,
           transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
         }}
       >
@@ -124,7 +119,6 @@ function Revisify({ project }) {
       <Photo
         src={preview}
         style={{
-          opacity: spring.opacity,
           transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
         }}
       />

@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styled, { css } from "styled-components"
 
+import { size } from "../../styles"
 import projectsList from "./projectsList"
 
 const Container = styled.div`
@@ -10,8 +11,11 @@ const Container = styled.div`
   width: 100vw;
   min-height: 100vh;
   position: relative;
-  transition: background 100ms;
   overflow: hidden;
+
+  @media (min-width: ${size.medium}) {
+    max-height: 100vh;
+  }
 
   ${({ theme }) =>
     css`

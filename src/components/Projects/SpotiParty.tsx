@@ -3,7 +3,7 @@ import { useSpring } from "react-spring"
 import styled from "styled-components"
 
 import preview from "../../images/spotiparty/preview.png"
-import { size } from "../../styles"
+import { projectSpring, size } from "../../styles"
 import {
   Description,
   Name,
@@ -42,15 +42,7 @@ const Photo = styled.img`
 `
 
 function SpotiParty({ project }) {
-  const spring = useSpring({
-    opacity: 1,
-    yPosition: 0,
-    from: {
-      opacity: 0,
-      yPosition: 50
-    },
-    duration: 50
-  })
+  const spring = useSpring(projectSpring)
 
   return (
     <Container
