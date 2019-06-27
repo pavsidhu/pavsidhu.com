@@ -1,10 +1,11 @@
 import React, { useState } from "react"
+import { Element, Link } from "react-scroll"
 import styled, { css } from "styled-components"
 
 import { size } from "../../styles"
 import projectsList from "./projectsList"
 
-const Container = styled.div`
+const Container = styled(Element)`
   display: grid;
   justify-items: center;
   grid-template-rows: auto 1fr;
@@ -68,16 +69,17 @@ function Projects() {
   const [project, setProject] = useState(projectsList[0])
 
   return (
-    <Container theme={project.theme}>
+    <Container theme={project.theme} name="projects">
       <Navigator>
         {projectsList.map(p => (
-          <NavigatorItem
-            selected={p.id === project.id}
-            onClick={() => setProject(projectsList[p.id])}
-            key={p.id}
-          >
-            {p.name}
-          </NavigatorItem>
+          <Link to="projects" key={p.id} smooth={true} duration={300}>
+            <NavigatorItem
+              selected={p.id === project.id}
+              onClick={() => setProject(projectsList[p.id])}
+            >
+              {p.name}
+            </NavigatorItem>
+          </Link>
         ))}
       </Navigator>
       {project.render(project)}
