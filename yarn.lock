@@ -7815,6 +7815,13 @@ react-reconciler@^0.20.0:
     prop-types "^15.6.2"
     scheduler "^0.13.6"
 
+react-scroll@^1.7.12:
+  version "1.7.12"
+  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.7.12.tgz#6bd453d04ec70e03bebe04d8b43b5d91e3d776cc"
+  dependencies:
+    lodash.throttle "^4.1.1"
+    prop-types "^15.5.8"
+
 react-side-effect@^1.1.0:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-1.1.5.tgz#f26059e50ed9c626d91d661b9f3c8bb38cd0ff2d"
