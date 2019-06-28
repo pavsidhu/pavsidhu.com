@@ -10,10 +10,10 @@ const WebContainer = styled(animated.div)`
   justify-items: center;
   max-width: 1600px;
   width: 100%;
+  height: 100%;
   padding: 0 24px;
 
   @media (min-width: ${size.medium}) {
-    flex: 1;
     grid-template-columns: minmax(400px, 1fr) 2fr;
     grid-gap: 80px;
     padding: 0;
@@ -30,7 +30,6 @@ const MobileContainer = styled(animated.div)`
   padding: 0 24px;
 
   @media (min-width: ${size.medium}) {
-    flex: 1;
     grid-template-columns: minmax(400px, 1fr) 1fr;
     grid-gap: 80px;
   }
