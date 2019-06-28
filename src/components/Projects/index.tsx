@@ -1,6 +1,9 @@
 import React, { useState } from "react"
+import TrackVisibility from "react-on-screen"
 import { Element, Link } from "react-scroll"
+import { animated, useSpring } from "react-spring"
 import styled, { css } from "styled-components"
+import Media from "react-media"
 
 import { size } from "../../styles"
 import projectsList from "./projectsList"
@@ -20,7 +23,7 @@ const Container = styled(Element)`
     `};
 `
 
-const Navigator = styled.ul`
+const Navigator = styled(animated.ul)`
   display: flex;
   max-width: 100vw;
   padding: 24px;
@@ -63,21 +66,55 @@ interface INavigatorItemProps {
 
 function Projects() {
   const [project, setProject] = useState(projectsList[0])
+  const [props, set, _] = useSpring(() => ({
+    scroll: 200,
+    duration: 2000
+  }))
 
   return (
     <Container theme={project.theme} name="projects">
-      <Navigator>
-        {projectsList.map(p => (
-          <Link to="projects" key={p.id} smooth={true} duration={300}>
-            <NavigatorItem
-              selected={p.id === project.id}
-              onClick={() => setProject(projectsList[p.id])}
-            >
-              {p.name}
-            </NavigatorItem>
-          </Link>
-        ))}
-      </Navigator>
+      <TrackVisibility
+        once={true}
+        partialVisibility={true}
+        offset={-50}
+        style={{
+          backgroundColor: "black",
+          mixBlendMode: "screen"
+        }}
+      >
+        {({ isVisible }) => {
+          set({ scroll: isVisible ? 0 : 100 })
+
+          return (
+            <Media query="(max-width: 599px)">
+              {matches => (
+                <Navigator
+                  style={
+                    matches
+                      ? {
+                          transform: props.scroll.interpolate(
+                            scroll => `translateX(${scroll}px)`
+                          )
+                        }
+                      : undefined
+                  }
+                >
+                  {projectsList.map(p => (
+                    <Link to="projects" key={p.id} smooth={true} duration={300}>
+                      <NavigatorItem
+                        selected={p.id === project.id}
+                        onClick={() => setProject(projectsList[p.id])}
+                      >
+                        {p.name}
+                      </NavigatorItem>
+                    </Link>
+                  ))}
+                </Navigator>
+              )}
+            </Media>
+          )
+        }}
+      </TrackVisibility>
 
       {project.render(project)}
     </Container>
