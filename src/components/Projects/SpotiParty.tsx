@@ -26,9 +26,11 @@ const Button = styled.a`
   transition: all 100ms;
   margin-bottom: 16px;
 
-  &:hover {
-    box-shadow: 12px 12px 0px #0b0b0b;
-    transform: translateX(-2px) translateY(-2px) scale(1.03);
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 12px 12px 0px #0b0b0b;
+      transform: translateX(-2px) translateY(-2px) scale(1.03);
+    }
   }
 `
 

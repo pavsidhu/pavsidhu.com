@@ -44,8 +44,10 @@ const Button = styled.a`
   border-radius: 4px;
   transition: all 80ms;
 
-  &:hover {
-    transform: scale(1.05);
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 `
 

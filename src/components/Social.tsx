@@ -84,9 +84,11 @@ const Item = styled.div`
   transition: all 100ms ease-in-out;
   color: #1b1b1b;
 
-  &:hover {
-    transform: translateY(-2px) scale(1.03);
-    color: #f25e38;
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-2px) scale(1.03);
+      color: #f25e38;
+    }
   }
 `
 

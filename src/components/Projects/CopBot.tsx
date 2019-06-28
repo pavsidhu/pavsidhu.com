@@ -19,8 +19,10 @@ const Button = styled.a`
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 4px;
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
   }
 `
 

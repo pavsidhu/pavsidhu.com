@@ -80,8 +80,10 @@ const Button = styled.a`
   background-color: #3c247f;
   border-radius: 4px;
 
-  &:hover {
-    filter: brightness(115%);
+  @media (hover: hover) {
+    &:hover {
+      filter: brightness(115%);
+    }
   }
 `
 
