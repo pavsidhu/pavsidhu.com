@@ -13,6 +13,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: "circular-book";
   }
 
+  h3 {
+    -webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+  }
+
   html, body {
     font-size: 62.5%;
     background: #fefefe;
