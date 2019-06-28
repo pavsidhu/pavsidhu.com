@@ -1,6 +1,6 @@
 import React from "react"
-import { useSpring } from "react-spring"
-import styled, { css } from "styled-components"
+import { animated, useSpring } from "react-spring"
+import styled from "styled-components"
 
 import asteroid from "../../images/rocket-riot/asteroid.svg"
 import planet1 from "../../images/rocket-riot/planet-1.svg"
@@ -10,25 +10,38 @@ import rocket1 from "../../images/rocket-riot/rocket-1.svg"
 import rocket2 from "../../images/rocket-riot/rocket-2.svg"
 import rocket3 from "../../images/rocket-riot/rocket-3.svg"
 import stars from "../../images/rocket-riot/stars.svg"
-import { Description, Name, Paragraph, Text } from "./common"
+import { projectSpring, size } from "../../styles"
+import {
+  Description,
+  Name,
+  Paragraph,
+  Text as BaseText,
+  WebContainer
+} from "./common"
 
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  flex: 1;
+const Container = styled(WebContainer)`
+  grid-template-rows: minmax(100px, 20vw) auto;
+  padding-bottom: 24px;
   background-image: url("${stars}");
   background-size: contain;
   background-repeat: repeat;
-  position: relative;
+
+  @media (min-width: ${size.medium}) {
+    padding: 24px;
+    grid-template-columns: 1fr minmax(350px, 1fr) 1fr auto 1fr;
+    grid-template-rows: minmax(100px, 200px) auto minmax(100px, 200px);
+    grid-gap: 0;
+    grid-column-gap: 24px;
+  }
 `
 
-const TextContainer = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1;
+const Text = styled(BaseText)`
+  @media (min-width: ${size.medium}) {
+    align-self: center;
+    justify-self: center;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
 `
 
 const Button = styled.a`
@@ -44,103 +57,150 @@ const Button = styled.a`
     background-color: #005858;
   }
 `
-const PhotoContainer = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-  z-index: 1;
-`
 
-const Photo = styled.img`
-  height: 70vh;
-  max-height: 360px;
-  border: 8px solid rgba(255, 255, 255, 0.05);
-`
-
-const Background = styled.div`
-  position: absolute;
+const Photo = styled(animated.img)`
+  align-self: center;
   width: 100%;
-  height: 100%;
+  max-width: 600px;
+  object-fit: contain;
+
+  @media (min-width: ${size.medium}) {
+    justify-self: center;
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+    max-width: none;
+    width: 100%;
+    max-height: 300px;
+  }
 `
 
-const Entity = styled.img`
-  position: absolute;
+const Rocket1 = styled.img`
+  justify-self: end;
+  align-self: end;
+  height: 90%;
+  transform: rotateZ(240deg);
+  margin-right: 40px;
 
-  ${(props: IEntityProps) => css`
-    left: ${props.x};
-    top: ${props.y};
-    transform: rotate(${props.rotate});
-  `}
+  @media (min-width: ${size.medium}) {
+    height: 50%;
+    transform: rotateZ(150deg);
+    justify-self: start;
+    margin-right: 0;
+    margin-left: 40px;
+    margin-bottom: 32px;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
 `
 
-interface IEntityProps {
-  x: string
-  y: string
-  rotate: string
-}
+const Rocket2 = styled.img`
+  justify-self: end;
+  align-self: start;
+  height: 50%;
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+  transform: rotateZ(240deg);
 
-const Rocket = styled(Entity)`
-  height: 120px;
+  @media (max-width: ${size.medium}) {
+    display: none;
+  }
 `
 
-const Asteroid = styled(Entity)`
-  height: 120px;
+const Rocket3 = styled.img`
+  justify-self: end;
+  align-self: center;
+  margin-bottom: 16px;
+  margin-right: 100px;
+  height: 50%;
+  grid-column: 4 / 6;
+  grid-row: 3 / 4;
+  transform: rotateZ(340deg);
+
+  @media (max-width: ${size.medium}) {
+    display: none;
+  }
 `
 
-const Planet = styled(Entity)`
-  height: 120px;
+const Asteroid = styled.img`
+  justify-self: center;
+  align-self: start;
+  margin-top: 40px;
+  height: 50%;
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+  transform: rotateZ(350deg);
+
+  @media (max-width: ${size.medium}) {
+    display: none;
+  }
+`
+
+const Planet1 = styled.img`
+  align-self: center;
+  justify-self: start;
+  height: 50%;
+  margin-left: 80px;
+  grid-column: 3 / 5;
+  grid-row: 1 / 2;
+
+  @media (max-width: ${size.medium}) {
+    display: none;
+  }
+`
+
+const Planet2 = styled.img`
+  align-self: center;
+  justify-self: start;
+  margin-left: 40px;
+  height: 50%;
+  grid-column: 4 / 5;
+  grid-row: 3 / 4;
+
+  @media (max-width: ${size.medium}) {
+    display: none;
+  }
 `
 
 function RocketRiot({ project }) {
-  const spring = useSpring({
-    opacity: 1,
-    yPosition: 0,
-    from: {
-      opacity: 0,
-      yPosition: 50
-    },
-    duration: 50
-  })
+  const spring = useSpring(projectSpring)
 
   return (
     <Container
       style={{
-        opacity: spring.opacity,
-        transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+        opacity: spring.opacity
       }}
     >
-      <TextContainer>
-        <Text>
-          <Name>{project.name}</Name>
-          <Description>{project.description}</Description>
+      <Rocket1 src={rocket1} alt="Rocket 1" />
+      <Rocket2 src={rocket2} alt="Rocket 2" />
+      <Rocket3 src={rocket3} alt="Rocket 3" />
+      <Asteroid src={asteroid} alt="Asteroid" />
+      <Planet1 src={planet1} alt="Planet 1" />
+      <Planet2 src={planet2} alt="Planet 2" />
 
-          {project.fullDescription.map((paragraph, index) => (
-            <Paragraph key={index}>{paragraph}</Paragraph>
-          ))}
+      <Text
+        style={{
+          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+        }}
+      >
+        <Name>{project.name}</Name>
+        <Description>{project.description}</Description>
 
-          <Button href={project.link} target="_blank" rel="noopener noreferrer">
-            View on GitHub
-          </Button>
-        </Text>
-      </TextContainer>
-      <PhotoContainer>
-        <Photo src={preview} alt="Rocket Riot Preview" />
-      </PhotoContainer>
+        {project.fullDescription.map((paragraph, index) => (
+          <Paragraph key={index}>{paragraph}</Paragraph>
+        ))}
 
-      <Background>
-        <Rocket src={rocket1} alt="Rocket 1" x="5%" y="10%" rotate="150deg" />
-        <Rocket src={rocket2} alt="Rocket 2" x="90%" y="0" rotate="240deg" />
-        <Rocket src={rocket3} alt="Rocket 3" x="85%" y="80%" rotate="340deg" />
-        <Asteroid
-          src={asteroid}
-          alt="Asteroid"
-          x="15%"
-          y="75%"
-          rotate="340deg"
-        />
-        <Planet src={planet1} alt="Planet 1" x="45%" y="5%" rotate="340deg" />
-        <Planet src={planet2} alt="Planet 2" x="55%" y="80%" rotate="340deg" />
-      </Background>
+        <Button href={project.link} target="_blank" rel="noopener noreferrer">
+          View on GitHub
+        </Button>
+      </Text>
+
+      <Photo
+        src={preview}
+        alt="Rocket Riot Preview"
+        style={{
+          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+        }}
+      />
     </Container>
   )
 }
