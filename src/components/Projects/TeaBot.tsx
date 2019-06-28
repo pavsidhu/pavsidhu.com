@@ -50,8 +50,10 @@ const Button = styled.a`
   transition: all 100ms;
   transform-origin: 0% 0%;
 
-  &:hover {
-    transform: scale(1.05);
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 `
 

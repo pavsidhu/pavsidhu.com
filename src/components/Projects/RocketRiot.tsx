@@ -53,8 +53,10 @@ const Button = styled.a`
   border: 8px solid #008a8b33;
   background-clip: padding-box;
 
-  &:hover {
-    background-color: #005858;
+  @media (hover: hover) {
+    &:hover {
+      background-color: #005858;
+    }
   }
 `
 

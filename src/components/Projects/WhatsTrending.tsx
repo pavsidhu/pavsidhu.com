@@ -34,8 +34,10 @@ const Button = styled.a`
   background-color: #ffe033;
   border: 3px solid white;
 
-  &:hover {
-    filter: brightness(105%);
+  @media (hover: hover) {
+    &:hover {
+      filter: brightness(105%);
+    }
   }
 `
 

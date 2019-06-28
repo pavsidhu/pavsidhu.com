@@ -21,8 +21,10 @@ const Link = styled.a`
         background-color: #f05f40;
       }
 
-      &:hover:before {
-        width: 100%;
+      @media (hover: hover) {
+        &:hover:before {
+          width: 100%;
+        }
       }
     `}
 `
