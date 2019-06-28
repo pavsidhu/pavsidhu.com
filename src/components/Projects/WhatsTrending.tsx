@@ -50,6 +50,11 @@ const Photo = styled.img`
   height: 100%;
   width: 100%;
   object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
 `
 
 function WhatsTrending({ project }) {

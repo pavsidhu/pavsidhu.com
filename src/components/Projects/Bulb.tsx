@@ -47,6 +47,11 @@ const Moon = styled.img`
     display: block;
     width: 100%;
     justify-self: start;
+    pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
   }
 `
 

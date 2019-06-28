@@ -14,10 +14,6 @@ const Container = styled(Element)`
   position: relative;
   overflow: hidden;
 
-  @media (min-width: ${size.medium}) {
-    max-height: 100vh;
-  }
-
   ${({ theme }) =>
     css`
       background: ${theme.background};
@@ -82,6 +78,7 @@ function Projects() {
           </Link>
         ))}
       </Navigator>
+
       {project.render(project)}
     </Container>
   )

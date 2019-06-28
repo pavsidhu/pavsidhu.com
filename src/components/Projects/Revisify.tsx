@@ -67,6 +67,11 @@ const Laptop = styled.img`
   justify-self: start;
   height: 100%;
   max-width: 100%;
+  pointer-events: none;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
 
   @media (min-width: ${size.medium}) {
     margin-left: 24px;
@@ -81,6 +86,11 @@ const NotePad = styled.img`
   justify-self: end;
   height: 100%;
   max-width: 100%;
+  pointer-events: none;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
 
   @media (max-width: ${size.medium}) {
     display: none;
