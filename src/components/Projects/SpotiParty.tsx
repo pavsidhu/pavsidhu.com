@@ -8,9 +8,13 @@ import {
   Description,
   Name,
   Paragraph,
-  Text,
+  Text as BaseText,
   WebContainer as Container
 } from "./common"
+
+const Text = styled(BaseText)`
+  color: #0b0b0b;
+`
 
 const Button = styled.a`
   color: black;
