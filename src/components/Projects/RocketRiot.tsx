@@ -74,7 +74,15 @@ const Photo = styled(animated.img)`
   }
 `
 
-const Rocket1 = styled.img`
+const Entity = styled.img`
+  pointer-events: none;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+`
+
+const Rocket1 = styled(Entity)`
   justify-self: end;
   align-self: end;
   height: 90%;
@@ -93,7 +101,7 @@ const Rocket1 = styled.img`
   }
 `
 
-const Rocket2 = styled.img`
+const Rocket2 = styled(Entity)`
   justify-self: end;
   align-self: start;
   height: 50%;
@@ -106,7 +114,7 @@ const Rocket2 = styled.img`
   }
 `
 
-const Rocket3 = styled.img`
+const Rocket3 = styled(Entity)`
   justify-self: end;
   align-self: center;
   margin-bottom: 16px;
@@ -121,7 +129,7 @@ const Rocket3 = styled.img`
   }
 `
 
-const Asteroid = styled.img`
+const Asteroid = styled(Entity)`
   justify-self: center;
   align-self: start;
   margin-top: 40px;
@@ -135,7 +143,7 @@ const Asteroid = styled.img`
   }
 `
 
-const Planet1 = styled.img`
+const Planet1 = styled(Entity)`
   align-self: center;
   justify-self: start;
   height: 50%;
@@ -148,7 +156,7 @@ const Planet1 = styled.img`
   }
 `
 
-const Planet2 = styled.img`
+const Planet2 = styled(Entity)`
   align-self: center;
   justify-self: start;
   margin-left: 40px;
