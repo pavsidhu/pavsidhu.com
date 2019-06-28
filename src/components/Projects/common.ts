@@ -42,6 +42,7 @@ const Text = styled(animated.div)`
   align-items: flex-start;
   max-width: 350px;
   justify-content: center;
+  color: #fefefe;
 
   @media (min-width: ${size.medium}) {
     justify-self: end;
@@ -50,20 +51,17 @@ const Text = styled(animated.div)`
 
 const Name = styled.h2`
   font-size: 5.6rem;
-  color: #fefefe;
   margin-bottom: 16px;
 `
 
 const Description = styled.h3`
   font-size: 2.4rem;
-  color: #fefefe;
   margin-bottom: 16px;
 `
 
 const Paragraph = styled.p`
   font-size: 1.6rem;
   line-height: 2.4rem;
-  color: #fefefe;
   margin-bottom: 16px;
 `
 

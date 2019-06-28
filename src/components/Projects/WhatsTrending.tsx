@@ -22,11 +22,12 @@ const Container = styled(animated.div)`
 
 const Text = styled(CommonText)`
   flex: 1;
+  color: #262626;
 `
 
 const Button = styled.a`
   display: inline-block;
-  color: black;
+  color: #262626;
   padding: 16px;
   font-size: 1.6rem;
   border-radius: 3rem;
