@@ -46,6 +46,7 @@ const List = styled.ul`
   font-size: 2rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   @media (min-width: ${size.medium}) {
     flex-direction: row;
