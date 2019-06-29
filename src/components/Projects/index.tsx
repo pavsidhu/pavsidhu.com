@@ -1,11 +1,10 @@
 import React, { useState } from "react"
+import Media from "react-media"
 import TrackVisibility from "react-on-screen"
 import { Element, Link } from "react-scroll"
 import { animated, useSpring } from "react-spring"
 import styled, { css } from "styled-components"
-import Media from "react-media"
 
-import { size } from "../../styles"
 import projectsList from "./projectsList"
 
 const Container = styled(Element)`
@@ -17,9 +16,9 @@ const Container = styled(Element)`
   position: relative;
   overflow: hidden;
 
-  ${({ theme }) =>
+  ${({ background }) =>
     css`
-      background: ${theme.background};
+      background: ${background};
     `};
 `
 
@@ -72,11 +71,11 @@ function Projects() {
   }))
 
   return (
-    <Container theme={project.theme} name="projects">
+    <Container background={project.theme.background} name="projects">
       <TrackVisibility
         once={true}
         partialVisibility={true}
-        offset={-50}
+        offset={-20}
         style={{
           backgroundColor: "black",
           mixBlendMode: "screen"
@@ -100,19 +99,14 @@ function Projects() {
                   }
                 >
                   {projectsList.map(p => (
-                    <NavigatorItem
-                      selected={p.id === project.id}
-                      onClick={() => setProject(projectsList[p.id])}
-                    >
-                      <Link
-                        to="projects"
-                        key={p.id}
-                        smooth={true}
-                        duration={300}
+                    <Link to="projects" smooth={true} duration={300} key={p.id}>
+                      <NavigatorItem
+                        selected={p.id === project.id}
+                        onClick={() => setProject(projectsList[p.id])}
                       >
                         {p.name}
-                      </Link>
-                    </NavigatorItem>
+                      </NavigatorItem>
+                    </Link>
                   ))}
                 </Navigator>
               )}
