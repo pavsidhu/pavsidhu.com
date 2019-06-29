@@ -4187,6 +4187,12 @@ gatsby-plugin-sharp@^2.1.1:
     sharp "^0.22.1"
     svgo "^1.2.0"
 
+gatsby-plugin-styled-components@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-3.1.0.tgz#ce837299807247cf2c4347bd51aaed4c58c195d9"
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+
 gatsby-plugin-tslint@^0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-tslint/-/gatsby-plugin-tslint-0.0.2.tgz#2f665d2ca7c4ca5c3c29305145a89b48217906b9"

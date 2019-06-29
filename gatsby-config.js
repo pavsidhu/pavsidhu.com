@@ -27,6 +27,7 @@ module.exports = {
         icon: `src/images/favicon/favicon.png`
       }
     },
-    `gatsby-plugin-typescript`
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-styled-components`
   ]
 }
