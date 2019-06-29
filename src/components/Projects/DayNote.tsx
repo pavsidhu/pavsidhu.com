@@ -2,6 +2,7 @@ import React from "react"
 import { useSpring } from "react-spring"
 import styled from "styled-components"
 
+import usePreloadImages from "../../hooks/usePreloadImages"
 import preview from "../../images/daynote/preview.png"
 import { projectSpring, size } from "../../styles"
 import {
@@ -44,30 +45,33 @@ const Photo = styled.img`
 `
 
 function DayNote({ project }) {
+  const isPreloaded = usePreloadImages([preview])
   const spring = useSpring(projectSpring)
 
   return (
-    <Container
-      style={{
-        opacity: spring.opacity,
-        transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
-      }}
-    >
-      <Text>
-        <Name>{project.name}</Name>
-        <Description>{project.description}</Description>
+    isPreloaded && (
+      <Container
+        style={{
+          opacity: spring.opacity,
+          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+        }}
+      >
+        <Text>
+          <Name>{project.name}</Name>
+          <Description>{project.description}</Description>
 
-        {project.fullDescription.map((paragraph, index) => (
-          <Paragraph key={index}>{paragraph}</Paragraph>
-        ))}
+          {project.fullDescription.map((paragraph, index) => (
+            <Paragraph key={index}>{paragraph}</Paragraph>
+          ))}
 
-        <Button href={project.link} target="_blank" rel="noopener noreferrer">
-          View on GitHub
-        </Button>
-      </Text>
+          <Button href={project.link} target="_blank" rel="noopener noreferrer">
+            View on GitHub
+          </Button>
+        </Text>
 
-      <Photo src={preview} alt="DayNote app preview" />
-    </Container>
+        <Photo src={preview} alt="DayNote app preview" />
+      </Container>
+    )
   )
 }
 

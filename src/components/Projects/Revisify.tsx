@@ -2,6 +2,7 @@ import React from "react"
 import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
 
+import usePreloadImages from "../../hooks/usePreloadImages"
 import laptop from "../../images/revisify/laptop.svg"
 import notepad from "../../images/revisify/notebook.svg"
 import preview from "../../images/revisify/preview.png"
@@ -100,41 +101,44 @@ const NotePad = styled.img`
 `
 
 function Revisify({ project }) {
+  const isPreloaded = usePreloadImages([preview, laptop, notepad])
   const spring = useSpring(projectSpring)
 
   return (
-    <Container
-      style={{
-        opacity: spring.opacity
-      }}
-    >
-      <Laptop src={laptop} alt="Laptop" />
-      <NotePad src={notepad} alt="Notepad" />
-
-      <Text
+    isPreloaded && (
+      <Container
         style={{
-          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          opacity: spring.opacity
         }}
       >
-        <Name>{project.name}</Name>
-        <Description>{project.description}</Description>
+        <Laptop src={laptop} alt="Laptop" />
+        <NotePad src={notepad} alt="Notepad" />
 
-        {project.fullDescription.map((paragraph, index) => (
-          <Paragraph key={index}>{paragraph}</Paragraph>
-        ))}
+        <Text
+          style={{
+            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          }}
+        >
+          <Name>{project.name}</Name>
+          <Description>{project.description}</Description>
 
-        <Button href={project.link} target="_blank" rel="noopener noreferrer">
-          View on GitHub
-        </Button>
-      </Text>
+          {project.fullDescription.map((paragraph, index) => (
+            <Paragraph key={index}>{paragraph}</Paragraph>
+          ))}
 
-      <Photo
-        src={preview}
-        style={{
-          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
-        }}
-      />
-    </Container>
+          <Button href={project.link} target="_blank" rel="noopener noreferrer">
+            View on GitHub
+          </Button>
+        </Text>
+
+        <Photo
+          src={preview}
+          style={{
+            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          }}
+        />
+      </Container>
+    )
   )
 }
 

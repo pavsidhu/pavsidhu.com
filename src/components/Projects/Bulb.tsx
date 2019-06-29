@@ -2,6 +2,7 @@ import React from "react"
 import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
 
+import usePreloadImages from "../../hooks/usePreloadImages"
 import moon from "../../images/bulb/moon.svg"
 import preview from "../../images/bulb/preview.svg"
 import stars from "../../images/bulb/stars.svg"
@@ -101,46 +102,49 @@ const Photo = styled(animated.img)`
 `
 
 function Bulb({ project }) {
+  const isPreloaded = usePreloadImages([moon, preview, stars])
   const spring = useSpring(projectSpring)
 
   return (
-    <Background>
-      <Container
-        style={{
-          opacity: spring.opacity
-        }}
-      >
-        <Moon src={moon} alt="Moon" />
-
-        <Text
+    isPreloaded && (
+      <Background>
+        <Container
           style={{
-            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+            opacity: spring.opacity
           }}
         >
-          <Name>{project.name}</Name>
-          <Description>{project.description}</Description>
+          <Moon src={moon} alt="Moon" />
 
-          {project.fullDescription.map((paragraph, index) => (
-            <Paragraph key={index}>{paragraph}</Paragraph>
-          ))}
-
-          <Button
-            href="https://github.com/aledjackson/Hackference-2018"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Text
+            style={{
+              transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+            }}
           >
-            View on GitHub
-          </Button>
-        </Text>
-        <Photo
-          src={preview}
-          alt="Bulb app preview"
-          style={{
-            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
-          }}
-        />
-      </Container>
-    </Background>
+            <Name>{project.name}</Name>
+            <Description>{project.description}</Description>
+
+            {project.fullDescription.map((paragraph, index) => (
+              <Paragraph key={index}>{paragraph}</Paragraph>
+            ))}
+
+            <Button
+              href="https://github.com/aledjackson/Hackference-2018"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub
+            </Button>
+          </Text>
+          <Photo
+            src={preview}
+            alt="Bulb app preview"
+            style={{
+              transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+            }}
+          />
+        </Container>
+      </Background>
+    )
   )
 }
 
