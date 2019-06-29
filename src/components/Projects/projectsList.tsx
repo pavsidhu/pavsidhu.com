@@ -15,7 +15,8 @@ const projectsList: IProject[] = [
     name: "Rocket Riot",
     description: "Turn by turn space game with real time minigames 🚀",
     fullDescription: [
-      "As part of a university project, I worked in a team of 6 to build a Java based multiplayer game."
+      "As part of a university project, I worked in a team of six to build a Java-based multiplayer game that works over a local network.",
+      "Players take in turns moving around a grid with the aim of capturing as many planets as possible through fun minigames."
     ],
     link: "https://github.com/rocketriot/game",
     theme: {
@@ -28,7 +29,8 @@ const projectsList: IProject[] = [
     name: "Revisify",
     description: "A simple online revision tool 🎓",
     fullDescription: [
-      "Labore et consectetur dolore cupidatat laborum ullamco dolore elit veniam non commodo est dolore commodo."
+      "Revisify began as a small project to help me prepare for my GCSEs.",
+      "Within the space of 2 years it grew into a community of 3000 students and teachers, creating and sharing quizzes with each other."
     ],
     link: "https://github.com/pavsidhu/revisify",
     theme: {
@@ -41,7 +43,8 @@ const projectsList: IProject[] = [
     name: "Cop Bot",
     description: "Supreme bot for Chrome 🛒",
     fullDescription: [
-      "Labore et consectetur dolore cupidatat laborum ullamco dolore elit veniam non commodo est dolore commodo."
+      "I built a Chrome extension bot that would automate buying products from Supreme during their weekly drops",
+      "Cop Bot is capable of ordering multiple products in the matter of seconds."
     ],
     link: "https://github.com/pavsidhu/cop-bot",
     theme: {
@@ -54,7 +57,8 @@ const projectsList: IProject[] = [
     name: "SpotiParty",
     description: "Queue songs on Spotify with your friends 🎵",
     fullDescription: [
-      "Labore et consectetur dolore cupidatat laborum ullamco dolore elit veniam non commodo est dolore commodo."
+      "As part of a hackathon project, five friends and I built a tool that lets people collaborate on a Spotify playlist at social events.",
+      "Songs can be added to a queue by texting a song name to a mobile number. A server searches for the song and adds it to the playlist."
     ],
     link: "https://github.com/aledjackson/Hackference-2018",
     theme: {
@@ -67,7 +71,8 @@ const projectsList: IProject[] = [
     name: "Bulb",
     description: "An alarm app for Android that works with LIFX 💡",
     fullDescription: [
-      "Labore et consectetur dolore cupidatat laborum ullamco dolore elit veniam non commodo est dolore commodo."
+      "In the winter when it’s dark and cold its always harder to get out of bed. I bought a LIFX bulb and discovered their public API.",
+      "Using the API, I built an app that gently turns my light on before playing a soothing alarm when I need to get out of bed."
     ],
     link: "https://github.com/pavsidhu/bulb",
     theme: {
@@ -77,23 +82,11 @@ const projectsList: IProject[] = [
   },
   {
     id: 5,
-    name: "Tea Bot",
-    description: "Tea, made simple 🍵",
-    fullDescription: [
-      "Labore et consectetur dolore cupidatat laborum ullamco dolore elit veniam non commodo est dolore commodo."
-    ],
-    link: "https://github.com/pavsidhu/tea-bot",
-    theme: {
-      background: "#16A1A5"
-    },
-    render: project => <TeaBot project={project} />
-  },
-  {
-    id: 6,
     name: "DayNote",
     description: "Your personal development journal ✏️",
     fullDescription: [
-      "Labore et consectetur dolore cupidatat laborum ullamco dolore elit veniam non commodo est dolore commodo."
+      "While learning about the benefits of daily journaling I created an app that would keep track of my journal entries.",
+      "I built a Google Assistant app that works with the Android app to view and create journal entries as part of competition ran by Google."
     ],
     link: "https://github.com/pavsidhu/daynote",
     theme: {
@@ -102,11 +95,11 @@ const projectsList: IProject[] = [
     render: project => <DayNote project={project} />
   },
   {
-    id: 7,
+    id: 6,
     name: "What's Trending",
     description: "See what's trending on Twitter via Alexa 🐦",
     fullDescription: [
-      "In order to get a feel for how voice assistants work, I built a small Alexa skill that fetches the latest trending hashtags on Twitter on demand."
+      "To get a feel for how voice assistants work, I built a small Alexa skill that fetches the latest trending hashtags on Twitter."
     ],
     link: "https://github.com/pavsidhu/whats-trending",
     theme: {
@@ -114,6 +107,19 @@ const projectsList: IProject[] = [
     },
     render: project => <WhatsTrending project={project} />
   }
+  // {
+  //   id: 7,
+  //   name: "Tea Bot",
+  //   description: "Tea, made simple 🍵",
+  //   fullDescription: [
+  //     "Labore et consectetur dolore cupidatat laborum ullamco dolore elit veniam non commodo est dolore commodo."
+  //   ],
+  //   link: "https://github.com/pavsidhu/tea-bot",
+  //   theme: {
+  //     background: "#16A1A5"
+  //   },
+  //   render: project => <TeaBot project={project} />
+  // }
 ]
 
 export default projectsList
