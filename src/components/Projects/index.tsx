@@ -67,7 +67,7 @@ interface INavigatorItemProps {
 function Projects() {
   const [project, setProject] = useState(projectsList[0])
   const [props, set, _] = useSpring(() => ({
-    scroll: 200,
+    scroll: 0,
     duration: 2000
   }))
 
@@ -83,7 +83,7 @@ function Projects() {
         }}
       >
         {({ isVisible }) => {
-          set({ scroll: isVisible ? 0 : 100 })
+          set({ scroll: isVisible ? 0 : 200 })
 
           return (
             <Media query="(max-width: 599px)">
