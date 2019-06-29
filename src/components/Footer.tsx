@@ -20,7 +20,7 @@ const Container = styled.footer`
   }
 `
 
-const Source = styled.a`
+const Source = styled.p`
   flex: 1;
 
   @media (max-width: ${size.medium}) {
@@ -28,8 +28,6 @@ const Source = styled.a`
     text-align: center;
   }
 `
-
-const Credit = styled.p``
 
 const Footer = () => (
   <Container>
@@ -43,7 +41,8 @@ const Footer = () => (
         GitHub
       </Link>
     </Source>
-    <Credit>Made with 💛 by Pav Sidhu</Credit>
+
+    <p>Made with 💛 by Pav Sidhu</p>
   </Container>
 )
 
