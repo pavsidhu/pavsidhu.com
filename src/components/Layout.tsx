@@ -45,10 +45,6 @@ const GlobalStyle = createGlobalStyle`
 
 const Layout = ({ children }) => (
   <>
-    <Helmet>
-      <link rel="preload" href={moon} />
-      <link rel="preload" href={bulbPreview} />
-    </Helmet>
     <GlobalStyle />
     <main>{children}</main>
   </>
