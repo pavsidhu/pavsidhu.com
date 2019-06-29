@@ -12,7 +12,7 @@ import {
   Name as BaseName,
   Paragraph as BaseParagraph,
   Text as BaseText
-} from "./Common"
+} from "./common"
 
 const Background = styled.div`
   display: flex;
