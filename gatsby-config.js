@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Pav Sidhu`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Welcome to my website! I'm a developer, designer and powerlifter from Cardiff. I study Computer Science at the University of Birmingham.`,
     author: `Pav Sidhu <pav@pavsidhu.com>`
   },
   plugins: [
@@ -18,13 +18,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Pav Sidhu`,
+        short_name: `Pav Sidhu`,
         start_url: `/`,
         background_color: `#fefefe`,
         theme_color: `#fefefe`,
-        display: `minimal-ui`
-        // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        display: `browser`,
+        icon: `src/images/favicon/favicon.png`
       }
     },
     `gatsby-plugin-typescript`
