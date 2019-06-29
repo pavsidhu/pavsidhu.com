@@ -113,13 +113,7 @@ function Social() {
       <Contents>
         <Heading>Social</Heading>
         {socialNetworks.map((socialNetwork, index) => (
-          <Link
-            href={socialNetwork.link}
-            target="_blank"
-            rel="noopener"
-            underline={false}
-            key={index}
-          >
+          <Link href={socialNetwork.link} underline={false} key={index}>
             <Item>
               <Icon
                 src={socialNetwork.icon}

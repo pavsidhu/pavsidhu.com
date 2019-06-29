@@ -1,11 +1,12 @@
 import React from "react"
+import { Link as ScrollLink } from "react-scroll"
 import styled from "styled-components"
 
 import profileImage from "../images/intro/profile.jpg"
 import scatterBackground from "../images/intro/scatter.svg"
+import scrollIndicator from "../images/intro/scroll_indicator.svg"
 import { size } from "../styles"
 import Link from "./Link"
-import RandomShapes from "./RandomShapes"
 
 const Container = styled.div`
   display: flex;
@@ -64,11 +65,23 @@ const ListItem = styled.li`
   }
 `
 
+const ScrollIndicatorContainer = styled(ScrollLink)`
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  margin-bottom: 24px;
+`
+
+const ScrollIndicator = styled.img`
+  width: 32px;
+`
+
 const Intro = () => (
   <Container>
     <Content>
       <Photo src={profileImage} alt="My face" />
       <Heading>Hey I’m Pav</Heading>
+
       <List>
         <ListItem>
           <Link
@@ -103,6 +116,10 @@ const Intro = () => (
           </Link>
         </ListItem>
       </List>
+
+      <ScrollIndicatorContainer to="projects" smooth={true} duration={300}>
+        <ScrollIndicator src={scrollIndicator} alt="Scroll indicator" />
+      </ScrollIndicatorContainer>
     </Content>
   </Container>
 )
