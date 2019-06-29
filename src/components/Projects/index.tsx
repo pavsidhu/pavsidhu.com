@@ -5,6 +5,7 @@ import { Element, Link } from "react-scroll"
 import { animated, useSpring } from "react-spring"
 import styled, { css } from "styled-components"
 
+import usePreloadAllImages from "../../hooks/usePreloadImages"
 import projectsList from "./projectsList"
 
 const Container = styled(Element)`
@@ -69,6 +70,8 @@ function Projects() {
     scroll: 0,
     duration: 2000
   }))
+
+  usePreloadAllImages()
 
   return (
     <Container background={project.theme.background} name="projects">

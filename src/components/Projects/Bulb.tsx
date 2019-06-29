@@ -2,7 +2,6 @@ import React from "react"
 import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
 
-import usePreloadImages from "../../hooks/usePreloadImages"
 import moon from "../../images/bulb/moon.svg"
 import preview from "../../images/bulb/preview.svg"
 import stars from "../../images/bulb/stars.svg"
@@ -102,49 +101,46 @@ const Photo = styled(animated.img)`
 `
 
 function Bulb({ project }) {
-  const isPreloaded = usePreloadImages([moon, preview, stars])
   const spring = useSpring(projectSpring)
 
   return (
-    isPreloaded && (
-      <Background>
-        <Container
+    <Background>
+      <Container
+        style={{
+          opacity: spring.opacity
+        }}
+      >
+        <Moon src={moon} alt="Moon" />
+
+        <Text
           style={{
-            opacity: spring.opacity
+            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
           }}
         >
-          <Moon src={moon} alt="Moon" />
+          <Name>{project.name}</Name>
+          <Description>{project.description}</Description>
 
-          <Text
-            style={{
-              transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
-            }}
+          {project.fullDescription.map((paragraph, index) => (
+            <Paragraph key={index}>{paragraph}</Paragraph>
+          ))}
+
+          <Button
+            href="https://github.com/aledjackson/Hackference-2018"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Name>{project.name}</Name>
-            <Description>{project.description}</Description>
-
-            {project.fullDescription.map((paragraph, index) => (
-              <Paragraph key={index}>{paragraph}</Paragraph>
-            ))}
-
-            <Button
-              href="https://github.com/aledjackson/Hackference-2018"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View on GitHub
-            </Button>
-          </Text>
-          <Photo
-            src={preview}
-            alt="Bulb app preview"
-            style={{
-              transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
-            }}
-          />
-        </Container>
-      </Background>
-    )
+            View on GitHub
+          </Button>
+        </Text>
+        <Photo
+          src={preview}
+          alt="Bulb app preview"
+          style={{
+            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          }}
+        />
+      </Container>
+    </Background>
   )
 }
 
