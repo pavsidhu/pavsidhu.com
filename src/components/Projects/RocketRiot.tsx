@@ -2,7 +2,6 @@ import React from "react"
 import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
 
-import usePreloadImages from "../../hooks/usePreloadImages"
 import asteroid from "../../images/rocket-riot/asteroid.svg"
 import planet1 from "../../images/rocket-riot/planet-1.svg"
 import planet2 from "../../images/rocket-riot/planet-2.svg"
@@ -173,58 +172,46 @@ const Planet2 = styled(Entity)`
 `
 
 function RocketRiot({ project }) {
-  const isPreloaded = usePreloadImages([
-    asteroid,
-    planet1,
-    planet2,
-    preview,
-    rocket1,
-    rocket2,
-    rocket3,
-    stars
-  ])
   const spring = useSpring(projectSpring)
 
   return (
-    isPreloaded && (
-      <Container
+    <Container
+      style={{
+        opacity: spring.opacity
+      }}
+    >
+      <Rocket1 src={rocket1} alt="Rocket 1" />
+      <Rocket2 src={rocket2} alt="Rocket 2" />
+      <Rocket3 src={rocket3} alt="Rocket 3" />
+      <Asteroid src={asteroid} alt="Asteroid" />
+      <Planet1 src={planet1} alt="Planet 1" />
+      <Planet2 src={planet2} alt="Planet 2" />
+
+      <Text
         style={{
-          opacity: spring.opacity
+          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
         }}
       >
-        <Rocket1 src={rocket1} alt="Rocket 1" />
-        <Rocket2 src={rocket2} alt="Rocket 2" />
-        <Rocket3 src={rocket3} alt="Rocket 3" />
-        <Asteroid src={asteroid} alt="Asteroid" />
-        <Planet1 src={planet1} alt="Planet 1" />
-        <Planet2 src={planet2} alt="Planet 2" />
+        <Name>{project.name}</Name>
+        <Description>{project.description}</Description>
 
-        <Text
-          style={{
-            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
-          }}
-        >
-          <Name>{project.name}</Name>
-          <Description>{project.description}</Description>
+        {project.fullDescription.map((paragraph, index) => (
+          <Paragraph key={index}>{paragraph}</Paragraph>
+        ))}
 
-          {project.fullDescription.map((paragraph, index) => (
-            <Paragraph key={index}>{paragraph}</Paragraph>
-          ))}
+        <Button href={project.link} target="_blank" rel="noopener noreferrer">
+          View on GitHub
+        </Button>
+      </Text>
 
-          <Button href={project.link} target="_blank" rel="noopener noreferrer">
-            View on GitHub
-          </Button>
-        </Text>
-
-        <Photo
-          src={preview}
-          alt="Rocket Riot Preview"
-          style={{
-            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
-          }}
-        />
-      </Container>
-    )
+      <Photo
+        src={preview}
+        alt="Rocket Riot Preview"
+        style={{
+          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+        }}
+      />
+    </Container>
   )
 }
 

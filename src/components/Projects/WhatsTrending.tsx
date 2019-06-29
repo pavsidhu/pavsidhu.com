@@ -2,7 +2,6 @@ import React from "react"
 import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
 
-import usePreloadImages from "../../hooks/usePreloadImages"
 import echoDot from "../../images/whats-trending/echo-dot.png"
 import { projectSpring, size } from "../../styles"
 import { Description, Name, Paragraph, Text as CommonText } from "./common"
@@ -61,34 +60,31 @@ const Photo = styled.img`
 `
 
 function WhatsTrending({ project }) {
-  const isPreloaded = usePreloadImages([echoDot])
   const spring = useSpring(projectSpring)
 
   return (
-    isPreloaded && (
-      <Container
-        style={{
-          opacity: spring.opacity,
-          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
-        }}
-      >
-        <Text>
-          <Name>{project.name}</Name>
-          <Description>{project.description}</Description>
+    <Container
+      style={{
+        opacity: spring.opacity,
+        transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+      }}
+    >
+      <Text>
+        <Name>{project.name}</Name>
+        <Description>{project.description}</Description>
 
-          {project.fullDescription.map((paragraph, index) => (
-            <Paragraph key={index}>{paragraph}</Paragraph>
-          ))}
+        {project.fullDescription.map((paragraph, index) => (
+          <Paragraph key={index}>{paragraph}</Paragraph>
+        ))}
 
-          <Button href={project.link} target="_blank" rel="noopener noreferrer">
-            View on GitHub
-          </Button>
-        </Text>
-        <PhotoContainer>
-          <Photo src={echoDot} alt="Echo Dot" />
-        </PhotoContainer>
-      </Container>
-    )
+        <Button href={project.link} target="_blank" rel="noopener noreferrer">
+          View on GitHub
+        </Button>
+      </Text>
+      <PhotoContainer>
+        <Photo src={echoDot} alt="Echo Dot" />
+      </PhotoContainer>
+    </Container>
   )
 }
 

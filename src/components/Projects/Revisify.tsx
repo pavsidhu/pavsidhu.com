@@ -2,7 +2,6 @@ import React from "react"
 import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
 
-import usePreloadImages from "../../hooks/usePreloadImages"
 import laptop from "../../images/revisify/laptop.svg"
 import notepad from "../../images/revisify/notebook.svg"
 import preview from "../../images/revisify/preview.png"
@@ -101,44 +100,42 @@ const NotePad = styled.img`
 `
 
 function Revisify({ project }) {
-  const isPreloaded = usePreloadImages([preview, laptop, notepad])
   const spring = useSpring(projectSpring)
 
+
   return (
-    isPreloaded && (
-      <Container
+    <Container
+      style={{
+        opacity: spring.opacity
+      }}
+    >
+      <Laptop src={laptop} alt="Laptop" />
+      <NotePad src={notepad} alt="Notepad" />
+
+      <Text
         style={{
-          opacity: spring.opacity
+          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
         }}
       >
-        <Laptop src={laptop} alt="Laptop" />
-        <NotePad src={notepad} alt="Notepad" />
+        <Name>{project.name}</Name>
+        <Description>{project.description}</Description>
 
-        <Text
-          style={{
-            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
-          }}
-        >
-          <Name>{project.name}</Name>
-          <Description>{project.description}</Description>
+        {project.fullDescription.map((paragraph, index) => (
+          <Paragraph key={index}>{paragraph}</Paragraph>
+        ))}
 
-          {project.fullDescription.map((paragraph, index) => (
-            <Paragraph key={index}>{paragraph}</Paragraph>
-          ))}
+        <Button href={project.link} target="_blank" rel="noopener noreferrer">
+          View on GitHub
+        </Button>
+      </Text>
 
-          <Button href={project.link} target="_blank" rel="noopener noreferrer">
-            View on GitHub
-          </Button>
-        </Text>
-
-        <Photo
-          src={preview}
-          style={{
-            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
-          }}
-        />
-      </Container>
-    )
+      <Photo
+        src={preview}
+        style={{
+          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+        }}
+      />
+    </Container>
   )
 }
 
