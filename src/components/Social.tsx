@@ -121,7 +121,10 @@ function Social() {
             key={index}
           >
             <Item>
-              <Icon src={socialNetwork.icon} />
+              <Icon
+                src={socialNetwork.icon}
+                alt={`${socialNetwork.name} icon`}
+              />
               <div>
                 <Name>{socialNetwork.name}</Name>
                 <Handle>{socialNetwork.handle}</Handle>

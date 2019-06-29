@@ -54,9 +54,10 @@ const List = styled.ul`
   }
 `
 
-const ListItem = styled.ul`
+const ListItem = styled.li`
   margin: 0 24px 16px;
   background-color: #fefefe;
+  list-style-type: none;
 
   @media (min-width: ${size.medium}) {
     margin-bottom: 0;
@@ -66,7 +67,7 @@ const ListItem = styled.ul`
 const Intro = () => (
   <Container>
     <Content>
-      <Photo src={profileImage} />
+      <Photo src={profileImage} alt="My face" />
       <Heading>Hey I’m Pav</Heading>
       <List>
         <ListItem>
