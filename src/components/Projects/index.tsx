@@ -100,14 +100,19 @@ function Projects() {
                   }
                 >
                   {projectsList.map(p => (
-                    <Link to="projects" key={p.id} smooth={true} duration={300}>
-                      <NavigatorItem
-                        selected={p.id === project.id}
-                        onClick={() => setProject(projectsList[p.id])}
+                    <NavigatorItem
+                      selected={p.id === project.id}
+                      onClick={() => setProject(projectsList[p.id])}
+                    >
+                      <Link
+                        to="projects"
+                        key={p.id}
+                        smooth={true}
+                        duration={300}
                       >
                         {p.name}
-                      </NavigatorItem>
-                    </Link>
+                      </Link>
+                    </NavigatorItem>
                   ))}
                 </Navigator>
               )}
