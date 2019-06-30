@@ -124,11 +124,7 @@ function Bulb({ project }) {
             <Paragraph key={index}>{paragraph}</Paragraph>
           ))}
 
-          <Button
-            href="https://github.com/aledjackson/Hackference-2018"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Button href={project.link} target="_blank" rel="noopener noreferrer">
             View on GitHub
           </Button>
         </Text>
