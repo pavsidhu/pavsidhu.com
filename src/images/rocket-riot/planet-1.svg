@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="111px" height="111px" viewBox="0 0 111 111" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
-    <title>Artboard Copy 12</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Artboard-Copy-12" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <circle id="Oval-Copy" fill-opacity="0.1" fill="#E8E500" fill-rule="nonzero" transform="translate(55.500000, 55.500000) scale(1, -1) translate(-55.500000, -55.500000) " cx="55.5" cy="55.5" r="55.5"></circle>
-        <circle id="Oval" fill="#F5F300" fill-rule="nonzero" transform="translate(55.500000, 55.500000) scale(1, -1) translate(-55.500000, -55.500000) " cx="55.5" cy="55.5" r="40.5"></circle>
-        <circle id="Oval" fill="#FFFFDD" fill-rule="nonzero" transform="translate(69.000000, 36.000000) scale(1, -1) translate(-69.000000, -36.000000) " cx="69" cy="36" r="8"></circle>
-        <path d="M86.5954415,29.5499697 C92.4666701,36.5777723 96,45.6262594 96,55.5 C96,77.8675324 77.8675324,96 55.5,96 C45.6262594,96 36.5777723,92.4666701 29.5499697,86.5954415 C33.2150037,87.512879 37.0506152,88 41,88 C66.9573832,88 88,66.9573832 88,41 C88,37.0506152 87.512879,33.2150037 86.5954415,29.5499697 Z" id="Combined-Shape" fill="#E8E500" fill-rule="nonzero"></path>
-    </g>
-</svg>
+<svg height="111" viewBox="0 0 111 111" width="111" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="nonzero"><circle cx="55.5" cy="55.5" fill="#e8e500" fill-opacity=".1" r="55.5" transform="matrix(1 0 0 -1 0 111)"/><circle cx="55.5" cy="55.5" fill="#f5f300" r="40.5" transform="matrix(1 0 0 -1 0 111)"/><circle cx="69" cy="36" fill="#ffd" r="8" transform="matrix(1 0 0 -1 0 72)"/><path d="m86.5954415 29.5499697c5.8712286 7.0278026 9.4045585 16.0762897 9.4045585 25.9500303 0 22.3675324-18.1324676 40.5-40.5 40.5-9.8737406 0-18.9222277-3.5333299-25.9500303-9.4045585 3.665034.9174375 7.5006455 1.4045585 11.4500303 1.4045585 25.9573832 0 47-21.0426168 47-47 0-3.9493848-.487121-7.7849963-1.4045585-11.4500303z" fill="#e8e500"/></g></svg>
