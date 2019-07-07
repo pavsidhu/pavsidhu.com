@@ -1,9 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "pavsidhu.com",
+  "description": "My personal website 💛",
+  "version": "1.0.0",
+  "author": "Pav Sidhu <pav@pavsidhu.com>",
   "dependencies": {
     "@types/styled-components": "^4.1.16",
     "gatsby": "^2.7.1",
@@ -38,9 +37,6 @@
     "tslint-react": "^4.0.0",
     "typescript": "^3.5.1"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -48,15 +44,14 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "type-check": "tsc --noEmit",
     "lint": "tslint --project ."
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/pavsidhu/pavsidhu.com"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/pavsidhu/pavsidhu.com/issues"
   }
 }
