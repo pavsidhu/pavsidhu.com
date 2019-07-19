@@ -12,20 +12,6 @@ import WhatsTrending from "./WhatsTrending"
 const projectsList: IProject[] = [
   {
     id: 0,
-    name: "Rocket Riot",
-    description: "Turn by turn space game with real time minigames 🚀",
-    fullDescription: [
-      "As part of a university project, I worked in a team of six to build a Java-based multiplayer game that works over a local network.",
-      "Players take in turns moving around a grid with the aim of capturing as many planets as possible through fun minigames."
-    ],
-    link: "https://github.com/rocketriot/game",
-    theme: {
-      background: "linear-gradient(115deg, #001536 0%, #012661 100%)"
-    },
-    render: project => <RocketRiot project={project} />
-  },
-  {
-    id: 1,
     name: "Revisify",
     description: "A simple online revision tool 🎓",
     fullDescription: [
@@ -37,6 +23,20 @@ const projectsList: IProject[] = [
       background: "#253239"
     },
     render: project => <Revisify project={project} />
+  },
+  {
+    id: 1,
+    name: "Rocket Riot",
+    description: "Turn by turn space game with real time minigames 🚀",
+    fullDescription: [
+      "As part of a university project, I worked in a team of six to build a Java-based multiplayer game that works over a local network.",
+      "Players take in turns moving around a grid with the aim of capturing as many planets as possible through fun minigames."
+    ],
+    link: "https://github.com/rocketriot/game",
+    theme: {
+      background: "linear-gradient(115deg, #001536 0%, #012661 100%)"
+    },
+    render: project => <RocketRiot project={project} />
   },
   {
     id: 2,
