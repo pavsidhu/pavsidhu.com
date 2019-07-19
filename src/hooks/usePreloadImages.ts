@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import asteroid from "../images/rocket-riot/asteroid.svg"
 import planet1 from "../images/rocket-riot/planet-1.svg"
 import planet2 from "../images/rocket-riot/planet-2.svg"
-import rocketRiotPreview from "../images/rocket-riot/preview.gif"
 import rocket1 from "../images/rocket-riot/rocket-1.svg"
 import rocket2 from "../images/rocket-riot/rocket-2.svg"
 import rocket3 from "../images/rocket-riot/rocket-3.svg"
@@ -48,7 +47,6 @@ export default function usePreloadAllImages() {
     asteroid,
     planet1,
     planet2,
-    rocketRiotPreview,
     rocket1,
     rocket2,
     rocket3,
