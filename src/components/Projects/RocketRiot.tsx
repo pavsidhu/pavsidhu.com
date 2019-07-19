@@ -5,7 +5,7 @@ import styled from "styled-components"
 import asteroid from "../../images/rocket-riot/asteroid.svg"
 import planet1 from "../../images/rocket-riot/planet-1.svg"
 import planet2 from "../../images/rocket-riot/planet-2.svg"
-import preview from "../../images/rocket-riot/preview.gif"
+import preview from "../../images/rocket-riot/preview.mp4"
 import rocket1 from "../../images/rocket-riot/rocket-1.svg"
 import rocket2 from "../../images/rocket-riot/rocket-2.svg"
 import rocket3 from "../../images/rocket-riot/rocket-3.svg"
@@ -60,7 +60,7 @@ const Button = styled.a`
   }
 `
 
-const Photo = styled(animated.img)`
+const Video = styled(animated.video)`
   align-self: center;
   width: 100%;
   max-width: 600px;
@@ -204,13 +204,15 @@ function RocketRiot({ project }) {
         </Button>
       </Text>
 
-      <Photo
-        src={preview}
-        alt="Rocket Riot Preview"
+      <Video
+        autoPlay={true}
+        loop={true}
         style={{
           transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
         }}
-      />
+      >
+        <source src={preview} type="video/mp4" />
+      </Video>
     </Container>
   )
 }
