@@ -1,13 +1,9 @@
 import PropTypes from "prop-types"
 import React from "react"
-import Helmet from "react-helmet"
 import { createGlobalStyle } from "styled-components"
 
 import CircularBold from "../fonts/circular-bold.otf"
 import CircularBook from "../fonts/circular-book.otf"
-
-import moon from "../images/bulb/moon.svg"
-import bulbPreview from "../images/bulb/preview.svg"
 
 const GlobalStyle = createGlobalStyle`
   * {
