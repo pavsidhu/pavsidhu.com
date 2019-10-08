@@ -5,6 +5,10 @@ module.exports = {
     author: `Pav Sidhu <pav@pavsidhu.com>`
   },
   plugins: [
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -13,8 +17,6 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -26,8 +28,6 @@ module.exports = {
         display: `browser`,
         icon: `src/images/favicon/favicon.png`
       }
-    },
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-styled-components`
+    }
   ]
 }
