@@ -24,7 +24,7 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 500px;
+  max-width: 550px;
   flex: 1;
 `
 
@@ -108,11 +108,11 @@ const Intro = () => (
         <ListItem>Cardiff / Birmingham</ListItem>
         <ListItem>
           <Link
-            href="https://www.cs.bham.ac.uk/admissions/undergraduate/degrees/cs"
+            href="https://www.cs.bham.ac.uk/admissions/undergraduate/degrees/aics"
             target="_blank"
             rel="noopener"
           >
-            Computer Science
+            AI and Computer Science
           </Link>
         </ListItem>
       </List>
