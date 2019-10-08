@@ -131,6 +131,7 @@ function Revisify({ project }) {
 
       <Photo
         src={preview}
+        alt="Revisify website preview"
         style={{
           transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
         }}
