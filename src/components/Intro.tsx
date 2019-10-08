@@ -70,6 +70,15 @@ const ScrollIndicatorContainer = styled(ScrollLink)`
   bottom: 0;
   cursor: pointer;
   margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const ScrollText = styled.p`
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
 `
 
 const ScrollIndicator = styled.img`
@@ -118,6 +127,7 @@ const Intro = () => (
       </List>
 
       <ScrollIndicatorContainer to="projects" smooth={true} duration={300}>
+        <ScrollText>My Projects</ScrollText>
         <ScrollIndicator src={scrollIndicator} alt="Scroll indicator" />
       </ScrollIndicatorContainer>
     </Content>
