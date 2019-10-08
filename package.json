@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Pav Sidhu <pav@pavsidhu.com>",
   "dependencies": {
+    "@types/react-scroll": "^1.5.4",
     "gatsby": "^2.7.1",
     "gatsby-image": "^2.1.1",
     "gatsby-plugin-manifest": "^2.1.1",
