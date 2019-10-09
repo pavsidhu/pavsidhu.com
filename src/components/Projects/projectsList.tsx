@@ -10,7 +10,8 @@ import TeaBot from "./TeaBot"
 import WhatsTrending from "./WhatsTrending"
 import Project from "../../types/Project"
 
-import stars from "../../images/rocket-riot/stars.svg"
+import rocketRiotBackground from "../../images/rocket-riot/stars.svg"
+import bulbBackground from "../../images/bulb/stars.svg"
 
 const projectsList: Project[] = [
   {
@@ -37,7 +38,7 @@ const projectsList: Project[] = [
     ],
     link: "https://github.com/rocketriot/game",
     theme: {
-      background: "linear-gradient(115deg, #001536 0%, #012661 100%)"
+      background: `url("${rocketRiotBackground}"), linear-gradient(115deg, #001536 0%, #012661 100%)`
     },
     render: project => <RocketRiot project={project} />
   },
@@ -79,7 +80,7 @@ const projectsList: Project[] = [
     ],
     link: "https://github.com/pavsidhu/bulb",
     theme: {
-      background: "#180652"
+      background: `url("${bulbBackground}"), #180652`
     },
     render: project => <Bulb project={project} />
   },
