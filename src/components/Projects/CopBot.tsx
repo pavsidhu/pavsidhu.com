@@ -11,6 +11,7 @@ import {
   Text,
   WebContainer as Container
 } from "./common"
+import Project from "../../types/Project"
 
 const Button = styled.a`
   padding: 16px;
@@ -37,7 +38,11 @@ const Photo = styled.img`
   }
 `
 
-function CopBot({ project }) {
+interface Props {
+  project: Project
+}
+
+function CopBot({ project }: Props) {
   const spring = useSpring(projectSpring)
 
   return (
@@ -51,7 +56,7 @@ function CopBot({ project }) {
         <Name>{project.name}</Name>
         <Description>{project.description}</Description>
 
-        {project.fullDescription.map((paragraph: string, index: number) => (
+        {project.fullDescription.map((paragraph, index) => (
           <Paragraph key={index}>{paragraph}</Paragraph>
         ))}
 

@@ -11,6 +11,7 @@ import {
   Paragraph,
   Text
 } from "./common"
+import Project from "../../types/Project"
 
 const Button = styled.a`
   width: 100%;
@@ -43,9 +44,12 @@ const Photo = styled.img`
   }
 `
 
-function DayNote({ project }) {
-  const spring = useSpring(projectSpring)
+interface Props {
+  project: Project
+}
 
+function DayNote({ project }: Props) {
+  const spring = useSpring(projectSpring)
 
   return (
     <Container

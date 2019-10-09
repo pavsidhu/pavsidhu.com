@@ -23,14 +23,7 @@ declare module "*.otf" {
   export default content
 }
 
-interface IProject {
-  id: number
-  name: string
-  description: string
-  fullDescription: string[]
-  link: string
-  theme: {
-    background: string
-  }
-  render: (project: IProject) => JSX.Element
+declare module "*.mp4" {
+  const content: string
+  export default content
 }

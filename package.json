@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Pav Sidhu <pav@pavsidhu.com>",
   "dependencies": {
-    "@types/react-scroll": "^1.5.4",
     "gatsby": "^2.7.1",
     "gatsby-image": "^2.1.1",
     "gatsby-plugin-manifest": "^2.1.1",
@@ -29,6 +28,8 @@
   "devDependencies": {
     "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
+    "@types/react-helmet": "^5.0.11",
+    "@types/react-scroll": "^1.5.4",
     "@types/styled-components": "^4.1.16",
     "prettier": "^1.17.1",
     "tslint": "^5.17.0",
