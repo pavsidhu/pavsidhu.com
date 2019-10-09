@@ -1,11 +1,15 @@
 import styled, { css } from "styled-components"
 
+interface Props {
+  underline?: boolean
+}
+
 const Link = styled.a`
   position: relative;
   z-index: 1;
   color: #f05f40;
 
-  ${(props: IProps) =>
+  ${(props: Props) =>
     props.underline &&
     css`
       &:before {
@@ -28,10 +32,6 @@ const Link = styled.a`
       }
     `}
 `
-
-interface IProps {
-  underline?: boolean
-}
 
 Link.defaultProps = {
   underline: true
