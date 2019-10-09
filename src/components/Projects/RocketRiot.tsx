@@ -23,7 +23,6 @@ import Project from "../../types/Project"
 const Container = styled(WebContainer)`
   grid-template-rows: minmax(100px, 20vw) auto;
   padding-bottom: 24px;
-  background-image: url("${stars}");
   background-size: contain;
   background-repeat: repeat;
 
