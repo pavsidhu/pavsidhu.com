@@ -10,6 +10,8 @@ import TeaBot from "./TeaBot"
 import WhatsTrending from "./WhatsTrending"
 import Project from "../../types/Project"
 
+import stars from "../../images/rocket-riot/stars.svg"
+
 const projectsList: Project[] = [
   {
     id: 0,
