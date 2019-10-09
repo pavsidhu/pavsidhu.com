@@ -6,7 +6,6 @@ import DayNote from "./DayNote"
 import Revisify from "./Revisify"
 import RocketRiot from "./RocketRiot"
 import SpotiParty from "./SpotiParty"
-import TeaBot from "./TeaBot"
 import WhatsTrending from "./WhatsTrending"
 import Project from "../../types/Project"
 
@@ -111,19 +110,6 @@ const projectsList: Project[] = [
     },
     render: project => <WhatsTrending project={project} />
   }
-  // {
-  //   id: 7,
-  //   name: "Tea Bot",
-  //   description: "Tea, made simple 🍵",
-  //   fullDescription: [
-  //     "Labore et consectetur dolore cupidatat laborum ullamco dolore elit veniam non commodo est dolore commodo."
-  //   ],
-  //   link: "https://github.com/pavsidhu/tea-bot",
-  //   theme: {
-  //     background: "#16A1A5"
-  //   },
-  //   render: project => <TeaBot project={project} />
-  // }
 ]
 
 export default projectsList
