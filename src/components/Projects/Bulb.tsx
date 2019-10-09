@@ -13,6 +13,7 @@ import {
   Paragraph as BaseParagraph,
   Text as BaseText
 } from "./common"
+import Project from "../../types/Project"
 
 const Background = styled.div`
   display: flex;
@@ -100,7 +101,11 @@ const Photo = styled(animated.img)`
   }
 `
 
-function Bulb({ project }) {
+interface Props {
+  project: Project
+}
+
+function Bulb({ project }: Props) {
   const spring = useSpring(projectSpring)
 
   return (

@@ -5,6 +5,7 @@ import styled from "styled-components"
 import echoDot from "../../images/whats-trending/echo-dot.png"
 import { projectSpring, size } from "../../styles"
 import { Description, Name, Paragraph, Text as CommonText } from "./common"
+import Project from "../../types/Project"
 
 const Container = styled(animated.div)`
   display: flex;
@@ -59,7 +60,11 @@ const Photo = styled.img`
   -webkit-user-select: none;
 `
 
-function WhatsTrending({ project }) {
+interface Props {
+  project: Project
+}
+
+function WhatsTrending({ project }: Props) {
   const spring = useSpring(projectSpring)
 
   return (

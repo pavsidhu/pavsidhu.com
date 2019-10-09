@@ -13,6 +13,7 @@ import {
   Text as BaseText,
   WebContainer
 } from "./common"
+import Project from "../../types/Project"
 
 const Container = styled(WebContainer)`
   grid-template-rows: minmax(100px, 20vw) auto;
@@ -99,9 +100,12 @@ const NotePad = styled.img`
   }
 `
 
-function Revisify({ project }) {
-  const spring = useSpring(projectSpring)
+interface Props {
+  project: Project
+}
 
+function Revisify({ project }: Props) {
+  const spring = useSpring(projectSpring)
 
   return (
     <Container

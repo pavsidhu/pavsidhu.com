@@ -11,6 +11,7 @@ import {
   Text as BaseText,
   WebContainer as Container
 } from "./common"
+import Project from "../../types/Project"
 
 const Text = styled(BaseText)`
   color: #0b0b0b;
@@ -47,7 +48,11 @@ const Photo = styled.img`
   }
 `
 
-function SpotiParty({ project }) {
+interface Props {
+  project: Project
+}
+
+function SpotiParty({ project }: Props) {
   const spring = useSpring(projectSpring)
 
   return (
@@ -61,7 +66,7 @@ function SpotiParty({ project }) {
         <Name>{project.name}</Name>
         <Description>{project.description}</Description>
 
-        {project.fullDescription.map((paragraph: string, index: number) => (
+        {project.fullDescription.map((paragraph, index) => (
           <Paragraph key={index}>{paragraph}</Paragraph>
         ))}
 

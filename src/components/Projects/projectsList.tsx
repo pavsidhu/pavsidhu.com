@@ -8,8 +8,9 @@ import RocketRiot from "./RocketRiot"
 import SpotiParty from "./SpotiParty"
 import TeaBot from "./TeaBot"
 import WhatsTrending from "./WhatsTrending"
+import Project from "../../types/Project"
 
-const projectsList: IProject[] = [
+const projectsList: Project[] = [
   {
     id: 0,
     name: "Revisify",

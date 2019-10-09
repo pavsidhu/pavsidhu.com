@@ -18,6 +18,7 @@ import {
   Text as BaseText,
   WebContainer
 } from "./common"
+import Project from "../../types/Project"
 
 const Container = styled(WebContainer)`
   grid-template-rows: minmax(100px, 20vw) auto;
@@ -171,7 +172,11 @@ const Planet2 = styled(Entity)`
   }
 `
 
-function RocketRiot({ project }) {
+interface Props {
+  project: Project
+}
+
+function RocketRiot({ project }: Props) {
   const spring = useSpring(projectSpring)
 
   return (

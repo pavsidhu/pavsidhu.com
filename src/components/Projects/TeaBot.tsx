@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import preview from "../../images/tea-bot/preview-1.jpg"
+import Project from "../../types/Project"
 
 const Container = styled.div`
   display: flex;
@@ -68,7 +69,11 @@ const Photo = styled.img`
   max-height: 700px;
 `
 
-function TeaBot({ project }) {
+interface Props {
+  project: Project
+}
+
+function TeaBot({ project }: Props) {
   return (
     <Container>
       <TextContainer>

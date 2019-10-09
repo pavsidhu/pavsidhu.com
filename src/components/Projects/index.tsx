@@ -17,7 +17,7 @@ const Container = styled(Element)`
   position: relative;
   overflow: hidden;
 
-  ${({ background }) =>
+  ${({ background }: { background: string }) =>
     css`
       background: ${background};
     `};
@@ -46,7 +46,7 @@ const NavigatorItem = styled.li`
   white-space: nowrap;
   cursor: pointer;
 
-  ${(props: INavigatorItemProps) =>
+  ${(props: { selected: boolean }) =>
     props.selected &&
     css`
       background: black;
@@ -60,13 +60,9 @@ const NavigatorItem = styled.li`
     `};
 `
 
-interface INavigatorItemProps {
-  selected: boolean
-}
-
 function Projects() {
   const [project, setProject] = useState(projectsList[0])
-  const [props, set, _] = useSpring(() => ({
+  const [props, set] = useSpring(() => ({
     scroll: 0,
     duration: 2000
   }))
