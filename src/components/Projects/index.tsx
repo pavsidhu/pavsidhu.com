@@ -37,7 +37,12 @@ const Navigator = styled(animated.ul)`
   }
 `
 
-const NavigatorItem = styled.li`
+interface NavigatorItemProps {
+  selected: boolean
+  dark?: boolean
+}
+
+const NavigatorItem = styled.li<NavigatorItemProps>`
   font-size: 1.8rem;
   margin: 0 24px;
   color: #fefefe;
@@ -46,17 +51,35 @@ const NavigatorItem = styled.li`
   white-space: nowrap;
   cursor: pointer;
 
-  ${(props: { selected: boolean }) =>
+  ${props =>
     props.selected &&
-    css`
-      background: black;
-      color: white;
+    (props.dark
+      ? css`
+          background: black;
+          color: white;
 
-      @supports (mix-blend-mode: screen) {
-        background: white;
-        color: black;
-        mix-blend-mode: screen;
-      }
+          @supports (mix-blend-mode: multiply) {
+            background: #1b1b1b
+            color: white;
+            mix-blend-mode:multiply;
+          }
+      `
+      : css`
+          background: white;
+          color: black;
+
+          @supports (mix-blend-mode: screen) {
+            background: white;
+            color: black;
+            mix-blend-mode: screen;
+          }
+        `)};
+
+  ${props =>
+    !props.selected &&
+    props.dark &&
+    css`
+      color: #1b1b1b;
     `};
 `
 
@@ -75,10 +98,12 @@ function Projects() {
         once={true}
         partialVisibility={true}
         offset={-20}
-        style={{
-          backgroundColor: "black",
-          mixBlendMode: "screen"
-        }}
+        style={
+          {
+            // backgroundColor: project.theme.dark ? "white" : "black",
+            // mixBlendMode: project.theme.dark ? "multiply" : "screen"
+          }
+        }
       >
         {({ isVisible }) => {
           set({ scroll: isVisible ? 0 : 200 })
@@ -101,6 +126,7 @@ function Projects() {
                     <Link to="projects" smooth={true} duration={300} key={p.id}>
                       <NavigatorItem
                         selected={p.id === project.id}
+                        dark={project.theme.dark}
                         onClick={() => setProject(projectsList[p.id])}
                       >
                         {p.name}
