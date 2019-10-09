@@ -6,6 +6,7 @@ export default interface Project {
   link: string
   theme: {
     background: string
+    dark?: boolean
   }
   render: (project: Project) => JSX.Element
 }
