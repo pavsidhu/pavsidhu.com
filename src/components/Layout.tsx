@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-import React from "react"
+import React, { ReactNode } from "react"
 import { createGlobalStyle } from "styled-components"
 
 import CircularBold from "../fonts/circular-bold.otf"
@@ -39,15 +39,19 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Layout = ({ children }) => (
-  <>
-    <GlobalStyle />
-    <main>{children}</main>
-  </>
-)
+interface Props {
+  children: ReactNode
+}
+
+export default function Layout(props: Props) {
+  return (
+    <>
+      <GlobalStyle />
+      <main>{props.children}</main>
+    </>
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired
 }
-
-export default Layout
