@@ -9,7 +9,6 @@ import preview from "../../images/rocket-riot/preview.mp4"
 import rocket1 from "../../images/rocket-riot/rocket-1.svg"
 import rocket2 from "../../images/rocket-riot/rocket-2.svg"
 import rocket3 from "../../images/rocket-riot/rocket-3.svg"
-import stars from "../../images/rocket-riot/stars.svg"
 import { projectSpring, size } from "../../styles"
 import {
   Description,
@@ -25,11 +24,14 @@ const Container = styled(WebContainer)`
   padding-bottom: 24px;
   background-size: contain;
   background-repeat: repeat;
+  max-width: none;
 
   @media (min-width: ${size.medium}) {
     padding: 24px;
-    grid-template-columns: 1fr minmax(350px, 1fr) 1fr auto 1fr;
-    grid-template-rows: minmax(100px, 200px) auto minmax(100px, 200px);
+    grid-template-columns:
+      1fr minmax(330px, 1fr) minmax(0, 56px) minmax(350px, auto)
+      1fr;
+    grid-template-rows: minmax(100px, auto) auto minmax(100px, auto);
     grid-gap: 0;
     grid-column-gap: 24px;
   }
@@ -60,20 +62,23 @@ const Button = styled.a`
   }
 `
 
-const Video = styled(animated.video)`
-  align-self: center;
-  width: 100%;
+const VideoContainer = styled.div`
   max-width: 600px;
-  object-fit: contain;
 
   @media (min-width: ${size.medium}) {
-    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     grid-column: 4 / 5;
     grid-row: 2 / 3;
     max-width: none;
     width: 100%;
-    max-height: 300px;
   }
+`
+
+const Video = styled(animated.video)`
+  border: 8px solid #fefefe33;
+  width: 100%;
 `
 
 const Entity = styled.img`
@@ -88,15 +93,16 @@ const Rocket1 = styled(Entity)`
   justify-self: end;
   align-self: end;
   height: 90%;
+  max-height: 100px;
   transform: rotateZ(240deg);
   margin-right: 40px;
 
   @media (min-width: ${size.medium}) {
-    height: 50%;
+    height: 90%;
+    max-height: 100px;
     transform: rotateZ(150deg);
-    justify-self: start;
-    margin-right: 0;
-    margin-left: 40px;
+    justify-self: center;
+    margin-right: 120px;
     margin-bottom: 32px;
     grid-column: 1 / 3;
     grid-row: 1 / 2;
@@ -106,7 +112,8 @@ const Rocket1 = styled(Entity)`
 const Rocket2 = styled(Entity)`
   justify-self: end;
   align-self: start;
-  height: 50%;
+  height: 90%;
+  max-height: 100px;
   grid-column: 4 / 5;
   grid-row: 1 / 2;
   transform: rotateZ(240deg);
@@ -117,12 +124,12 @@ const Rocket2 = styled(Entity)`
 `
 
 const Rocket3 = styled(Entity)`
-  justify-self: end;
   align-self: center;
-  margin-bottom: 16px;
-  margin-right: 100px;
-  height: 50%;
-  grid-column: 4 / 6;
+  justify-self: start;
+  margin-left: 20px;
+  height: 90%;
+  max-height: 100px;
+  grid-column: 3 / 5;
   grid-row: 3 / 4;
   transform: rotateZ(340deg);
 
@@ -133,9 +140,10 @@ const Rocket3 = styled(Entity)`
 
 const Asteroid = styled(Entity)`
   justify-self: center;
-  align-self: start;
-  margin-top: 40px;
-  height: 50%;
+  align-self: end;
+  margin-top: 10px;
+  height: 90%;
+  max-height: 100px;
   grid-column: 1 / 3;
   grid-row: 3 / 4;
   transform: rotateZ(350deg);
@@ -148,8 +156,9 @@ const Asteroid = styled(Entity)`
 const Planet1 = styled(Entity)`
   align-self: center;
   justify-self: start;
-  height: 50%;
+  height: 90%;
   margin-left: 80px;
+  max-height: 100px;
   grid-column: 3 / 5;
   grid-row: 1 / 2;
 
@@ -159,11 +168,13 @@ const Planet1 = styled(Entity)`
 `
 
 const Planet2 = styled(Entity)`
+  justify-self: center;
   align-self: center;
-  justify-self: start;
-  margin-left: 40px;
-  height: 50%;
-  grid-column: 4 / 5;
+  margin-bottom: 16px;
+  margin-left: 120px;
+  height: 90%;
+  max-height: 100px;
+  grid-column: 4 / 6;
   grid-row: 3 / 4;
 
   @media (max-width: ${size.medium}) {
@@ -208,15 +219,17 @@ function RocketRiot({ project }: Props) {
         </Button>
       </Text>
 
-      <Video
-        autoPlay={true}
-        loop={true}
-        style={{
-          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
-        }}
-      >
-        <source src={preview} type="video/mp4" />
-      </Video>
+      <VideoContainer>
+        <Video
+          autoPlay={true}
+          loop={true}
+          style={{
+            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          }}
+        >
+          <source src={preview} type="video/mp4" />
+        </Video>
+      </VideoContainer>
     </Container>
   )
 }
