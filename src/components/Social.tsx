@@ -58,6 +58,7 @@ const Container = styled.div`
   align-items: center;
   background: url('${scatterBackground}');
   background-repeat: repeat;
+  background-position: 500px;
 `
 
 const Contents = styled.div`
