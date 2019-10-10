@@ -64,7 +64,7 @@ const projectsList: Project[] = [
     name: "Cop Bot",
     description: "Supreme bot for Chrome 🛒",
     fullDescription: [
-      "I built a Chrome extension bot that would automate buying products from Supreme during their weekly drops",
+      "I built a Chrome extension bot that would automate buying products from Supreme during their weekly drops.",
       "Cop Bot is capable of ordering multiple products in the matter of seconds."
     ],
     link: "https://github.com/pavsidhu/cop-bot",
