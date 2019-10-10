@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react"
 
+import feelingBackground from "../images/feeling/background.svg"
+import feelingPreview from "../images/feeling/preview.png"
+
 import asteroid from "../images/rocket-riot/asteroid.svg"
 import planet1 from "../images/rocket-riot/planet-1.svg"
 import planet2 from "../images/rocket-riot/planet-2.svg"
@@ -44,6 +47,9 @@ function usePreloadImages(images: string[]) {
 
 export default function usePreloadAllImages() {
   usePreloadImages([
+    feelingPreview,
+    feelingBackground,
+
     asteroid,
     planet1,
     planet2,
