@@ -18,8 +18,8 @@ const Container = styled(MobileContainer)`
 
   @media (min-width: ${size.medium}) {
     grid-template-columns:
-      minmax(0, 180px) minmax(340px, 1fr) minmax(0, 56px) minmax(340px, 1fr)
-      minmax(0, 180px);
+      minmax(0, 100px) minmax(340px, 1fr) minmax(0, 56px) minmax(340px, 1fr)
+      minmax(0, 100px);
     grid-template-areas: "left-space text space preview right-space";
     grid-gap: 24px;
     max-width: 1600px;
@@ -31,6 +31,7 @@ const Text = styled(BaseText)`
 
   @media (min-width: ${size.medium}) {
     grid-area: text;
+    justify-self: center;
   }
 `
 
