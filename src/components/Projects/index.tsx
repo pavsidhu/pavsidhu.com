@@ -1,11 +1,11 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Media from "react-media"
 import TrackVisibility from "react-on-screen"
 import { Element, Link } from "react-scroll"
 import { animated, useSpring } from "react-spring"
 import styled, { css } from "styled-components"
 
-import usePreloadAllImages from "../../hooks/usePreloadImages"
+import preloadImages from "../../preloadImages"
 import projectsList from "./projectsList"
 
 const Container = styled(Element)`
@@ -90,7 +90,9 @@ function Projects() {
     duration: 2000
   }))
 
-  usePreloadAllImages()
+  useEffect(() => {
+    preloadImages()
+  }, [])
 
   return (
     <Container background={project.theme.background} name="projects">
