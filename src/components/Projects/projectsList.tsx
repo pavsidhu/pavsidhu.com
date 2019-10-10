@@ -22,9 +22,9 @@ const projectsList: Project[] = [
     fullDescription: [
       "Feeling is a daily journaling app, aiming to increase emotional self-awareness using artificial intelligence.",
       "Users can talk to a chatbot about their day and gain insight into their thoughts and feelings.",
-      "Created using Kotlin and Python, Feeling will be available soon and open-sourced to GitHub."
+      "Created using Kotlin and Python, Feeling will be available soon."
     ],
-    link: "https://github.com/pavsidhu/feeling-app",
+    link: "https://github.com/feelingapp",
     theme: {
       background: `url("${feelingBackground}"), #CAEAF8`,
       dark: true

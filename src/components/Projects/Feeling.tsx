@@ -26,17 +26,12 @@ const Container = styled(MobileContainer)`
   }
 `
 
-const X = styled.div`
-  @media (min-width: ${size.medium}) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    grid-area: text;
-  }
-`
-
 const Text = styled(BaseText)`
   color: #1b1b1b;
+
+  @media (min-width: ${size.medium}) {
+    grid-area: text;
+  }
 `
 
 const Button = styled.a`
@@ -83,22 +78,22 @@ function Feeling({ project }: Props) {
         opacity: spring.opacity
       }}
     >
-      <X>
-        <Text
-          style={{
-            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
-          }}
-        >
-          <Name>{project.name}</Name>
-          <Description>{project.description}</Description>
+      <Text
+        style={{
+          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+        }}
+      >
+        <Name>{project.name}</Name>
+        <Description>{project.description}</Description>
 
-          {project.fullDescription.map((paragraph, index) => (
-            <Paragraph key={index}>{paragraph}</Paragraph>
-          ))}
+        {project.fullDescription.map((paragraph, index) => (
+          <Paragraph key={index}>{paragraph}</Paragraph>
+        ))}
 
-          <Button>Coming Soon to Android</Button>
-        </Text>
-      </X>
+        <Button href={project.link} target="_blank" rel="noopener noreferrer">
+          View on GitHub
+        </Button>
+      </Text>
       <Photo
         src={preview}
         alt="Feeling app preview"
