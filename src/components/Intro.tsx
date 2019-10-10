@@ -69,11 +69,23 @@ const ListItem = styled.li`
 const ScrollIndicatorContainer = styled(ScrollLink)`
   grid-area: scroll;
   align-self: flex-end;
+  justify-self: center;
   cursor: pointer;
   margin-bottom: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 100ms ease-out;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:hover img {
+      transform: translateY(5px);
+    }
+  }
 `
 
 const ScrollText = styled.p`
@@ -83,6 +95,7 @@ const ScrollText = styled.p`
 `
 
 const ScrollIndicator = styled.img`
+  transition: transform 100ms ease-out 80ms;
   width: 32px;
 `
 
