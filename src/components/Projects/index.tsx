@@ -98,12 +98,10 @@ function Projects() {
         once={true}
         partialVisibility={true}
         offset={-20}
-        style={
-          {
-            // backgroundColor: project.theme.dark ? "white" : "black",
-            // mixBlendMode: project.theme.dark ? "multiply" : "screen"
-          }
-        }
+        style={{
+          backgroundColor: project.theme.dark ? "white" : "black",
+          mixBlendMode: project.theme.dark ? "multiply" : "screen"
+        }}
       >
         {({ isVisible }) => {
           set({ scroll: isVisible ? 0 : 200 })

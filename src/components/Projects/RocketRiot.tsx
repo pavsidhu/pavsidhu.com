@@ -142,6 +142,7 @@ const Asteroid = styled(Entity)`
   justify-self: center;
   align-self: end;
   margin-top: 10px;
+  margin-bottom: 20px;
   height: 90%;
   max-height: 100px;
   grid-column: 1 / 3;
