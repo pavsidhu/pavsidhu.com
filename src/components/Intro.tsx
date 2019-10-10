@@ -9,10 +9,9 @@ import { size } from "../styles"
 import Link from "./Link"
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-areas: "space" "content" "scroll";
   width: 100vw;
   min-height: 100vh;
   background: url('${scatterBackground}');
@@ -20,6 +19,8 @@ const Container = styled.div`
 `
 
 const Content = styled.div`
+  grid-area: content;
+  justify-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,8 +67,8 @@ const ListItem = styled.li`
 `
 
 const ScrollIndicatorContainer = styled(ScrollLink)`
-  position: absolute;
-  bottom: 0;
+  grid-area: scroll;
+  align-self: flex-end;
   cursor: pointer;
   margin-bottom: 24px;
   display: flex;
@@ -125,12 +126,12 @@ const Intro = () => (
           </Link>
         </ListItem>
       </List>
-
-      <ScrollIndicatorContainer to="projects" smooth={true} duration={300}>
-        <ScrollText>My Projects</ScrollText>
-        <ScrollIndicator src={scrollIndicator} alt="Scroll indicator" />
-      </ScrollIndicatorContainer>
     </Content>
+
+    <ScrollIndicatorContainer to="projects" smooth={true} duration={300}>
+      <ScrollText>My Projects</ScrollText>
+      <ScrollIndicator src={scrollIndicator} alt="Scroll indicator" />
+    </ScrollIndicatorContainer>
   </Container>
 )
 
