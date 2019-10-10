@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react"
-
 import feelingBackground from "../images/feeling/background.svg"
 import feelingPreview from "../images/feeling/preview.png"
 
@@ -27,51 +25,38 @@ import daynotePreview from "../images/daynote/preview.png"
 
 import echoDot from "../images/whats-trending/echo-dot.png"
 
-function usePreloadImage(src: string) {
-  const [isPreloaded, setPreloaded] = useState(false)
+const images = [
+  feelingPreview,
+  feelingBackground,
 
-  useEffect(() => {
+  asteroid,
+  planet1,
+  planet2,
+  rocket1,
+  rocket2,
+  rocket3,
+  rocketRiotStars,
+
+  laptop,
+  notepad,
+  revisifyPreview,
+
+  copbotPreview,
+
+  spotipartyPreview,
+
+  moon,
+  bulbPreview,
+  bulbStars,
+
+  daynotePreview,
+
+  echoDot
+]
+
+export default function preloadImages() {
+  images.forEach(src => {
     const image = new Image()
     image.src = src
-    image.onload = () => setPreloaded(true)
   })
-
-  return isPreloaded
-}
-
-function usePreloadImages(images: string[]) {
-  const allPreloaded = images.map(src => usePreloadImage(src))
-
-  return allPreloaded.every(isPreloaded => isPreloaded === true)
-}
-
-export default function usePreloadAllImages() {
-  usePreloadImages([
-    feelingPreview,
-    feelingBackground,
-
-    asteroid,
-    planet1,
-    planet2,
-    rocket1,
-    rocket2,
-    rocket3,
-    rocketRiotStars,
-
-    laptop,
-    notepad,
-    revisifyPreview,
-
-    copbotPreview,
-
-    spotipartyPreview,
-
-    moon,
-    bulbPreview,
-    bulbStars,
-
-    daynotePreview,
-
-    echoDot
-  ])
 }
