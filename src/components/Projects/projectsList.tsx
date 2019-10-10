@@ -2,6 +2,7 @@ import React from "react"
 
 import Bulb from "./Bulb"
 import CopBot from "./CopBot"
+import Feeling from "./Feeling"
 import DayNote from "./DayNote"
 import Revisify from "./Revisify"
 import RocketRiot from "./RocketRiot"
@@ -11,10 +12,27 @@ import Project from "../../types/Project"
 
 import rocketRiotBackground from "../../images/rocket-riot/stars.svg"
 import bulbBackground from "../../images/bulb/stars.svg"
+import feelingBackground from "../../images/feeling/background.svg"
 
 const projectsList: Project[] = [
   {
     id: 0,
+    name: "Feeling",
+    description: "A smart mood tracking app 🤗",
+    fullDescription: [
+      "Feeling is a daily journaling app, aiming to increase emotional self-awareness using artificial intelligence.",
+      "Users can talk to a chatbot about their day and gain insight into their thoughts and feelings.",
+      "Created using Kotlin and Python, Feeling will be available soon and open-sourced to GitHub."
+    ],
+    link: "https://github.com/pavsidhu/feeling-app",
+    theme: {
+      background: `url("${feelingBackground}"), #CAEAF8`,
+      dark: true
+    },
+    render: project => <Feeling project={project} />
+  },
+  {
+    id: 1,
     name: "Revisify",
     description: "A simple online revision tool 🎓",
     fullDescription: [
@@ -28,7 +46,7 @@ const projectsList: Project[] = [
     render: project => <Revisify project={project} />
   },
   {
-    id: 1,
+    id: 2,
     name: "Rocket Riot",
     description: "Turn by turn space game with real time minigames 🚀",
     fullDescription: [
@@ -42,7 +60,7 @@ const projectsList: Project[] = [
     render: project => <RocketRiot project={project} />
   },
   {
-    id: 2,
+    id: 3,
     name: "Cop Bot",
     description: "Supreme bot for Chrome 🛒",
     fullDescription: [
@@ -56,7 +74,7 @@ const projectsList: Project[] = [
     render: project => <CopBot project={project} />
   },
   {
-    id: 3,
+    id: 4,
     name: "SpotiParty",
     description: "Queue songs on Spotify with your friends 🎵",
     fullDescription: [
@@ -70,7 +88,7 @@ const projectsList: Project[] = [
     render: project => <SpotiParty project={project} />
   },
   {
-    id: 4,
+    id: 5,
     name: "Bulb",
     description: "An alarm app for Android that works with LIFX 💡",
     fullDescription: [
@@ -84,7 +102,7 @@ const projectsList: Project[] = [
     render: project => <Bulb project={project} />
   },
   {
-    id: 5,
+    id: 6,
     name: "DayNote",
     description: "Your personal development journal ✏️",
     fullDescription: [
@@ -98,7 +116,7 @@ const projectsList: Project[] = [
     render: project => <DayNote project={project} />
   },
   {
-    id: 6,
+    id: 7,
     name: "What's Trending",
     description: "See what's trending on Twitter via Alexa 🐦",
     fullDescription: [
