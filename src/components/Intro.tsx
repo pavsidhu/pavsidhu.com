@@ -1,12 +1,13 @@
-import React from "react"
+import React, { useRef } from "react"
 import { Link as ScrollLink } from "react-scroll"
 import styled from "styled-components"
 
 import profileImage from "../images/intro/profile.jpg"
 import scatterBackground from "../images/intro/scatter.svg"
 import scrollIndicator from "../images/intro/scroll_indicator.svg"
-import { size } from "../styles"
+import { size, projectSpring } from "../styles"
 import Link from "./Link"
+import { animated, useChain, useSpring } from "react-spring"
 
 const Container = styled.div`
   display: grid;
@@ -29,12 +30,18 @@ const Content = styled.div`
   flex: 1;
 `
 
-const Photo = styled.img`
+const Photo = styled(animated.img)`
   width: 140px;
   height: 140px;
   border-radius: 50%;
   margin-bottom: 40px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+`
+
+const Text = styled(animated.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 const Heading = styled.h1`
@@ -99,53 +106,83 @@ const ScrollIndicator = styled.img`
   width: 32px;
 `
 
-const Intro = () => (
-  <Container>
-    <Content>
-      <Photo src={profileImage} alt="My face" />
-      <Heading>Hey I’m Pav</Heading>
+function Intro() {
+  const spring = useSpring({ ...projectSpring })
 
-      <List>
-        <ListItem>
-          <Link
-            href="https://github.com/pavsidhu"
-            target="_blank"
-            rel="noopener"
-          >
-            Developer
-          </Link>
-        </ListItem>
-        <ListItem>UX Designer</ListItem>
-        <ListItem>
-          <Link
-            href="https://www.instagram.com/p/BrIiwq9hAbV/"
-            target="_blank"
-            rel="noopener"
-          >
-            Powerlifter
-          </Link>
-        </ListItem>
-      </List>
+  const photoSpring = useSpring({
+    opacity: 1,
+    scale: 1,
+    from: {
+      opacity: 0,
+      scale: 0
+    },
+    duration: 1,
+    delay: 100,
+    config: { friction: 18 }
+  })
 
-      <List>
-        <ListItem>Cardiff / Birmingham</ListItem>
-        <ListItem>
-          <Link
-            href="https://www.cs.bham.ac.uk/admissions/undergraduate/degrees/aics"
-            target="_blank"
-            rel="noopener"
-          >
-            AI and Computer Science
-          </Link>
-        </ListItem>
-      </List>
-    </Content>
+  return (
+    <Container>
+      <Content>
+        <Photo
+          src={profileImage}
+          alt="My face"
+          style={{
+            transform: photoSpring.scale.interpolate(scale => `scale(${scale})`)
+          }}
+        />
 
-    <ScrollIndicatorContainer to="projects" smooth={true} duration={300}>
-      <ScrollText>My Projects</ScrollText>
-      <ScrollIndicator src={scrollIndicator} alt="Scroll indicator" />
-    </ScrollIndicatorContainer>
-  </Container>
-)
+        <Text
+          style={{
+            opacity: spring.opacity,
+            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          }}
+        >
+          <Heading>Hey I’m Pav</Heading>
+
+          <List>
+            <ListItem>
+              <Link
+                href="https://github.com/pavsidhu"
+                target="_blank"
+                rel="noopener"
+              >
+                Developer
+              </Link>
+            </ListItem>
+            <ListItem>UX Designer</ListItem>
+            <ListItem>
+              <Link
+                href="https://www.instagram.com/p/BrIiwq9hAbV/"
+                target="_blank"
+                rel="noopener"
+              >
+                Powerlifter
+              </Link>
+            </ListItem>
+          </List>
+
+          <List>
+            <ListItem>Cardiff / Birmingham</ListItem>
+            <ListItem>
+              <Link
+                href="https://www.cs.bham.ac.uk/admissions/undergraduate/degrees/aics"
+                target="_blank"
+                rel="noopener"
+              >
+                AI and Computer Science
+              </Link>
+            </ListItem>
+          </List>
+        </Text>
+      </Content>
+
+      <ScrollIndicatorContainer to="projects" smooth={true} duration={300}>
+        <ScrollText>My Projects</ScrollText>
+        <ScrollIndicator src={scrollIndicator} alt="Scroll indicator" />
+      </ScrollIndicatorContainer>
+    </Container>
+  )
+}
 
 export default Intro
