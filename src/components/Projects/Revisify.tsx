@@ -22,7 +22,7 @@ const Container = styled(WebContainer)`
   @media (min-width: ${size.medium}) {
     padding: 24px;
     grid-template-columns: minmax(400px, 1fr) 1fr;
-    grid-template-rows: minmax(100px, 200px) auto minmax(100px, 200px);
+    grid-template-rows: minmax(100px, 180px) 1fr minmax(90px, 180px);
     grid-gap: 0;
     grid-column-gap: 24px;
   }
