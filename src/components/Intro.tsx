@@ -78,11 +78,16 @@ const ScrollIndicatorContainer = styled(ScrollLink)`
   align-self: flex-end;
   justify-self: center;
   cursor: pointer;
-  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 100ms ease-out;
+  margin-bottom: 10vh;
+  margin-top: 8px;
+
+  @media (min-width: ${size.medium}) {
+    margin: 0;
+  }
 
   @media (hover: hover) {
     &:hover {
