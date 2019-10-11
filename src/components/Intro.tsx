@@ -7,7 +7,7 @@ import scatterBackground from "../images/intro/scatter.svg"
 import scrollIndicator from "../images/intro/scroll_indicator.svg"
 import { size, projectSpring } from "../styles"
 import Link from "./Link"
-import { animated, useChain, useSpring } from "react-spring"
+import { animated, interpolate, useSpring } from "react-spring"
 
 const Container = styled.div`
   display: grid;
@@ -107,18 +107,26 @@ const ScrollIndicator = styled.img`
 `
 
 function Intro() {
-  const spring = useSpring({ ...projectSpring })
+  const spring = useSpring({ ...projectSpring, delay: 220 })
 
   const photoSpring = useSpring({
     opacity: 1,
     scale: 1,
+    rotate: 0,
     from: {
       opacity: 0,
-      scale: 0
+      scale: 0,
+      rotate: -45
     },
-    duration: 1,
-    delay: 100,
     config: { friction: 18 }
+  })
+
+  const photoRotateSpring = useSpring({
+    rotate: 0,
+    from: {
+      rotate: -25
+    },
+    config: { friction: 11 }
   })
 
   return (
@@ -128,7 +136,15 @@ function Intro() {
           src={profileImage}
           alt="My face"
           style={{
-            transform: photoSpring.scale.interpolate(scale => `scale(${scale})`)
+            transform: interpolate(
+              [
+                photoSpring.scale.interpolate(scale => `scale(${scale})`),
+                photoRotateSpring.rotate.interpolate(
+                  rotate => `rotateZ(${rotate}deg)`
+                )
+              ],
+              (scale, rotation) => `${scale} ${rotation}`
+            )
           }}
         />
 
