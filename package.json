@@ -22,7 +22,7 @@
     "react-media": "^1.9.2",
     "react-on-screen": "^2.1.1",
     "react-scroll": "^1.7.12",
-    "react-spring": "^8.0.25",
+    "react-spring": "^9.0.0-beta.34",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
