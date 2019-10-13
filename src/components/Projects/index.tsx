@@ -39,7 +39,7 @@ const Navigator = styled(animated.ul)`
 
 interface NavigatorItemProps {
   selected: boolean
-  dark?: boolean
+  dark: string
 }
 
 const NavigatorItem = styled.li<NavigatorItemProps>`
@@ -53,7 +53,7 @@ const NavigatorItem = styled.li<NavigatorItemProps>`
 
   ${props =>
     props.selected &&
-    (props.dark
+    (props.dark === "true"
       ? css`
           background: black;
           color: white;
@@ -77,7 +77,7 @@ const NavigatorItem = styled.li<NavigatorItemProps>`
 
   ${props =>
     !props.selected &&
-    props.dark &&
+    props.dark === "true" &&
     css`
       color: #1b1b1b;
     `};
@@ -126,8 +126,8 @@ function Projects() {
                     <Link to="projects" smooth={true} duration={300} key={p.id}>
                       <NavigatorItem
                         selected={p.id === project.id}
-                        dark={project.theme.dark}
                         onClick={() => setProject(projectsList[p.id])}
+                        dark={project.theme.dark ? "true" : "false"}
                       >
                         {p.name}
                       </NavigatorItem>
