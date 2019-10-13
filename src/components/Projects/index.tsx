@@ -150,9 +150,9 @@ export default function Projects() {
               ref={navigatorRef}
               scrollLeft={navigatorScrollSpring.scroll}
               style={{
-                transform:
-                  shouldScroll &&
-                  scrollSpring.scroll.to(scroll => `translateX(${scroll}px)`)
+                transform: shouldScroll
+                  ? scrollSpring.scroll.to(scroll => `translateX(${scroll}px)`)
+                  : undefined
               }}
             >
               {projectsList.map(p => (
