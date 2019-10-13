@@ -139,7 +139,7 @@ export default function Projects() {
         }}
       >
         {({ isVisible }) => {
-          // setScrollSpring({ scroll: isVisible ? 0 : 200 })
+          setScrollSpring({ scroll: isVisible ? 0 : 200 })
 
           return (
             <Navigator
