@@ -105,7 +105,7 @@ function Bulb({ project }: Props) {
 
       <Text
         style={{
-          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          transform: spring.yPosition.to(y => `translateY(${y}px)`)
         }}
       >
         <Name>{project.name}</Name>
@@ -123,7 +123,7 @@ function Bulb({ project }: Props) {
         src={preview}
         alt="Bulb app preview"
         style={{
-          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          transform: spring.yPosition.to(y => `translateY(${y}px)`)
         }}
       />
     </Container>
