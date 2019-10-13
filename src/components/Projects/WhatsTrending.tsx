@@ -64,7 +64,7 @@ interface Props {
   project: Project
 }
 
-function WhatsTrending({ project }: Props) {
+export default function WhatsTrending({ project }: Props) {
   const spring = useSpring(projectSpring)
 
   return (
@@ -92,5 +92,3 @@ function WhatsTrending({ project }: Props) {
     </Container>
   )
 }
-
-export default WhatsTrending

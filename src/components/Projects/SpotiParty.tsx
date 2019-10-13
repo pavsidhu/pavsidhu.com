@@ -52,7 +52,7 @@ interface Props {
   project: Project
 }
 
-function SpotiParty({ project }: Props) {
+export default function SpotiParty({ project }: Props) {
   const spring = useSpring(projectSpring)
 
   return (
@@ -79,5 +79,3 @@ function SpotiParty({ project }: Props) {
     </Container>
   )
 }
-
-export default SpotiParty

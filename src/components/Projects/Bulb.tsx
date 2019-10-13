@@ -92,7 +92,7 @@ interface Props {
   project: Project
 }
 
-function Bulb({ project }: Props) {
+export default function Bulb({ project }: Props) {
   const spring = useSpring(projectSpring)
 
   return (
@@ -129,5 +129,3 @@ function Bulb({ project }: Props) {
     </Container>
   )
 }
-
-export default Bulb

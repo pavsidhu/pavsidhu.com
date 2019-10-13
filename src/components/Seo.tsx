@@ -9,7 +9,7 @@ interface Props {
   title: string
 }
 
-function Seo({ description, lang, title }: Props) {
+export default function Seo({ description, lang, title }: Props) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -81,5 +81,3 @@ Seo.propTypes = {
   lang: PropTypes.string,
   title: PropTypes.string.isRequired
 }
-
-export default Seo
