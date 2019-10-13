@@ -42,12 +42,14 @@ const Button = styled.a`
   padding: 16px;
   border-radius: 12px;
   background-color: rgba(254, 254, 254, 0.8);
-  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+  transition: all 80ms;
 
   @media (hover: hover) {
     &:hover {
-      filter: brightness(115%);
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     }
   }
 `
