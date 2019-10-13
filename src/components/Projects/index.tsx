@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import Media from "react-media"
 import TrackVisibility from "react-on-screen"
 import { Element, Link } from "react-scroll"
@@ -23,7 +23,7 @@ const Container = styled(Element)`
     `};
 `
 
-const Navigator = styled(animated.ul)`
+const Navigator = styled(animated.div)`
   display: flex;
   max-width: 100vw;
   padding: 24px;
@@ -42,7 +42,7 @@ interface NavigatorItemProps {
   dark: string
 }
 
-const NavigatorItem = styled.li<NavigatorItemProps>`
+const NavigatorItem = styled(Element)<NavigatorItemProps>`
   font-size: 1.8rem;
   margin: 0 24px;
   color: #fefefe;
@@ -85,14 +85,47 @@ const NavigatorItem = styled.li<NavigatorItemProps>`
 
 function Projects() {
   const [project, setProject] = useState(projectsList[0])
-  const [props, set] = useSpring(() => ({
-    scroll: 0,
-    duration: 2000
+  const [navigatorScrollSpring, setNavigatorScrollSpring] = useSpring(() => ({
+    scroll: 0
   }))
+
+  const [scrollSpring, setScrollSpring] = useSpring(() => ({ scroll: 200 }))
 
   useEffect(() => {
     preloadImages()
   }, [])
+
+  const navigatorRef = useRef<HTMLDivElement>() as React.MutableRefObject<
+    HTMLDivElement
+  >
+
+  function handleNavigationItemClick(projectId: number) {
+    setProject(projectsList[projectId])
+
+    if (navigatorRef.current) {
+      const navigatorItems = Array.from(navigatorRef.current.children)
+      const navigatorItemsBeforeSelected = navigatorItems.slice(0, projectId)
+
+      const width = navigatorItemsBeforeSelected.reduce(
+        (total, navItem) => total + navItem.scrollWidth,
+        0
+      )
+
+      const navigatorWidth = navigatorRef.current.offsetWidth - 48
+      const selectedNavigatorItemWidth = navigatorItems[projectId].scrollWidth
+
+      const scroll = width - navigatorWidth / 2 + selectedNavigatorItemWidth / 2
+
+      // Set scroll spring to current scroll position
+      // +1 so the scroll is guaranteed to change so onRest is called
+      setNavigatorScrollSpring({
+        scroll: navigatorRef.current.scrollLeft + 1,
+        config: { duration: 0 },
+        onRest: () =>
+          setNavigatorScrollSpring({ scroll, config: { tension: 400 } })
+      })
+    }
+  }
 
   return (
     <Container background={project.theme.background} name="projects">
@@ -106,16 +139,18 @@ function Projects() {
         }}
       >
         {({ isVisible }) => {
-          set({ scroll: isVisible ? 0 : 200 })
+          setScrollSpring({ scroll: isVisible ? 0 : 200 })
 
           return (
             <Media query="(max-width: 599px)">
               {matches => (
                 <Navigator
+                  ref={navigatorRef}
+                  scrollLeft={navigatorScrollSpring.scroll}
                   style={
                     matches
                       ? {
-                          transform: props.scroll.interpolate(
+                          transform: scrollSpring.scroll.interpolate(
                             scroll => `translateX(${scroll}px)`
                           )
                         }
@@ -125,9 +160,10 @@ function Projects() {
                   {projectsList.map(p => (
                     <Link to="projects" smooth={true} duration={300} key={p.id}>
                       <NavigatorItem
+                        name={p.name}
                         selected={p.id === project.id}
-                        onClick={() => setProject(projectsList[p.id])}
                         dark={project.theme.dark ? "true" : "false"}
+                        onClick={() => handleNavigationItemClick(p.id)}
                       >
                         {p.name}
                       </NavigatorItem>
