@@ -150,7 +150,7 @@ function Projects() {
                   style={
                     matches
                       ? {
-                          transform: scrollSpring.scroll.interpolate(
+                          transform: scrollSpring.scroll.to(
                             scroll => `translateX(${scroll}px)`
                           )
                         }
