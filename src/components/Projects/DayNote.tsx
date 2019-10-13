@@ -48,7 +48,7 @@ interface Props {
   project: Project
 }
 
-function DayNote({ project }: Props) {
+export default function DayNote({ project }: Props) {
   const spring = useSpring(projectSpring)
 
   return (
@@ -75,5 +75,3 @@ function DayNote({ project }: Props) {
     </Container>
   )
 }
-
-export default DayNote

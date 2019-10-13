@@ -29,21 +29,21 @@ const Source = styled.p`
   }
 `
 
-const Footer = () => (
-  <Container>
-    <Source>
-      👨🏼‍💻 Source code is available on{" "}
-      <Link
-        href="https://github.com/pavsidhu/pavsidhu.com"
-        target="_blank"
-        rel="noopener"
-      >
-        GitHub
-      </Link>
-    </Source>
+export default function Footer() {
+  return (
+    <Container>
+      <Source>
+        👨🏼‍💻 Source code is available on{" "}
+        <Link
+          href="https://github.com/pavsidhu/pavsidhu.com"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </Link>
+      </Source>
 
-    <p>Made with 💛 by Pav Sidhu</p>
-  </Container>
-)
-
-export default Footer
+      <p>Made with 💛 by Pav Sidhu</p>
+    </Container>
+  )
+}

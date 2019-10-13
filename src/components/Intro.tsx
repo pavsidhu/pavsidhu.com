@@ -112,7 +112,7 @@ const ScrollIndicator = styled.img`
   width: 32px;
 `
 
-function Intro() {
+export default function Intro() {
   const spring = useSpring({ ...projectSpring, delay: 220 })
 
   const photoSpring = useSpring({
@@ -204,5 +204,3 @@ function Intro() {
     </Container>
   )
 }
-
-export default Intro

@@ -33,16 +33,17 @@ const Text = styled.p`
   text-align: center;
 `
 
-const NotFoundPage = () => (
-  <Layout>
-    <Container>
-      <Seo title="404 Are you lost?" />
-      <Emoji>️☹️</Emoji>️<Title>Are you lost?</Title>
-      <Text>
-        There's nothing here, <Link href="/">click here</Link> to go back home.
-      </Text>
-    </Container>
-  </Layout>
-)
-
-export default NotFoundPage
+export default function NotFoundPage() {
+  return (
+    <Layout>
+      <Container>
+        <Seo title="404 Are you lost?" />
+        <Emoji>️☹️</Emoji>️<Title>Are you lost?</Title>
+        <Text>
+          There's nothing here, <Link href="/">click here</Link> to go back
+          home.
+        </Text>
+      </Container>
+    </Layout>
+  )
+}

@@ -72,7 +72,7 @@ interface Props {
   project: Project
 }
 
-function Feeling({ project }: Props) {
+export default function Feeling({ project }: Props) {
   const spring = useSpring(projectSpring)
 
   return (
@@ -107,5 +107,3 @@ function Feeling({ project }: Props) {
     </Container>
   )
 }
-
-export default Feeling

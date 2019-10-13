@@ -83,7 +83,7 @@ const NavigatorItem = styled(Element)<NavigatorItemProps>`
     `};
 `
 
-function Projects() {
+export default function Projects() {
   const [project, setProject] = useState(projectsList[0])
   const [navigatorScrollSpring, setNavigatorScrollSpring] = useSpring(() => ({
     scroll: 0
@@ -172,5 +172,3 @@ function Projects() {
     </Container>
   )
 }
-
-export default Projects

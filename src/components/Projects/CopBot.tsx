@@ -42,7 +42,7 @@ interface Props {
   project: Project
 }
 
-function CopBot({ project }: Props) {
+export default function CopBot({ project }: Props) {
   const spring = useSpring(projectSpring)
 
   return (
@@ -69,5 +69,3 @@ function CopBot({ project }: Props) {
     </Container>
   )
 }
-
-export default CopBot

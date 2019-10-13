@@ -104,7 +104,7 @@ interface Props {
   project: Project
 }
 
-function Revisify({ project }: Props) {
+export default function Revisify({ project }: Props) {
   const spring = useSpring(projectSpring)
 
   return (
@@ -143,5 +143,3 @@ function Revisify({ project }: Props) {
     </Container>
   )
 }
-
-export default Revisify

@@ -6,14 +6,14 @@ import Projects from "../components/Projects"
 import Seo from "../components/Seo"
 import Social from "../components/Social"
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
+export default function IndexPage() {
+  return (
+    <Layout>
+      <Seo title="Home" />
 
-    <Intro />
-    <Projects />
-    <Social />
-  </Layout>
-)
-
-export default IndexPage
+      <Intro />
+      <Projects />
+      <Social />
+    </Layout>
+  )
+}

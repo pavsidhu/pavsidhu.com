@@ -187,7 +187,7 @@ interface Props {
   project: Project
 }
 
-function RocketRiot({ project }: Props) {
+export default function RocketRiot({ project }: Props) {
   const spring = useSpring(projectSpring)
 
   return (
@@ -235,5 +235,3 @@ function RocketRiot({ project }: Props) {
     </Container>
   )
 }
-
-export default RocketRiot

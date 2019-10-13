@@ -108,7 +108,7 @@ const Handle = styled.p`
   color: #adadad;
 `
 
-function Social() {
+export default function Social() {
   return (
     <Container>
       <Contents>
@@ -132,5 +132,3 @@ function Social() {
     </Container>
   )
 }
-
-export default Social
