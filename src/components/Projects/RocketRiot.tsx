@@ -224,6 +224,7 @@ function RocketRiot({ project }: Props) {
         <Video
           autoPlay={true}
           loop={true}
+          disableRemotePlayback="true"
           style={{
             transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
           }}
