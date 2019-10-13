@@ -142,36 +142,28 @@ function Projects() {
           setScrollSpring({ scroll: isVisible ? 0 : 200 })
 
           return (
-            <Media query="(max-width: 599px)">
-              {matches => (
-                <Navigator
-                  ref={navigatorRef}
-                  scrollLeft={navigatorScrollSpring.scroll}
-                  style={
-                    matches
-                      ? {
-                          transform: scrollSpring.scroll.to(
-                            scroll => `translateX(${scroll}px)`
-                          )
-                        }
-                      : undefined
-                  }
-                >
-                  {projectsList.map(p => (
-                    <Link to="projects" smooth={true} duration={300} key={p.id}>
-                      <NavigatorItem
-                        name={p.name}
-                        selected={p.id === project.id}
-                        dark={project.theme.dark ? "true" : "false"}
-                        onClick={() => handleNavigationItemClick(p.id)}
-                      >
-                        {p.name}
-                      </NavigatorItem>
-                    </Link>
-                  ))}
-                </Navigator>
-              )}
-            </Media>
+            <Navigator
+              ref={navigatorRef}
+              scrollLeft={navigatorScrollSpring.scroll}
+              style={{
+                transform:
+                  window.matchMedia("(max-width: 1100px)").matches &&
+                  scrollSpring.scroll.to(scroll => `translateX(${scroll}px)`)
+              }}
+            >
+              {projectsList.map(p => (
+                <Link to="projects" smooth={true} duration={300} key={p.id}>
+                  <NavigatorItem
+                    name={p.name}
+                    selected={p.id === project.id}
+                    dark={project.theme.dark ? "true" : "false"}
+                    onClick={() => handleNavigationItemClick(p.id)}
+                  >
+                    {p.name}
+                  </NavigatorItem>
+                </Link>
+              ))}
+            </Navigator>
           )
         }}
       </TrackVisibility>
