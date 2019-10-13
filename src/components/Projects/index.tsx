@@ -139,20 +139,16 @@ export default function Projects() {
         }}
       >
         {({ isVisible }) => {
-          setScrollSpring({ scroll: isVisible ? 0 : 200 })
-
-          const shouldScroll =
-            typeof window !== "undefined" &&
-            window.matchMedia("(max-width: 1100px)").matches
+          // setScrollSpring({ scroll: isVisible ? 0 : 200 })
 
           return (
             <Navigator
               ref={navigatorRef}
               scrollLeft={navigatorScrollSpring.scroll}
               style={{
-                transform: shouldScroll
-                  ? scrollSpring.scroll.to(scroll => `translateX(${scroll}px)`)
-                  : undefined
+                transform: scrollSpring.scroll.to(
+                  scroll => `translateX(${scroll}px)`
+                )
               }}
             >
               {projectsList.map(p => (
