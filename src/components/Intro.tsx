@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React from "react"
 import { Link as ScrollLink } from "react-scroll"
 import styled from "styled-components"
 
@@ -86,7 +86,8 @@ const ScrollIndicatorContainer = styled(ScrollLink)`
   margin-top: 8px;
 
   @media (min-width: ${size.medium}) {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 16px;
   }
 
   @media (hover: hover) {
