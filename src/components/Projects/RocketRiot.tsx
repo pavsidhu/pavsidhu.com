@@ -205,7 +205,7 @@ function RocketRiot({ project }: Props) {
 
       <Text
         style={{
-          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          transform: spring.yPosition.to(y => `translateY(${y}px)`)
         }}
       >
         <Name>{project.name}</Name>
@@ -224,9 +224,9 @@ function RocketRiot({ project }: Props) {
         <Video
           autoPlay={true}
           loop={true}
-          disableRemotePlayback="true"
+          disableremoteplayback="true"
           style={{
-            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+            transform: spring.yPosition.to(y => `translateY(${y}px)`)
           }}
         >
           <source src={preview} type="video/mp4" />
