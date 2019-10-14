@@ -205,7 +205,7 @@ export default function RocketRiot({ project }: Props) {
 
       <Text
         style={{
-          transform: spring.yPosition.to(y => `translateY(${y}px)`)
+          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
         }}
       >
         <Name>{project.name}</Name>
@@ -226,7 +226,7 @@ export default function RocketRiot({ project }: Props) {
           loop={true}
           disableremoteplayback="true"
           style={{
-            transform: spring.yPosition.to(y => `translateY(${y}px)`)
+            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
           }}
         >
           <source src={preview} type="video/mp4" />

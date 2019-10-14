@@ -49,7 +49,7 @@ export default function CopBot({ project }: Props) {
     <Container
       style={{
         opacity: spring.opacity,
-        transform: spring.yPosition.to(y => `translateY(${y}px)`)
+        transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
       }}
     >
       <Text>

@@ -118,7 +118,7 @@ export default function Revisify({ project }: Props) {
 
       <Text
         style={{
-          transform: spring.yPosition.to(y => `translateY(${y}px)`)
+          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
         }}
       >
         <Name>{project.name}</Name>
@@ -137,7 +137,7 @@ export default function Revisify({ project }: Props) {
         src={preview}
         alt="Revisify website preview"
         style={{
-          transform: spring.yPosition.to(y => `translateY(${y}px)`)
+          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
         }}
       />
     </Container>
