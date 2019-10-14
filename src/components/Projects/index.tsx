@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react"
-import Media from "react-media"
 import TrackVisibility from "react-on-screen"
 import { Element, Link } from "react-scroll"
 import { animated, useSpring } from "react-spring"
@@ -23,7 +22,7 @@ const Container = styled(Element)`
     `};
 `
 
-const Navigator = styled(animated.div)`
+const Navigator = styled(animated.ul)`
   display: flex;
   max-width: 100vw;
   padding: 24px;
@@ -42,7 +41,7 @@ interface NavigatorItemProps {
   dark: string
 }
 
-const NavigatorItem = styled(Element)<NavigatorItemProps>`
+const NavigatorItem = styled.li<NavigatorItemProps>`
   font-size: 1.8rem;
   margin: 0 24px;
   color: #fefefe;
@@ -95,14 +94,12 @@ export default function Projects() {
     preloadImages()
   }, [])
 
-  const navigatorRef = useRef<HTMLDivElement>() as React.MutableRefObject<
-    HTMLDivElement
+  const navigatorRef = useRef<HTMLUListElement>() as React.MutableRefObject<
+    HTMLUListElement
   >
 
   function handleNavigationItemClick(projectId: number) {
     setProject(projectsList[projectId])
-
-    console.log("navigatorRef", navigatorRef.current)
 
     if (navigatorRef.current) {
       const navigatorItems = Array.from(navigatorRef.current.children)
@@ -117,7 +114,6 @@ export default function Projects() {
       const selectedNavigatorItemWidth = navigatorItems[projectId].scrollWidth
 
       const scroll = width - navigatorWidth / 2 + selectedNavigatorItemWidth / 2
-      console.log("scroll", scroll)
 
       // Set scroll spring to current scroll position
       // +1 so the scroll is guaranteed to change so onRest is called
@@ -126,7 +122,6 @@ export default function Projects() {
         config: { duration: 0 },
         onRest: () => {
           setNavigatorScrollSpring({ scroll, config: { tension: 400 } })
-          console.log("next scroll")
         }
       })
     }
@@ -159,7 +154,6 @@ export default function Projects() {
               {projectsList.map(p => (
                 <Link to="projects" smooth={true} duration={300} key={p.id}>
                   <NavigatorItem
-                    name={p.name}
                     selected={p.id === project.id}
                     dark={project.theme.dark ? "true" : "false"}
                     onClick={() => handleNavigationItemClick(p.id)}
