@@ -146,7 +146,7 @@ export default function Projects() {
               ref={navigatorRef}
               scrollLeft={navigatorScrollSpring.scroll}
               style={{
-                transform: scrollSpring.scroll.to(
+                transform: scrollSpring.scroll.interpolate(
                   scroll => `translateX(${scroll}px)`
                 )
               }}

@@ -7,7 +7,7 @@ import scatterBackground from "../images/intro/scatter.svg"
 import scrollIndicator from "../images/intro/scroll_indicator.svg"
 import { size, projectSpring } from "../styles"
 import Link from "./Link"
-import { animated, to, useSpring } from "react-spring"
+import { animated, interpolate, useSpring } from "react-spring"
 
 const Container = styled.div`
   display: grid;
@@ -142,10 +142,12 @@ export default function Intro() {
           src={profileImage}
           alt="My face"
           style={{
-            transform: to(
+            transform: interpolate(
               [
-                photoSpring.scale.to(scale => `scale(${scale})`),
-                photoRotateSpring.rotate.to(rotate => `rotateZ(${rotate}deg)`)
+                photoSpring.scale.interpolate(scale => `scale(${scale})`),
+                photoRotateSpring.rotate.interpolate(
+                  rotate => `rotateZ(${rotate}deg)`
+                )
               ],
               (scale, rotation) => `${scale} ${rotation}`
             )
@@ -155,7 +157,7 @@ export default function Intro() {
         <Text
           style={{
             opacity: spring.opacity,
-            transform: spring.yPosition.to(y => `translateY(${y}px)`)
+            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
           }}
         >
           <Heading>Hey I’m Pav</Heading>
