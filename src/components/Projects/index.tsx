@@ -102,6 +102,8 @@ export default function Projects() {
   function handleNavigationItemClick(projectId: number) {
     setProject(projectsList[projectId])
 
+    console.log("navigatorRef", navigatorRef.current)
+
     if (navigatorRef.current) {
       const navigatorItems = Array.from(navigatorRef.current.children)
       const navigatorItemsBeforeSelected = navigatorItems.slice(0, projectId)
@@ -115,14 +117,17 @@ export default function Projects() {
       const selectedNavigatorItemWidth = navigatorItems[projectId].scrollWidth
 
       const scroll = width - navigatorWidth / 2 + selectedNavigatorItemWidth / 2
+      console.log("scroll", scroll)
 
       // Set scroll spring to current scroll position
       // +1 so the scroll is guaranteed to change so onRest is called
       setNavigatorScrollSpring({
         scroll: navigatorRef.current.scrollLeft + 1,
         config: { duration: 0 },
-        onRest: () =>
+        onRest: () => {
           setNavigatorScrollSpring({ scroll, config: { tension: 400 } })
+          console.log("next scroll")
+        }
       })
     }
   }
