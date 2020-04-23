@@ -23,8 +23,6 @@ import bulbStars from "./images/bulb/stars.svg"
 
 import daynotePreview from "./images/daynote/preview.png"
 
-import echoDot from "./images/whats-trending/echo-dot.png"
-
 const images = [
   feelingPreview,
   feelingBackground,
@@ -49,9 +47,7 @@ const images = [
   bulbPreview,
   bulbStars,
 
-  daynotePreview,
-
-  echoDot
+  daynotePreview
 ]
 
 export default function preloadImages() {
