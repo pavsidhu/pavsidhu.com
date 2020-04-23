@@ -7,7 +7,6 @@ import DayNote from "./DayNote"
 import Revisify from "./Revisify"
 import RocketRiot from "./RocketRiot"
 import SpotiParty from "./SpotiParty"
-import WhatsTrending from "./WhatsTrending"
 import Project from "../../types/Project"
 
 import rocketRiotBackground from "../../images/rocket-riot/stars.svg"
@@ -114,19 +113,6 @@ const projectsList: Project[] = [
       background: "#FF785A"
     },
     render: project => <DayNote project={project} />
-  },
-  {
-    id: 7,
-    name: "What's Trending",
-    description: "See what's trending on Twitter via Alexa 🐦",
-    fullDescription: [
-      "To get a feel for how voice assistants work, I built a small Alexa skill that fetches the latest trending hashtags on Twitter."
-    ],
-    link: "https://github.com/pavsidhu/whats-trending",
-    theme: {
-      background: "#00C9FF"
-    },
-    render: project => <WhatsTrending project={project} />
   }
 ]
 
