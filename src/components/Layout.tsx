@@ -1,4 +1,3 @@
-import PropTypes from "prop-types"
 import React, { ReactNode } from "react"
 import { createGlobalStyle } from "styled-components"
 
@@ -50,8 +49,4 @@ export default function Layout(props: Props) {
       <main>{props.children}</main>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired
 }
