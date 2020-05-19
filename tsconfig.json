@@ -1,15 +1,8 @@
 {
-  "include": ["./src/**/*"],
   "compilerOptions": {
-    "target": "esnext",
-    "module": "commonjs",
-    "lib": ["dom", "es2017"],
-    "jsx": "react",
-    "strict": true,
+    "typeRoots": ["src/custom.d.ts"],
     "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "noEmit": true,
-    "skipLibCheck": true
+    "jsx": "react",
+    "strict": true
   }
 }
