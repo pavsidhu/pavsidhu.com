@@ -4,32 +4,32 @@ import { createGlobalStyle } from "styled-components"
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Orkney';
-    src: url('../../static/fonts/Orkney-Medium.woff2') format('woff2'),
-        url('../../static/fonts/Orkney-Medium.woff') format('woff');
+    src: url('../fonts/Orkney-Medium.woff2') format('woff2'),
+        url('../fonts/Orkney-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
   }
 
   @font-face {
       font-family: 'Orkney';
-      src: url('../../static/fonts/Orkney-Light.woff2') format('woff2'),
-          url('../../static/fonts/Orkney-Light.woff') format('woff');
+      src: url('../fonts/Orkney-Light.woff2') format('woff2'),
+          url('../fonts/Orkney-Light.woff') format('woff');
       font-weight: 300;
       font-style: normal;
   }
 
   @font-face {
       font-family: 'Orkney';
-      src: url('../../static/fonts/Orkney-Regular.woff2') format('woff2'),
-          url('../../static/fonts/Orkney-Regular.woff') format('woff');
+      src: url('../fonts/Orkney-Regular.woff2') format('woff2'),
+          url('../fonts/Orkney-Regular.woff') format('woff');
       font-weight: normal;
       font-style: normal;
   }
 
   @font-face {
       font-family: 'Orkney';
-      src: url('../../static/fonts/Orkney-Bold.woff2') format('woff2'),
-          url('../../static/fonts/Orkney-Bold.woff') format('woff');
+      src: url('../fonts/Orkney-Bold.woff2') format('woff2'),
+          url('../fonts/Orkney-Bold.woff') format('woff');
       font-weight: bold;
       font-style: normal;
   }
