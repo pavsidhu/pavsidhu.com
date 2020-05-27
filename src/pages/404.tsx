@@ -1,8 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 
-import Layout from "../components/Layout"
-import Link from "../components/Link"
 import Seo from "../components/Seo"
 
 const Container = styled.div`
@@ -39,10 +37,7 @@ export default function NotFoundPage() {
       <Container>
         <Seo title="404 Are you lost?" />
         <Emoji>️☹️</Emoji>️<Title>Are you lost?</Title>
-        <Text>
-          There's nothing here, <Link href="/">click here</Link> to go back
-          home.
-        </Text>
+        <Text>There's nothing here, go back home.</Text>
       </Container>
     </Layout>
   )
