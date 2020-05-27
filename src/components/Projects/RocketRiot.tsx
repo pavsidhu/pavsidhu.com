@@ -1,6 +1,6 @@
 import React from "react"
 import { animated, useSpring } from "react-spring"
-import styled from "styled-components"
+import { styled } from "linaria/react"
 
 import asteroid from "../../images/rocket-riot/asteroid.svg"
 import planet1 from "../../images/rocket-riot/planet-1.svg"
@@ -205,7 +205,7 @@ export default function RocketRiot({ project }: Props) {
 
       <Text
         style={{
-          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          transform: spring.yPosition.interpolate((y) => `translateY(${y}px)`)
         }}
       >
         <Name>{project.name}</Name>
@@ -226,7 +226,7 @@ export default function RocketRiot({ project }: Props) {
           loop={true}
           disableremoteplayback="true"
           style={{
-            transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+            transform: spring.yPosition.interpolate((y) => `translateY(${y}px)`)
           }}
         >
           <source src={preview} type="video/mp4" />

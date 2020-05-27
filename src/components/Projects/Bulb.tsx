@@ -1,6 +1,6 @@
 import React from "react"
 import { animated, useSpring } from "react-spring"
-import styled from "styled-components"
+import { styled } from "linaria/react"
 
 import moon from "../../images/bulb/moon.svg"
 import preview from "../../images/bulb/preview.svg"
@@ -105,7 +105,7 @@ export default function Bulb({ project }: Props) {
 
       <Text
         style={{
-          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          transform: spring.yPosition.interpolate((y) => `translateY(${y}px)`)
         }}
       >
         <Name>{project.name}</Name>
@@ -123,7 +123,7 @@ export default function Bulb({ project }: Props) {
         src={preview}
         alt="Bulb app preview"
         style={{
-          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          transform: spring.yPosition.interpolate((y) => `translateY(${y}px)`)
         }}
       />
     </Container>

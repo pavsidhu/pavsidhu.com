@@ -1,5 +1,5 @@
 import { animated } from "react-spring"
-import styled from "styled-components"
+import { styled } from "linaria/react"
 
 import { size } from "../../styles"
 

@@ -1,6 +1,6 @@
 import React from "react"
 import { animated, useSpring } from "react-spring"
-import styled from "styled-components"
+import { styled } from "linaria/react"
 
 import laptop from "../../images/revisify/laptop.svg"
 import notepad from "../../images/revisify/notebook.svg"
@@ -118,7 +118,7 @@ export default function Revisify({ project }: Props) {
 
       <Text
         style={{
-          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          transform: spring.yPosition.interpolate((y) => `translateY(${y}px)`)
         }}
       >
         <Name>{project.name}</Name>
@@ -137,7 +137,7 @@ export default function Revisify({ project }: Props) {
         src={preview}
         alt="Revisify website preview"
         style={{
-          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          transform: spring.yPosition.interpolate((y) => `translateY(${y}px)`)
         }}
       />
     </Container>

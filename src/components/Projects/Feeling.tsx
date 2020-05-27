@@ -1,6 +1,6 @@
 import React from "react"
 import { animated, useSpring } from "react-spring"
-import styled from "styled-components"
+import { styled } from "linaria/react"
 
 import preview from "../../images/feeling/preview.png"
 import { projectSpring, size } from "../../styles"
@@ -83,7 +83,7 @@ export default function Feeling({ project }: Props) {
     >
       <Text
         style={{
-          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          transform: spring.yPosition.interpolate((y) => `translateY(${y}px)`)
         }}
       >
         <Name>{project.name}</Name>
@@ -101,7 +101,7 @@ export default function Feeling({ project }: Props) {
         src={preview}
         alt="Feeling app preview"
         style={{
-          transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+          transform: spring.yPosition.interpolate((y) => `translateY(${y}px)`)
         }}
       />
     </Container>

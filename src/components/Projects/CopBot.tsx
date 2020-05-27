@@ -1,6 +1,6 @@
 import React from "react"
 import { useSpring } from "react-spring"
-import styled from "styled-components"
+import { styled } from "linaria/react"
 
 import preview from "../../images/copbot/preview.png"
 import { projectSpring, size } from "../../styles"
@@ -49,7 +49,7 @@ export default function CopBot({ project }: Props) {
     <Container
       style={{
         opacity: spring.opacity,
-        transform: spring.yPosition.interpolate(y => `translateY(${y}px)`)
+        transform: spring.yPosition.interpolate((y) => `translateY(${y}px)`)
       }}
     >
       <Text>
