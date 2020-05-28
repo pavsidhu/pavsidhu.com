@@ -1,6 +1,6 @@
 import React from "react"
 import { useSpring } from "react-spring"
-import { styled } from "linaria/react"
+import styled from "styled-components"
 
 import preview from "../../images/copbot/preview.png"
 import { projectSpring, size } from "../../styles"

@@ -1,5 +1,5 @@
 import React from "react"
-import { styled } from "linaria/react"
+import styled from "styled-components"
 
 import Seo from "../components/Seo"
 

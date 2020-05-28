@@ -1,6 +1,6 @@
 import React from "react"
 import { animated, useSpring } from "react-spring"
-import { styled } from "linaria/react"
+import styled from "styled-components"
 
 import moon from "../../images/bulb/moon.svg"
 import preview from "../../images/bulb/preview.svg"
