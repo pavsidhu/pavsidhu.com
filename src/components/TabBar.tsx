@@ -25,6 +25,7 @@ const Tab = styled(Link)`
   background: var(--white);
   color: var(--black);
   border-bottom: 2px solid var(--white);
+  transition: background 100ms, color 100ms;
 
   &.active {
     background: var(--light-orange);
@@ -38,30 +39,26 @@ const TabLabel = styled.p`
   font-size: 1.2rem;
 `
 
-interface Props {
-  location: Location
-}
-
-export default function TabBar(props: Props) {
+export default function TabBar() {
   return (
     <Container>
       <Tab to="/" activeClassName="active">
-        <HomeIcon />
+        <HomeIcon aria-hidden="true" />
         <TabLabel>Home</TabLabel>
       </Tab>
 
       <Tab to="/about" activeClassName="active">
-        <AboutIcon />
+        <AboutIcon aria-hidden="true" />
         <TabLabel>About</TabLabel>
       </Tab>
 
       <Tab to="/projects" activeClassName="active">
-        <ProjectsIcon />
+        <ProjectsIcon aria-hidden="true" />
         <TabLabel>Projects</TabLabel>
       </Tab>
 
       <Tab to="/contact" activeClassName="active">
-        <ContactIcon />
+        <ContactIcon aria-hidden="true" />
         <TabLabel>Contact</TabLabel>
       </Tab>
     </Container>
