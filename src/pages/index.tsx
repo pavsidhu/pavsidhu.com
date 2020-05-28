@@ -44,6 +44,12 @@ const Intro = styled.div`
     ".      .      .      .        .      "
     "social social social social    social"
     ".      .      .      .        .      ";
+
+  @media (min-width: 800px) {
+    position: sticky;
+    left: 0;
+    top: 0;
+  }
 `
 
 const ProfilePicture = styled(Image)`
