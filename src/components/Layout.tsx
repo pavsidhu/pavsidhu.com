@@ -1,73 +1,86 @@
-import React, { ReactNode } from "react"
-import { css } from "linaria"
+import React from "react"
+import styled, { createGlobalStyle } from "styled-components"
 
-export const globals = css`
-  :global {
-    @font-face {
-      font-family: "Orkney";
-      src: url("../fonts/Orkney-Medium.woff2") format("woff2"),
-        url("../fonts/Orkney-Medium.woff") format("woff");
-      font-weight: 500;
-      font-style: normal;
-    }
+import { TabBar } from "../components"
 
-    @font-face {
-      font-family: "Orkney";
-      src: url("../fonts/Orkney-Light.woff2") format("woff2"),
-        url("../fonts/Orkney-Light.woff") format("woff");
-      font-weight: 300;
-      font-style: normal;
-    }
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "Orkney";
+    src: url("../fonts/Orkney-Medium.woff2") format("woff2"),
+      url("../fonts/Orkney-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
 
-    @font-face {
-      font-family: "Orkney";
-      src: url("../fonts/Orkney-Regular.woff2") format("woff2"),
-        url("../fonts/Orkney-Regular.woff") format("woff");
-      font-weight: normal;
-      font-style: normal;
-    }
+  @font-face {
+    font-family: "Orkney";
+    src: url("../fonts/Orkney-Light.woff2") format("woff2"),
+      url("../fonts/Orkney-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+  }
 
-    @font-face {
-      font-family: "Orkney";
-      src: url("../fonts/Orkney-Bold.woff2") format("woff2"),
-        url("../fonts/Orkney-Bold.woff") format("woff");
-      font-weight: bold;
-      font-style: normal;
-    }
+  @font-face {
+    font-family: "Orkney";
+    src: url("../fonts/Orkney-Regular.woff2") format("woff2"),
+      url("../fonts/Orkney-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "circular-book";
-    }
+  @font-face {
+    font-family: "Orkney";
+    src: url("../fonts/Orkney-Bold.woff2") format("woff2"),
+      url("../fonts/Orkney-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
 
-    h3 {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    html,
-    body {
-      font-size: 62.5%;
-      background: #fefefe;
-    }
+  html,
+  body {
+    font-size: 62.5%;
+    font-family: "Orkney";
+    background: var(--white);
+  }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  :root {
+    --orange: #f05f40;
+    --light-orange: #fff4f1;
+    --black: #1b1b1b;
+    --white: #fefefe;
   }
 `
 
+const Container = styled.div`
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+`
+
 interface Props {
-  children: ReactNode
+  children: React.ReactNode
+  location: Location
 }
 
 export default function Layout(props: Props) {
   return (
     <>
-      <main>{props.children}</main>
+      <GlobalStyle />
+      <Container>
+        <main>{props.children}</main>
+        <TabBar location={location} />
+      </Container>
     </>
   )
 }
