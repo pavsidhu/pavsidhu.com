@@ -91,7 +91,6 @@ const SocialLink = styled.a`
   grid-template-areas: "icon";
   grid-template-columns: var(--space-m);
   grid-template-rows: var(--space-m);
-  color: var(--black);
   margin-right: var(--space-m);
   transition: background 100ms, color 100ms;
 

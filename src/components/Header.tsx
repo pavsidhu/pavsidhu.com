@@ -43,7 +43,6 @@ const NavItem = styled(Link)`
   margin-left: var(--space-s);
   background: var(--white);
   border-radius: 20px;
-  color: var(--black);
   fill: currentColor;
   transition: background 100ms, color 100ms;
 

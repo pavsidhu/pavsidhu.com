@@ -56,7 +56,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: var(--black);
   }
 
   html,
@@ -64,6 +63,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
     font-family: "Orkney";
     background: var(--white);
+    color: var(--black);
   }
 
   a {

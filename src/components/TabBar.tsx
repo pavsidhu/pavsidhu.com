@@ -31,7 +31,6 @@ const Tab = styled(Link)`
   fill: currentColor;
   padding: calc(0.8rem + 2px) 0 0.8rem;
   background: var(--white);
-  color: var(--black);
   border-bottom: 2px solid var(--white);
   transition: background 100ms, color 100ms;
 
