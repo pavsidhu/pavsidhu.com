@@ -1,7 +1,7 @@
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
 
-import { TabBar } from "../components"
+import { Header, TabBar } from "../components"
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -59,6 +59,11 @@ const GlobalStyle = createGlobalStyle`
     --light-orange: #fff4f1;
     --black: #1b1b1b;
     --white: #fefefe;
+
+    --space-xs: 8px;
+    --space-s: 16px;
+    --space-m: 24px;
+    --space-l: 32px;
   }
 `
 
@@ -66,20 +71,20 @@ const Container = styled.div`
   min-height: 100vh;
   display: grid;
   grid-template-rows: 1fr auto;
+
+  @media (min-width: 800px) {
+    grid-template-rows: auto 1fr;
+  }
 `
 
-interface Props {
-  children: React.ReactNode
-  location: Location
-}
-
-export default function Layout(props: Props) {
+export default function Layout(props: { children: React.ReactNode }) {
   return (
     <>
       <GlobalStyle />
       <Container>
+        <Header />
         <main>{props.children}</main>
-        <TabBar location={location} />
+        <TabBar />
       </Container>
     </>
   )

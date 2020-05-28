@@ -12,6 +12,10 @@ const Container = styled.nav`
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
   background: var(--white);
+
+  @media (min-width: 800px) {
+    display: none;
+  }
 `
 
 const Tab = styled(Link)`

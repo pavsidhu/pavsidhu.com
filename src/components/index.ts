@@ -1,3 +1,4 @@
+import Header from "./Header"
 import TabBar from "./TabBar"
 
-export { TabBar }
+export { Header, TabBar }
