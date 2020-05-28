@@ -12,6 +12,10 @@ const Container = styled.nav`
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
   background: var(--white);
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
 
   @media (min-width: 800px) {
     display: none;

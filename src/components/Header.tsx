@@ -9,14 +9,18 @@ import ContactIcon from "../images/icons/contact.svg"
 
 const Container = styled.header`
   display: none;
-  align-items: center;
-  width: 100%;
-  padding: var(--space-s) var(--space-l);
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
-  background: var(--white);
 
   @media (min-width: 800px) {
     display: flex;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: var(--space-s) var(--space-l);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
+    background: var(--white);
   }
 `
 
