@@ -19,7 +19,7 @@ const Container = styled.header`
     left: 0;
     z-index: 10;
     padding: var(--space-s) var(--space-l);
-    box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px;
     background: var(--white);
   }
 `
