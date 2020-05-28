@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Pav Sidhu`,
-    description: `Welcome to my website! I'm a developer, designer and powerlifter from Cardiff. I study Computer Science at the University of Birmingham.`,
+    description: `I’m a developer from the UK. I like progressive web apps, neural networks and designing user experiences.`,
     author: `Pav Sidhu <pav@pavsidhu.com>`
   },
   plugins: [
