@@ -17,7 +17,9 @@ const Container = styled.section`
 `
 
 const Intro = styled.div`
-  background: #f7f7f7;
+  /* background: #f7f7f7; */
+  /* box-shadow: rgba(0, 0, 0, 0.05) 0 0 10px; */
+  border-right: rgba(0, 0, 0, 0.1) 1px solid;
 
   display: grid;
   grid-template-columns:
@@ -108,7 +110,6 @@ const SocialLink = styled.a`
   @media (hover: hover) {
     &:hover {
       background: var(--light-grey);
-      color: var(--orange);
     }
   }
 `
