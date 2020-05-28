@@ -67,7 +67,7 @@ const Description = styled.p`
   grid-area: desc;
   line-height: 2.4rem;
   font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: 400;
 `
 
 const Highlight = styled.span`
