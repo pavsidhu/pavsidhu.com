@@ -36,7 +36,7 @@ const NavItem = styled(Link)`
   display: flex;
   align-items: center;
   padding: var(--space-xs) var(--space-s);
-  margin: 0 var(--space-s);
+  margin-left: var(--space-s);
   background: var(--white);
   border-radius: 20px;
   color: var(--black);
@@ -46,6 +46,12 @@ const NavItem = styled(Link)`
   &.active {
     background: var(--light-orange);
     color: var(--orange);
+  }
+
+  @media (hover: hover) {
+    &:hover:not(.active) {
+      background: var(--light-grey);
+    }
   }
 `
 
@@ -58,7 +64,9 @@ const NavItemLabel = styled.p`
 export default function Header() {
   return (
     <Container>
-      <Title>Pav Sidhu</Title>
+      <Title>
+        <Link to="/">Pav Sidhu</Link>
+      </Title>
 
       <Nav>
         <NavItem to="/" activeClassName="active">

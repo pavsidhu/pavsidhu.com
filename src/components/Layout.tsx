@@ -59,6 +59,7 @@ const GlobalStyle = createGlobalStyle`
     --light-orange: #fff4f1;
     --black: #1b1b1b;
     --white: #fefefe;
+    --light-grey: #eeeeee;
 
     --space-xs: 8px;
     --space-s: 16px;
