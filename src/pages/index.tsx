@@ -202,7 +202,7 @@ export default function IndexPage({ data }) {
 
 export const query = graphql`
   query {
-    file(relativePath: { eq: "intro/profile.jpg" }) {
+    file(relativePath: { eq: "general/profile.jpg" }) {
       childImageSharp {
         fixed(width: 72, height: 72) {
           ...GatsbyImageSharpFixed_withWebp

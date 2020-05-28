@@ -24,7 +24,7 @@ const Container = styled.header`
   }
 `
 
-const Title = styled.h1`
+const Title = styled.p`
   flex: 1;
   font-size: 2rem;
   font-weight: 500;
