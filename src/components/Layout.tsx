@@ -65,6 +65,7 @@ const GlobalStyle = createGlobalStyle`
     --space-s: 16px;
     --space-m: 24px;
     --space-l: 32px;
+    --space-xl: 40px;
   }
 `
 
