@@ -32,7 +32,7 @@ const projects = [
     subtitle: "Supreme bot for Chrome 🛒",
     description: `
       I built a Chrome extension bot that would automate buying products from Supreme during their weekly drops.
-      Cop Bot is capable of ordering multiple products in the matter of seconds.
+      Cop Bot is capable of ordering multiple products in a matter of seconds.
     `,
     link: "https://github.com/pavsidhu/cop-bot"
   },
