@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import styled, { css } from "styled-components"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 
 import Seo from "../components/Seo"
 import projects from "../projects"
@@ -80,6 +80,8 @@ const SelectorItem = styled(Link)`
   }
 `
 
+const toHash = (value: string) => "#" + value.toLowerCase().replace(" ", "")
+
 export default function ProjectsPage({ location }: { location: Location }) {
   function renderProject() {
     switch (location.hash) {
@@ -101,11 +103,11 @@ export default function ProjectsPage({ location }: { location: Location }) {
       case "#bulb":
         return <CopBot />
 
-      case "DayNote":
-        return <CopBot />
+      case "#daynote":
+        return <DayNote />
 
       default:
-        throw Error("Project not found")
+        navigate("/projects" + toHash(projects[0].title))
     }
   }
 
@@ -116,10 +118,8 @@ export default function ProjectsPage({ location }: { location: Location }) {
         <Selector>
           {projects.map(({ title }) => (
             <SelectorItem
-              selected={
-                location.hash === "#" + title.toLowerCase().replace(/\s/g, "")
-              }
-              to={"/projects/" + "#" + title.toLowerCase().replace(/\s/g, "")}
+              selected={location.hash === toHash(title)}
+              to={"/projects/" + toHash(title)}
               key={title}
             >
               {title}
