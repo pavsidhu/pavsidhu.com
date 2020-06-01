@@ -71,6 +71,12 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: inherit;
+    user-select:  none;
+  }
+  
+  img {
+    user-select:  none;
+    user-drag: none;
   }
 
   :root {
