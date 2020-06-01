@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
+import { Link } from "gatsby"
 
 import Seo from "../components/Seo"
 import projects from "../projects"
@@ -39,7 +40,7 @@ const Selector = styled.div`
   box-shadow: rgba(0, 0, 0, 0.05) 0 0 10px;
 `
 
-const SelectorItem = styled.button`
+const SelectorItem = styled(Link)`
   padding: calc(var(--space-xs) + 0.5rem) var(--space-m) var(--space-xs);
   font-size: 1.8rem;
   font-weight: 500;
@@ -79,27 +80,25 @@ const SelectorItem = styled.button`
   }
 `
 
-export default function ProjectsPage() {
-  const [selectedProject, setSelectedProject] = useState(projects[0].title)
-
+export default function ProjectsPage({ location }: { location: Location }) {
   function renderProject() {
-    switch (selectedProject) {
-      case "Feeling":
+    switch (location.hash) {
+      case "#feeling":
         return <CopBot />
 
-      case "Revisify":
+      case "#revisify":
         return <CopBot />
 
-      case "Rocket Riot":
+      case "#rocketriot":
         return <CopBot />
 
-      case "Cop Bot":
+      case "#copbot":
         return <CopBot />
 
-      case "SpotiParty":
+      case "#spotiparty":
         return <SpotiParty />
 
-      case "Bulb":
+      case "#bulb":
         return <CopBot />
 
       case "DayNote":
@@ -117,8 +116,10 @@ export default function ProjectsPage() {
         <Selector>
           {projects.map(({ title }) => (
             <SelectorItem
-              selected={selectedProject === title}
-              onClick={() => setSelectedProject(title)}
+              selected={
+                location.hash === "#" + title.toLowerCase().replace(/\s/g, "")
+              }
+              to={"/projects/" + "#" + title.toLowerCase().replace(/\s/g, "")}
               key={title}
             >
               {title}

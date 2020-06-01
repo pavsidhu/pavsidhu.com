@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Image from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 
-import projects from "../../projects"
+import { spotiparty } from "../../projects"
 import {
   Title,
   Subtitle,
@@ -42,11 +42,7 @@ const Preview = styled(ProjectPreview)`
   box-shadow: 15px 15px 0px #0b0b0b;
 `
 
-const project = projects.find(({ title }) => title === "SpotiParty")
-
 export default function SpotiParty() {
-  if (!project) throw Error("Project not found")
-
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "spotiparty/preview.png" }) {
@@ -62,17 +58,21 @@ export default function SpotiParty() {
   return (
     <Container>
       <ProjectDetails>
-        <Title>{project.title}</Title>
-        <Subtitle>{project.subtitle}</Subtitle>
+        <Title>{spotiparty.title}</Title>
+        <Subtitle>{spotiparty.subtitle}</Subtitle>
 
-        {project.description
+        {spotiparty.description
           .trim()
           .split("\n")
           .map((paragraph, index) => (
             <Paragraph key={index}>{paragraph}</Paragraph>
           ))}
 
-        <Button href={project.link} target="_blank" rel="noopener noreferrer">
+        <Button
+          href={spotiparty.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           View on GitHub
         </Button>
       </ProjectDetails>

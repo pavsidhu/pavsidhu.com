@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 
-import projects from "../../projects"
+import { copBot } from "../../projects"
 import {
   Title,
   Subtitle,
@@ -33,11 +33,7 @@ const Button = styled(ProjectButton)`
   }
 `
 
-const project = projects.find(({ title }) => title === "Cop Bot")
-
 export default function CopBot() {
-  if (!project) throw Error("Project not found")
-
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "copbot/preview.png" }) {
@@ -53,17 +49,17 @@ export default function CopBot() {
   return (
     <Container>
       <ProjectDetails>
-        <Title>{project.title}</Title>
-        <Subtitle>{project.subtitle}</Subtitle>
+        <Title>{copBot.title}</Title>
+        <Subtitle>{copBot.subtitle}</Subtitle>
 
-        {project.description
+        {copBot.description
           .trim()
           .split("\n")
-          .map((paragraph) => (
-            <Paragraph>{paragraph}</Paragraph>
+          .map((paragraph, index) => (
+            <Paragraph key={index}>{paragraph}</Paragraph>
           ))}
 
-        <Button href={project.link} target="_blank" rel="noopener noreferrer">
+        <Button href={copBot.link} target="_blank" rel="noopener noreferrer">
           View on GitHub
         </Button>
       </ProjectDetails>
