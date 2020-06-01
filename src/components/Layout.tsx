@@ -46,11 +46,13 @@ const GlobalStyle = createGlobalStyle`
       background-attachment: initial !important;
       scroll-behavior: auto !important;
       transition-delay: 0s !important;
-      transition-duration: 0s !important; 
-    } 
+      transition-duration: 0s !important;
+    }
   }
 
-  * {
+  *,
+  ::before,
+  ::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
