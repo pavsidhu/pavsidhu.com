@@ -14,7 +14,7 @@ const Container = styled.section`
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: var(--space-s) auto 1fr;
+  grid-template-rows: var(--space-s) max-content 1fr;
   grid-template-columns:
     minmax(var(--space-s), 1fr)
     auto
@@ -97,7 +97,7 @@ export default function ProjectsPage() {
         return <CopBot />
 
       case "SpotiParty":
-        return <CopBot />
+        return <SpotiParty />
 
       case "Bulb":
         return <CopBot />
@@ -106,7 +106,7 @@ export default function ProjectsPage() {
         return <CopBot />
 
       default:
-        return undefined
+        throw Error("Project not found")
     }
   }
 

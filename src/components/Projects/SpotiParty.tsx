@@ -1,31 +1,31 @@
 import React from "react"
-import { useSpring } from "react-spring"
 import styled from "styled-components"
+import Image from "gatsby-image"
+import { graphql, useStaticQuery } from "gatsby"
 
-import preview from "../../images/spotiparty/preview.png"
-import { projectSpring, size } from "../../styles"
+import projects from "../../projects"
 import {
-  Description,
-  Name,
+  Title,
+  Subtitle,
   Paragraph,
-  Text as BaseText,
-  WebContainer as Container
-} from "./common"
-import Project from "../../types/Project"
+  ProjectContainer,
+  ProjectDetails,
+  ProjectPreview
+} from ".."
 
-const Text = styled(BaseText)`
+const Container = styled(ProjectContainer)`
+  background: #39d772;
   color: #0b0b0b;
 `
 
 const Button = styled.a`
-  color: black;
+  justify-self: start;
   padding: 16px;
   font-size: 1.6rem;
   background-color: #fefefe;
   border: 5px solid #0b0b0b;
   box-shadow: 8px 8px 0px #0b0b0b;
-  transition: all 100ms;
-  margin-bottom: 16px;
+  transition: transform 100ms, box-shadow 100ms;
 
   @media (hover: hover) {
     &:hover {
@@ -35,47 +35,49 @@ const Button = styled.a`
   }
 `
 
-const Photo = styled.img`
-  align-self: center;
-  width: 100%;
-  max-width: 600px;
+const Preview = styled(ProjectPreview)`
+  grid-area: preview;
+  align-self: start;
   border: 5px solid #0b0b0b;
   box-shadow: 15px 15px 0px #0b0b0b;
-  margin-bottom: 40px;
-
-  @media (min-width: ${size.medium}) {
-    max-width: none;
-  }
 `
 
-interface Props {
-  project: Project
-}
+const project = projects.find(({ title }) => title === "SpotiParty")
 
-export default function SpotiParty({ project }: Props) {
-  const spring = useSpring(projectSpring)
+export default function SpotiParty() {
+  if (!project) throw Error("Project not found")
+
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "spotiparty/preview.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1500, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
 
   return (
-    <Container
-      style={{
-        opacity: spring.opacity,
-        transform: spring.yPosition.interpolate((y) => `translateY(${y}px)`)
-      }}
-    >
-      <Text>
-        <Name>{project.name}</Name>
-        <Description>{project.description}</Description>
+    <Container>
+      <ProjectDetails>
+        <Title>{project.title}</Title>
+        <Subtitle>{project.subtitle}</Subtitle>
 
-        {project.fullDescription.map((paragraph, index) => (
-          <Paragraph key={index}>{paragraph}</Paragraph>
-        ))}
+        {project.description
+          .trim()
+          .split("\n")
+          .map((paragraph, index) => (
+            <Paragraph key={index}>{paragraph}</Paragraph>
+          ))}
 
         <Button href={project.link} target="_blank" rel="noopener noreferrer">
           View on GitHub
         </Button>
-      </Text>
+      </ProjectDetails>
 
-      <Photo src={preview} />
+      <Preview fluid={data.file.childImageSharp.fluid} />
     </Container>
   )
 }
