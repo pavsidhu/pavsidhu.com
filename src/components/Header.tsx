@@ -82,7 +82,7 @@ export default function Header() {
           <NavItemLabel>About</NavItemLabel>
         </NavItem>
 
-        <NavItem to="/projects" activeClassName="active">
+        <NavItem to="/projects" activeClassName="active" partiallyActive={true}>
           <ProjectsIcon aria-hidden="true" />
           <NavItemLabel>Projects</NavItemLabel>
         </NavItem>
