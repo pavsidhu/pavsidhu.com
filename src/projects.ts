@@ -5,6 +5,17 @@ interface Project {
   link: string
 }
 
+export const aida: Project = {
+  title: "Aida",
+  subtitle: "Your digital assistant for meeting new people 👬🏼",
+  description: `
+    Aida is a dating chatbot for iOS and Android that uses neural networks to predict personality and match users.
+    An attention-based BLSTM was trained to predict a user’s personality given answers to practice dating questions asked by Aida. Users were matched based on the similarity of their personalities.
+    The neural network improved state of the art results by ~3.22% and performed with the same accuracy on unseen answers to Aida's questions.
+  `,
+  link: "https://github.com/pavsidhu/aida"
+}
+
 export const feeling: Project = {
   title: "Feeling",
   subtitle: "A smart mood tracking app 🤗",
@@ -34,6 +45,17 @@ export const rocketRiot: Project = {
       Players take in turns moving around a grid with the aim of capturing as many planets as possible through fun minigames.
     `,
   link: "https://github.com/rocketriot/game"
+}
+
+export const waiter: Project = {
+  title: "wAIter",
+  subtitle: "Automated drone beverage delivery service 🍹",
+  description: `
+  Working in a team of four we came 1st at HackTheMidlands 2019.
+  Using an app, customers can order drinks. Through a web system, bartenders can accept them. A drone uses Bluetooth Beacons and computer vision to locate the customer's phone and deliver drinks.
+  The system was built using Kotlin, Android Jetpack, JavaScript, React, MongoDB, Python and a Raspberry Pi.
+  `,
+  link: "https://github.com/sub-standard/wAIter"
 }
 
 export const copBot: Project = {
@@ -77,9 +99,11 @@ export const daynote: Project = {
 }
 
 const projects = [
+  aida,
   feeling,
   revisify,
   rocketRiot,
+  waiter,
   copBot,
   spotiparty,
   bulb,
