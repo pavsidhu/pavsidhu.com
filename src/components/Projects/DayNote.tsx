@@ -1,19 +1,39 @@
 import React from "react"
-import { useSpring } from "react-spring"
 import styled from "styled-components"
+import { graphql, useStaticQuery } from "gatsby"
 
-import preview from "../../images/daynote/preview.png"
-import { projectSpring, size } from "../../styles"
+import { daynote } from "../../projects"
 import {
-  Description,
-  MobileContainer as Container,
-  Name,
+  Title,
+  Subtitle,
   Paragraph,
-  Text
-} from "./common"
-import Project from "../../types/Project"
+  ProjectButton,
+  ProjectContainer,
+  ProjectDetails,
+  ProjectPreview
+} from ".."
 
-const Button = styled.a`
+const Container = styled(ProjectContainer)`
+  background: #ff785a;
+  color: #fefefe;
+
+  @media (min-width: 800px) {
+    /* Ensures content doesn't appear under the project selector */
+
+    grid-template-areas:
+      ". .       . .       ."
+      ". content . preview ."
+      ". .       . .       .";
+    grid-template-columns:
+      minmax(var(--space-m), 2fr)
+      minmax(350px, 60ch)
+      minmax(var(--space-m), 1fr)
+      minmax(300px, 2fr)
+      minmax(var(--space-m), 2fr);
+  }
+`
+
+const Button = styled(ProjectButton)`
   width: 100%;
   text-align: center;
   color: black;
@@ -22,7 +42,6 @@ const Button = styled.a`
   background-color: #fefefe;
   border-radius: 2px;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
-
   transition: box-shadow 200ms;
 
   @media (hover: hover) {
@@ -32,46 +51,48 @@ const Button = styled.a`
   }
 `
 
-const Photo = styled.img`
-  align-self: center;
+const Preview = styled(ProjectPreview)`
   width: 100%;
-  max-width: 250px;
-  margin-bottom: 24px;
-
-  @media (min-width: ${size.medium}) {
-    justify-self: start;
-    max-width: 300px;
-  }
+  max-width: 400px;
+  max-height: 40vw;
+  justify-self: center;
 `
 
-interface Props {
-  project: Project
-}
-
-export default function DayNote({ project }: Props) {
-  const spring = useSpring(projectSpring)
+export default function DayNote() {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "daynote/preview.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1500, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
 
   return (
-    <Container
-      style={{
-        opacity: spring.opacity,
-        transform: spring.yPosition.interpolate((y) => `translateY(${y}px)`)
-      }}
-    >
-      <Text>
-        <Name>{project.name}</Name>
-        <Description>{project.description}</Description>
+    <Container>
+      <ProjectDetails>
+        <Title>{daynote.title}</Title>
+        <Subtitle>{daynote.subtitle}</Subtitle>
 
-        {project.fullDescription.map((paragraph, index) => (
-          <Paragraph key={index}>{paragraph}</Paragraph>
-        ))}
+        {daynote.description
+          .trim()
+          .split("\n")
+          .map((paragraph, index) => (
+            <Paragraph key={index}>{paragraph}</Paragraph>
+          ))}
 
-        <Button href={project.link} target="_blank" rel="noopener noreferrer">
+        <Button href={daynote.link} target="_blank" rel="noopener noreferrer">
           View on GitHub
         </Button>
-      </Text>
+      </ProjectDetails>
 
-      <Photo src={preview} alt="DayNote app preview" />
+      <Preview
+        fluid={data.file.childImageSharp.fluid}
+        imgStyle={{ objectFit: "contain" }}
+      />
     </Container>
   )
 }

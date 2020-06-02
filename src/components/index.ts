@@ -15,7 +15,7 @@ export const Subtitle = styled.h2`
 `
 
 export const Paragraph = styled.p`
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 2.8rem;
 `
 
@@ -24,18 +24,21 @@ export const ProjectContainer = styled.section`
   grid-row: -1 / 1;
 
   /* Ensures content doesn't appear under the project selector */
-  padding-top: calc(85px + 2.3rem);
+  padding-top: calc(53px + 2.3rem);
 
   display: grid;
   grid-template-areas:
+    ". .       ."
     ". content ."
     ". .       ."
     ". preview ."
     ". .       .";
   grid-template-columns: var(--space-m) 1fr var(--space-m);
-  grid-template-rows: auto var(--space-m) auto var(--space-m);
+  grid-template-rows: var(--space-s) auto var(--space-m) auto var(--space-m);
 
   @media (min-width: 800px) {
+    /* Ensures content doesn't appear under the project selector */
+
     grid-template-areas:
       ". .       . .       ."
       ". content . preview ."
