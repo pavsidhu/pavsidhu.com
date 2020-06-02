@@ -18,8 +18,6 @@ const Container = styled(ProjectContainer)`
   color: #fefefe;
 
   @media (min-width: 800px) {
-    /* Ensures content doesn't appear under the project selector */
-
     grid-template-areas:
       ". .       . .       ."
       ". content . preview ."
@@ -37,7 +35,7 @@ const Button = styled(ProjectButton)`
   width: 100%;
   text-align: center;
   color: black;
-  padding: 16px;
+  padding: calc(16px + 0.5rem) 16px 16px;
   font-size: 1.6rem;
   background-color: #fefefe;
   border-radius: 2px;

@@ -19,7 +19,7 @@ const Container = styled(ProjectContainer)`
 `
 
 const Button = styled(ProjectButton)`
-  padding: 16px;
+  padding: calc(16px + 0.5rem) 16px 16px;
   font-size: 1.6rem;
   font-weight: 500;
   background: rgba(255, 255, 255, 0.2);

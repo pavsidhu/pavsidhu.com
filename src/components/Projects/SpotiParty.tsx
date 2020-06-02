@@ -20,7 +20,7 @@ const Container = styled(ProjectContainer)`
 
 const Button = styled.a`
   justify-self: start;
-  padding: 16px;
+  padding: calc(16px + 0.5rem) 16px 16px;
   font-size: 1.6rem;
   background-color: #fefefe;
   border: 5px solid #0b0b0b;
