@@ -5,6 +5,7 @@ import { Link, navigate } from "gatsby"
 import Seo from "../components/Seo"
 import projects from "../projects"
 
+import Aida from "../components/projects/Aida"
 import Revisify from "../components/projects/Revisify"
 import CopBot from "../components/projects/CopBot"
 import SpotiParty from "../components/projects/SpotiParty"
@@ -86,6 +87,9 @@ const toHash = (value: string) => "#" + value.toLowerCase().replace(" ", "")
 export default function ProjectsPage({ location }: { location: Location }) {
   function renderProject() {
     switch (location.hash) {
+      case "#aida":
+        return <Aida />
+
       case "#feeling":
         return <CopBot />
 
