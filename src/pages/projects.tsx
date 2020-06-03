@@ -101,7 +101,7 @@ export default function ProjectsPage({ location }: { location: Location }) {
         return <SpotiParty />
 
       case "#bulb":
-        return <CopBot />
+        return <Bulb />
 
       case "#daynote":
         return <DayNote />

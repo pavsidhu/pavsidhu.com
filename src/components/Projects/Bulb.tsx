@@ -1,130 +1,128 @@
 import React from "react"
-import { animated, useSpring } from "react-spring"
 import styled from "styled-components"
+import { graphql, useStaticQuery } from "gatsby"
 
-import moon from "../../images/bulb/moon.svg"
-import preview from "../../images/bulb/preview.svg"
-import { projectSpring, size } from "../../styles"
+import { bulb } from "../../projects"
+import stars from "../../images/bulb/stars.svg"
+import { ReactComponent as MoonSVG } from "../../images/bulb/moon.svg"
 import {
-  Description as BaseDescription,
-  MobileContainer,
-  Name as BaseName,
-  Paragraph as BaseParagraph,
-  Text as BaseText
-} from "./common"
-import Project from "../../types/Project"
+  Title,
+  Subtitle,
+  Paragraph,
+  ProjectButton,
+  ProjectContainer,
+  ProjectDetails,
+  ProjectPreview
+} from ".."
 
-const Container = styled(MobileContainer)`
-  display: grid;
-
-  @media (min-width: ${size.medium}) {
-    grid-template-columns:
-      minmax(0, 180px) minmax(400px, 1fr) 56px minmax(200px, 1fr)
-      minmax(0, 180px);
-    grid-template-areas: "moon text space preview moon-space";
-    grid-gap: 24px;
-    max-width: 1600px;
-  }
-`
-
-const Moon = styled.img`
-  display: none;
-
-  @media (min-width: ${size.medium}) {
-    grid-area: moon;
-    display: block;
-    width: 100%;
-    justify-self: start;
-    pointer-events: none;
-    user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-  }
-`
-
-const Text = styled(BaseText)`
-  @media (min-width: ${size.medium}) {
-    grid-area: text;
-  }
-`
-
-const Name = styled(BaseName)`
-  background-color: #180652;
-`
-
-const Description = styled(BaseDescription)`
-  background-color: #180652;
-`
-
-const Paragraph = styled(BaseParagraph)`
-  background-color: #180652;
-`
-
-const Button = styled.a`
+const Container = styled(ProjectContainer)`
+  background: url(${stars}) #180652;
+  background-size: 30%;
   color: #fefefe;
+  overflow-x: hidden;
+`
+
+const CustomTitle = styled(Title)`
+  background: #180652;
+
+  @media (min-width: 800px) {
+    background: none;
+  }
+`
+
+const CustomSubtitle = styled(Subtitle)`
+  background: #180652;
+
+  @media (min-width: 800px) {
+    background: none;
+  }
+`
+
+const CustomParagraph = styled(Paragraph)`
+  background: #180652;
+
+  @media (min-width: 800px) {
+    background: none;
+  }
+`
+
+const Button = styled(ProjectButton)`
   padding: 16px;
   font-size: 1.6rem;
-  background-color: #3c247f;
   border-radius: 4px;
+  background: #3c247f;
+  transform: background 100ms;
 
   @media (hover: hover) {
     &:hover {
-      filter: brightness(115%);
+      background: #452992;
     }
   }
 `
 
-const Photo = styled(animated.img)`
-  align-self: center;
+const Preview = styled(ProjectPreview)`
+  justify-self: center;
   width: 100%;
-  max-width: 250px;
-  margin-bottom: 24px;
+  max-height: 500px;
 
-  @media (min-width: ${size.medium}) {
-    grid-area: preview;
-    justify-self: start;
-    max-width: 300px;
+  @media (min-width: 800px) {
+    max-height: none;
+    height: clamp(400px, 100vh, 70vh);
   }
 `
 
-interface Props {
-  project: Project
-}
+const Moon = styled(MoonSVG)`
+  display: none;
 
-export default function Bulb({ project }: Props) {
-  const spring = useSpring(projectSpring)
+  @media (min-width: 800px) {
+    display: block;
+    grid-area: content;
+    transform: translateY(-50px) translateX(-100px) scale(0.9);
+    filter: brightness(0.6) opacity(0.8);
+    z-index: 0;
+    justify-self: start;
+    align-self: start;
+    pointer-events: none;
+    user-select: none;
+  }
+`
+
+export default function Bulb() {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "bulb/preview.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1500, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
 
   return (
-    <Container
-      style={{
-        opacity: spring.opacity
-      }}
-    >
-      <Moon src={moon} alt="Moon" />
+    <Container>
+      <Moon />
 
-      <Text
-        style={{
-          transform: spring.yPosition.interpolate((y) => `translateY(${y}px)`)
-        }}
-      >
-        <Name>{project.name}</Name>
-        <Description>{project.description}</Description>
+      <ProjectDetails style={{ zIndex: 1 }}>
+        <CustomTitle>{bulb.title}</CustomTitle>
+        <CustomSubtitle>{bulb.subtitle}</CustomSubtitle>
 
-        {project.fullDescription.map((paragraph, index) => (
-          <Paragraph key={index}>{paragraph}</Paragraph>
-        ))}
+        {bulb.description
+          .trim()
+          .split("\n")
+          .map((paragraph, index) => (
+            <CustomParagraph key={index}>{paragraph}</CustomParagraph>
+          ))}
 
-        <Button href={project.link} target="_blank" rel="noopener noreferrer">
+        <Button href={bulb.link} target="_blank" rel="noopener noreferrer">
           View on GitHub
         </Button>
-      </Text>
-      <Photo
-        src={preview}
-        alt="Bulb app preview"
-        style={{
-          transform: spring.yPosition.interpolate((y) => `translateY(${y}px)`)
-        }}
+      </ProjectDetails>
+
+      <Preview
+        fluid={data.file.childImageSharp.fluid}
+        imgStyle={{ objectFit: "contain" }}
       />
     </Container>
   )
