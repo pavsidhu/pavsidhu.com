@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 
 import { bulb } from "../../projects"
 import stars from "../../images/bulb/stars.svg"
-import { ReactComponent as MoonSVG } from "../../images/bulb/moon.svg"
+import { ReactComponent as MoonSvg } from "../../images/bulb/moon.svg"
 import {
   Title,
   Subtitle,
@@ -60,7 +60,7 @@ const CustomParagraph = styled(Paragraph)`
 `
 
 const Button = styled(ProjectButton)`
-  padding: 16px;
+  padding: calc(16px + 0.5rem) 16px 16px;
   font-size: 1.6rem;
   border-radius: 4px;
   background: #3c247f;
@@ -84,7 +84,7 @@ const Preview = styled(ProjectPreview)`
   }
 `
 
-const Moon = styled(MoonSVG)`
+const Moon = styled(MoonSvg)`
   display: none;
 
   @media (min-width: 800px) {
@@ -117,7 +117,7 @@ export default function Bulb() {
     <Container>
       <Moon />
 
-      <ProjectDetails style={{ zIndex: 1 }}>
+      <ProjectDetails>
         <CustomTitle>{bulb.title}</CustomTitle>
         <CustomSubtitle>{bulb.subtitle}</CustomSubtitle>
 

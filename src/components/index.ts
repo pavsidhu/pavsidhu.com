@@ -62,6 +62,7 @@ export const ProjectDetails = styled.div`
   display: grid;
   grid-auto-flow: row;
   gap: var(--space-s);
+  z-index: 1;
 `
 
 export const ProjectPreview = styled(Image).attrs({ fadeIn: false })`

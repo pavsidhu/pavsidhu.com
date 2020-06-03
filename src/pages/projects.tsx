@@ -38,6 +38,7 @@ const Selector = styled.div`
   border-radius: 40px;
   background: rgba(255, 255, 255, 0.3);
   box-shadow: rgba(0, 0, 0, 0.05) 0 0 10px;
+  z-index: 5;
 `
 
 const SelectorItem = styled(Link)`
