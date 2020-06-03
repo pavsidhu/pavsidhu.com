@@ -86,12 +86,14 @@ const Preview = styled(ProjectPreview)`
 
 const Moon = styled(MoonSvg)`
   display: none;
+  background: #180652;
+  border-radius: 50%;
 
   @media (min-width: 800px) {
     display: block;
     grid-area: content;
     transform: translateY(-50px) translateX(-100px) scale(0.9);
-    filter: brightness(0.6) opacity(0.8);
+    filter: brightness(0.5);
     z-index: 0;
     justify-self: start;
     align-self: start;
