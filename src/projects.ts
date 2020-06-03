@@ -100,7 +100,6 @@ export const daynote: Project = {
 
 const projects = [
   aida,
-  feeling,
   revisify,
   rocketRiot,
   waiter,
