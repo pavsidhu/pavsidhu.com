@@ -10,6 +10,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-svgr`,
     `gatsby-plugin-mdx`,
     `gatsby-plugin-netlify-cms`,
     {
@@ -30,14 +31,6 @@ module.exports = {
       options: {
         name: `blogPosts`,
         path: `${__dirname}/content/blog`
-      }
-    },
-    {
-      resolve: `gatsby-plugin-react-svg`,
-      options: {
-        rule: {
-          include: /images\/icons/
-        }
       }
     },
     {

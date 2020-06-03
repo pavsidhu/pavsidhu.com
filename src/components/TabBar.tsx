@@ -2,10 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import HomeIcon from "../images/icons/home.svg"
-import AboutIcon from "../images/icons/about.svg"
-import ProjectsIcon from "../images/icons/projects.svg"
-import ContactIcon from "../images/icons/contact.svg"
+import { ReactComponent as HomeIcon } from "../images/icons/home.svg"
+import { ReactComponent as AboutIcon } from "../images/icons/about.svg"
+import { ReactComponent as ProjectsIcon } from "../images/icons/projects.svg"
+import { ReactComponent as ContactIcon } from "../images/icons/contact.svg"
 
 const Container = styled.nav`
   display: flex;

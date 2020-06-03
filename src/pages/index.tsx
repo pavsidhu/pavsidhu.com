@@ -4,9 +4,9 @@ import Image from "gatsby-image"
 import { graphql } from "gatsby"
 
 import Seo from "../components/Seo"
-import TwitterIcon from "../images/icons/twitter.svg"
-import GitHubIcon from "../images/icons/github.svg"
-import LinkedInIcon from "../images/icons/linkedin.svg"
+import { ReactComponent as TwitterIcon } from "../images/icons/twitter.svg"
+import { ReactComponent as GitHubIcon } from "../images/icons/github.svg"
+import { ReactComponent as LinkedInIcon } from "../images/icons/linkedin.svg"
 
 const Container = styled.section`
   @media (min-width: 800px) {
@@ -17,10 +17,7 @@ const Container = styled.section`
 `
 
 const Intro = styled.div`
-  /* background: #f7f7f7; */
-  /* box-shadow: rgba(0, 0, 0, 0.05) 0 0 10px; */
   border-right: rgba(0, 0, 0, 0.1) 1px solid;
-
   display: grid;
   grid-template-columns:
     var(--space-m)
