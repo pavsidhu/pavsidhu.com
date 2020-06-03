@@ -26,7 +26,7 @@ const Container = styled(ProjectContainer)`
       minmax(var(--space-m), 2fr)
       minmax(350px, 60ch)
       minmax(var(--space-m), 1fr)
-      minmax(300px, 2fr)
+      minmax(300px, max-content)
       minmax(var(--space-m), 2fr);
   }
 `
@@ -50,10 +50,14 @@ const Button = styled(ProjectButton)`
 `
 
 const Preview = styled(ProjectPreview)`
-  width: 100%;
-  max-width: 400px;
-  max-height: 40vw;
   justify-self: center;
+  width: 100%;
+  max-height: 500px;
+
+  @media (min-width: 800px) {
+    max-height: none;
+    height: clamp(400px, 100vh, 70vh);
+  }
 `
 
 export default function DayNote() {
