@@ -90,14 +90,14 @@ export default function ProjectsPage({ location }: { location: Location }) {
       case "#aida":
         return <Aida />
 
-      case "#feeling":
-        return <CopBot />
+      // case "#revisify":
+      //   return <Revisify />
 
-      case "#revisify":
-        return <CopBot />
+      // case "#rocketriot":
+      //   return <RocketRiot />
 
-      case "#rocketriot":
-        return <CopBot />
+      // case "#waiter":
+      //   return <Waiter />
 
       case "#copbot":
         return <CopBot />
