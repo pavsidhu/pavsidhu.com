@@ -20,6 +20,19 @@ const Container = styled(ProjectContainer)`
   background-size: 30%;
   color: #fefefe;
   overflow-x: hidden;
+
+  @media (min-width: 800px) {
+    grid-template-areas:
+      ". .       . .       ."
+      ". content . preview ."
+      ". .       . .       .";
+    grid-template-columns:
+      minmax(var(--space-m), 2fr)
+      minmax(350px, 60ch)
+      minmax(var(--space-m), 1fr)
+      minmax(300px, max-content)
+      minmax(var(--space-m), 2fr);
+  }
 `
 
 const CustomTitle = styled(Title)`
