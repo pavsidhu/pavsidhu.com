@@ -59,7 +59,7 @@ export default function TabBar() {
         <TabLabel>About</TabLabel>
       </Tab>
 
-      <Tab to="/projects" activeClassName="active">
+      <Tab to="/projects" activeClassName="active" partiallyActive={true}>
         <ProjectsIcon aria-hidden="true" />
         <TabLabel>Projects</TabLabel>
       </Tab>

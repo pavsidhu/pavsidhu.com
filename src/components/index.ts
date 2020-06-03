@@ -37,8 +37,6 @@ export const ProjectContainer = styled.section`
   grid-template-rows: var(--space-s) auto var(--space-m) auto var(--space-m);
 
   @media (min-width: 800px) {
-    /* Ensures content doesn't appear under the project selector */
-
     grid-template-areas:
       ". .       . .       ."
       ". content . preview ."
