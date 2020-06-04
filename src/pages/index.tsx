@@ -9,32 +9,16 @@ import { ReactComponent as GitHubIcon } from "../images/icons/github.svg"
 import { ReactComponent as LinkedInIcon } from "../images/icons/linkedin.svg"
 
 const Container = styled.section`
-  @media (min-width: 800px) {
+  @media (min-width: 900px) {
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: min-content 1fr;
     height: 100%;
   }
 `
 
 const Intro = styled.div`
-  border-right: rgba(0, 0, 0, 0.1) 1px solid;
+  border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
   display: grid;
-  grid-template-columns:
-    var(--space-m)
-    72px
-    var(--space-s)
-    auto
-    var(--space-m);
-
-  grid-template-rows:
-    var(--space-m)
-    72px
-    var(--space-m)
-    max-content
-    var(--space-m)
-    auto
-    var(--space-m);
-  align-items: center;
   grid-template-areas:
     ".      .      .      .        .      "
     ".      photo  .      greeting .      "
@@ -43,8 +27,48 @@ const Intro = styled.div`
     ".      .      .      .        .      "
     "social social social social    social"
     ".      .      .      .        .      ";
+  grid-template-columns:
+    var(--space-m)
+    min-content
+    var(--space-s)
+    auto
+    var(--space-m);
+  grid-template-rows:
+    var(--space-m)
+    min-content
+    var(--space-m)
+    max-content
+    var(--space-m)
+    auto
+    var(--space-m);
 
-  @media (min-width: 800px) {
+  @media (min-width: 500px) and (max-width: 899px) {
+    justify-content: center;
+    grid-template-areas:
+      ". .     .    .        . .      ."
+      ". photo .    greeting . social ."
+      ". .     .    .        . social ."
+      ". desc  desc desc     . social ."
+      ". .     .    .        . .      .";
+    grid-template-columns:
+      var(--space-m)
+      min-content
+      var(--space-s)
+      auto
+      var(--space-m)
+      min-content
+      var(--space-m);
+    grid-template-rows:
+      var(--space-m)
+      min-content
+      var(--space-m)
+      1fr
+      var(--space-m);
+  }
+
+  @media (min-width: 900px) {
+    border-bottom: none;
+    border-right: rgba(0, 0, 0, 0.1) 1px solid;
     position: sticky;
     left: 0;
     top: 0;
@@ -53,13 +77,21 @@ const Intro = styled.div`
 
 const ProfilePicture = styled(Image)`
   grid-area: photo;
+  align-self: center;
   border-radius: 50%;
+  width: 72px;
+  height: 75px;
 `
 
 const Greeting = styled.h2`
   grid-area: greeting;
+  align-self: center;
   font-size: 3.2rem;
   padding-top: 1rem;
+
+  @media (min-width: 900px) {
+    white-space: nowrap;
+  }
 `
 
 const Description = styled.p`
@@ -67,6 +99,7 @@ const Description = styled.p`
   line-height: 2.4rem;
   font-size: 1.6rem;
   font-weight: 400;
+  max-width: 25ch;
 `
 
 const Highlight = styled.span`
@@ -79,7 +112,7 @@ const Social = styled.div`
   display: flex;
   margin: 0 var(--space-m);
 
-  @media (min-width: 800px) {
+  @media (min-width: 500px) {
     flex-direction: column;
     margin: 0;
   }
@@ -93,7 +126,7 @@ const SocialLink = styled.a`
   margin-right: var(--space-m);
   transition: background 100ms, color 100ms;
 
-  @media (min-width: 800px) {
+  @media (min-width: 500px) {
     grid-template-columns: var(--space-xl) var(--space-s) 1fr;
     grid-template-rows: initial;
     grid-template-areas:
@@ -122,7 +155,7 @@ const SocialIcon = styled.svg`
 const SocialLabel = styled.p`
   display: none;
 
-  @media (min-width: 800px) {
+  @media (min-width: 500px) {
     display: block;
     grid-area: label;
     font-size: 1.6rem;
@@ -133,7 +166,7 @@ const SocialLabel = styled.p`
 const SocialHandle = styled.p`
   display: none;
 
-  @media (min-width: 800px) {
+  @media (min-width: 500px) {
     display: block;
     grid-area: handle;
     font-size: 1.6rem;
@@ -142,7 +175,42 @@ const SocialHandle = styled.p`
   }
 `
 
-const BlogPosts = styled.div``
+const BlogPosts = styled.div`
+  justify-self: center;
+  width: 100%;
+
+  /* Max size of 4 blog post cards */
+  max-width: calc((300px * 4) + (24px * 3) + (24px * 2));
+
+  display: grid;
+  justify-content: center;
+  grid-template-areas:
+    ". .          ."
+    ". title      ."
+    ". .          ."
+    ". blog-posts ."
+    ". .          .";
+  grid-template-columns: var(--space-m) 1fr var(--space-m);
+  grid-template-rows:
+    var(--space-m)
+    max-content
+    var(--space-m)
+    max-content
+    var(--space-m);
+`
+
+const BlogPostsTitle = styled.h3`
+  grid-area: title;
+  font-size: 2.4rem;
+`
+
+const BlogPostCards = styled.div`
+  grid-area: blog-posts;
+  display: grid;
+  gap: var(--space-l);
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  justify-items: start;
+`
 
 export default function IndexPage({ data }) {
   return (
@@ -191,7 +259,24 @@ export default function IndexPage({ data }) {
             </SocialLink>
           </Social>
         </Intro>
-        <BlogPosts></BlogPosts>
+
+        <BlogPosts>
+          <BlogPostsTitle>Latest Blog Posts</BlogPostsTitle>
+
+          <BlogPostCards>
+            {data.allMdx.edges.map(({ node }) => (
+              <BlogPostCard
+                title={node.frontmatter.title}
+                date={node.frontmatter.date}
+                coverImage={node.frontmatter.coverImage}
+                coverImageAlt={node.frontmatter.coverImageAlt}
+                readTime={node.timeToRead}
+                excerpt={node.excerpt}
+                key={node.frontmatter.title}
+              />
+            ))}
+          </BlogPostCards>
+        </BlogPosts>
       </Container>
     </>
   )
@@ -199,6 +284,26 @@ export default function IndexPage({ data }) {
 
 export const query = graphql`
   query {
+    allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            date(formatString: "Do MMM YYYY")
+            coverImage {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+            coverImageAlt
+          }
+          timeToRead
+          excerpt
+        }
+      }
+    }
     file(relativePath: { eq: "general/profile.jpg" }) {
       childImageSharp {
         fixed(width: 72, height: 72) {
