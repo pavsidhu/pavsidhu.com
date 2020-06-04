@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Image from "gatsby-image"
 import { graphql } from "gatsby"
 
-import Seo from "../components/Seo"
+import { Seo } from "../components"
 
 const Container = styled.section`
   width: 100%;

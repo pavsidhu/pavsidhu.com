@@ -2,15 +2,14 @@ import React from "react"
 import styled, { css } from "styled-components"
 import { Link, navigate } from "gatsby"
 
-import Seo from "../components/Seo"
-import projects from "../projects"
-
+import { Seo } from "../components"
 import Aida from "../components/projects/Aida"
 import Revisify from "../components/projects/Revisify"
 import CopBot from "../components/projects/CopBot"
 import SpotiParty from "../components/projects/SpotiParty"
 import Bulb from "../components/projects/Bulb"
 import DayNote from "../components/projects/DayNote"
+import projects from "../projects"
 
 const Container = styled.section`
   height: 100%;

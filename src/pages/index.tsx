@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Image from "gatsby-image"
 import { graphql } from "gatsby"
 
-import Seo from "../components/Seo"
+import { BlogPostCard, Seo } from "../components"
 import { ReactComponent as TwitterIcon } from "../images/icons/twitter.svg"
 import { ReactComponent as GitHubIcon } from "../images/icons/github.svg"
 import { ReactComponent as LinkedInIcon } from "../images/icons/linkedin.svg"

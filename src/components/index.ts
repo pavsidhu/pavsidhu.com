@@ -2,9 +2,10 @@ import Image from "gatsby-image"
 import styled from "styled-components"
 
 import Header from "./Header"
+import Seo from "./Seo"
 import TabBar from "./TabBar"
 
-export { Header, TabBar }
+export { Header, Seo, TabBar }
 
 export const Title = styled.h1`
   font-size: 4.8rem;
