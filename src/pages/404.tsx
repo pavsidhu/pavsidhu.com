@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import Seo from "../components/Seo"
+import { Seo } from "../components"
 
 const Container = styled.div`
   display: flex;
@@ -33,12 +33,10 @@ const Text = styled.p`
 
 export default function NotFoundPage() {
   return (
-    <Layout>
-      <Container>
-        <Seo title="404 Are you lost?" />
-        <Emoji>️☹️</Emoji>️<Title>Are you lost?</Title>
-        <Text>There's nothing here, go back home.</Text>
-      </Container>
-    </Layout>
+    <Container>
+      <Seo title="404 Are you lost?" />
+      <Emoji>️☹️</Emoji>️<Title>Are you lost?</Title>
+      <Text>There's nothing here, go back home.</Text>
+    </Container>
   )
 }
