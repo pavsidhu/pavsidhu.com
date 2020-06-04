@@ -1,6 +1,7 @@
 import React from "react"
 import styled, { css } from "styled-components"
-import { Link, navigate } from "gatsby"
+import { Link } from "gatsby"
+import { Redirect } from "@reach/router"
 
 import { Seo } from "../components"
 import Aida from "../components/projects/Aida"
@@ -111,7 +112,7 @@ export default function ProjectsPage({ location }: { location: Location }) {
         return <DayNote />
 
       default:
-        navigate("/projects" + toHash(projects[0].title))
+        return <Redirect to={"/projects" + toHash(projects[0].title)} />
     }
   }
 
