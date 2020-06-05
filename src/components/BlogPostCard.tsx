@@ -12,8 +12,17 @@ const Container = styled(Link)`
     "title  "
     "excerpt";
   grid-template-rows: auto repeat(3, auto);
-  gap: var(--space-s);
+  gap: var(--space-xs);
   align-content: start;
+  border-radius: 4px;
+  padding: var(--space-xs);
+  transition: background 100ms;
+
+  @media (hover: hover) {
+    &:hover {
+      background: var(--light-grey);
+    }
+  }
 `
 
 const CoverPhoto = styled(Image)`
@@ -47,12 +56,14 @@ const Title = styled.p`
   font-size: 1.8rem;
   font-weight: 500;
   color: var(--orange);
+  padding: 0;
 `
 
 const Excerpt = styled.p`
   grid-area: excerpt;
   font-size: 1.4rem;
   line-height: 2.4rem;
+  padding: 0;
 `
 
 interface Props {

@@ -187,11 +187,11 @@ const BlogPosts = styled.div`
     ". .          ."
     ". blog-posts ."
     ". .          .";
-  grid-template-columns: var(--space-m) 1fr var(--space-m);
+  grid-template-columns: var(--space-s) 1fr var(--space-s);
   grid-template-rows:
     var(--space-m)
     max-content
-    var(--space-m)
+    var(--space-s)
     max-content
     var(--space-m);
 `
@@ -199,13 +199,16 @@ const BlogPosts = styled.div`
 const BlogPostsTitle = styled.h3`
   grid-area: title;
   font-size: 2.4rem;
+
+  /* Accounts for padding of blog post cards */
+  margin-left: var(--space-xs);
 `
 
 const BlogPostCards = styled.div`
   grid-area: blog-posts;
   display: grid;
-  gap: var(--space-l);
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-m);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   justify-items: start;
 `
 
