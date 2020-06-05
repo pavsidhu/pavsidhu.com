@@ -87,7 +87,6 @@ const Greeting = styled.h2`
   grid-area: greeting;
   align-self: center;
   font-size: 3.2rem;
-  padding-top: 1rem;
 
   @media (min-width: 900px) {
     white-space: nowrap;
@@ -159,7 +158,6 @@ const SocialLabel = styled.p`
     display: block;
     grid-area: label;
     font-size: 1.6rem;
-    padding-top: 0.5rem;
   }
 `
 
@@ -170,7 +168,6 @@ const SocialHandle = styled.p`
     display: block;
     grid-area: handle;
     font-size: 1.6rem;
-    padding-top: 0.5rem;
     color: #adadad;
   }
 `

@@ -28,7 +28,6 @@ const Title = styled.p`
   flex: 1;
   font-size: 2rem;
   font-weight: 500;
-  padding-top: 0.6rem;
 `
 
 const Nav = styled.nav`
@@ -60,7 +59,6 @@ const NavItem = styled(Link)`
 
 const NavItemLabel = styled.p`
   margin-left: var(--space-xs);
-  padding-top: 0.4rem;
   font-size: 1.4rem;
 `
 

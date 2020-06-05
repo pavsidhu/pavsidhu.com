@@ -79,6 +79,17 @@ const GlobalStyle = createGlobalStyle`
     user-drag: none;
   }
 
+  /* Fixes text not aligning properly due to the font used */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    padding-top: var(--font-padding);
+  }
+
   :root {
     --orange: #f05f40;
     --light-orange: #fff4f1;
@@ -91,6 +102,8 @@ const GlobalStyle = createGlobalStyle`
     --space-m: 24px;
     --space-l: 32px;
     --space-xl: 40px;
+
+    --font-padding: 0.333em;
   }
 `
 
