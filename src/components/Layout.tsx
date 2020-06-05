@@ -1,5 +1,6 @@
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
+import "focus-visible"
 
 import { Header, TabBar } from "../components"
 
@@ -88,6 +89,11 @@ const GlobalStyle = createGlobalStyle`
   h6,
   p {
     padding-top: var(--font-padding);
+  }
+
+  .focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--orange);
   }
 
   :root {
