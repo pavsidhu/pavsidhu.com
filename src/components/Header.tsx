@@ -13,6 +13,7 @@ const Container = styled.header`
   @media (min-width: 800px) {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     position: sticky;
     top: 0;
@@ -24,10 +25,11 @@ const Container = styled.header`
   }
 `
 
-const Title = styled.p`
-  flex: 1;
+const Title = styled(Link)`
   font-size: 2rem;
   font-weight: 500;
+  padding: calc(var(--font-padding) + var(--space-xs)) var(--space-xs)
+    var(--space-xs);
 `
 
 const Nav = styled.nav`
@@ -65,9 +67,7 @@ const NavItemLabel = styled.p`
 export default function Header() {
   return (
     <Container>
-      <Title>
-        <Link to="/">Pav Sidhu</Link>
-      </Title>
+      <Title to="/">Pav Sidhu</Title>
 
       <Nav>
         <NavItem to="/" activeClassName="active">
