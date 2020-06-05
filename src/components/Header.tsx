@@ -28,12 +28,13 @@ const Container = styled.header`
 const Title = styled(Link)`
   font-size: 2rem;
   font-weight: 500;
-  padding: calc(var(--font-padding) + var(--space-xs)) var(--space-xs)
-    var(--space-xs);
+  padding-top: var(--font-padding);
 `
 
 const Nav = styled.nav`
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: var(--space-s);
 `
 
 const NavItem = styled(Link)`
@@ -41,7 +42,6 @@ const NavItem = styled(Link)`
   display: flex;
   align-items: center;
   padding: var(--space-xs) var(--space-s);
-  margin-left: var(--space-s);
   background: var(--white);
   border-radius: 20px;
   fill: currentColor;
