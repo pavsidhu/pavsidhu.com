@@ -99,7 +99,7 @@ const Description = styled.p`
   line-height: 2.4rem;
   font-size: 1.6rem;
   font-weight: 400;
-  max-width: 25ch;
+  max-width: 35ch;
 `
 
 const Highlight = styled.span`
