@@ -8,8 +8,11 @@ import { Seo } from "../components"
 const Container = styled.section`
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(24px, 1fr) minmax(auto, 50ch) minmax(24px, 1fr);
-  grid-template-rows: 48px auto 48px;
+  grid-template-columns:
+    minmax(var(--space-m), 1fr)
+    minmax(auto, 50ch)
+    minmax(var(--space-m), 1fr);
+  grid-template-rows: var(--space-m) auto var(--space-m);
   grid-template-areas:
     ". .       ."
     ". content ."
@@ -25,6 +28,10 @@ const Content = styled.div`
 
 const Title = styled.h1`
   font-size: 5.6rem;
+`
+
+const ImageOfMe = styled(Image)`
+  border-radius: 4px;
 `
 
 const SubTitle = styled.h1`
@@ -44,7 +51,7 @@ export default function AboutPage({ data }) {
         <Content>
           <Title>About</Title>
 
-          <Image fluid={data.file.childImageSharp.fluid} />
+          <ImageOfMe fluid={data.file.childImageSharp.fluid} />
 
           <SubTitle>
             A simple Google search of “how do websites work” is what started
@@ -95,7 +102,7 @@ export const query = graphql`
   query {
     file(relativePath: { eq: "general/about.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1200) {
+        fluid(maxWidth: 800, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
