@@ -91,8 +91,11 @@ const GlobalStyle = createGlobalStyle`
     padding-top: var(--font-padding);
   }
 
-  .focus-visible {
+  :focus {
     outline: none;
+  }
+
+  .focus-visible {
     box-shadow: 0 0 0 2px var(--orange);
   }
 
