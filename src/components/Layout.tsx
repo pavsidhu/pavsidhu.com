@@ -80,6 +80,10 @@ const GlobalStyle = createGlobalStyle`
     user-drag: none;
   }
 
+  button, label {
+    user-select:  none;
+  }
+
   /* Fixes text not aligning properly due to the font used */
   h1,
   h2,
