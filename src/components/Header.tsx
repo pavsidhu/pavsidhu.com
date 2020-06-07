@@ -70,12 +70,12 @@ export default function Header() {
       <Title to="/">Pav Sidhu</Title>
 
       <Nav>
-        <NavItem to="/" activeClassName="active">
+        <NavItem to="/" activeClassName="active" partiallyActive={true}>
           <HomeIcon aria-hidden="true" />
           <NavItemLabel>Home</NavItemLabel>
         </NavItem>
 
-        <NavItem to="/about" activeClassName="active">
+        <NavItem to="/about" activeClassName="active" partiallyActive={true}>
           <AboutIcon aria-hidden="true" />
           <NavItemLabel>About</NavItemLabel>
         </NavItem>
@@ -85,7 +85,7 @@ export default function Header() {
           <NavItemLabel>Projects</NavItemLabel>
         </NavItem>
 
-        <NavItem to="/contact" activeClassName="active">
+        <NavItem to="/contact" activeClassName="active" partiallyActive={true}>
           <ContactIcon aria-hidden="true" />
           <NavItemLabel>Contact</NavItemLabel>
         </NavItem>

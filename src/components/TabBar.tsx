@@ -49,12 +49,12 @@ const TabLabel = styled.p`
 export default function TabBar() {
   return (
     <Container>
-      <Tab to="/" activeClassName="active">
+      <Tab to="/" activeClassName="active" partiallyActive={true}>
         <HomeIcon aria-hidden="true" />
         <TabLabel>Home</TabLabel>
       </Tab>
 
-      <Tab to="/about" activeClassName="active">
+      <Tab to="/about" activeClassName="active" partiallyActive={true}>
         <AboutIcon aria-hidden="true" />
         <TabLabel>About</TabLabel>
       </Tab>
@@ -64,7 +64,7 @@ export default function TabBar() {
         <TabLabel>Projects</TabLabel>
       </Tab>
 
-      <Tab to="/contact" activeClassName="active">
+      <Tab to="/contact" activeClassName="active" partiallyActive={true}>
         <ContactIcon aria-hidden="true" />
         <TabLabel>Contact</TabLabel>
       </Tab>
