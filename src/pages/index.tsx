@@ -274,6 +274,7 @@ export default function IndexPage({ data }) {
                 coverImageAlt={node.frontmatter.coverImageAlt}
                 readTime={node.timeToRead}
                 excerpt={node.excerpt}
+                link={node.fields.slug}
                 key={node.frontmatter.title}
               />
             ))}
@@ -300,6 +301,9 @@ export const query = graphql`
               }
             }
             coverImageAlt
+          }
+          fields {
+            slug
           }
           timeToRead
           excerpt
