@@ -43,13 +43,35 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        plugins: [
+          `gatsby-remark-images`,
+          {
+            resolve: `gatsby-remark-images-medium-zoom`,
+            options: {
+              background: "rgba(0,0,0,0.8)"
+            }
+          }
+        ],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 700,
               quality: 80,
-              withWebp: true
+              withWebp: true,
+              linkImagesToOriginal: false,
+            }
+          },
+          {
+            resolve: `gatsby-remark-images-medium-zoom`,
+            options: {
+              background: "rgba(0,0,0,0.8)"
+            }
+          },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              rel: "noopener"
             }
           }
         ]

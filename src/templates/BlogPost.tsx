@@ -43,7 +43,7 @@ const Title = styled.h1`
   /* font-size: 5.6rem; */
 `
 
-const Meta = styled.p`
+const Meta = styled.div`
   grid-area: meta;
   font-size: 1.4rem;
   font-weight: 500;
