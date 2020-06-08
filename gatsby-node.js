@@ -11,3 +11,30 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
   }
 }
+
+// Generate pages for each blog post
+exports.createPages = async ({ graphql, actions }) => {
+  const result = await graphql(`
+    query {
+      allMdx {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  result.data.allMdx.edges.forEach(({ node }) =>
+    actions.createPage({
+      path: "/blog" + node.fields.slug,
+      component: path.resolve(`./src/templates/BlogPost.tsx`),
+      context: {
+        slug: node.fields.slug
+      }
+    })
+  )
+}

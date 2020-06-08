@@ -82,7 +82,7 @@ interface Props {
 
 export default function BlogPostCard(props: Props) {
   return (
-    <Container to={props.link}>
+    <Container to={"/blog/" + props.link}>
       <CoverPhoto fluid={props.coverImage.childImageSharp.fluid} />
 
       <Meta>

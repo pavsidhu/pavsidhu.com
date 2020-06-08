@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useLayoutEffect, useRef } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
@@ -65,8 +65,19 @@ const NavItemLabel = styled.p`
 `
 
 export default function Header() {
+  const containerRef = useRef()
+
+  useLayoutEffect(() => {
+    if (!containerRef.current) return
+
+    document.documentElement.style.setProperty(
+      "--header-height",
+      containerRef.current.clientHeight + "px"
+    )
+  })
+
   return (
-    <Container>
+    <Container ref={containerRef}>
       <Title to="/">Pav Sidhu</Title>
 
       <Nav>

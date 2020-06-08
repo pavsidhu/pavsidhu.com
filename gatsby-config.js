@@ -11,7 +11,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-svgr`,
-    `gatsby-plugin-mdx`,
+    `gatsby-remark-images`,
     `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-layout`,
@@ -38,6 +38,21 @@ module.exports = {
       options: {
         name: `blogPostImages`,
         path: `${__dirname}/static/images/`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 700,
+              quality: 80,
+              withWebp: true
+            }
+          }
+        ]
       }
     },
     {

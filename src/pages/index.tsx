@@ -67,8 +67,6 @@ const Intro = styled.div`
   }
 
   @media (min-width: 900px) {
-    --header-height: calc((var(--space-s) * 4) + 1.4rem);
-
     border-bottom: none;
     border-right: rgba(0, 0, 0, 0.1) 1px solid;
     height: calc(100vh - var(--header-height));

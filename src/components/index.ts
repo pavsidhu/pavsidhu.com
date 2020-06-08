@@ -2,11 +2,22 @@ import Image from "gatsby-image"
 import styled from "styled-components"
 
 import BlogPostCard from "./BlogPostCard"
+import CodeBlock from "./CodeBlock"
 import Header from "./Header"
+import ReadingProgress from "./ReadingProgress"
 import Seo from "./Seo"
 import TabBar from "./TabBar"
+import YouTube from "./YouTube"
 
-export { BlogPostCard, Header, Seo, TabBar }
+export {
+  BlogPostCard,
+  CodeBlock,
+  Header,
+  ReadingProgress,
+  Seo,
+  TabBar,
+  YouTube
+}
 
 export const Title = styled.h1`
   font-size: 4.8rem;
