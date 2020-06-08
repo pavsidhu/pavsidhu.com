@@ -68,6 +68,7 @@ const components = {
     padding-top: var(--space-l);
     font-size: 2.4rem;
   `,
+
   p: styled.p`
     &:not(:first-of-type) {
       padding-top: var(--space-s);
@@ -76,7 +77,14 @@ const components = {
     font-size: 1.8rem;
     line-height: 2.8rem;
     word-break: break-word;
+
+    figcaption {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-top: 4px;
+    }
   `,
+
   a: styled.a`
     color: var(--orange);
   `,
@@ -84,6 +92,7 @@ const components = {
   ul: styled.ul`
     list-style-position: inside;
   `,
+
   li: styled.li`
     padding-top: var(--space-s);
     font-size: 1.8rem;

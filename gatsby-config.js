@@ -60,6 +60,7 @@ module.exports = {
               quality: 80,
               withWebp: true,
               linkImagesToOriginal: false,
+              showCaptions: true
             }
           },
           {
