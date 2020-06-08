@@ -44,7 +44,6 @@ const Meta = styled.div`
 `
 
 const Divider = styled.span`
-  grid-area: divider;
   background: #f1f1f1;
   padding-bottom: 1px;
   margin: 0 var(--space-xs) 1px;

@@ -10,70 +10,87 @@ import { Seo, CodeBlock, ReadingProgress } from "../components"
 const Container = styled.article`
   width: 100%;
   display: grid;
-  grid-template-columns: var(--space-m) minmax(0, 1fr) var(--space-m);
   grid-template-areas:
     "cover cover   cover"
-    ".     title   .    "
-    ".     meta    .    "
     ".     content .    "
     ".     .       .    ";
+  grid-template-columns: var(--space-m) minmax(0, 1fr) var(--space-m);
   row-gap: var(--space-s);
+  justify-content: center;
 
   @media (min-width: 800px) {
-    grid-template-columns:
-      minmax(var(--space-m), 1fr)
-      minmax(auto, 600px)
-      minmax(var(--space-m), 1fr);
+    grid-template-areas:
+      ". .       ."
+      ". cover   ."
+      ". content ."
+      ". .       .";
     row-gap: var(--space-m);
   }
 `
 
-const CoverImage = styled(Image)`
+const CoverImageContainer = styled.div`
   grid-area: cover;
+  justify-self: center;
+  width: 100%;
+  max-width: 800px;
+`
+
+const CoverImage = styled(Image)`
   width: 100%;
   height: 0;
   padding-bottom: 60%;
-  justify-self: center;
-  /* border-radius: 4px; */
+
+  @media (min-width: 800px) {
+    border-radius: 4px;
+  }
 `
 
 const Title = styled.h1`
-  grid-area: title;
   font-size: 3.2rem;
   /* font-size: 5.6rem; */
 `
 
 const Meta = styled.div`
-  grid-area: meta;
   font-size: 1.4rem;
   font-weight: 500;
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  color: var(--dark-grey);
+`
 
-  @media (min-width: 800px) {
-    justify-content: start;
-    gap: var(--space-m);
-  }
+const Divider = styled.span`
+  background: #f1f1f1;
+  padding-bottom: 1px;
+  margin: 0 var(--space-xs) 1px;
+  flex: 1;
 `
 
 const Content = styled.section`
   grid-area: content;
   justify-self: center;
+  width: 100%;
   max-width: 700px;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-s);
+
+  @media (min-width: 800px) {
+    position: relative;
+    top: calc(-1 * (var(--space-m) + var(--space-l)));
+    padding: var(--space-m) var(--space-l);
+    background: var(--white);
+    border-radius: 4px;
+    border: 1px solid var(--light-grey);
+  }
 `
 
 const components = {
   h2: styled.h2`
-    padding-top: var(--space-l);
     font-size: 2.4rem;
   `,
 
   p: styled.p`
-    &:not(:first-of-type) {
-      padding-top: var(--space-s);
-    }
-
     font-size: 1.8rem;
     line-height: 2.8rem;
     word-break: break-word;
@@ -82,6 +99,7 @@ const components = {
       text-align: center;
       font-size: 1.6rem;
       margin-top: 4px;
+      color: var(--dark-grey);
     }
   `,
 
@@ -94,7 +112,6 @@ const components = {
   `,
 
   li: styled.li`
-    padding-top: var(--space-s);
     font-size: 1.8rem;
     line-height: 3.2rem;
 
@@ -114,19 +131,22 @@ export default function BlogPost({ data: { mdx } }) {
 
       <ReadingProgress target={contentRef} />
 
-      <CoverImage
-        fluid={mdx.frontmatter.coverImage.childImageSharp.fluid}
-        alt={mdx.frontmatter.coverImageAlt}
-      />
-
-      <Title>{mdx.frontmatter.title}</Title>
-
-      <Meta>
-        <p>{mdx.frontmatter.date}</p>
-        <p>{mdx.timeToRead} Minute Read</p>
-      </Meta>
+      <CoverImageContainer>
+        <CoverImage
+          fluid={mdx.frontmatter.coverImage.childImageSharp.fluid}
+          alt={mdx.frontmatter.coverImageAlt}
+        />
+      </CoverImageContainer>
 
       <Content>
+        <Title>{mdx.frontmatter.title}</Title>
+
+        <Meta>
+          <p>{mdx.frontmatter.date}</p>
+          <Divider />
+          <p>{mdx.timeToRead} Minute Read</p>
+        </Meta>
+
         <MDXProvider components={components}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>

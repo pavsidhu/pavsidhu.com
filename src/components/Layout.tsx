@@ -109,6 +109,7 @@ const GlobalStyle = createGlobalStyle`
     --black: #1b1b1b;
     --white: #fefefe;
     --light-grey: #eeeeee;
+    --dark-grey: #646464;
 
     --space-xs: 8px;
     --space-s: 16px;
