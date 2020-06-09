@@ -11,7 +11,7 @@ export const aida: Project = {
   description: `
     Aida is a dating chatbot for iOS and Android that uses neural networks to predict personality and match users.
     An attention-based BLSTM was trained to predict a user’s personality given answers to practice dating questions asked by Aida. Users were matched based on the similarity of their personalities.
-    The neural network improved state of the art results by ~3.22% and performed with the same accuracy on unseen answers to Aida's questions.
+    The neural network improved state of the art results by ~3.22% and performed with the same accuracy during evaluation.
   `,
   link: "https://github.com/pavsidhu/aida"
 }
