@@ -105,7 +105,7 @@ const Moon = styled(MoonSvg)`
 export default function Bulb() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "bulb/preview.png" }) {
+      file(relativePath: { eq: "projects/bulb/preview.png" }) {
         childImageSharp {
           fluid(maxWidth: 1500, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp

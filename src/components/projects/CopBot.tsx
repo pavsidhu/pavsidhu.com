@@ -36,7 +36,7 @@ const Button = styled(ProjectButton)`
 export default function CopBot() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "copbot/preview.png" }) {
+      file(relativePath: { eq: "projects/copbot/preview.png" }) {
         childImageSharp {
           fluid(maxWidth: 1500, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp_noBase64

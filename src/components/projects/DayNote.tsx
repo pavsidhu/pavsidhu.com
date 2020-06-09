@@ -63,7 +63,7 @@ const Preview = styled(ProjectPreview)`
 export default function DayNote() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "daynote/preview.png" }) {
+      file(relativePath: { eq: "projects/daynote/preview.png" }) {
         childImageSharp {
           fluid(maxWidth: 1500, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp

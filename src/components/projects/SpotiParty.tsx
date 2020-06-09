@@ -45,7 +45,7 @@ const Preview = styled(ProjectPreview)`
 export default function SpotiParty() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "spotiparty/preview.png" }) {
+      file(relativePath: { eq: "projects/spotiparty/preview.png" }) {
         childImageSharp {
           fluid(maxWidth: 1500, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
