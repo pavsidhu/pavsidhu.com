@@ -134,7 +134,7 @@ const GlobalStyle = createGlobalStyle`
   @media (prefers-color-scheme: dark) {
     :root {
     --primary-light-color: rgba(255, 255, 255, 0.25);
-    --primary-text-color: #fefefe;
+    --primary-text-color: rgba(255, 255, 255, 0.9);
     --background-color: #1b1b1b;
     --hover-color: rgba(255, 255, 255, 0.1);
     --secondary-text-color: rgba(255, 255, 255, 0.7);
