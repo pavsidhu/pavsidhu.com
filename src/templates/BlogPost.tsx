@@ -32,7 +32,8 @@ const CoverImageContainer = styled.div`
   grid-area: cover;
   justify-self: center;
   width: 100%;
-  max-width: 700px;
+  max-width: 50ch;
+  font-size: var(--font-m);
 `
 
 const CoverImage = styled(Image)`
@@ -49,24 +50,20 @@ const Content = styled.section`
   grid-area: content;
   justify-self: center;
   width: 100%;
-  max-width: 700px;
+  max-width: 50ch;
+  font-size: var(--font-m);
   display: grid;
   grid-auto-flow: row;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--space-s);
-
-  @media (min-width: 800px) {
-    /* transform: translateY(calc(-1 * (var(--space-m) + var(--space-l)))); */
-  }
 `
 
 const Title = styled.h1`
-  font-size: 3.2rem;
-  /* font-size: 5.6rem; */
+  font-size: var(--font-xl);
 `
 
 const Meta = styled.div`
-  font-size: 1.4rem;
+  font-size: var(--font-xs);
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -82,17 +79,17 @@ const Divider = styled.span`
 
 const components = {
   h2: styled.h2`
-    font-size: 2.4rem;
+    font-size: var(--font-l);
   `,
 
   p: styled.p`
-    font-size: 1.8rem;
-    line-height: 2.8rem;
+    font-size: var(--font-m);
+    line-height: 3.2rem;
     word-break: break-word;
 
     figcaption {
       text-align: center;
-      font-size: 1.6rem;
+      font-size: var(--font-s);
       margin-top: 4px;
       color: var(--dark-grey);
     }
@@ -111,8 +108,8 @@ const components = {
   `,
 
   li: styled.li`
-    font-size: 1.8rem;
-    line-height: 3.2rem;
+    font-size: var(--font-m);
+    line-height: var(--font-xl);
 
     p {
       display: inline;
@@ -127,7 +124,7 @@ const components = {
     color: var(--dark-grey);
 
     p {
-      font-size: 1.6rem;
+      font-size: var(--font-s);
     }
   `
 }
@@ -176,7 +173,7 @@ export const query = graphql`
         date(formatString: "Do MMM YYYY")
         coverImage {
           childImageSharp {
-            fluid(maxWidth: 700) {
+            fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

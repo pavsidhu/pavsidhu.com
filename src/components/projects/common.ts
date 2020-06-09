@@ -49,17 +49,17 @@ const Text = styled(animated.div)`
 `
 
 const Name = styled.h2`
-  font-size: 5.6rem;
+  font-size: var(--font-xxl);
   margin-bottom: 16px;
 `
 
 const Description = styled.h3`
-  font-size: 2.4rem;
+  font-size: var(--font-l);
   margin-bottom: 16px;
 `
 
 const Paragraph = styled.p`
-  font-size: 1.6rem;
+  font-size: var(--font-s);
   line-height: 2.4rem;
   margin-bottom: 16px;
 `

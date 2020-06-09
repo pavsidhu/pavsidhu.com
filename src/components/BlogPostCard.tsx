@@ -38,7 +38,7 @@ const Meta = styled.div`
   grid-area: meta;
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: var(--font-xxs);
   font-weight: 500;
   color: #828282;
 `
@@ -52,7 +52,7 @@ const Divider = styled.span`
 
 const Title = styled.p`
   grid-area: title;
-  font-size: 1.8rem;
+  font-size: var(--font-m);
   font-weight: 500;
   color: var(--orange);
   padding: 0;
@@ -60,7 +60,7 @@ const Title = styled.p`
 
 const Excerpt = styled.p`
   grid-area: excerpt;
-  font-size: 1.4rem;
+  font-size: var(--font-xs);
   line-height: 2.4rem;
   padding: 0;
 `

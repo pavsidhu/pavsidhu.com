@@ -12,7 +12,7 @@ const Container = styled.div`
     line-height: 1;
     padding: 1.5rem;
     height: 5rem;
-    font-size: 1.6rem;
+    font-size: var(--font-s);
   }
 `
 

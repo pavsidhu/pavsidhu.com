@@ -80,7 +80,9 @@ const GlobalStyle = createGlobalStyle`
     user-drag: none;
   }
 
-  button, label {
+  button,
+  label,
+  #gatsby-announcer {
     user-select:  none;
   }
 
@@ -116,6 +118,14 @@ const GlobalStyle = createGlobalStyle`
     --space-m: 24px;
     --space-l: 32px;
     --space-xl: 40px;
+
+    --font-xxl: 5.6rem;
+    --font-xl: 3.2rem;
+    --font-l: 2.4rem;
+    --font-m: 1.8rem;
+    --font-s: 1.6rem;
+    --font-xs: 1.4rem;
+    --font-xxs: 1.2rem;
 
     --font-padding: 0.333em;
   }

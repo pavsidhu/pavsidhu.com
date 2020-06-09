@@ -62,7 +62,7 @@ const NavItem = styled(Link)`
 
 const NavItemLabel = styled.p`
   margin-left: var(--space-xs);
-  font-size: 1.4rem;
+  font-size: var(--font-xs);
 `
 
 export default function Header() {

@@ -21,7 +21,7 @@ const Container = styled(ProjectContainer)`
 const Button = styled.a`
   justify-self: start;
   padding: calc(16px + var(--font-padding)) 16px 16px;
-  font-size: 1.6rem;
+  font-size: var(--font-s);
   background-color: #fefefe;
   border: 5px solid #0b0b0b;
   box-shadow: 8px 8px 0px #0b0b0b;

@@ -61,7 +61,7 @@ const CustomParagraph = styled(Paragraph)`
 
 const Button = styled(ProjectButton)`
   padding: calc(16px + var(--font-padding)) 16px 16px;
-  font-size: 1.6rem;
+  font-size: var(--font-s);
   border-radius: 4px;
   background: #3c247f;
   transform: background 100ms;

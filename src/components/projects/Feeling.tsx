@@ -38,7 +38,7 @@ const Text = styled(BaseText)`
 const Button = styled.a`
   color: #1b1b1b;
   padding: 16px;
-  font-size: 1.6rem;
+  font-size: var(--font-s);
   padding: 16px;
   border-radius: 12px;
   background-color: rgba(254, 254, 254, 0.8);

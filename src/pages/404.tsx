@@ -26,7 +26,7 @@ const Title = styled.h1`
 `
 
 const Text = styled.p`
-  font-size: 1.8rem;
+  font-size: var(--font-m);
   color: #1b1b1b;
   text-align: center;
 `

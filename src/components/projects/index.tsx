@@ -42,7 +42,7 @@ interface NavigatorItemProps {
 }
 
 const NavigatorItem = styled.li<NavigatorItemProps>`
-  font-size: 1.8rem;
+  font-size: var(--font-m);
   margin: 0 24px;
   color: #fefefe;
   border-radius: 4px;
@@ -50,7 +50,7 @@ const NavigatorItem = styled.li<NavigatorItemProps>`
   white-space: nowrap;
   cursor: pointer;
 
-  ${props =>
+  ${(props) =>
     props.selected &&
     (props.dark === "true"
       ? css`
@@ -74,7 +74,7 @@ const NavigatorItem = styled.li<NavigatorItemProps>`
           }
         `)};
 
-  ${props =>
+  ${(props) =>
     !props.selected &&
     props.dark === "true" &&
     css`
@@ -147,11 +147,11 @@ export default function Projects() {
               scrollLeft={navigatorScrollSpring.scroll}
               style={{
                 transform: scrollSpring.scroll.interpolate(
-                  scroll => `translateX(${scroll}px)`
+                  (scroll) => `translateX(${scroll}px)`
                 )
               }}
             >
-              {projectsList.map(p => (
+              {projectsList.map((p) => (
                 <Link to="projects" smooth={true} duration={300} key={p.id}>
                   <NavigatorItem
                     selected={p.id === project.id}

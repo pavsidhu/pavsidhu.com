@@ -44,7 +44,7 @@ const Tab = styled(Link)`
 
 const TabLabel = styled.p`
   margin-top: 4px;
-  font-size: 1.2rem;
+  font-size: var(--font-xxs);
 `
 
 export default function TabBar() {

@@ -44,7 +44,7 @@ const Selector = styled.div`
 
 const SelectorItem = styled(Link)`
   padding: calc(var(--space-xs) + var(--font-padding)) var(--space-m) var(--space-xs);
-  font-size: 1.8rem;
+  font-size: var(--font-m);
   font-weight: 500;
   font-family: inherit;
   white-space: nowrap;

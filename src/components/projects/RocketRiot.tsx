@@ -50,7 +50,7 @@ const Button = styled.a`
   display: inline-block;
   color: #fefefe;
   padding: 16px;
-  font-size: 1.6rem;
+  font-size: var(--font-s);
   background-color: #008a8b;
   border: 8px solid #008a8b33;
   background-clip: padding-box;

@@ -37,7 +37,7 @@ const Button = styled(ProjectButton)`
   text-align: center;
   color: #424351;
   padding: calc(20px + var(--font-padding)) 20px 20px;
-  font-size: 1.6rem;
+  font-size: var(--font-s);
   font-weight: 500;
   border-radius: 12px;
   background-color: #fefefe;

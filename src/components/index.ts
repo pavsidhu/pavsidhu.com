@@ -26,11 +26,11 @@ export const Title = styled.h1`
 `
 
 export const Subtitle = styled.h2`
-  font-size: 2.4rem;
+  font-size: var(--font-l);
 `
 
 export const Paragraph = styled.p`
-  font-size: 1.6rem;
+  font-size: var(--font-s);
   line-height: 2.8rem;
 `
 

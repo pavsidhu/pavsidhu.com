@@ -14,11 +14,12 @@ const Container = styled.article`
 `
 
 const Title = styled.h1`
-  font-size: 5.6rem;
+  font-size: var(--font-xxl);
 `
 
 const Paragraph = styled.p`
-  font-size: 1.6rem;
+  font-size: var(--font-s);
+  line-height: 3.2rem;
 `
 
 const Form = styled.form`
@@ -48,7 +49,7 @@ const SubmitButton = styled.button`
   border-radius: 40px;
   color: var(--orange);
   font: inherit;
-  font-size: 1.6rem;
+  font-size: var(--font-s);
   font-weight: 500;
   cursor: pointer;
   border: none;

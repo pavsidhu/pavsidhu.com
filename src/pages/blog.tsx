@@ -31,7 +31,7 @@ const Container = styled.section`
 
 const Title = styled.h1`
   grid-area: title;
-  font-size: 5.6rem;
+  font-size: var(--font-xxl);
 `
 
 const BlogPostCards = styled.div`

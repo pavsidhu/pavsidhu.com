@@ -40,7 +40,7 @@ const Text = styled(BaseText)`
 const Button = styled.a`
   color: #fefefe;
   padding: 16px 24px;
-  font-size: 1.6rem;
+  font-size: var(--font-s);
   background-color: #c4105a;
   border-radius: 4px;
   transition: all 80ms;

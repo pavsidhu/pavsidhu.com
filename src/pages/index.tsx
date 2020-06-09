@@ -86,7 +86,7 @@ const ProfilePicture = styled(Image)`
 const Greeting = styled.h2`
   grid-area: greeting;
   align-self: center;
-  font-size: 3.2rem;
+  font-size: var(--font-xl);
 
   @media (min-width: 900px) {
     white-space: nowrap;
@@ -96,7 +96,7 @@ const Greeting = styled.h2`
 const Description = styled.p`
   grid-area: desc;
   line-height: 2.4rem;
-  font-size: 1.6rem;
+  font-size: var(--font-s);
   font-weight: 400;
   max-width: 35ch;
 `
@@ -157,7 +157,7 @@ const SocialLabel = styled.p`
   @media (min-width: 500px) {
     display: block;
     grid-area: label;
-    font-size: 1.6rem;
+    font-size: var(--font-s);
   }
 `
 
@@ -167,7 +167,7 @@ const SocialHandle = styled.p`
   @media (min-width: 500px) {
     display: block;
     grid-area: handle;
-    font-size: 1.6rem;
+    font-size: var(--font-s);
     color: #adadad;
   }
 `
@@ -198,7 +198,7 @@ const BlogPosts = styled.div`
 
 const BlogPostsTitle = styled.h3`
   grid-area: title;
-  font-size: 2.4rem;
+  font-size: var(--font-l);
 
   /* Accounts for padding of blog post cards */
   margin-left: var(--space-xs);

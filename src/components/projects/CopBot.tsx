@@ -20,7 +20,7 @@ const Container = styled(ProjectContainer)`
 
 const Button = styled(ProjectButton)`
   padding: calc(16px + var(--font-padding)) 16px 16px;
-  font-size: 1.6rem;
+  font-size: var(--font-s);
   font-weight: 500;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 4px;

@@ -17,7 +17,7 @@ const Container = styled.section`
     ". .       ."
     ". content ."
     ". .       .";
-  font-size: 1.6rem;
+  font-size: var(--font-m);
 `
 
 const Content = styled.div`
@@ -27,7 +27,7 @@ const Content = styled.div`
 `
 
 const Title = styled.h1`
-  font-size: 5.6rem;
+  font-size: var(--font-xxl);
 `
 
 const ImageOfMe = styled(Image)`
@@ -35,12 +35,12 @@ const ImageOfMe = styled(Image)`
 `
 
 const SubTitle = styled.h1`
-  font-size: 2.4rem;
+  font-size: var(--font-l);
 `
 
 const Paragraph = styled.p`
-  font-size: 1.6rem;
-  line-height: 2.8rem;
+  font-size: var(--font-m);
+  line-height: 3.2rem;
 `
 
 export default function AboutPage({ data }) {
@@ -61,36 +61,34 @@ export default function AboutPage({ data }) {
           <Paragraph>
             Since I was 12, programming has been a fundamental part of my life.
             I learnt web development in dark times when Internet Explorer 8 was
-            still popular. I did graphic design too, in fact, I had a couple
-            freelance jobs where I would pretend to be an accomplished graphic
-            designer.
+            popular and JQuery was at its peak. I picked up graphic design too,
+            in fact, I did some freelance work. My clients weren't aware that I
+            was a young teenager learning as I go.
           </Paragraph>
           <Paragraph>
-            I started exploring other areas of programming and soon learnt
-            Python. When I was 15, studying for my GCSEs, I decided to use my
-            skills to build a study website, Revisify. I worked on the project
-            for 2 years, gaining a community of 3000 students before closing it
-            down to pursue other interests.
+            A few years later, I started exploring other areas of programming
+            and came across Python. When I was studying for my high school
+            exams, I decided to use my skills to build a study website,
+            Revisify. I worked on the project for 2 years, gaining a community
+            of 3000 students before closing it down to pursue other interests.
           </Paragraph>
           <Paragraph>
-            By the time I closed down Revisify, I began studying Artificial
-            Intelligence and Computer Science at the University of Birmingham.
-            During my time at university, I learnt a lot about machine learning
-            and neural networks. I managed to achieve state-of-the-art results
-            in personality classification from text as part of my final year
-            project.
+            I studied Artificial Intelligence and Computer Science at the
+            University of Birmingham. During my time at university, I learnt a
+            lot about machine learning and neural networks. I managed to achieve
+            state-of-the-art results in personality classification from text as
+            part of my final year project.
           </Paragraph>
           <Paragraph>
-            I’ve worked on many more projects since through hackathons,
-            self-interests and more. If you’re reading this, I’m probably
-            working on something else. When I’m not programming, I love
+            I’ve worked on many other projects through hackathons,
+            self-interests and more. If you’re reading this, I’m most likely
+            working on something new. When I’m not programming, I love
             powerlifting, playing board games and listening to music.
           </Paragraph>
           <Paragraph>
             As of now, I’ve finished university and have a graduate scheme lined
-            up in London. I’m currently really interested in progressive web
-            apps and the future of the web. The rest of my story is to be
-            continued.
+            up in London. I’m currently interested in progressive web apps and
+            the future of the web.
           </Paragraph>
         </Content>
       </Container>
