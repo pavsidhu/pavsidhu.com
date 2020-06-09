@@ -21,6 +21,10 @@ const Container = styled.nav`
   @media (min-width: 800px) {
     display: none;
   }
+
+  @media (prefers-color-scheme: dark) {
+    background: var(--dark-secondary-background-color);
+  }
 `
 
 const Tab = styled(Link)`
@@ -31,7 +35,6 @@ const Tab = styled(Link)`
   align-items: center;
   fill: currentColor;
   padding: calc(0.8rem + 2px) 0 0.8rem;
-  background: var(--background-color);
   border-bottom: 2px solid var(--background-color);
   transition: background 100ms, color 100ms;
 
@@ -39,6 +42,12 @@ const Tab = styled(Link)`
     background: var(--primary-light-color);
     color: var(--primary-color);
     border-bottom: 2px solid var(--primary-color);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &.active {
+      color: var(--primary-text-color);
+    }
   }
 `
 

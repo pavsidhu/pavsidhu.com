@@ -18,6 +18,7 @@ const Container = styled.div`
 
 const Field = styled.input`
   border: none;
+  background: none;
   border-bottom: 1px solid var(--secondary-text-color);
 
   /* If the field is a textarea */

@@ -24,6 +24,10 @@ const Container = styled.header`
     box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px;
     background: var(--background-color);
   }
+
+  @media (prefers-color-scheme: dark) {
+    background: var(--dark-secondary-background-color);
+  }
 `
 
 const Title = styled(Link)`
@@ -43,7 +47,6 @@ const NavItem = styled(Link)`
   display: flex;
   align-items: center;
   padding: var(--space-xs) var(--space-s);
-  background: var(--background-color);
   border-radius: 20px;
   fill: currentColor;
   transition: background 100ms, color 100ms;
@@ -56,6 +59,12 @@ const NavItem = styled(Link)`
   @media (hover: hover) {
     &:hover:not(.active) {
       background: var(--hover-color);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &.active {
+      color: var(--primary-text-color);
     }
   }
 `

@@ -130,6 +130,22 @@ const GlobalStyle = createGlobalStyle`
 
     --font-padding: 0.333em;
   }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+    --primary-light-color: rgba(255, 255, 255, 0.25);
+    --primary-text-color: #fefefe;
+    --background-color: #1b1b1b;
+    --hover-color: rgba(255, 255, 255, 0.1);
+    --secondary-text-color: rgba(255, 255, 255, 0.7);
+    --line-color: rgba(255, 255, 255, 0.1);
+    --dark-secondary-background-color: #292929;
+    }
+
+    * {
+      box-shadow: none;
+    }
+  }
 `
 
 const Container = styled.div`
