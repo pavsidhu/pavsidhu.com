@@ -4,6 +4,7 @@ import styled from "styled-components"
 import BlogPostCard from "./BlogPostCard"
 import CodeBlock from "./CodeBlock"
 import Header from "./Header"
+import Input from "./Input"
 import ReadingProgress from "./ReadingProgress"
 import Seo from "./Seo"
 import TabBar from "./TabBar"
@@ -13,6 +14,7 @@ export {
   BlogPostCard,
   CodeBlock,
   Header,
+  Input,
   ReadingProgress,
   Seo,
   TabBar,
