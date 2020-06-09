@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import { ReactComponent as HomeIcon } from "../images/icons/home.svg"
 import { ReactComponent as AboutIcon } from "../images/icons/about.svg"
+import { ReactComponent as BlogIcon } from "../images/icons/blog.svg"
 import { ReactComponent as ProjectsIcon } from "../images/icons/projects.svg"
 import { ReactComponent as ContactIcon } from "../images/icons/contact.svg"
 
@@ -81,7 +82,7 @@ export default function Header() {
       <Title to="/">Pav Sidhu</Title>
 
       <Nav>
-        <NavItem to="/" activeClassName="active" partiallyActive={true}>
+        <NavItem to="/" activeClassName="active">
           <HomeIcon aria-hidden="true" />
           <NavItemLabel>Home</NavItemLabel>
         </NavItem>
@@ -89,6 +90,11 @@ export default function Header() {
         <NavItem to="/about" activeClassName="active" partiallyActive={true}>
           <AboutIcon aria-hidden="true" />
           <NavItemLabel>About</NavItemLabel>
+        </NavItem>
+
+        <NavItem to="/blog" activeClassName="active" partiallyActive={true}>
+          <BlogIcon aria-hidden="true" />
+          <NavItemLabel>Blog</NavItemLabel>
         </NavItem>
 
         <NavItem to="/projects" activeClassName="active" partiallyActive={true}>

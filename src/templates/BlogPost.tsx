@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react"
+import React, { useRef } from "react"
 import styled from "styled-components"
 import Image from "gatsby-image"
 import { MDXProvider } from "@mdx-js/react"

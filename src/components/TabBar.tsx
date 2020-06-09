@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import { ReactComponent as HomeIcon } from "../images/icons/home.svg"
 import { ReactComponent as AboutIcon } from "../images/icons/about.svg"
+import { ReactComponent as BlogIcon } from "../images/icons/blog.svg"
 import { ReactComponent as ProjectsIcon } from "../images/icons/projects.svg"
 import { ReactComponent as ContactIcon } from "../images/icons/contact.svg"
 
@@ -57,6 +58,11 @@ export default function TabBar() {
       <Tab to="/about" activeClassName="active" partiallyActive={true}>
         <AboutIcon aria-hidden="true" />
         <TabLabel>About</TabLabel>
+      </Tab>
+
+      <Tab to="/blog" activeClassName="active" partiallyActive={true}>
+        <BlogIcon aria-hidden="true" />
+        <TabLabel>Blog</TabLabel>
       </Tab>
 
       <Tab to="/projects" activeClassName="active" partiallyActive={true}>
