@@ -118,7 +118,18 @@ const components = {
       display: inline;
     }
   `,
-  code: CodeBlock
+
+  code: CodeBlock,
+
+  blockquote: styled.blockquote`
+    border-left: 4px solid var(--orange);
+    padding-left: var(--space-s);
+    color: var(--dark-grey);
+
+    p {
+      font-size: 1.6rem;
+    }
+  `
 }
 
 export default function BlogPost({ data: { mdx } }) {
