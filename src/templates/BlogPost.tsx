@@ -103,7 +103,11 @@ const components = {
   `,
 
   ul: styled.ul`
-    list-style-position: inside;
+    padding: 1.6rem;
+  `,
+
+  ol: styled.ol`
+    padding: 1.6rem;
   `,
 
   li: styled.li`
