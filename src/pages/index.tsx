@@ -68,7 +68,7 @@ const Intro = styled.div`
 
   @media (min-width: 900px) {
     border-bottom: none;
-    border-right: rgba(0, 0, 0, 0.1) 1px solid;
+    border-right: var(--line-color) 1px solid;
     height: calc(100vh - var(--header-height));
     position: sticky;
     top: var(--header-height);
@@ -102,7 +102,7 @@ const Description = styled.p`
 `
 
 const Highlight = styled.span`
-  color: var(--orange);
+  color: var(--primary-color);
 `
 
 const Social = styled.div`
@@ -138,7 +138,7 @@ const SocialLink = styled.a`
 
   @media (hover: hover) {
     &:hover {
-      background: var(--light-grey);
+      background: var(--hover-color);
     }
   }
 `
@@ -168,7 +168,7 @@ const SocialHandle = styled.p`
     display: block;
     grid-area: handle;
     font-size: var(--font-s);
-    color: #adadad;
+    color: var(--secondary-text-color);
   }
 `
 

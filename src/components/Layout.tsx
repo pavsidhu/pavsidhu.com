@@ -65,8 +65,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-size: 62.5%;
     font-family: "Orkney";
-    background: var(--white);
-    color: var(--black);
+    background: var(--background-color);
+    color: var(--primary-text-color);
   }
 
   a {
@@ -102,16 +102,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .focus-visible {
-    box-shadow: 0 0 0 2px var(--orange);
+    box-shadow: 0 0 0 2px var(--primary-color);
   }
 
   :root {
-    --orange: #f05f40;
-    --light-orange: #fff4f1;
-    --black: #1b1b1b;
-    --white: #fefefe;
-    --light-grey: #eeeeee;
-    --dark-grey: #646464;
+    --primary-color: #f05f40;
+    --primary-light-color: #fff4f1;
+    --primary-text-color: #1b1b1b;
+    --background-color: #fefefe;
+    --hover-color: #eeeeee;
+    --secondary-text-color: #646464;
+    --line-color: rgba(0, 0, 0, 0.1);
 
     --space-xs: 8px;
     --space-s: 16px;

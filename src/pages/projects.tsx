@@ -59,8 +59,8 @@ const SelectorItem = styled(Link)`
   ${(props: { selected: boolean }) =>
     props.selected
       ? css`
-          color: var(--orange);
-          background: var(--white);
+          color: var(--primary-color);
+          background: var(--background-color);
         `
       : css`
           @media (hover: hover) {

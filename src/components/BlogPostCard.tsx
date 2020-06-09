@@ -20,7 +20,7 @@ const Container = styled(Link)`
 
   @media (hover: hover) {
     &:hover {
-      background: var(--light-grey);
+      background: var(--hover-color);
     }
   }
 `
@@ -40,11 +40,11 @@ const Meta = styled.div`
   align-items: center;
   font-size: var(--font-xxs);
   font-weight: 500;
-  color: #828282;
+  color: var(--secondary-text-color);
 `
 
 const Divider = styled.span`
-  background: #f1f1f1;
+  background: var(--line-color);
   padding-bottom: 1px;
   margin: 0 var(--space-xs) 1px;
   flex: 1;
@@ -54,7 +54,7 @@ const Title = styled.p`
   grid-area: title;
   font-size: var(--font-m);
   font-weight: 500;
-  color: var(--orange);
+  color: var(--primary-color);
   padding: 0;
 `
 

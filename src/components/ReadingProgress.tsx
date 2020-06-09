@@ -11,7 +11,7 @@ const ProgressBar = styled.div`
   transform-origin: 0;
   transform: scaleX(0);
   will-change: transform;
-  background: var(--orange);
+  background: var(--primary-color);
 
   @media (min-width: 800px) {
     top: var(--header-height);

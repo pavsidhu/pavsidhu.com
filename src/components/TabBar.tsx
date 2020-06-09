@@ -12,7 +12,7 @@ const Container = styled.nav`
   display: flex;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
-  background: var(--white);
+  background: var(--background-color);
   position: sticky;
   bottom: 0;
   left: 0;
@@ -31,14 +31,14 @@ const Tab = styled(Link)`
   align-items: center;
   fill: currentColor;
   padding: calc(0.8rem + 2px) 0 0.8rem;
-  background: var(--white);
-  border-bottom: 2px solid var(--white);
+  background: var(--background-color);
+  border-bottom: 2px solid var(--background-color);
   transition: background 100ms, color 100ms;
 
   &.active {
-    background: var(--light-orange);
-    color: var(--orange);
-    border-bottom: 2px solid var(--orange);
+    background: var(--primary-light-color);
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
   }
 `
 

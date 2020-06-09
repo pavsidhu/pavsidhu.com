@@ -67,11 +67,11 @@ const Meta = styled.div`
   font-weight: 500;
   display: flex;
   align-items: center;
-  color: var(--dark-grey);
+  color: var(--secondary-text-color);
 `
 
 const Divider = styled.span`
-  background: #f1f1f1;
+  background: var(--line-color);
   padding-bottom: 1px;
   margin: 0 var(--space-xs) 1px;
   flex: 1;
@@ -91,12 +91,12 @@ const components = {
       text-align: center;
       font-size: var(--font-s);
       margin-top: 4px;
-      color: var(--dark-grey);
+      color: var(--secondary-text-color);
     }
   `,
 
   a: styled.a`
-    color: var(--orange);
+    color: var(--primary-color);
   `,
 
   ul: styled.ul`
@@ -119,9 +119,9 @@ const components = {
   code: CodeBlock,
 
   blockquote: styled.blockquote`
-    border-left: 4px solid var(--orange);
+    border-left: 4px solid var(--primary-color);
     padding-left: var(--space-s);
-    color: var(--dark-grey);
+    color: var(--secondary-text-color);
 
     p {
       font-size: var(--font-s);

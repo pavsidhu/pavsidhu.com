@@ -47,7 +47,7 @@ const SubmitButton = styled.button`
   padding: var(--space-s);
   padding-top: calc(var(--font-padding) + var(--space-s));
   border-radius: 40px;
-  color: var(--orange);
+  color: var(--primary-color);
   font: inherit;
   font-size: var(--font-s);
   font-weight: 500;
@@ -57,7 +57,7 @@ const SubmitButton = styled.button`
 
   @media (hover: hover) {
     &:hover {
-      background: var(--light-grey);
+      background: var(--hover-color);
     }
   }
 `

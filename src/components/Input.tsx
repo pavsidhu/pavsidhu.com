@@ -4,7 +4,7 @@ import TextareaAutosize from "react-textarea-autosize"
 
 const Container = styled.div`
   display: grid;
-  color: var(--dark-grey);
+  color: var(--secondary-text-color);
 
   * {
     grid-row: -1 / 1;
@@ -18,7 +18,7 @@ const Container = styled.div`
 
 const Field = styled.input`
   border: none;
-  border-bottom: 1px solid var(--dark-grey);
+  border-bottom: 1px solid var(--secondary-text-color);
 
   /* If the field is a textarea */
   font-family: inherit;
@@ -31,11 +31,11 @@ const Field = styled.input`
 
   &:focus {
     box-shadow: none;
-    border-color: var(--orange);
+    border-color: var(--primary-color);
     border-width: 1px;
 
     & + label {
-      color: var(--orange);
+      color: var(--primary-color);
     }
   }
 

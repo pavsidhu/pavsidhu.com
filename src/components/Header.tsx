@@ -22,7 +22,7 @@ const Container = styled.header`
     z-index: 10;
     padding: var(--space-s) var(--space-l);
     box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px;
-    background: var(--white);
+    background: var(--background-color);
   }
 `
 
@@ -43,19 +43,19 @@ const NavItem = styled(Link)`
   display: flex;
   align-items: center;
   padding: var(--space-xs) var(--space-s);
-  background: var(--white);
+  background: var(--background-color);
   border-radius: 20px;
   fill: currentColor;
   transition: background 100ms, color 100ms;
 
   &.active {
-    background: var(--light-orange);
-    color: var(--orange);
+    background: var(--primary-light-color);
+    color: var(--primary-color);
   }
 
   @media (hover: hover) {
     &:hover:not(.active) {
-      background: var(--light-grey);
+      background: var(--hover-color);
     }
   }
 `
