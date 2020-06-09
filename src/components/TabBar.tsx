@@ -14,9 +14,9 @@ const Container = styled.nav`
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
   background: var(--background-color);
   position: sticky;
-  bottom: 0;
-  left: 0;
   z-index: 10;
+  left: 0;
+  bottom: -1px;
 
   @media (min-width: 800px) {
     display: none;
