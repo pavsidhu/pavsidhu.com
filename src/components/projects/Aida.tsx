@@ -17,6 +17,7 @@ import {
 const Container = styled(ProjectContainer)`
   background: #8e92f4;
   color: #1b1b1b;
+  overflow-x: hidden;
 
   @media (min-width: 800px) {
     grid-template-areas:
@@ -65,7 +66,14 @@ const Heart = styled(HeartSvg)`
 `
 
 const Preview = styled(ProjectPreview)`
-  align-self: center;
+  justify-self: center;
+  width: 100%;
+  max-height: 500px;
+
+  @media (min-width: 800px) {
+    max-height: none;
+    height: clamp(400px, 100vh, 70vh);
+  }
 `
 
 export default function Aida() {
@@ -101,7 +109,10 @@ export default function Aida() {
 
       <Heart />
 
-      <Preview fluid={data.file.childImageSharp.fluid} />
+      <Preview
+        fluid={data.file.childImageSharp.fluid}
+        imgStyle={{ objectFit: "contain" }}
+      />
     </Container>
   )
 }
