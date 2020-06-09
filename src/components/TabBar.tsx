@@ -50,7 +50,7 @@ const TabLabel = styled.p`
 export default function TabBar() {
   return (
     <Container>
-      <Tab to="/" activeClassName="active" partiallyActive={true}>
+      <Tab to="/" activeClassName="active">
         <HomeIcon aria-hidden="true" />
         <TabLabel>Home</TabLabel>
       </Tab>
