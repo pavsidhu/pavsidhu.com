@@ -32,7 +32,7 @@ const CoverImageContainer = styled.div`
   grid-area: cover;
   justify-self: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
 `
 
 const CoverImage = styled(Image)`
@@ -42,6 +42,21 @@ const CoverImage = styled(Image)`
 
   @media (min-width: 800px) {
     border-radius: 4px;
+  }
+`
+
+const Content = styled.section`
+  grid-area: content;
+  justify-self: center;
+  width: 100%;
+  max-width: 700px;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-s);
+
+  @media (min-width: 800px) {
+    /* transform: translateY(calc(-1 * (var(--space-m) + var(--space-l)))); */
   }
 `
 
@@ -63,26 +78,6 @@ const Divider = styled.span`
   padding-bottom: 1px;
   margin: 0 var(--space-xs) 1px;
   flex: 1;
-`
-
-const Content = styled.section`
-  grid-area: content;
-  justify-self: center;
-  width: 100%;
-  max-width: 700px;
-  display: grid;
-  grid-auto-flow: row;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-s);
-
-  @media (min-width: 800px) {
-    position: relative;
-    top: calc(-1 * (var(--space-m) + var(--space-l)));
-    padding: var(--space-m) var(--space-l);
-    background: var(--white);
-    border-radius: 4px;
-    border: 1px solid var(--light-grey);
-  }
 `
 
 const components = {
