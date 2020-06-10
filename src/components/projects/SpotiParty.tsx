@@ -16,6 +16,11 @@ import {
 const Container = styled(ProjectContainer)`
   background: #39d772;
   color: #0b0b0b;
+
+  @media (prefers-color-scheme: dark) {
+    background: linear-gradient(#39d772b3, #39d772b3);
+    background-color: var(--background-color);
+  }
 `
 
 const Button = styled.a`
@@ -40,6 +45,10 @@ const Preview = styled(ProjectPreview)`
   align-self: start;
   border: 5px solid #0b0b0b;
   box-shadow: 15px 15px 0px #0b0b0b;
+
+  @media (prefers-color-scheme: dark) {
+    filter: brightness(0.9);
+  }
 `
 
 export default function SpotiParty() {

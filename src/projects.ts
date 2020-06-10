@@ -29,7 +29,7 @@ export const feeling: Project = {
 
 export const revisify: Project = {
   title: "Revisify",
-  subtitle: "A simple online revision tool 🎓",
+  subtitle: "A simple online revision tool for students 🎓",
   description: `
     Revisify began as a small project to help me prepare for my GCSEs.
     Within the space of 2 years it grew into a community of 3000 students and teachers, creating and sharing quizzes with each other.

@@ -50,6 +50,7 @@ export const ProjectContainer = styled.section`
     ". .       .";
   grid-template-columns: var(--space-m) 1fr var(--space-m);
   grid-template-rows: var(--space-s) auto var(--space-m) auto var(--space-m);
+  align-items: center;
 
   @media (min-width: 800px) {
     grid-template-areas:
@@ -82,7 +83,6 @@ export const ProjectDetails = styled.div`
 
 export const ProjectPreview = styled(Image).attrs({ fadeIn: false })`
   grid-area: preview;
-  align-self: start;
 `
 
 export const ProjectButton = styled.a`

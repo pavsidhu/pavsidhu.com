@@ -3,8 +3,8 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 
 import { bulb } from "../../projects"
-import stars from "../../images/bulb/stars.svg"
-import { ReactComponent as MoonSvg } from "../../images/bulb/moon.svg"
+import stars from "../../images/projects/bulb/stars.svg"
+import { ReactComponent as MoonSvg } from "../../images/projects/bulb/moon.svg"
 import {
   Title,
   Subtitle,

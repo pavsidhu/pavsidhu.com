@@ -5,11 +5,13 @@ import { Redirect } from "@reach/router"
 
 import { Seo } from "../components"
 import Aida from "../components/projects/Aida"
-import Revisify from "../components/projects/Revisify"
-import CopBot from "../components/projects/CopBot"
-import SpotiParty from "../components/projects/SpotiParty"
 import Bulb from "../components/projects/Bulb"
+import CopBot from "../components/projects/CopBot"
 import DayNote from "../components/projects/DayNote"
+import Revisify from "../components/projects/Revisify"
+import RocketRiot from "../components/projects/RocketRiot"
+import SpotiParty from "../components/projects/SpotiParty"
+import Waiter from "../components/projects/Waiter"
 import projects from "../projects"
 
 const Container = styled.section`
@@ -40,6 +42,10 @@ const Selector = styled.div`
   background: rgba(255, 255, 255, 0.3);
   box-shadow: rgba(0, 0, 0, 0.05) 0 0 10px;
   z-index: 5;
+
+  @media (prefers-color-scheme: dark) {
+    background: rgba(0, 0, 0, 0.2);
+  }
 `
 
 const SelectorItem = styled(Link)`
@@ -61,11 +67,21 @@ const SelectorItem = styled(Link)`
       ? css`
           color: var(--primary-color);
           background: var(--background-color);
+
+          @media (prefers-color-scheme: dark) {
+            color: var(--primary-text-color);
+          }
         `
       : css`
           @media (hover: hover) {
             &:hover {
               background: rgba(255, 255, 255, 0.3);
+            }
+          }
+
+          @media (prefers-color-scheme: dark) {
+            &:hover {
+              background: rgba(0, 0, 0, 0.2);
             }
           }
         `}
@@ -90,14 +106,14 @@ export default function ProjectsPage({ location }: { location: Location }) {
       case "#aida":
         return <Aida />
 
-      // case "#revisify":
-      //   return <Revisify />
+      case "#revisify":
+        return <Revisify />
 
-      // case "#rocketriot":
-      //   return <RocketRiot />
+      case "#rocketriot":
+        return <RocketRiot />
 
-      // case "#waiter":
-      //   return <Waiter />
+      case "#waiter":
+        return <Waiter />
 
       case "#copbot":
         return <CopBot />

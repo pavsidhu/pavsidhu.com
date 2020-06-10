@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 
 import { aida } from "../../projects"
-import { ReactComponent as HeartSvg } from "../../images/aida/heart.svg"
+import { ReactComponent as HeartSvg } from "../../images/projects/aida/heart.svg"
 import {
   Title,
   Subtitle,
@@ -30,6 +30,12 @@ const Container = styled(ProjectContainer)`
       minmax(var(--space-m), 1fr)
       minmax(300px, max-content)
       minmax(var(--space-m), 2fr);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background: linear-gradient(#8e92f4b3, #8e92f4b3);
+    background-color: var(--background-color);
+    color: #fefefe;
   }
 `
 
@@ -73,6 +79,10 @@ const Preview = styled(ProjectPreview)`
   @media (min-width: 800px) {
     max-height: none;
     height: clamp(400px, 100vh, 70vh);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    filter: brightness(0.9);
   }
 `
 
