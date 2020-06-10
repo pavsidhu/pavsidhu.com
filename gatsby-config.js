@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `Pav Sidhu`,
@@ -94,6 +96,17 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-41576939-2"
+      }
+    },
+    {
+      resolve: `gatsby-plugin-firebase-messaging`,
+      options: {
+        config: {
+          apiKey: process.env.FIREBASE_API_KEY,
+          appId: process.env.FIREBASE_APP_ID,
+          messagingSenderId: process.env.FIREBASE_FIREBASE_MESSAGING_SENDER_ID,
+          projectId: process.env.FIREBASE_FIREBASE_PROJECT_ID
+        }
       }
     }
   ]
