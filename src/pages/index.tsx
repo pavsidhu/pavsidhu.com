@@ -221,17 +221,11 @@ const BlogPostCards = styled.div`
   justify-items: start;
 `
 
-const messaging = firebase.messaging()
-
-messaging.usePublicVapidKey(
-  "BGZm39gZl2tDz4YIvfamO6fyuXZKTrWOwJJt9FJqFV2BxraPcaqdg8mDZAUloz5Cgtrmt8YGz2NBpt1CWdh5TSE"
-)
-
 export default function IndexPage({ data }) {
   async function enableNotifications() {
     try {
-      await messaging.requestPermission()
-      const token = await messaging.getToken()
+      await firebase.messaging().requestPermission()
+      const token = await firebase.messaging().getToken()
       console.log(token)
     } catch (error) {
       console.error(error)
