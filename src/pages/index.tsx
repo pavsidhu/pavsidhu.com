@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Image from "gatsby-image"
+import firebase from "gatsby-plugin-firebase"
 import { graphql } from "gatsby"
 
 import { BlogPostCard, Seo } from "../components"
@@ -26,6 +27,8 @@ const Intro = styled.div`
     ".      desc   desc   desc     .      "
     ".      .      .      .        .      "
     "social social social social    social"
+    ".      .      .      .        .      "
+    "notifications notifications notifications notifications notifications"
     ".      .      .      .        .      ";
   grid-template-columns:
     var(--space-m)
@@ -38,6 +41,8 @@ const Intro = styled.div`
     min-content
     var(--space-m)
     max-content
+    var(--space-m)
+    auto
     var(--space-m)
     auto
     var(--space-m);
@@ -172,6 +177,10 @@ const SocialHandle = styled.p`
   }
 `
 
+const NotificationButton = styled.button`
+  grid-area: notifications;
+`
+
 const BlogPosts = styled.div`
   justify-self: center;
   width: 100%;
@@ -212,7 +221,23 @@ const BlogPostCards = styled.div`
   justify-items: start;
 `
 
+const messaging = firebase.messaging()
+
+messaging.usePublicVapidKey(
+  "BGZm39gZl2tDz4YIvfamO6fyuXZKTrWOwJJt9FJqFV2BxraPcaqdg8mDZAUloz5Cgtrmt8YGz2NBpt1CWdh5TSE"
+)
+
 export default function IndexPage({ data }) {
+  async function enableNotifications() {
+    try {
+      await messaging.requestPermission()
+      const token = await messaging.getToken()
+      console.log(token)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <>
       <Seo title="Home" />
@@ -258,6 +283,10 @@ export default function IndexPage({ data }) {
               <SocialHandle>@pavsidhu</SocialHandle>
             </SocialLink>
           </Social>
+
+          <NotificationButton onClick={enableNotifications}>
+            Enable Notifications
+          </NotificationButton>
         </Intro>
 
         <BlogPosts>
