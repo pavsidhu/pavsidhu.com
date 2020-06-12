@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import Image from "gatsby-image"
-import firebase from "gatsby-plugin-firebase"
 import { graphql } from "gatsby"
 
 import { BlogPostCard, Seo } from "../components"

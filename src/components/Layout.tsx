@@ -1,6 +1,5 @@
 import React, { useEffect } from "react"
 import styled, { createGlobalStyle } from "styled-components"
-import firebase from "gatsby-plugin-firebase"
 import "focus-visible"
 
 import { Header, TabBar } from "../components"
@@ -168,14 +167,6 @@ const Container = styled.div`
 `
 
 export default function Layout(props: { children: React.ReactNode }) {
-  useEffect(() => {
-    firebase
-      .messaging()
-      .usePublicVapidKey(
-        "BGZm39gZl2tDz4YIvfamO6fyuXZKTrWOwJJt9FJqFV2BxraPcaqdg8mDZAUloz5Cgtrmt8YGz2NBpt1CWdh5TSE"
-      )
-  }, [])
-
   return (
     <>
       <GlobalStyle />
