@@ -48,12 +48,8 @@ const SubmitButton = styled.button`
   padding-top: calc(var(--font-padding) + var(--space-s));
   border-radius: 40px;
   color: var(--primary-color);
-  font: inherit;
   font-size: var(--font-s);
   font-weight: 500;
-  cursor: pointer;
-  border: none;
-  background: none;
 
   @media (hover: hover) {
     &:hover {

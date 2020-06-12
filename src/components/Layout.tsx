@@ -106,6 +106,14 @@ const GlobalStyle = createGlobalStyle`
     box-shadow: 0 0 0 2px var(--primary-color);
   }
 
+  /* Remove default button styles */
+  button {
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
   :root {
     --primary-color: #f05f40;
     --primary-light-color: #fff4f1;
