@@ -1,5 +1,6 @@
+import React from "react"
 import Image from "gatsby-image"
-import styled from "styled-components"
+import { styled } from "linaria/react"
 
 import BlogPostCard from "./BlogPostCard"
 import CodeBlock from "./CodeBlock"
@@ -81,7 +82,9 @@ export const ProjectDetails = styled.div`
   z-index: 1;
 `
 
-export const ProjectPreview = styled(Image).attrs({ fadeIn: false })`
+export const ProjectPreview = styled((props) => (
+  <Image fadeIn={false} {...props} />
+))`
   grid-area: preview;
 `
 

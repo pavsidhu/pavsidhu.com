@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled from "styled-components"
+import { styled } from "linaria/react"
 
 import { ReactComponent as HomeIcon } from "../images/icons/home.svg"
 import { ReactComponent as AboutIcon } from "../images/icons/about.svg"
@@ -27,7 +27,7 @@ const Container = styled.nav`
   }
 `
 
-const Tab = styled(Link)`
+const Tab = styled((props) => <Link {...props} />)`
   flex: 1;
   display: flex;
   flex-direction: column;

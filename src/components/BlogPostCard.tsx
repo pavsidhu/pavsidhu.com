@@ -1,9 +1,9 @@
 import React from "react"
-import styled from "styled-components"
+import { styled } from "linaria/react"
 import Image, { FluidObject } from "gatsby-image"
 import { Link } from "gatsby"
 
-const Container = styled(Link)`
+const Container = styled((props) => <Link {...props} />)`
   display: grid;
   width: 100%;
   grid-template-areas:
@@ -25,7 +25,7 @@ const Container = styled(Link)`
   }
 `
 
-const CoverPhoto = styled(Image)`
+const CoverPhoto = styled((props) => <Image {...props} />)`
   grid-area: photo;
   width: 100%;
   height: 0;

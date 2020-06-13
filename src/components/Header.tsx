@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef } from "react"
+import { styled } from "linaria/react"
 import { Link } from "gatsby"
-import styled from "styled-components"
 
 import { ReactComponent as HomeIcon } from "../images/icons/home.svg"
 import { ReactComponent as AboutIcon } from "../images/icons/about.svg"
@@ -30,7 +30,7 @@ const Container = styled.header`
   }
 `
 
-const Title = styled(Link)`
+const Title = styled((props) => <Link {...props} />)`
   font-size: 2rem;
   font-weight: 500;
   padding-top: var(--font-padding);
@@ -42,7 +42,7 @@ const Nav = styled.nav`
   column-gap: var(--space-s);
 `
 
-const NavItem = styled(Link)`
+const NavItem = styled((props) => <Link {...props} />)`
   flex: 1;
   display: flex;
   align-items: center;

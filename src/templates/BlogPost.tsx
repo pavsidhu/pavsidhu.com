@@ -1,5 +1,5 @@
 import React, { useRef } from "react"
-import styled from "styled-components"
+import { styled } from "linaria/react"
 import Image from "gatsby-image"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"

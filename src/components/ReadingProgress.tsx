@@ -1,5 +1,5 @@
 import React, { useEffect, useState, RefObject } from "react"
-import styled from "styled-components"
+import { styled } from "linaria/react"
 
 const ProgressBar = styled.div`
   grid-row: -1 / 1;

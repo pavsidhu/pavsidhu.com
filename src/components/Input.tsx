@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import { styled } from "linaria/react"
 import TextareaAutosize from "react-textarea-autosize"
 
 const Container = styled.div`

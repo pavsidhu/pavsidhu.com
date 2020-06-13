@@ -1,5 +1,5 @@
 import React from "react"
-import styled, { css } from "styled-components"
+import { styled } from "linaria/react"
 import { Link } from "gatsby"
 import { Redirect } from "@reach/router"
 
@@ -48,8 +48,9 @@ const Selector = styled.div`
   }
 `
 
-const SelectorItem = styled(Link)`
-  padding: calc(var(--space-xs) + var(--font-padding)) var(--space-m) var(--space-xs);
+const SelectorItem = styled((props) => <Link {...props} />)`
+  padding: calc(var(--space-xs) + var(--font-padding)) var(--space-m)
+    var(--space-xs);
   font-size: var(--font-m);
   font-weight: 500;
   font-family: inherit;
@@ -62,38 +63,36 @@ const SelectorItem = styled(Link)`
   position: relative;
   cursor: pointer;
 
-  ${(props: { selected: boolean }) =>
-    props.selected
-      ? css`
-          color: var(--primary-color);
-          background: var(--background-color);
+  /* Account for overflow scroll not including right spacing of child */
+  &:last-of-type ::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: -8px;
+    width: 1px;
+    height: 1px;
+  }
 
-          @media (prefers-color-scheme: dark) {
-            color: var(--primary-text-color);
-          }
-        `
-      : css`
-          @media (hover: hover) {
-            &:hover {
-              background: rgba(255, 255, 255, 0.3);
-            }
-          }
+  &.active {
+    color: var(--primary-color);
+    background: var(--background-color);
 
-          @media (prefers-color-scheme: dark) {
-            &:hover {
-              background: rgba(0, 0, 0, 0.2);
-            }
-          }
-        `}
-        
-    /* Account for overflow scroll not including right spacing of child */
-    &:last-of-type ::after {
-      content: "";
-      display: block;
-      position: absolute;
-      right: -8px;
-      width: 1px;
-      height: 1px;
+    @media (prefers-color-scheme: dark) {
+      color: var(--primary-text-color);
+    }
+  }
+
+  &:not(.active) {
+    @media (hover: hover) {
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      &:hover {
+        background: rgba(0, 0, 0, 0.2);
+      }
     }
   }
 `
@@ -139,7 +138,7 @@ export default function ProjectsPage({ location }: { location: Location }) {
         <Selector>
           {projects.map(({ title }) => (
             <SelectorItem
-              selected={location.hash === toHash(title)}
+              className={location.hash === toHash(title) ? "active" : undefined}
               to={"/projects/" + toHash(title)}
               key={title}
             >
