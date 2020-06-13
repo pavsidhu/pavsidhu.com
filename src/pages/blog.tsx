@@ -18,9 +18,9 @@ const Container = styled.section`
     ". blog-posts ."
     ". .          .";
   grid-template-columns:
-    minmax(var(--space-s), 1fr)
+    minmax(var(--space-m), 1fr)
     minmax(auto, var(--max-width))
-    minmax(var(--space-s), 1fr);
+    minmax(var(--space-m), 1fr);
   grid-template-rows:
     var(--space-m)
     max-content

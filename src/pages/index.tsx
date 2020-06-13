@@ -178,37 +178,22 @@ const SocialHandle = styled.p`
 const BlogPosts = styled.div`
   justify-self: center;
   width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-auto-flow: row;
+  grid-auto-columns: 1fr;
+  gap: var(--space-s);
+  padding: var(--space-m);
 
   /* Max size of 4 blog post cards */
   max-width: calc((300px * 4) + (24px * 3) + (24px * 2));
-
-  display: grid;
-  justify-content: center;
-  grid-template-areas:
-    ". .          ."
-    ". title      ."
-    ". .          ."
-    ". blog-posts ."
-    ". .          .";
-  grid-template-columns: var(--space-s) 1fr var(--space-s);
-  grid-template-rows:
-    var(--space-m)
-    max-content
-    var(--space-s)
-    max-content
-    var(--space-m);
 `
 
 const BlogPostsTitle = styled.h3`
-  grid-area: title;
   font-size: var(--font-l);
-
-  /* Accounts for padding of blog post cards */
-  margin-left: var(--space-xs);
 `
 
 const BlogPostCards = styled.div`
-  grid-area: blog-posts;
   display: grid;
   gap: var(--space-m);
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

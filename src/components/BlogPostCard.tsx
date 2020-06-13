@@ -15,12 +15,12 @@ const Container = styled((props) => <Link {...props} />)`
   gap: var(--space-xs);
   align-content: start;
   border-radius: 4px;
-  padding: var(--space-xs);
-  transition: background 100ms;
+  transition: box-shadow 100ms;
 
   @media (hover: hover) {
-    &:hover {
-      background: var(--hover-color);
+    &:hover:not(.active) {
+      box-shadow: 0 0 0 100vw var(--hover-color) inset,
+        0 0 0 8px var(--hover-color);
     }
   }
 `
@@ -81,7 +81,7 @@ interface Props {
 
 export default function BlogPostCard(props: Props) {
   return (
-    <Container to={"/blog/" + props.link}>
+    <Container to={"/blog/" + props.link} className="clickable">
       <CoverPhoto fluid={props.coverImage.childImageSharp.fluid} />
 
       <Meta>
