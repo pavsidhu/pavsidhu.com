@@ -76,10 +76,6 @@ const SelectorItem = styled((props) => <Link {...props} />)`
   &.active {
     color: var(--primary-color);
     background: var(--background-color);
-
-    @media (prefers-color-scheme: dark) {
-      color: var(--primary-text-color);
-    }
   }
 
   &:not(.active) {
