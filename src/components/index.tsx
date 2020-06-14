@@ -36,8 +36,10 @@ export const Paragraph = styled.p`
 `
 
 export const ProjectContainer = styled.section`
-  grid-column: -1 / 1;
-  grid-row: -1 / 1;
+  height: 100%;
+  width: 100vw;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 
   /* Ensures content doesn't appear under the project selector */
   padding-top: calc(53px + 2.3rem);
@@ -50,7 +52,9 @@ export const ProjectContainer = styled.section`
     ". preview ."
     ". .       .";
   grid-template-columns: var(--space-m) 1fr var(--space-m);
-  grid-template-rows: var(--space-s) auto var(--space-m) auto var(--space-m);
+  grid-template-rows: var(--space-s) max-content var(--space-m) max-content var(
+      --space-m
+    );
   align-items: center;
 
   @media (min-width: 800px) {

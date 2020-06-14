@@ -35,6 +35,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
+    "react-swipeable-views": "^0.13.9",
+    "react-swipeable-views-utils": "^0.13.9",
     "react-textarea-autosize": "^8.0.1",
     "react-transition-group": "^4.4.1"
   },
@@ -43,6 +45,8 @@
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "@types/react-helmet": "^6.0.0",
+    "@types/react-swipeable-views": "^0.13.0",
+    "@types/react-swipeable-views-utils": "^0.13.2",
     "prettier": "^2.0.5"
   },
   "license": "MIT",

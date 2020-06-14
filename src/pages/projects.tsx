@@ -1,7 +1,7 @@
-import React from "react"
+import React, { useState, useRef } from "react"
+import SwipeableViews from "react-swipeable-views"
+import { bindKeyboard } from "react-swipeable-views-utils"
 import { styled } from "linaria/react"
-import { Link } from "gatsby"
-import { Redirect } from "@reach/router"
 
 import { Seo } from "../components"
 import Aida from "../components/projects/Aida"
@@ -11,7 +11,6 @@ import DayNote from "../components/projects/DayNote"
 import Revisify from "../components/projects/Revisify"
 import RocketRiot from "../components/projects/RocketRiot"
 import SpotiParty from "../components/projects/SpotiParty"
-import Waiter from "../components/projects/Waiter"
 import projects from "../projects"
 
 const Container = styled.section`
@@ -26,7 +25,7 @@ const Container = styled.section`
   grid-template-areas:
     ".       .        .      "
     ".       selector .      "
-    ".       .        .      ";
+    ".       projects .      ";
 `
 
 const Selector = styled.div`
@@ -48,7 +47,7 @@ const Selector = styled.div`
   }
 `
 
-const SelectorItem = styled((props) => <Link {...props} />)`
+const SelectorItem = styled.button`
   padding: calc(var(--space-xs) + var(--font-padding)) var(--space-m)
     var(--space-xs);
   font-size: var(--font-m);
@@ -64,13 +63,15 @@ const SelectorItem = styled((props) => <Link {...props} />)`
   cursor: pointer;
 
   /* Account for overflow scroll not including right spacing of child */
-  &:last-of-type ::after {
-    content: "";
-    display: block;
-    position: absolute;
-    right: -8px;
-    width: 1px;
-    height: 1px;
+  &:last-child {
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: -8px;
+      width: 1px;
+      height: 1px;
+    }
   }
 
   &.active {
@@ -93,58 +94,67 @@ const SelectorItem = styled((props) => <Link {...props} />)`
   }
 `
 
-const toHash = (value: string) => "#" + value.toLowerCase().replace(" ", "")
+const BindKeyboardSwipeableViews = bindKeyboard(SwipeableViews)
 
-export default function ProjectsPage({ location }: { location: Location }) {
-  function renderProject() {
-    switch (location.hash) {
-      case "#aida":
-        return <Aida />
+const Projects = styled(BindKeyboardSwipeableViews)`
+  grid-column: -1 / 1;
+  grid-row: -1 / 1;
 
-      case "#revisify":
-        return <Revisify />
-
-      case "#rocketriot":
-        return <RocketRiot />
-
-      case "#waiter":
-        return <Waiter />
-
-      case "#copbot":
-        return <CopBot />
-
-      case "#spotiparty":
-        return <SpotiParty />
-
-      case "#bulb":
-        return <Bulb />
-
-      case "#daynote":
-        return <DayNote />
-
-      default:
-        return <Redirect to={"/projects" + toHash(projects[0].title)} />
+  @media (min-width: 800px) {
+    .react-swipeable-view-container {
+      min-height: calc(100vh - var(--header-height));
     }
+  }
+`
+
+export default function ProjectsPage() {
+  const [projectIndex, setProjectIndex] = useState(0)
+  const selectorRef = useRef<HTMLDivElement>(null)
+
+  function scrollToSelectorItem(index: number) {
+    selectorRef.current?.childNodes[index].scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "end"
+    })
+  }
+
+  function changeIndex(index: number) {
+    setProjectIndex(index)
   }
 
   return (
-    <>
+    <Container>
       <Seo title="Projects" />
-      <Container>
-        <Selector>
-          {projects.map(({ title }) => (
-            <SelectorItem
-              className={location.hash === toHash(title) ? "active" : undefined}
-              to={"/projects/" + toHash(title)}
-              key={title}
-            >
-              {title}
-            </SelectorItem>
-          ))}
-        </Selector>
 
-        {renderProject()}
-      </Container>
-    </>
+      <Selector ref={selectorRef}>
+        {projects.map(({ title }, index) => (
+          <SelectorItem
+            className={index === projectIndex ? "active" : undefined}
+            onClick={(event) => {
+              changeIndex(index)
+              scrollToSelectorItem(index)
+            }}
+            key={title}
+          >
+            {title}
+          </SelectorItem>
+        ))}
+      </Selector>
+
+      <Projects
+        index={projectIndex}
+        onChangeIndex={(index) => changeIndex(index)}
+        onTransitionEnd={() => scrollToSelectorItem(projectIndex)}
+      >
+        <Aida />
+        <Revisify />
+        <RocketRiot />
+        <CopBot />
+        <SpotiParty />
+        <Bulb />
+        <DayNote />
+      </Projects>
+    </Container>
   )
 }
