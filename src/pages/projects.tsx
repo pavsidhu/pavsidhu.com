@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, useLayoutEffect } from "react"
 import SwipeableViews from "react-swipeable-views"
 import { bindKeyboard } from "react-swipeable-views-utils"
 import { styled } from "linaria/react"
@@ -37,14 +37,12 @@ const Selector = styled.div`
   overflow: scroll;
   scroll-snap-type: x mandatory;
   padding: 8px;
+  position: sticky;
+  top: var(--space-s);
   border-radius: 40px;
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--background-color);
   box-shadow: rgba(0, 0, 0, 0.05) 0 0 10px;
   z-index: 5;
-
-  @media (prefers-color-scheme: dark) {
-    background: rgba(0, 0, 0, 0.2);
-  }
 
   /* Hide scrollbar in firefox */
   overflow: -moz-scrollbars-none;
@@ -70,6 +68,7 @@ const SelectorItem = styled.button`
   scroll-snap-align: center;
   position: relative;
   cursor: pointer;
+  color: var(--primary-text-color);
 
   /* Account for overflow scroll not including right spacing of child */
   &:last-child {
@@ -84,20 +83,17 @@ const SelectorItem = styled.button`
   }
 
   &.active {
-    color: var(--primary-color);
-    background: var(--background-color);
+    background: var(--secondary-background-color);
+
+    @media (prefers-color-scheme: dark) {
+      background: var(--primary-light-color);
+    }
   }
 
   &:not(.active) {
     @media (hover: hover) {
       &:hover {
-        background: rgba(255, 255, 255, 0.3);
-      }
-    }
-
-    @media (prefers-color-scheme: dark) {
-      &:hover {
-        background: rgba(0, 0, 0, 0.2);
+        background: var(--hover-color);
       }
     }
   }
@@ -109,9 +105,13 @@ const Projects = styled(BindKeyboardSwipeableViews)`
   grid-column: -1 / 1;
   grid-row: -1 / 1;
 
+  .react-swipeable-view-container {
+    height: calc(100vh - var(--tab-bar-height));
+  }
+
   @media (min-width: 800px) {
     .react-swipeable-view-container {
-      min-height: calc(100vh - var(--header-height));
+      height: calc(100vh - var(--header-height));
     }
   }
 `
@@ -119,6 +119,15 @@ const Projects = styled(BindKeyboardSwipeableViews)`
 export default function ProjectsPage() {
   const [projectIndex, setProjectIndex] = useState(0)
   const selectorRef = useRef<HTMLDivElement>(null)
+
+  useLayoutEffect(() => {
+    if (!selectorRef.current) return
+
+    document.documentElement.style.setProperty(
+      "--project-selector-height",
+      selectorRef.current.clientHeight + "px"
+    )
+  })
 
   function scrollToSelectorItem(index: number) {
     selectorRef.current?.childNodes[index].scrollIntoView({
@@ -140,7 +149,7 @@ export default function ProjectsPage() {
         {projects.map(({ title }, index) => (
           <SelectorItem
             className={index === projectIndex ? "active" : undefined}
-            onClick={(event) => {
+            onClick={() => {
               changeIndex(index)
               scrollToSelectorItem(index)
             }}

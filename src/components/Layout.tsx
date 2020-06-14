@@ -120,9 +120,10 @@ export const globals = css`
       --primary-color: #f05f40;
       --primary-light-color: #fff4f1;
       --primary-text-color: #1b1b1b;
-      --background-color: #fefefe;
-      --hover-color: #eeeeee;
       --secondary-text-color: #646464;
+      --background-color: #fefefe;
+      --secondary-background-color: rgba(0, 0, 0, 0.2);
+      --hover-color: #eeeeee;
       --line-color: rgba(0, 0, 0, 0.1);
 
       --space-xs: 8px;
@@ -146,11 +147,11 @@ export const globals = css`
       :root {
         --primary-light-color: rgba(255, 255, 255, 0.25);
         --primary-text-color: rgba(255, 255, 255, 0.9);
-        --background-color: #1b1b1b;
-        --hover-color: rgba(255, 255, 255, 0.1);
         --secondary-text-color: rgba(255, 255, 255, 0.7);
+        --background-color: #1b1b1b;
+        --secondary-background-color: #292929;
+        --hover-color: rgba(255, 255, 255, 0.1);
         --line-color: rgba(255, 255, 255, 0.1);
-        --dark-secondary-background-color: #292929;
       }
 
       * {

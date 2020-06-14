@@ -38,23 +38,17 @@ export const Paragraph = styled.p`
 export const ProjectContainer = styled.section`
   height: 100%;
   width: 100vw;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-
-  /* Ensures content doesn't appear under the project selector */
-  padding-top: calc(53px + 2.3rem);
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 
   display: grid;
   grid-template-areas:
-    ". .       ."
-    ". content ."
-    ". .       ."
-    ". preview ."
-    ". .       .";
-  grid-template-columns: var(--space-m) 1fr var(--space-m);
-  grid-template-rows: var(--space-s) max-content var(--space-m) max-content var(
-      --space-m
-    );
+    "content"
+    "preview";
+  grid-template-rows: repeat(2, max-content);
+  padding: calc(var(--space-s) + var(--project-selector-height)) var(--space-m)
+    0;
+  gap: var(--space-m);
   align-items: center;
 
   @media (min-width: 800px) {
@@ -72,6 +66,13 @@ export const ProjectContainer = styled.section`
       minmax(var(--space-m), 1fr)
       max-content
       minmax(var(--space-m), 1fr);
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-bottom: var(--space-xl);
   }
 `
 

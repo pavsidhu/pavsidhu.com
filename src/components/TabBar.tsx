@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useLayoutEffect, useRef } from "react"
 import { Link } from "gatsby"
 import { styled } from "linaria/react"
 
@@ -23,7 +23,7 @@ const Container = styled.nav`
   }
 
   @media (prefers-color-scheme: dark) {
-    background: var(--dark-secondary-background-color);
+    background: var(--secondary-background-color);
   }
 `
 
@@ -57,8 +57,19 @@ const TabLabel = styled.p`
 `
 
 export default function TabBar() {
+  const containerRef = useRef()
+
+  useLayoutEffect(() => {
+    if (!containerRef.current) return
+
+    document.documentElement.style.setProperty(
+      "--tab-bar-height",
+      containerRef.current.clientHeight + "px"
+    )
+  })
+
   return (
-    <Container>
+    <Container ref={containerRef}>
       <Tab to="/" activeClassName="active">
         <HomeIcon aria-hidden="true" />
         <TabLabel>Home</TabLabel>
