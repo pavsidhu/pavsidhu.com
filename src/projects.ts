@@ -98,15 +98,6 @@ export const daynote: Project = {
   link: "https://github.com/pavsidhu/daynote"
 }
 
-const projects = [
-  aida,
-  revisify,
-  rocketRiot,
-  waiter,
-  copBot,
-  spotiparty,
-  bulb,
-  daynote
-]
+const projects = [aida, revisify, rocketRiot, copBot, spotiparty, bulb, daynote]
 
 export default projects
