@@ -37,24 +37,11 @@ const Button = styled(ProjectButton)`
 
 const Video = styled.video`
   grid-area: preview;
-  align-self: start;
   width: 100%;
   border: 8px solid #fefefe33;
 `
 
 export default function RocketRiot() {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     file(relativePath: { eq: "projects/rocket-riot/preview.mp4" }) {
-  //       childImageSharp {
-  //         fluid(maxWidth: 1500, quality: 100) {
-  //           ...GatsbyImageSharpFluid_withWebp_tracedSVG
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
   return (
     <Container>
       <ProjectDetails>
