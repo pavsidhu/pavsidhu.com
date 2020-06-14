@@ -153,8 +153,10 @@ export default function ProjectsPage() {
 
       <Projects
         index={projectIndex}
-        onChangeIndex={(index) => changeIndex(index)}
-        onTransitionEnd={() => scrollToSelectorItem(projectIndex)}
+        onChangeIndex={(index) => {
+          changeIndex(index)
+          setTimeout(() => scrollToSelectorItem(index), 0)
+        }}
       >
         <Aida />
         <Revisify />
