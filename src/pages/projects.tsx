@@ -45,6 +45,15 @@ const Selector = styled.div`
   @media (prefers-color-scheme: dark) {
     background: rgba(0, 0, 0, 0.2);
   }
+
+  /* Hide scrollbar in firefox */
+  overflow: -moz-scrollbars-none;
+
+  /* Hide scrollbar in webkit */
+  &::-webkit-scrollbar {
+    width: 0 !important;
+    display: none;
+  }
 `
 
 const SelectorItem = styled.button`
