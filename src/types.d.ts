@@ -21,7 +21,7 @@ declare module "*.gif" {
   export default content
 }
 
-declare module "*.otf" {
+declare module "*.woff2" {
   const content: string
   export default content
 }

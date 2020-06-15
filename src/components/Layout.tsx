@@ -1,9 +1,14 @@
 import React from "react"
 import { css } from "linaria"
 import { styled } from "linaria/react"
+import { Helmet } from "react-helmet"
 import "focus-visible"
 
 import { Header, TabBar } from "../components"
+import fontLight from "../fonts/Orkney-Light.woff2"
+import fontMedium from "../fonts/Orkney-Medium.woff2"
+import fontRegular from "../fonts/Orkney-Regular.woff2"
+import fontBold from "../fonts/Orkney-Bold.woff2"
 
 export const globals = css`
   :global() {
@@ -13,6 +18,7 @@ export const globals = css`
         url("../fonts/Orkney-Medium.woff") format("woff");
       font-weight: 500;
       font-style: normal;
+      font-display: optional;
     }
 
     @font-face {
@@ -21,6 +27,7 @@ export const globals = css`
         url("../fonts/Orkney-Light.woff") format("woff");
       font-weight: 300;
       font-style: normal;
+      font-display: optional;
     }
 
     @font-face {
@@ -29,6 +36,7 @@ export const globals = css`
         url("../fonts/Orkney-Regular.woff") format("woff");
       font-weight: normal;
       font-style: normal;
+      font-display: optional;
     }
 
     @font-face {
@@ -37,6 +45,7 @@ export const globals = css`
         url("../fonts/Orkney-Bold.woff") format("woff");
       font-weight: bold;
       font-style: normal;
+      font-display: optional;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -173,12 +182,17 @@ const Container = styled.div`
 
 export default function Layout(props: { children: React.ReactNode }) {
   return (
-    <>
-      <Container>
-        <Header />
-        <main>{props.children}</main>
-        <TabBar />
-      </Container>
-    </>
+    <Container>
+      <Helmet>
+        <link rel="preload" href={fontLight} as="font" type="font/woff2" />
+        <link rel="preload" href={fontMedium} as="font" type="font/woff2" />
+        <link rel="preload" href={fontRegular} as="font" type="font/woff2" />
+        <link rel="preload" href={fontBold} as="font" type="font/woff2" />
+      </Helmet>
+
+      <Header />
+      <main>{props.children}</main>
+      <TabBar />
+    </Container>
   )
 }
