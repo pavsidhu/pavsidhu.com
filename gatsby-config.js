@@ -93,7 +93,7 @@ module.exports = {
         icon: `src/images/favicons/1024.png`,
         icons: [
           {
-            src: `/favicons/32.png`,
+            src: `src/images/favicons/32.png`,
             sizes: `32x32`,
             type: `image/png`,
             purpose: "any"
