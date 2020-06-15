@@ -220,6 +220,7 @@ export default function IndexPage({ data }) {
               href="https://twitter.com/pav_sidhu"
               target="_blank"
               rel="noopener"
+              aria-label="Twitter"
             >
               <SocialIcon as={TwitterIcon} />
               <SocialLabel>Twitter</SocialLabel>
@@ -230,6 +231,7 @@ export default function IndexPage({ data }) {
               href="https://github.com/pavsidhu"
               target="_blank"
               rel="noopener"
+              aria-label="GitHub"
             >
               <SocialIcon as={GitHubIcon} />
               <SocialLabel>GitHub</SocialLabel>
@@ -240,6 +242,7 @@ export default function IndexPage({ data }) {
               href="https://www.linkedin.com/in/pavsidhu"
               target="_blank"
               rel="noopener"
+              aria-label="LinkedIn"
             >
               <SocialIcon as={LinkedInIcon} />
               <SocialLabel>LinkedIn</SocialLabel>
