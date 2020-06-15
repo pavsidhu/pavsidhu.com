@@ -40,6 +40,11 @@ const Title = styled((props) => <Link {...props} />)`
     &:hover {
       box-shadow: 0 0 0 100vw var(--hover-color) inset,
         0 0 0 4px var(--hover-color);
+
+      &:focus {
+        box-shadow: 0 0 0 2px var(--primary-color),
+          0 0 0 100vw var(--hover-color) inset;
+      }
     }
   }
 `
