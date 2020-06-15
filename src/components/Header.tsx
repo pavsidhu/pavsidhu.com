@@ -20,7 +20,7 @@ const Container = styled.header`
     top: 0;
     left: 0;
     z-index: 10;
-    padding: var(--space-s) var(--space-l);
+    padding: var(--space-s);
     box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px;
     background: var(--background-color);
   }
@@ -33,7 +33,7 @@ const Container = styled.header`
 const Title = styled((props) => <Link {...props} />)`
   font-size: 2rem;
   font-weight: 500;
-  padding: calc(var(--font-padding) + 4px) var(--space-s) 4px;
+  padding: calc(var(--font-padding) + 4px) var(--space-xs) 4px;
   border-radius: 20px;
 
   @media (hover: hover) {
