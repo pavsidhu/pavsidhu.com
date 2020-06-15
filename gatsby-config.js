@@ -89,7 +89,19 @@ module.exports = {
         background_color: `#fefefe`,
         theme_color: `#f05f40`,
         display: `standalone`,
-        icon: `src/images/favicon.png`
+        cache_busting_mode: "none",
+        icon: `src/images/favicons/1024.png`,
+        icons: [
+          {
+            src: `/favicons/32.png`,
+            sizes: `32x32`,
+            type: `image/png`,
+            purpose: "any"
+          }
+        ],
+        icon_options: {
+          purpose: `maskable`
+        }
       }
     },
     {
