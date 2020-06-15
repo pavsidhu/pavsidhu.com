@@ -26,14 +26,22 @@ const Container = styled.header`
   }
 
   @media (prefers-color-scheme: dark) {
-    background: var(--secondary-background-color);
+    background: var(--dark-secondary-background-color);
   }
 `
 
 const Title = styled((props) => <Link {...props} />)`
   font-size: 2rem;
   font-weight: 500;
-  padding-top: var(--font-padding);
+  padding: calc(var(--font-padding) + 4px) var(--space-s) 4px;
+  border-radius: 20px;
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0 0 0 100vw var(--hover-color) inset,
+        0 0 0 4px var(--hover-color);
+    }
+  }
 `
 
 const Nav = styled.nav`
@@ -72,10 +80,11 @@ const NavItem = styled((props) => <Link {...props} />)`
 const NavItemLabel = styled.p`
   margin-left: var(--space-xs);
   font-size: var(--font-xs);
+  font-weight: 500;
 `
 
 export default function Header() {
-  const containerRef = useRef()
+  const containerRef = useRef<HTMLElement>(null)
 
   useLayoutEffect(() => {
     if (!containerRef.current) return
