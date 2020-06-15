@@ -58,6 +58,10 @@ const Button = styled(ProjectButton)`
       box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
     }
   }
+
+  &:focus {
+    box-shadow: var(--focus-box-shadow), 0 0 20px rgba(0, 0, 0, 0.2);
+  }
 `
 
 const Heart = styled(HeartSvg)`

@@ -38,6 +38,10 @@ const Button = styled.a`
       transform: translateX(-2px) translateY(-2px) scale(1.03);
     }
   }
+
+  &:focus {
+    box-shadow: var(--focus-box-shadow), 12px 12px 0px #0b0b0b;
+  }
 `
 
 const Preview = styled(ProjectPreview)`

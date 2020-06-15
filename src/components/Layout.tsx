@@ -110,7 +110,7 @@ export const globals = css`
     }
 
     .focus-visible {
-      box-shadow: 0 0 0 2px var(--primary-color);
+      box-shadow: var(--focus-box-shadow);
     }
 
     /* Remove default button styles */
@@ -146,6 +146,7 @@ export const globals = css`
       --font-xxs: 1.2rem;
 
       --font-padding: 0.333em;
+      --focus-box-shadow: 0 0 0 2px var(--primary-color);
     }
 
     @media (prefers-color-scheme: dark) {
