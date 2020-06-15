@@ -14,17 +14,7 @@ export const globals = css`
   :global() {
     @font-face {
       font-family: "Orkney";
-      src: url("../fonts/Orkney-Medium.woff2") format("woff2"),
-        url("../fonts/Orkney-Medium.woff") format("woff");
-      font-weight: 500;
-      font-style: normal;
-      font-display: optional;
-    }
-
-    @font-face {
-      font-family: "Orkney";
-      src: url("../fonts/Orkney-Light.woff2") format("woff2"),
-        url("../fonts/Orkney-Light.woff") format("woff");
+      src: url("${fontLight}") format("woff2"), url("${fontLight}") format("woff");
       font-weight: 300;
       font-style: normal;
       font-display: optional;
@@ -32,8 +22,7 @@ export const globals = css`
 
     @font-face {
       font-family: "Orkney";
-      src: url("../fonts/Orkney-Regular.woff2") format("woff2"),
-        url("../fonts/Orkney-Regular.woff") format("woff");
+      src: url("${fontRegular}") format("woff2"), url("${fontRegular}") format("woff");
       font-weight: normal;
       font-style: normal;
       font-display: optional;
@@ -41,8 +30,15 @@ export const globals = css`
 
     @font-face {
       font-family: "Orkney";
-      src: url("../fonts/Orkney-Bold.woff2") format("woff2"),
-        url("../fonts/Orkney-Bold.woff") format("woff");
+      src: url("${fontMedium}") format("woff2"), url("${fontMedium}") format("woff");
+      font-weight: 500;
+      font-style: normal;
+      font-display: optional;
+    }
+
+    @font-face {
+      font-family: "Orkney";
+      src: url("${fontBold}") format("woff2"), url("${fontBold}") format("woff");
       font-weight: bold;
       font-style: normal;
       font-display: optional;
