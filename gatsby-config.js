@@ -92,7 +92,7 @@ module.exports = {
         cache_busting_mode: "none",
         icon: `src/images/favicons/1024.png`,
         icon_options: {
-          purpose: `maskable`
+          purpose: `maskable any`
         }
       }
     },
