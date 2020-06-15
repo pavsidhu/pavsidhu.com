@@ -284,7 +284,7 @@ export const query = graphql`
             date(formatString: "Do MMM YYYY")
             coverImage {
               childImageSharp {
-                fluid(maxWidth: 500) {
+                fluid(maxWidth: 300) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

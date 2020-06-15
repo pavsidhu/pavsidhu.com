@@ -74,7 +74,7 @@ export default function DayNote() {
     query {
       file(relativePath: { eq: "projects/daynote/preview.png" }) {
         childImageSharp {
-          fluid(maxWidth: 1500, quality: 100) {
+          fluid(maxWidth: 800, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
