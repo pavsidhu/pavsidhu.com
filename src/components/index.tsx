@@ -46,8 +46,7 @@ export const ProjectContainer = styled.section`
     "content"
     "preview";
   grid-template-rows: repeat(2, max-content);
-  padding: calc(var(--space-s) + var(--project-selector-height)) var(--space-m)
-    0;
+  padding: calc(var(--space-s) + var(--project-selector-height)) var(--space-m);
   gap: var(--space-m);
   align-items: center;
 
@@ -68,11 +67,8 @@ export const ProjectContainer = styled.section`
       minmax(var(--space-m), 1fr);
   }
 
-  &:after {
-    content: "";
-    display: block;
-    width: 100%;
-    padding-bottom: var(--space-xl);
+  & *:last-child {
+    margin-bottom: var(--space-m);
   }
 `
 
