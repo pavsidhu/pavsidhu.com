@@ -88,7 +88,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#fefefe`,
         theme_color: `#f05f40`,
-        display: `fullscreen`,
+        display: `standalone`,
         icon: `src/images/favicon/favicon.png`
       }
     },
