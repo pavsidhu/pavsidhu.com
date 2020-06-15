@@ -104,6 +104,10 @@ const Projects = styled(BindKeyboardSwipeableViews)`
 
   .react-swipeable-view-container {
     height: calc(100vh - var(--tab-bar-height));
+
+    [aria-hidden="true"] a {
+      display: none;
+    }
   }
 
   @media (min-width: 800px) {
