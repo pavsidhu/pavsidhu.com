@@ -73,8 +73,11 @@ export default function Input(props: Props) {
         type={props.type ? props.name : "text"}
         required={props.required === true}
         as={props.textarea === true ? TextareaAutosize : Field}
+        id={props.name}
       />
-      <Label>{props.required === true ? `${props.name}*` : props.name}</Label>
+      <Label htmlFor={props.name}>
+        {props.required === true ? `${props.name}*` : props.name}
+      </Label>
     </Container>
   )
 }
