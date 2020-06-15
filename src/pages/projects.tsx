@@ -83,11 +83,8 @@ const SelectorItem = styled.button`
   }
 
   &.active {
-    background: var(--secondary-background-color);
-
-    @media (prefers-color-scheme: dark) {
-      background: var(--primary-light-color);
-    }
+    color: var(--primary-color);
+    background: var(--primary-light-color);
   }
 
   &:not(.active) {
