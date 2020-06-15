@@ -33,7 +33,7 @@ export default function NotFoundPage() {
       <Title>Page Not Found</Title>
       <Text>
         There's nothing here, perhaps you'll find what you're looking for back
-        home
+        home.
       </Text>
       <HomeLink to="/">Go To Home</HomeLink>.
     </Container>
