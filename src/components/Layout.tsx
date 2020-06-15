@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { css } from "linaria"
 import { styled } from "linaria/react"
 import { Helmet } from "react-helmet"
@@ -177,6 +177,13 @@ const Container = styled.div`
 `
 
 export default function Layout(props: { children: React.ReactNode }) {
+  // Disable annoying install prompt
+  useEffect(() => {
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault()
+    })
+  }, [])
+
   return (
     <Container>
       <Helmet>
