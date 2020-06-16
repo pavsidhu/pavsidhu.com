@@ -7,7 +7,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     actions.createNodeField({
       node,
       name: `slug`,
-      value: createFilePath({ node, getNode })
+      value: createFilePath({ node, getNode, trailingSlash: false })
     })
   }
 }
