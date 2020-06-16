@@ -203,10 +203,15 @@ export default function Layout(props: { children: React.ReactNode }) {
   return (
     <Container>
       <Helmet>
-        <link rel="preload" href={fontLight} as="font" type="font/woff2" />
-        <link rel="preload" href={fontMedium} as="font" type="font/woff2" />
-        <link rel="preload" href={fontRegular} as="font" type="font/woff2" />
-        <link rel="preload" href={fontBold} as="font" type="font/woff2" />
+        {[fontLight, fontRegular, fontMedium, fontBold].map((font) => (
+          <link
+            rel="preload"
+            href={font}
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        ))}
       </Helmet>
 
       <Header />
