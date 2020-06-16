@@ -12,6 +12,7 @@ const Container = styled.header`
   display: none;
 
   @media (min-width: 800px) {
+    grid-area: header;
     display: flex;
     align-items: center;
     justify-content: space-between;

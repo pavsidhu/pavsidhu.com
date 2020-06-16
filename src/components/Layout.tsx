@@ -174,24 +174,29 @@ export const globals = css`
 const Container = styled.div`
   min-height: 100vh;
   display: grid;
+  grid-template-areas: "main" "tabs";
   grid-template-rows: 1fr auto;
 
   @media (min-width: 800px) {
+    grid-template-areas: "header" "main";
     grid-template-rows: auto 1fr;
   }
 `
 
 const timeout = 100
 
-const Main = styled.main`
+const Main = styled(TransitionGroup)`
+  grid-area: main;
+  position: relative;
+`
+
+const Content = styled.div`
   width: 100%;
   background: var(--background-color);
   transition: opacity ${timeout}ms ease-in-out;
 
   &.enter {
     position: absolute;
-    top: var(--header-height);
-    left: 0;
     opacity: 0;
   }
 
@@ -201,7 +206,6 @@ const Main = styled.main`
 
   &.exit {
     position: absolute;
-    left: 0;
     opacity: 1;
   }
 
@@ -253,6 +257,7 @@ export default function Layout(props: { children: React.ReactNode }) {
       </Helmet>
 
       <Header />
+
       <BlogPostTransition.Provider
         value={{
           bounds: blogPostCardBounds,
@@ -260,27 +265,20 @@ export default function Layout(props: { children: React.ReactNode }) {
           resetBounds: () => setBlogPostCardBounds(undefined)
         }}
       >
-        <TransitionGroup>
+        <Main component="main">
           <CSSTransition
             key={subtab}
             timeout={timeout}
             unmountOnExit={true}
             onExit={(node) => {
-              node.style.top =
-                (
-                  -1 * window.scrollY +
-                  parseInt(
-                    document.documentElement.style.getPropertyValue(
-                      "--header-height"
-                    )
-                  )
-                ).toString() + "px"
+              node.style.top = (-1 * window.scrollY).toString() + "px"
             }}
           >
-            <Main>{props.children}</Main>
+            <Content>{props.children}</Content>
           </CSSTransition>
-        </TransitionGroup>
+        </Main>
       </BlogPostTransition.Provider>
+
       <TabBar />
     </Container>
   )

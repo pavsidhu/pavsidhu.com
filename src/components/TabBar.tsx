@@ -9,6 +9,7 @@ import { ReactComponent as ProjectsIcon } from "../images/icons/projects.svg"
 import { ReactComponent as ContactIcon } from "../images/icons/contact.svg"
 
 const Container = styled.nav`
+  grid-area: tabs;
   display: flex;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
@@ -16,7 +17,7 @@ const Container = styled.nav`
   position: sticky;
   z-index: 10;
   left: 0;
-  bottom: -1px;
+  bottom: 0;
 
   @media (min-width: 800px) {
     display: none;

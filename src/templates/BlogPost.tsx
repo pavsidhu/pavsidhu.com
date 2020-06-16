@@ -43,6 +43,7 @@ const CoverImage = styled(Image)`
   padding-bottom: 60%;
   transform-origin: top left;
   will-change: transform;
+  color: transparent;
 
   @media (min-width: 800px) {
     border-radius: 4px;

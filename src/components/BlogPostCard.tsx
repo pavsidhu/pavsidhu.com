@@ -37,6 +37,7 @@ const CoverPhoto = styled((props) => <Image {...props} />)`
   padding-bottom: 60%;
   object-fit: cover;
   border-radius: 4px;
+  color: transparent;
 `
 
 const Meta = styled.div`
