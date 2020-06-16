@@ -186,15 +186,21 @@ export const BlogPostTransition = React.createContext<{
   resetBounds: () => void
 }>({
   bounds: undefined,
-  setBounds: (bounds) => {},
+  setBounds: () => {},
   resetBounds: () => {}
 })
 
 export default function Layout(props: { children: React.ReactNode }) {
   // Disable annoying install prompt
   useEffect(() => {
-    window.addEventListener("beforeinstallprompt", (e) => {
-      e.preventDefault()
+    window.addEventListener("beforeinstallprompt", (event) => {
+      event.preventDefault()
+    })
+
+    window.matchMedia("(prefers-color-scheme: dark)").addListener((event) => {
+      document
+        .querySelector("meta[name=theme-color]")
+        ?.setAttribute("content", event.matches ? "#292929" : "#fefefe")
     })
   }, [])
 
