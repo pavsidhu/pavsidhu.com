@@ -87,7 +87,7 @@ module.exports = {
         short_name: `Pav Sidhu`,
         start_url: `/`,
         background_color: `#fefefe`,
-        theme_color: `#f05f40`,
+        theme_color: `#fefefe`,
         display: `standalone`,
         cache_busting_mode: "none",
         icon: `src/images/favicons/1024.png`,
