@@ -223,6 +223,9 @@ export const query = graphql`
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid_withWebp
             }
+            resize(width: 1200) {
+              src
+            }
           }
         }
         coverImageAlt
