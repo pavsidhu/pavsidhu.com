@@ -20,7 +20,7 @@ export const globals = css`
       src: url("${fontLight}") format("woff2"), url("${fontLight}") format("woff");
       font-weight: 300;
       font-style: normal;
-      font-display: optional;
+      font-display: block;
     }
 
     @font-face {
@@ -28,7 +28,7 @@ export const globals = css`
       src: url("${fontRegular}") format("woff2"), url("${fontRegular}") format("woff");
       font-weight: normal;
       font-style: normal;
-      font-display: optional;
+      font-display: block;
     }
 
     @font-face {
@@ -36,7 +36,7 @@ export const globals = css`
       src: url("${fontMedium}") format("woff2"), url("${fontMedium}") format("woff");
       font-weight: 500;
       font-style: normal;
-      font-display: optional;
+      font-display: block;
     }
 
     @font-face {
@@ -44,7 +44,7 @@ export const globals = css`
       src: url("${fontBold}") format("woff2"), url("${fontBold}") format("woff");
       font-weight: bold;
       font-style: normal;
-      font-display: optional;
+      font-display: block;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -75,7 +75,7 @@ export const globals = css`
     html,
     body {
       font-size: 62.5%;
-      font-family: "Orkney";
+      font-family: "Orkney", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif;
       background: var(--background-color);
       color: var(--primary-text-color);
     }
