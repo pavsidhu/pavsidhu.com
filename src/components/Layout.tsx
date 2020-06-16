@@ -203,13 +203,14 @@ export default function Layout(props: { children: React.ReactNode }) {
   return (
     <Container>
       <Helmet>
-        {[fontLight, fontRegular, fontMedium, fontBold].map((font) => (
+        {[fontLight, fontRegular, fontMedium, fontBold].map((font, index) => (
           <link
             rel="preload"
             href={font}
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
+            key={index}
           />
         ))}
       </Helmet>
