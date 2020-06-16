@@ -59,36 +59,38 @@ export default function AboutPage({ data }) {
           </SubTitle>
 
           <Paragraph>
-            Since I was 12, programming has been a fundamental part of my life.
-            I learnt web development in dark times when Internet Explorer 8 was
-            popular and JQuery was at its peak. I picked up graphic design too,
-            in fact, I did some freelance work. My clients weren't aware that I
-            was a young teenager learning as I go.
+            Programming has been a fundamental part of my life from the age of
+            12. I learnt web development during those dark times when Internet
+            Explorer 8 was popular and jQuery was at its peak. I picked up
+            graphic design too and started freelancing. My clients weren't aware
+            that I was a young teenager learning on the job.
           </Paragraph>
           <Paragraph>
-            A few years later, I started exploring other areas of programming
-            and came across Python. When I was studying for my high school
-            exams, I decided to use my skills to build a study website,
-            Revisify. I worked on the project for 2 years, gaining a community
-            of 3000 students before closing it down to pursue other interests.
+            A few years later, I began to explore other areas of programming.
+            Whilst studying for my school exams, I used my skills to build a
+            study website called Revisify. Over a 2 year period, Revisify grew
+            into a community of 3000 students. I decided to shut the website
+            down in 2017 so I could pursue other interests.
           </Paragraph>
           <Paragraph>
-            I studied Artificial Intelligence and Computer Science at the
-            University of Birmingham. During my time at university, I learnt a
-            lot about machine learning and neural networks. I managed to achieve
-            state-of-the-art results in personality classification from text as
-            part of my final year project.
+            After finishing school, I went on to study Artificial Intelligence
+            and Computer Science at the University of Birmingham. I learnt a
+            variety of topics including machine learning, neural networks and
+            natural language processing. As part of my final year project, I
+            built a dating chatbot that matched users based on their
+            personality. My neural network managed to achieve state-of-the-art
+            results in personality classification from text.
           </Paragraph>
           <Paragraph>
-            I’ve worked on many other projects through hackathons,
-            self-interests and more. If you’re reading this, I’m most likely
-            working on something new. When I’m not programming, I love
-            powerlifting, playing board games and listening to music.
+            I’ve worked on several other projects through hackathons,
+            self-interests and university. If you’re reading this, I’m most
+            likely working on something new. I'm currently interested in
+            progressive web apps and the future of the web.
           </Paragraph>
           <Paragraph>
-            As of now, I’ve finished university and have a graduate scheme lined
-            up in London. I’m currently interested in progressive web apps and
-            the future of the web.
+            When I'm not behind my computer, you'll find me lifting weights in
+            the gym, playing board games or spending time with friends and
+            family.
           </Paragraph>
         </Content>
       </Container>
