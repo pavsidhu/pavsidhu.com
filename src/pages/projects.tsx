@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from "react"
+import React, { useState, useRef, useLayoutEffect, useEffect } from "react"
 import SwipeableViews from "react-swipeable-views"
 import { bindKeyboard } from "react-swipeable-views-utils"
 import { styled } from "linaria/react"
@@ -117,6 +117,10 @@ const Projects = styled(BindKeyboardSwipeableViews)`
   }
 `
 
+const projectHashes = projects.map(
+  ({ title }) => "#" + title.toLowerCase().replace(" ", "")
+)
+
 export default function ProjectsPage() {
   const [projectIndex, setProjectIndex] = useState(0)
   const selectorRef = useRef<HTMLDivElement>(null)
@@ -130,16 +134,22 @@ export default function ProjectsPage() {
     )
   })
 
+  useEffect(() => {
+    if (!projectHashes.includes(window.location.hash)) {
+      window.location.hash = projectHashes[0]
+    } else {
+      const index = projectHashes.indexOf(window.location.hash)
+      setProjectIndex(index)
+      scrollToSelectorItem(index)
+    }
+  }, [])
+
   function scrollToSelectorItem(index: number) {
     selectorRef.current?.childNodes[index].scrollIntoView({
       behavior: "smooth",
       inline: "center",
       block: "end"
     })
-  }
-
-  function changeIndex(index: number) {
-    setProjectIndex(index)
   }
 
   return (
@@ -151,7 +161,7 @@ export default function ProjectsPage() {
           <SelectorItem
             className={index === projectIndex ? "active" : undefined}
             onClick={() => {
-              changeIndex(index)
+              setProjectIndex(index)
               scrollToSelectorItem(index)
             }}
             key={title}
@@ -164,8 +174,13 @@ export default function ProjectsPage() {
       <Projects
         index={projectIndex}
         onChangeIndex={(index) => {
-          changeIndex(index)
-          setTimeout(() => scrollToSelectorItem(index), 100)
+          setProjectIndex(index)
+          setTimeout(() => {
+            scrollToSelectorItem(index)
+          }, 100)
+        }}
+        onTransitionEnd={() => {
+          window.location.hash = projectHashes[projectIndex]
         }}
       >
         <Aida />
