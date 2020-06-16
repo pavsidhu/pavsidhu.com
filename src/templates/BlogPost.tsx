@@ -100,6 +100,7 @@ const components = {
 
   a: styled.a`
     color: var(--primary-color);
+    user-select: auto;
   `,
 
   ul: styled.ul`
