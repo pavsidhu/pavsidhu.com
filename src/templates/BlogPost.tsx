@@ -176,7 +176,11 @@ export default function BlogPost({ data: { mdx } }) {
 
   return (
     <Container ref={containerRef}>
-      <Seo title={mdx.frontmatter.title} description={mdx.excerpt} />
+      <Seo
+        title={mdx.frontmatter.title}
+        description={mdx.excerpt}
+        image={mdx.frontmatter.coverImage.childImageSharp.resize.src}
+      />
 
       <ReadingProgress target={containerRef} />
 

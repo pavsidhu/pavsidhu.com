@@ -4,7 +4,8 @@ module.exports = {
   siteMetadata: {
     title: `Pav Sidhu`,
     description: `I’m a developer from the UK. I like progressive web apps, neural networks and designing user experiences.`,
-    author: `Pav Sidhu <pav@pavsidhu.com>`
+    author: `Pav Sidhu <pav@pavsidhu.com>`,
+    siteUrl: `https://pavsidhu.com`
   },
   plugins: [
     `gatsby-plugin-typescript`,

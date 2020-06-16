@@ -6,10 +6,11 @@ interface Props {
   description?: string
   lang?: string
   title: string
+  image: string
 }
 
-export default function Seo({ description, lang, title }: Props) {
-  const { site } = useStaticQuery(
+function Seo({ description, lang, meta, title, image }: Props) {
+  const { site, file } = useStaticQuery(
     graphql`
       query {
         site {
@@ -17,6 +18,14 @@ export default function Seo({ description, lang, title }: Props) {
             title
             description
             author
+            siteUrl
+          }
+        }
+        file(relativePath: { eq: "general/profile.jpg" }) {
+          childImageSharp {
+            resize(width: 1200) {
+              src
+            }
           }
         }
       }
@@ -24,12 +33,11 @@ export default function Seo({ description, lang, title }: Props) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const metaImage = image || file.childImageSharp.resize.src
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang
-      }}
+      htmlAttributes={{ lang }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
@@ -46,12 +54,16 @@ export default function Seo({ description, lang, title }: Props) {
           content: metaDescription
         },
         {
+          property: `og:image`,
+          content: site.siteMetadata.siteUrl + metaImage
+        },
+        {
           property: `og:type`,
           content: `website`
         },
         {
           name: `twitter:card`,
-          content: `summary`
+          content: `summary_large_image`
         },
         {
           name: `twitter:creator`,
@@ -64,13 +76,21 @@ export default function Seo({ description, lang, title }: Props) {
         {
           name: `twitter:description`,
           content: metaDescription
+        },
+        {
+          property: `twitter:image`,
+          content: site.siteMetadata.siteUrl + metaImage
         }
-      ]}
+      ].concat(meta)}
     />
   )
 }
 
 Seo.defaultProps = {
   lang: `en`,
-  description: ``
+  meta: [],
+  description: ``,
+  image: undefined
 }
+
+export default Seo
