@@ -165,7 +165,7 @@ export default function ProjectsPage() {
         index={projectIndex}
         onChangeIndex={(index) => {
           changeIndex(index)
-          setTimeout(() => scrollToSelectorItem(index), 0)
+          setTimeout(() => scrollToSelectorItem(index), 100)
         }}
       >
         <Aida />
