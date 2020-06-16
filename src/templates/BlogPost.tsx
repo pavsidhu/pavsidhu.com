@@ -1,10 +1,11 @@
-import React, { useRef } from "react"
+import React, { useRef, useContext, useLayoutEffect } from "react"
 import { styled } from "linaria/react"
 import Image from "gatsby-image"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"
 
+import { BlogPostTransition } from "../components/Layout"
 import { Seo, CodeBlock, ReadingProgress } from "../components"
 
 const Container = styled.article`
@@ -40,6 +41,8 @@ const CoverImage = styled(Image)`
   width: 100%;
   height: 0;
   padding-bottom: 60%;
+  transform-origin: top left;
+  will-change: transform;
 
   @media (min-width: 800px) {
     border-radius: 4px;
@@ -130,16 +133,54 @@ const components = {
 }
 
 export default function BlogPost({ data: { mdx } }) {
-  const contentRef = useRef<HTMLElement>(null)
+  const containerRef = useRef<HTMLElement>(null)
+  const coverImageRef = useRef<HTMLElement>(null)
+  const context = useContext(BlogPostTransition)
+
+  useLayoutEffect(() => {
+    const image = containerRef.current?.querySelector(".gatsby-image-wrapper")
+
+    if (context.bounds && image) {
+      const coverImageRect = image.getBoundingClientRect()
+
+      const deltaX = context.bounds.left - window.scrollX - coverImageRect.left
+      const deltaY = context.bounds.top - window.scrollY - coverImageRect.top
+      const deltaW = context.bounds.width / coverImageRect.width
+      const deltaH = context.bounds.height / coverImageRect.height
+
+      image.animate(
+        [
+          {
+            transform: `
+            translate(${deltaX}px, ${deltaY}px)
+            scale(${deltaW}, ${deltaH})
+          `
+          },
+          {
+            transform: "none"
+          }
+        ],
+        {
+          duration: 250,
+          delay: 100,
+          easing: "ease-in-out",
+          fill: "both"
+        }
+      )
+
+      context.resetBounds()
+    }
+  })
 
   return (
-    <Container ref={contentRef}>
+    <Container ref={containerRef}>
       <Seo title={mdx.frontmatter.title} description={mdx.excerpt} />
 
-      <ReadingProgress target={contentRef} />
+      <ReadingProgress target={containerRef} />
 
       <CoverImageContainer>
         <CoverImage
+          ref={coverImageRef}
           fluid={mdx.frontmatter.coverImage.childImageSharp.fluid}
           alt={mdx.frontmatter.coverImageAlt}
         />

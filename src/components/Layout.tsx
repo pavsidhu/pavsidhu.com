@@ -1,8 +1,11 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { css } from "linaria"
 import { styled } from "linaria/react"
 import { Helmet } from "react-helmet"
+
+// Polyfills
 import "focus-visible"
+import "web-animations-js"
 
 import { Header, TabBar } from "../components"
 import fontLight from "../fonts/Orkney-Light.woff2"
@@ -177,6 +180,16 @@ const Container = styled.div`
   }
 `
 
+export const BlogPostTransition = React.createContext<{
+  bounds?: DOMRect
+  setBounds: (bounds?: DOMRect) => void
+  resetBounds: () => void
+}>({
+  bounds: undefined,
+  setBounds: (bounds) => {},
+  resetBounds: () => {}
+})
+
 export default function Layout(props: { children: React.ReactNode }) {
   // Disable annoying install prompt
   useEffect(() => {
@@ -184,6 +197,8 @@ export default function Layout(props: { children: React.ReactNode }) {
       e.preventDefault()
     })
   }, [])
+
+  const [blogPostCardBounds, setBlogPostCardBounds] = useState<DOMRect>()
 
   return (
     <Container>
@@ -195,7 +210,15 @@ export default function Layout(props: { children: React.ReactNode }) {
       </Helmet>
 
       <Header />
-      <main>{props.children}</main>
+      <BlogPostTransition.Provider
+        value={{
+          bounds: blogPostCardBounds,
+          setBounds: setBlogPostCardBounds,
+          resetBounds: () => setBlogPostCardBounds(undefined)
+        }}
+      >
+        <main>{props.children}</main>
+      </BlogPostTransition.Provider>
       <TabBar />
     </Container>
   )
