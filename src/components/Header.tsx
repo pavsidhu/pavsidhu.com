@@ -26,7 +26,7 @@ const Container = styled.header`
   }
 
   @media (prefers-color-scheme: dark) {
-    background: var(--dark-secondary-background-color);
+    background: var(--secondary-background-color);
   }
 `
 
