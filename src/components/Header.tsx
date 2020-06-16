@@ -92,12 +92,12 @@ export default function Header() {
   const containerRef = useRef<HTMLElement>(null)
 
   useLayoutEffect(() => {
-    if (!containerRef.current) return
-
-    document.documentElement.style.setProperty(
-      "--header-height",
-      containerRef.current.clientHeight + "px"
-    )
+    if (containerRef.current) {
+      document.documentElement.style.setProperty(
+        "--header-height",
+        containerRef.current.clientHeight + "px"
+      )
+    }
   })
 
   return (

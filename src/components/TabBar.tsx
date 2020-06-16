@@ -57,15 +57,15 @@ const TabLabel = styled.p`
 `
 
 export default function TabBar() {
-  const containerRef = useRef()
+  const containerRef = useRef<HTMLElement>(null)
 
   useLayoutEffect(() => {
-    if (!containerRef.current) return
-
-    document.documentElement.style.setProperty(
-      "--tab-bar-height",
-      containerRef.current.clientHeight + "px"
-    )
+    if (containerRef.current) {
+      document.documentElement.style.setProperty(
+        "--tab-bar-height",
+        containerRef.current.clientHeight + "px"
+      )
+    }
   })
 
   return (
