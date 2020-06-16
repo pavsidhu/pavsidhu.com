@@ -1,3 +1,5 @@
+declare module "focus-visible"
+
 declare module "*.svg" {
   export const ReactComponent: React.FunctionComponent<React.SVGAttributes<
     SVGElement
