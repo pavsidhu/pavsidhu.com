@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { css } from "linaria"
 import { styled } from "linaria/react"
 import { Helmet } from "react-helmet"
+import { TransitionGroup, CSSTransition } from "react-transition-group"
 
 // Polyfills
 import "focus-visible"
@@ -180,6 +181,35 @@ const Container = styled.div`
   }
 `
 
+const timeout = 100
+
+const Main = styled.main`
+  width: 100%;
+  background: var(--background-color);
+  transition: opacity ${timeout}ms ease-in-out;
+
+  &.enter {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    opacity: 0;
+  }
+
+  &.enter-active {
+    opacity: 1;
+  }
+
+  &.exit {
+    position: absolute;
+    left: 0;
+    opacity: 1;
+  }
+
+  &.exit-active {
+    opacity: 0;
+  }
+`
+
 export const BlogPostTransition = React.createContext<{
   bounds?: DOMRect
   setBounds: (bounds?: DOMRect) => void
@@ -205,6 +235,7 @@ export default function Layout(props: { children: React.ReactNode }) {
   }, [])
 
   const [blogPostCardBounds, setBlogPostCardBounds] = useState<DOMRect>()
+  const subtab = location.pathname.split("/")[2]
 
   return (
     <Container>
@@ -229,7 +260,26 @@ export default function Layout(props: { children: React.ReactNode }) {
           resetBounds: () => setBlogPostCardBounds(undefined)
         }}
       >
-        <main>{props.children}</main>
+        <TransitionGroup>
+          <CSSTransition
+            key={subtab}
+            timeout={timeout}
+            unmountOnExit={true}
+            onExit={(node) => {
+              node.style.top =
+                (
+                  -1 * window.scrollY +
+                  parseInt(
+                    document.documentElement.style.getPropertyValue(
+                      "--header-height"
+                    )
+                  )
+                ).toString() + "px"
+            }}
+          >
+            <Main>{props.children}</Main>
+          </CSSTransition>
+        </TransitionGroup>
       </BlogPostTransition.Provider>
       <TabBar />
     </Container>

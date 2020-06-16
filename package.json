@@ -50,6 +50,7 @@
     "@types/react-swipeable-views": "^0.13.0",
     "@types/react-swipeable-views-utils": "^0.13.2",
     "@types/web-animations-js": "^2.2.9",
+    "@types/react-transition-group": "^4.4.0",
     "prettier": "^2.0.5"
   },
   "license": "MIT",
