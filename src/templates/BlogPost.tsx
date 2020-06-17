@@ -4,9 +4,11 @@ import Image from "gatsby-image"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"
+import { navigate } from "@reach/router"
 
 import { BlogPostTransition } from "../components/Layout"
 import { Seo, CodeBlock, ReadingProgress } from "../components"
+import { ReactComponent as BackIcon } from "../images/icons/back.svg"
 
 const Container = styled.article`
   width: 100%;
@@ -17,15 +19,80 @@ const Container = styled.article`
     ".     .       .    ";
   grid-template-columns: var(--space-m) minmax(0, 1fr) var(--space-m);
   row-gap: var(--space-s);
-  justify-content: center;
+  position: relative;
 
   @media (min-width: 800px) {
     grid-template-areas:
-      ". .       ."
-      ". cover   ."
-      ". content ."
-      ". .       .";
+      ". .           ."
+      ". cover       ."
+      ". content     ."
+      ". .           .";
     row-gap: var(--space-m);
+  }
+`
+
+const BackButtonContainer = styled.div`
+  grid-area: cover;
+  justify-self: center;
+  z-index: 1;
+  width: 100%;
+  max-width: 50ch;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), transparent);
+  padding: var(--space-s) var(--space-xs);
+  font-size: var(--font-m);
+  font-weight: 500;
+  opacity: 0;
+  animation: fadeIn 100ms 100ms forwards;
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: 800px) {
+    border-radius: 4px;
+  }
+
+  @media (min-width: 900px) {
+    grid-area: back-button;
+    background-image: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+`
+
+const BackButton = styled.button`
+  display: flex;
+  align-self: start;
+  align-items: center;
+  padding: var(--space-xs) var(--space-s);
+  border-radius: 20px;
+  color: #fefefe;
+  fill: currentColor;
+  transition: background 100ms, color 100ms;
+
+  p {
+    padding-top: 0.4rem;
+    margin-left: var(--space-xs);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  @media (min-width: 900px) {
+    color: var(--primary-text-color);
+    background: var(--background-color);
+
+    @media (hover: hover) {
+      &:hover {
+        background: var(--hover-color);
+      }
+    }
   }
 `
 
@@ -183,6 +250,13 @@ export default function BlogPost({ data: { mdx } }) {
       />
 
       <ReadingProgress target={containerRef} />
+
+      <BackButtonContainer>
+        <BackButton onClick={() => navigate(-1)}>
+          <BackIcon />
+          <p>Back</p>
+        </BackButton>
+      </BackButtonContainer>
 
       <CoverImageContainer>
         <CoverImage
