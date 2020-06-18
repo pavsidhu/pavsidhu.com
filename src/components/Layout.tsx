@@ -233,7 +233,12 @@ export const BlogPostTransition = React.createContext<{
   resetBounds: () => {}
 })
 
-export default function Layout(props: { children: React.ReactNode }) {
+interface Props {
+  location: Location
+  children: React.ReactNode
+}
+
+export default function Layout(props: Props) {
   // Disable annoying install prompt
   useEffect(() => {
     window.addEventListener("beforeinstallprompt", (event) => {
@@ -248,7 +253,7 @@ export default function Layout(props: { children: React.ReactNode }) {
   }, [])
 
   const [blogPostCardBounds, setBlogPostCardBounds] = useState<DOMRect>()
-  const subtab = location.pathname.split("/")[2]
+  const subtab = props.location.pathname.split("/")[2]
 
   return (
     <Container>
