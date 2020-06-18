@@ -1,6 +1,6 @@
 import React from "react"
-import { styled } from "linaria/react"
 import Image from "gatsby-image"
+import { styled } from "linaria/react"
 import { graphql } from "gatsby"
 
 import { BlogPostCard, Seo } from "../components"
@@ -19,54 +19,22 @@ const Container = styled.article`
 const Intro = styled.div`
   border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
   display: grid;
+  padding: var(--space-m);
+  row-gap: var(--space-m);
   grid-template-areas:
-    ".      .      .      .        .      "
-    ".      photo  .      greeting .      "
-    ".      .      .      .        .      "
-    ".      desc   desc   desc     .      "
-    ".      .      .      .        .      "
-    "social social social social    social"
-    ".      .      .      .        .      "
-    ".      .      .      .        .      ";
-  grid-template-columns:
-    var(--space-m)
-    min-content
-    var(--space-s)
-    auto
-    var(--space-m);
-  grid-template-rows:
-    var(--space-m)
-    min-content
-    var(--space-m)
-    max-content
-    var(--space-m)
-    auto
-    var(--space-m)
-    auto
-    var(--space-m);
+    "photo  .      greeting"
+    "desc   desc   desc    "
+    "social social social  ";
+  grid-template-columns: min-content var(--space-s) auto;
+  grid-template-rows: min-content max-content auto;
 
   @media (min-width: 500px) and (max-width: 899px) {
     justify-content: center;
     grid-template-areas:
-      ". .     .    .        . .      ."
-      ". photo .    greeting . social ."
-      ". .     .    .        . social ."
-      ". desc  desc desc     . social ."
-      ". .     .    .        . .      .";
-    grid-template-columns:
-      var(--space-m)
-      min-content
-      var(--space-s)
-      auto
-      var(--space-m)
-      min-content
-      var(--space-m);
-    grid-template-rows:
-      var(--space-m)
-      min-content
-      var(--space-m)
-      1fr
-      var(--space-m);
+      "photo .    greeting . social"
+      "desc  desc desc     . social";
+    grid-template-columns: min-content var(--space-s) auto var(--space-m) min-content;
+    grid-template-rows: min-content 1fr;
   }
 
   @media (min-width: 900px) {
@@ -110,13 +78,23 @@ const Highlight = styled.span`
 
 const Social = styled.div`
   grid-area: social;
-  height: 100%;
-  display: flex;
-  margin: 0 var(--space-m);
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--space-s);
+  justify-content: start;
+  align-content: start;
+  transform: translateX(calc(-1 * var(--space-xs)));
 
   @media (min-width: 500px) {
-    flex-direction: column;
-    margin: 0;
+    transform: none;
+    grid-auto-flow: row;
+    gap: var(--space-xs);
+  }
+
+  @media (min-width: 800px) {
+    transform: translateX(calc(-1 * var(--space-xs)));
+    width: calc(100% + var(--space-s));
+    justify-content: initial;
   }
 `
 
@@ -124,17 +102,14 @@ const SocialLink = styled.a`
   display: grid;
   grid-template-areas: "icon";
   grid-template-columns: var(--space-m);
-  grid-template-rows: var(--space-m);
-  margin-right: var(--space-m);
+  padding: var(--space-xs);
+  border-radius: 50%;
 
   @media (min-width: 500px) {
     grid-template-columns: var(--space-xl) var(--space-s) 1fr;
-    grid-template-rows: initial;
     grid-template-areas:
       "icon . label "
       "icon . handle";
-    margin: 0 var(--space-s) var(--space-xs);
-    padding: var(--space-xs) var(--space-s);
     border-radius: 40px;
   }
 `
@@ -142,7 +117,6 @@ const SocialLink = styled.a`
 const SocialIcon = styled.svg`
   grid-area: icon;
   width: 100%;
-  height: 100%;
   fill: currentColor;
   align-self: center;
 `
