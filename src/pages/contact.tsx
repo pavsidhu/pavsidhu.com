@@ -1,7 +1,8 @@
 import React from "react"
 import { styled } from "linaria/react"
+import { Link } from "gatsby"
 
-import { Input, Seo } from "../../components"
+import { Input, Seo } from "../components"
 
 const Container = styled.article`
   width: 100%;
@@ -52,8 +53,36 @@ const SubmitButton = styled.button`
   font-weight: 500;
 `
 
-export default function ContactPage() {
-  return (
+const SuccessContainer = styled.article`
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: var(--space-s);
+  padding: var(--space-m);
+`
+
+const HomeLink = styled((props) => <Link {...props} />)`
+  font-size: var(--font-m);
+  color: var(--primary-color);
+  padding: var(--space-xs);
+  padding-top: calc(var(--font-padding) + var(--space-xs));
+`
+
+export default function ContactPage({ location }: { location: Location }) {
+  const params = new URLSearchParams(location.search)
+  const success = params.get("success") === "true"
+
+  return success ? (
+    <SuccessContainer>
+      <Title>Thanks</Title>
+      <Paragraph>
+        I got your message, I'll get back to you as soon as I can!
+      </Paragraph>
+      <HomeLink to="/" data-clickable="default">
+        Go To Home
+      </HomeLink>
+    </SuccessContainer>
+  ) : (
     <Container>
       <Seo title="Contact" />
       <Title>Contact</Title>

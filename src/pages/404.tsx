@@ -24,6 +24,8 @@ const Paragraph = styled.p`
 const HomeLink = styled((props) => <Link {...props} />)`
   font-size: var(--font-m);
   color: var(--primary-color);
+  padding: var(--space-xs);
+  padding-top: calc(var(--font-padding) + var(--space-xs));
 `
 
 export default function NotFoundPage() {
