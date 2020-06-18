@@ -88,6 +88,7 @@ const Moon = styled(MoonSvg)`
   display: none;
   background: #180652;
   border-radius: 50%;
+  width: 100%;
 
   @media (min-width: 800px) {
     display: block;
