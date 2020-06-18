@@ -36,18 +36,6 @@ const Title = styled((props) => <Link {...props} />)`
   font-weight: 500;
   padding: calc(var(--font-padding) + 4px) var(--space-xs) 4px;
   border-radius: 20px;
-
-  @media (hover: hover) {
-    &:hover {
-      box-shadow: 0 0 0 100vw var(--hover-color) inset,
-        0 0 0 4px var(--hover-color);
-
-      &:focus {
-        box-shadow: 0 0 0 var(--focus-box-shadow),
-          0 0 0 100vw var(--hover-color) inset;
-      }
-    }
-  }
 `
 
 const Nav = styled.nav`
@@ -68,12 +56,6 @@ const NavItem = styled((props) => <Link {...props} />)`
   &.active {
     background: var(--primary-light-color);
     color: var(--primary-color);
-  }
-
-  @media (hover: hover) {
-    &:hover:not(.active) {
-      background: var(--hover-color);
-    }
   }
 
   @media (prefers-color-scheme: dark) {
@@ -103,30 +85,52 @@ export default function Header() {
 
   return (
     <Container ref={containerRef}>
-      <Title to="/">Pav Sidhu</Title>
+      <Title to="/" data-clickable="default">
+        Pav Sidhu
+      </Title>
 
       <Nav>
-        <NavItem to="/" activeClassName="active">
+        <NavItem to="/" activeClassName="active" data-clickable="default">
           <HomeIcon aria-hidden="true" />
           <NavItemLabel>Home</NavItemLabel>
         </NavItem>
 
-        <NavItem to="/about" activeClassName="active" partiallyActive={true}>
+        <NavItem
+          to="/about"
+          activeClassName="active"
+          partiallyActive={true}
+          data-clickable="default"
+        >
           <AboutIcon aria-hidden="true" />
           <NavItemLabel>About</NavItemLabel>
         </NavItem>
 
-        <NavItem to="/blog" activeClassName="active" partiallyActive={true}>
+        <NavItem
+          to="/blog"
+          activeClassName="active"
+          partiallyActive={true}
+          data-clickable="default"
+        >
           <BlogIcon aria-hidden="true" />
           <NavItemLabel>Blog</NavItemLabel>
         </NavItem>
 
-        <NavItem to="/projects" activeClassName="active" partiallyActive={true}>
+        <NavItem
+          to="/projects"
+          activeClassName="active"
+          partiallyActive={true}
+          data-clickable="default"
+        >
           <ProjectsIcon aria-hidden="true" />
           <NavItemLabel>Projects</NavItemLabel>
         </NavItem>
 
-        <NavItem to="/contact" activeClassName="active" partiallyActive={true}>
+        <NavItem
+          to="/contact"
+          activeClassName="active"
+          partiallyActive={true}
+          data-clickable="default"
+        >
           <ContactIcon aria-hidden="true" />
           <NavItemLabel>Contact</NavItemLabel>
         </NavItem>

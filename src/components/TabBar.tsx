@@ -50,6 +50,12 @@ const Tab = styled((props) => <Link {...props} />)`
       color: var(--primary-text-color);
     }
   }
+
+  @media (hover: hover) {
+    &:hover:not(.active) {
+      background: var(--hover-color);
+    }
+  }
 `
 
 const TabLabel = styled.p`

@@ -126,7 +126,6 @@ const SocialLink = styled.a`
   grid-template-columns: var(--space-m);
   grid-template-rows: var(--space-m);
   margin-right: var(--space-m);
-  transition: background 100ms, color 100ms;
 
   @media (min-width: 500px) {
     grid-template-columns: var(--space-xl) var(--space-s) 1fr;
@@ -137,12 +136,6 @@ const SocialLink = styled.a`
     margin: 0 var(--space-s) var(--space-xs);
     padding: var(--space-xs) var(--space-s);
     border-radius: 40px;
-  }
-
-  @media (hover: hover) {
-    &:hover {
-      background: var(--hover-color);
-    }
   }
 `
 
@@ -221,6 +214,7 @@ export default function IndexPage({ data }) {
               target="_blank"
               rel="noopener"
               aria-label="Twitter"
+              data-clickable="default"
             >
               <SocialIcon as={TwitterIcon} />
               <SocialLabel>Twitter</SocialLabel>
@@ -232,6 +226,7 @@ export default function IndexPage({ data }) {
               target="_blank"
               rel="noopener"
               aria-label="GitHub"
+              data-clickable="default"
             >
               <SocialIcon as={GitHubIcon} />
               <SocialLabel>GitHub</SocialLabel>
@@ -243,6 +238,7 @@ export default function IndexPage({ data }) {
               target="_blank"
               rel="noopener"
               aria-label="LinkedIn"
+              data-clickable="default"
             >
               <SocialIcon as={LinkedInIcon} />
               <SocialLabel>LinkedIn</SocialLabel>

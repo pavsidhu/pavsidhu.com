@@ -86,14 +86,6 @@ const SelectorItem = styled.button`
     color: var(--primary-color);
     background: var(--primary-light-color);
   }
-
-  &:not(.active) {
-    @media (hover: hover) {
-      &:hover {
-        background: var(--hover-color);
-      }
-    }
-  }
 `
 
 const BindKeyboardSwipeableViews = bindKeyboard(SwipeableViews)
@@ -160,11 +152,12 @@ export default function ProjectsPage() {
         {projects.map(({ title }, index) => (
           <SelectorItem
             className={index === projectIndex ? "active" : undefined}
+            key={title}
+            data-clickable="default"
             onClick={() => {
               setProjectIndex(index)
               scrollToSelectorItem(index)
             }}
-            key={title}
           >
             {title}
           </SelectorItem>

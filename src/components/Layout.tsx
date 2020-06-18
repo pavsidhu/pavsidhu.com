@@ -136,6 +136,47 @@ export const globals = css`
       animation: fade-in 100ms ease-in-out;
     }
 
+    [data-clickable],
+    [data-clickable="default"] {
+      position: relative;
+      z-index: 0;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
+        transform: scale(0.9);
+        background: var(--hover-color);
+        border-radius: 10000px;
+        top: calc(-1 * 2px);
+        left: calc(-1 * 4px);
+        width: calc(100% + var(--space-xs));
+        height: calc(100% + 4px);
+      }
+
+      @media (hover: hover) {
+        &:hover:not(.active) {
+          &:before {
+            transform: none;
+            opacity: 1;
+          }
+        }
+      }
+    }
+    
+    [data-clickable="square"] {
+      &:before {
+        border-radius: 8px;
+        top: calc(-1 * var(--space-xs));
+        left: calc(-1 * var(--space-xs));
+        width: calc(100% + var(--space-s));
+        height: calc(100% + var(--space-s));
+      }
+    }
+
     @keyframes fade-in {
       from {
         opacity: 0.5;
@@ -152,7 +193,7 @@ export const globals = css`
       --secondary-text-color: #646464;
       --background-color: #fefefe;
       --secondary-background-color: rgba(0, 0, 0, 0.2);
-      --hover-color: #eeeeee;
+      --hover-color: rgba(0, 0, 0, 0.075);
       --line-color: rgba(0, 0, 0, 0.1);
 
       --space-xs: 8px;

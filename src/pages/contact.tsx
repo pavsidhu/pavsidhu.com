@@ -50,12 +50,6 @@ const SubmitButton = styled.button`
   color: var(--primary-color);
   font-size: var(--font-s);
   font-weight: 500;
-
-  @media (hover: hover) {
-    &:hover {
-      background: var(--hover-color);
-    }
-  }
 `
 
 export default function ContactPage() {
@@ -81,7 +75,9 @@ export default function ContactPage() {
             style={{ gridArea: "message" }}
           />
 
-          <SubmitButton type="submit">Send Message</SubmitButton>
+          <SubmitButton type="submit" data-clickable="default">
+            Send Message
+          </SubmitButton>
         </Form>
       </Container>
     </>

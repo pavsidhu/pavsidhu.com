@@ -18,14 +18,6 @@ const Container = styled(
   gap: var(--space-xs);
   align-content: start;
   border-radius: 4px;
-  transition: box-shadow 100ms;
-
-  @media (hover: hover) {
-    &:hover:not(.active) {
-      box-shadow: 0 0 0 100vw var(--hover-color) inset,
-        0 0 0 8px var(--hover-color);
-    }
-  }
 `
 
 const CoverPhoto = styled((props) => <Image {...props} />)`
@@ -100,6 +92,7 @@ export default function BlogPostCard(props: Props) {
         if (coverPhotoBounds) context.setBounds(coverPhotoBounds)
         navigate("/blog" + props.link)
       }}
+      data-clickable="square"
     >
       <CoverPhoto fluid={props.coverImage.childImageSharp.fluid} />
 
