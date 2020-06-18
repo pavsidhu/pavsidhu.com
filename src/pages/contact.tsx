@@ -64,7 +64,12 @@ export default function ContactPage() {
           possible!
         </Paragraph>
 
-        <Form name="contact" method="POST" data-netlify="true">
+        <Form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
           <Input name="Name" style={{ gridArea: "name" }} />
 
           <Input name="Email" type="email" style={{ gridArea: "email" }} />
@@ -74,6 +79,8 @@ export default function ContactPage() {
             textarea={true}
             style={{ gridArea: "message" }}
           />
+
+          <input type="hidden" name="form-name" value="contact" />
 
           <SubmitButton type="submit" data-clickable="default">
             Send Message
