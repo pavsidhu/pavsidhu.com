@@ -230,7 +230,7 @@ export default function BlogPost({ data: { mdx } }) {
           }
         ],
         {
-          duration: 250,
+          duration: 200,
           delay: 10,
           easing: "ease-in-out",
           fill: "both"
