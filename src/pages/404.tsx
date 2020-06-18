@@ -16,7 +16,7 @@ const Title = styled.h1`
   font-size: var(--font-xxl);
 `
 
-const Text = styled.p`
+const Paragraph = styled.p`
   font-size: var(--font-m);
   line-height: 3.2rem;
 `
