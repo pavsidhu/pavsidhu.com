@@ -1,7 +1,7 @@
 import React from "react"
 import { styled } from "linaria/react"
 
-import { Input, Seo } from "../components"
+import { Input, Seo } from "../../components"
 
 const Container = styled.article`
   width: 100%;
@@ -54,39 +54,34 @@ const SubmitButton = styled.button`
 
 export default function ContactPage() {
   return (
-    <>
+    <Container>
       <Seo title="Contact" />
-      <Container>
-        <Title>Contact</Title>
+      <Title>Contact</Title>
 
-        <Paragraph>
-          My email is always open if you want a chat. I'll respond as soon as
-          possible!
-        </Paragraph>
+      <Paragraph>
+        My email is always open if you want a chat. I'll respond as soon as
+        possible!
+      </Paragraph>
 
-        <Form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-          <Input name="Name" style={{ gridArea: "name" }} />
+      <Form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        action="/contact/success"
+      >
+        <Input name="Name" style={{ gridArea: "name" }} />
 
-          <Input name="Email" type="email" style={{ gridArea: "email" }} />
+        <Input name="Email" type="email" style={{ gridArea: "email" }} />
 
-          <Input
-            name="Message"
-            textarea={true}
-            style={{ gridArea: "message" }}
-          />
+        <Input name="Message" textarea={true} style={{ gridArea: "message" }} />
 
-          <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="contact" />
 
-          <SubmitButton type="submit" data-clickable="default">
-            Send Message
-          </SubmitButton>
-        </Form>
-      </Container>
-    </>
+        <SubmitButton type="submit" data-clickable="default">
+          Send Message
+        </SubmitButton>
+      </Form>
+    </Container>
   )
 }
