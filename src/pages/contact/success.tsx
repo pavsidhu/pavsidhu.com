@@ -26,10 +26,9 @@ const HomeLink = styled((props) => <Link {...props} />)`
 export default function ContactPage() {
   return (
     <Container>
-      <Title>Thanks!</Title>
+      <Title>Thanks</Title>
       <Paragraph>
-        There's nothing here, perhaps you'll find what you're looking for back
-        home.
+        I got your message, I'll get back to you as soon as I can!
       </Paragraph>
       <HomeLink to="/" data-clickable="default">
         Go To Home

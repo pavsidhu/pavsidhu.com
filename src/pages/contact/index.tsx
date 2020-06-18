@@ -70,11 +70,21 @@ export default function ContactPage() {
         data-netlify-honeypot="bot-field"
         action="/contact/success"
       >
-        <Input name="Name" style={{ gridArea: "name" }} />
+        <Input name="Name" style={{ gridArea: "name" }} required={true} />
 
-        <Input name="Email" type="email" style={{ gridArea: "email" }} />
+        <Input
+          name="Email"
+          type="email"
+          style={{ gridArea: "email" }}
+          required={true}
+        />
 
-        <Input name="Message" textarea={true} style={{ gridArea: "message" }} />
+        <Input
+          name="Message"
+          textarea={true}
+          style={{ gridArea: "message" }}
+          required={true}
+        />
 
         <input type="hidden" name="form-name" value="contact" />
 
