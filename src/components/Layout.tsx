@@ -8,11 +8,20 @@ import { TransitionGroup, CSSTransition } from "react-transition-group"
 import "focus-visible"
 import "web-animations-js"
 
-import { Header, TabBar } from "../components"
+// Fonts
 import fontLight from "../fonts/Orkney-Light.woff2"
 import fontMedium from "../fonts/Orkney-Medium.woff2"
 import fontRegular from "../fonts/Orkney-Regular.woff2"
 import fontBold from "../fonts/Orkney-Bold.woff2"
+
+// Favicons
+import faviconSvg from "../images/favicons/favicon.svg"
+import favicon16 from "../images/favicons/favicon-16.png"
+import favicon32 from "../images/favicons/favicon-32.png"
+import favicon48 from "../images/favicons/favicon-48.png"
+import faviconSafari from "../images/favicons/safari-pinned-tab.svg"
+
+import { Header, TabBar } from "../components"
 
 export const globals = css`
   :global() {
@@ -254,6 +263,11 @@ export default function Layout(props: { children: React.ReactNode }) {
             key={index}
           />
         ))}
+
+        <link rel="icon" type="image/svg+xml" href={faviconSvg} />
+        <link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
+        <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
+        <link rel="icon" type="image/png" sizes="48x48" href={favicon48} />
       </Helmet>
 
       <Header />
