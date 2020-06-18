@@ -133,7 +133,7 @@ export const globals = css`
     }
 
     article {
-      animation: fade-in 200ms ease-in-out;
+      animation: fade-in 100ms ease-in-out;
     }
 
     @keyframes fade-in {
