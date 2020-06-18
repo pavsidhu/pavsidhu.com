@@ -184,43 +184,18 @@ const Container = styled.div`
   min-height: 100vh;
   display: grid;
   grid-template-areas: "main" "tabs";
-  grid-template-rows: 1fr auto;
+  grid-template-rows: minmax(0, 1fr) max-content;
 
   @media (min-width: 800px) {
     grid-template-areas: "header" "main";
-    grid-template-rows: auto 1fr;
+    grid-template-rows: max-content minmax(0, 1fr);
   }
 `
 
-const timeout = 100
-
-const Main = styled(TransitionGroup)`
+const Main = styled.main`
   grid-area: main;
-  position: relative;
-`
-
-const Content = styled.div`
   width: 100%;
   background: var(--background-color);
-  transition: opacity ${timeout}ms ease-in-out;
-
-  &.enter {
-    position: absolute;
-    opacity: 0;
-  }
-
-  &.enter-active {
-    opacity: 1;
-  }
-
-  &.exit {
-    position: absolute;
-    opacity: 1;
-  }
-
-  &.exit-active {
-    opacity: 0;
-  }
 `
 
 export const BlogPostTransition = React.createContext<{
@@ -284,18 +259,7 @@ export default function Layout(props: Props) {
           resetBounds: () => setBlogPostCardBounds(undefined)
         }}
       >
-        <Main component="main">
-          <CSSTransition
-            key={subtab}
-            timeout={timeout}
-            unmountOnExit={true}
-            onExit={(node) => {
-              node.style.top = (-1 * window.scrollY).toString() + "px"
-            }}
-          >
-            <Content>{props.children}</Content>
-          </CSSTransition>
-        </Main>
+        <Main>{props.children}</Main>
       </BlogPostTransition.Provider>
 
       <TabBar />
