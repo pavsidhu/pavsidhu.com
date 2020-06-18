@@ -97,7 +97,7 @@ export default function ContactPage({ location }: { location: Location }) {
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        action="/contact/success"
+        action="/contact?success=true"
       >
         <Input name="Name" style={{ gridArea: "name" }} required={true} />
 
