@@ -8,7 +8,7 @@ import { ReactComponent as TwitterIcon } from "../images/icons/twitter.svg"
 import { ReactComponent as GitHubIcon } from "../images/icons/github.svg"
 import { ReactComponent as LinkedInIcon } from "../images/icons/linkedin.svg"
 
-const Container = styled.section`
+const Container = styled.article`
   @media (min-width: 900px) {
     display: grid;
     grid-template-columns: min-content 1fr;

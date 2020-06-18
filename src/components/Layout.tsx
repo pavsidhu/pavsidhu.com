@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import { css } from "linaria"
 import { styled } from "linaria/react"
 import { Helmet } from "react-helmet"
-import { TransitionGroup, CSSTransition } from "react-transition-group"
 
 // Polyfills
 import "focus-visible"
@@ -19,7 +18,6 @@ import faviconSvg from "../images/favicons/favicon.svg"
 import favicon16 from "../images/favicons/favicon-16.png"
 import favicon32 from "../images/favicons/favicon-32.png"
 import favicon48 from "../images/favicons/favicon-48.png"
-import faviconSafari from "../images/favicons/safari-pinned-tab.svg"
 
 import { Header, TabBar } from "../components"
 
@@ -134,6 +132,19 @@ export const globals = css`
       background: none;
     }
 
+    article {
+      animation: fade-in 200ms ease-in-out;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0.5;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
     :root {
       --primary-color: #f05f40;
       --primary-light-color: #fff4f1;
@@ -228,7 +239,6 @@ export default function Layout(props: Props) {
   }, [])
 
   const [blogPostCardBounds, setBlogPostCardBounds] = useState<DOMRect>()
-  const subtab = props.location.pathname.split("/")[2]
 
   return (
     <Container>

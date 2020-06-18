@@ -5,7 +5,7 @@ import { graphql } from "gatsby"
 
 import { Seo } from "../components"
 
-const Container = styled.section`
+const Container = styled.article`
   width: 100%;
   display: grid;
   grid-template-columns:

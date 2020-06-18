@@ -1,6 +1,6 @@
 import React, { useRef, useContext, useLayoutEffect } from "react"
-import { styled } from "linaria/react"
 import Image from "gatsby-image"
+import { styled } from "linaria/react"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"

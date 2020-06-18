@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 
 import { BlogPostCard, Seo } from "../components"
 
-const Container = styled.section`
+const Container = styled.article`
   /* Max size of 4 blog post cards */
   --max-width: calc((300px * 4) + (24px * 3) + (24px * 2));
 

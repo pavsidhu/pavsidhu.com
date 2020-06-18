@@ -1,9 +1,7 @@
 import React, { useRef, useContext } from "react"
-import { styled } from "linaria/react"
 import Image, { FluidObject } from "gatsby-image"
-import { Link } from "gatsby"
-import { navigate } from "@reach/router"
-
+import { styled } from "linaria/react"
+import { Link, navigate } from "gatsby"
 import { BlogPostTransition } from "./Layout"
 
 const Container = styled(
@@ -92,7 +90,6 @@ export default function BlogPostCard(props: Props) {
   return (
     <Container
       to={"/blog" + props.link}
-      className="clickable"
       ref={containerRef}
       onClick={(event: Event) => {
         event.preventDefault()
