@@ -14,8 +14,6 @@ import SpotiParty from "../components/projects/SpotiParty"
 import projects from "../projects"
 
 const Container = styled.article`
-  height: 100%;
-  width: 100%;
   display: grid;
   grid-template-rows: var(--space-s) max-content 1fr;
   grid-template-columns:
