@@ -299,6 +299,8 @@ export default function Layout(props: Props) {
         <link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
         <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
         <link rel="icon" type="image/png" sizes="48x48" href={favicon48} />
+
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       </Helmet>
 
       <Header />
