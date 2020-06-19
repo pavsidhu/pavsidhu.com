@@ -47,7 +47,7 @@ export const ProjectContainer = styled.section`
     "preview";
   grid-template-rows: repeat(2, max-content);
   padding: calc(var(--space-s) + var(--project-selector-height)) var(--space-m);
-  gap: var(--space-m);
+  row-gap: var(--space-m);
   align-items: center;
 
   @media (min-width: 800px) {
@@ -57,7 +57,7 @@ export const ProjectContainer = styled.section`
       ". .       . .       .";
     grid-template-columns:
       minmax(var(--space-m), 1fr)
-      minmax(350px, 60ch)
+      minmax(300px, 60ch)
       minmax(var(--space-m), 1fr)
       minmax(400px, 800px)
       minmax(var(--space-m), 1fr);
@@ -65,10 +65,7 @@ export const ProjectContainer = styled.section`
       minmax(var(--space-m), 1fr)
       max-content
       minmax(var(--space-m), 1fr);
-  }
-
-  & *:last-child {
-    margin-bottom: var(--space-m);
+    gap: 0;
   }
 `
 
