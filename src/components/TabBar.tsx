@@ -18,6 +18,7 @@ const Container = styled.nav`
   z-index: 10;
   left: 0;
   bottom: 0;
+  padding-bottom: env(safe-area-inset-bottom);
 
   @media (min-width: 800px) {
     display: none;
