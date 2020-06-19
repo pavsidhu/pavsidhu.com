@@ -28,7 +28,6 @@ const Container = styled.article`
 
 const Selector = styled.div`
   grid-area: selector;
-  width: 100%;
   display: grid;
   grid-auto-flow: column;
   gap: var(--space-xs);
