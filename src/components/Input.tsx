@@ -41,7 +41,13 @@ const Field = styled.input`
   }
 
   &:focus,
-  &:not(:placeholder-shown),
+  &:not(:placeholder-shown) {
+    & + label {
+      transform: translate(0.2rem, -30%) scale(0.8);
+    }
+  }
+
+  /* Fix for Edge not supporting :placeholder-shown */
   &:not(::-ms-input-placeholder) {
     & + label {
       transform: translate(0.2rem, -30%) scale(0.8);
