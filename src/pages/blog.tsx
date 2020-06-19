@@ -35,11 +35,13 @@ const Title = styled.h1`
 `
 
 const BlogPostCards = styled.div`
-  grid-area: blog-posts;
   display: grid;
   gap: var(--space-m);
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   justify-items: start;
+
+  @media (min-width: 500px) {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
 `
 
 export default function BlogPage({ data }) {

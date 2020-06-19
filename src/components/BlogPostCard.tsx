@@ -14,7 +14,7 @@ const Container = styled(
     "meta   "
     "title  "
     "excerpt";
-  grid-template-rows: auto repeat(3, auto);
+  grid-auto-flow: row;
   gap: var(--space-xs);
   align-content: start;
   border-radius: 4px;
