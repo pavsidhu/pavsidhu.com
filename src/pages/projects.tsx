@@ -98,7 +98,9 @@ const Projects = styled(BindKeyboardSwipeableViews)`
   .react-swipeable-view-container {
     height: calc(100vh - var(--tab-bar-height));
 
+    /* Hacky way to prevent tabbing to project buttons when slide is inactive */
     [aria-hidden="true"] a {
+      transition: display 0 100ms;
       display: none;
     }
   }
