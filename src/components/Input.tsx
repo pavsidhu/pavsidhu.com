@@ -41,14 +41,8 @@ const Field = styled.input`
   }
 
   &:focus,
-  &:not(:placeholder-shown) {
-    & + label {
-      transform: translate(0.2rem, -30%) scale(0.8);
-    }
-  }
-
-  &:focus,
-  &::-ms-input-placeholder {
+  &:not(:placeholder-shown),
+  &:not(::-ms-input-placeholder) {
     & + label {
       transform: translate(0.2rem, -30%) scale(0.8);
     }
