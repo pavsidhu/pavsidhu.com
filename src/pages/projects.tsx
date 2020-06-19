@@ -44,8 +44,9 @@ const Selector = styled.div`
   box-shadow: rgba(0, 0, 0, 0.05) 0 0 10px;
   z-index: 5;
 
-  /* Hide scrollbar in firefox */
+  /* Hide scrollbar in firefox and edge */
   overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
 
   /* Hide scrollbar in webkit */
   &::-webkit-scrollbar {
