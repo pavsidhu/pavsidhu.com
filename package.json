@@ -1,7 +1,7 @@
 {
   "name": "pavsidhu.com",
   "description": "My personal website 💛",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Pav Sidhu <pav@pavsidhu.com>",
   "dependencies": {
     "@mdx-js/mdx": "^1.6.5",
