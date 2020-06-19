@@ -35,6 +35,7 @@ const Title = styled.h1`
 `
 
 const BlogPostCards = styled.div`
+  grid-area: blog-posts;
   display: grid;
   gap: var(--space-m);
   justify-items: start;
