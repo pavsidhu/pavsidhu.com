@@ -23,6 +23,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#f05f40`,
+        showSpinner: false
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
