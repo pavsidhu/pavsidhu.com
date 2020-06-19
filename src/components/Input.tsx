@@ -46,6 +46,13 @@ const Field = styled.input`
       transform: translate(0.2rem, -30%) scale(0.8);
     }
   }
+
+  &:focus,
+  &::-ms-input-placeholder {
+    & + label {
+      transform: translate(0.2rem, -30%) scale(0.8);
+    }
+  }
 `
 
 const Label = styled.label`
