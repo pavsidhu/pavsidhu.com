@@ -50,7 +50,7 @@ export default function CopBot() {
       file(relativePath: { eq: "projects/copbot/preview.png" }) {
         childImageSharp {
           fluid(maxWidth: 800, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }

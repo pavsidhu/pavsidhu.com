@@ -109,7 +109,7 @@ export default function Bulb() {
       file(relativePath: { eq: "projects/bulb/preview.png" }) {
         childImageSharp {
           fluid(maxWidth: 800, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
           }
         }
       }
