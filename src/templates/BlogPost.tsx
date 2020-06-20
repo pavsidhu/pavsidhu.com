@@ -44,6 +44,7 @@ const BackButtonContainer = styled.div`
   opacity: 0;
   animation: fadeIn 100ms 100ms forwards;
   color: #fefefe;
+  pointer-events: none;
 
   @keyframes fadeIn {
     to {
@@ -75,6 +76,7 @@ const BackButton = styled.button`
   color: inherit;
   fill: currentColor;
   transition: color 100ms;
+  pointer-events: auto;
 
   p {
     padding-top: 0.4rem;
