@@ -1,7 +1,7 @@
 ---
 title: How I Built My Blog Using Gatsby and Netlify
 date: 2018-05-28T00:00:00.000Z
-coverImage: ../../static/images/macbook-at-desk-2.jpg
+coverImage: ../images/macbook-at-desk-2.jpg
 coverImageAlt: Macbook on a desk
 ---
 
@@ -23,7 +23,7 @@ If you haven't used React before there is a learning curve but there are plenty 
 
 For many static websites like my blog, I need to use external data sources (my actual blog posts) during the build process. Gatsby provides support for many forms of data, including Markdown, APIs, Databases and CMSs like WordPress. To access this data, Gatsby uses GraphQL.
 
-![Gatsby stack taken from the official website](../../static/images/gatsby_flow.png)
+![Gatsby stack taken from the official website](../images/gatsby_flow.png)
 
 All my blog posts are in Markdown, so I'm using a Gatsby plugin [gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/?=gatsby-transformer-remark) that allows you to query your Markdown files using GraphQL. It also converts your Markdown file to HTML straight out of the box like magic. I simply need to use the following GraphQL query to access a specific post:
 
@@ -81,7 +81,7 @@ Aside from the actual usage of Gatsby, the [official documentation](https://www.
 
 The only difficulty I came across when using Gatbsy was when I deployed my website I had a FOUC (flash of unstyled content). To fix this issue I found that upgrading Gatsby from 1.8.12 to 1.9.250 fixed the issue. I'm not too sure why this fixed it, I assume it must have been an internal issue with Gatsby.
 
-![I mean who really wants to see my forehead?](../../static/images/fouc.png)
+![I mean who really wants to see my forehead?](../images/fouc.png)
 
 ## Netlify
 

@@ -1,7 +1,7 @@
 ---
 title: The Timezone Struggle
 date: 2016-12-27T00:00:00.000Z
-coverImage: ../../static/images/clock.jpg
+coverImage: ../images/clock.jpg
 coverImageAlt: Alarm clock
 ---
 
@@ -11,7 +11,7 @@ Something I recently found difficult to get my head around was how timezones wor
 
 For those of you who don’t know, Revisify is a tool I built to help students study. Students can create questions, test themselves and progress. I have one feature available, study streaks, which count the number consecutive days a student has been studying.
 
-![Here’s what the study streak looks like.](../../static/images/study-streak.png)
+![Here’s what the study streak looks like.](../images/study-streak.png)
 
 Now, this must be quite simple to program right? I’ve stored all the dates/times a student has tested themselves in a database, now all I need to do is get today’s date, and work backwards through the database, check if yesterday’s date is there and if so, check the previous day’s date and continue on until one of the dates is not available. However, something which I forgot about was that this would not work for students who live in a timezone other than GMT. Why? Because the server is based in the UK. The way I programmed the server is that every time a student tests themselves, the server will get the server’s date/time and logs it into the database.
 
