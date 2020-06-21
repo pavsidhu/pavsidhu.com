@@ -61,7 +61,7 @@ export default function SpotiParty() {
       file(relativePath: { eq: "projects/spotiparty/preview.png" }) {
         childImageSharp {
           fluid(maxWidth: 800, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }

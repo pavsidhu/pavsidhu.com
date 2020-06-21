@@ -96,7 +96,7 @@ export default function Aida() {
       file(relativePath: { eq: "projects/aida/preview.png" }) {
         childImageSharp {
           fluid(maxWidth: 800, quality: 100) {
-            ...GatsbyImageSharpFluid_noBase64
+            ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
       }

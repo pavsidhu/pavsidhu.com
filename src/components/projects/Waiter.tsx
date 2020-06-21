@@ -43,7 +43,7 @@ export default function Waiter() {
       file(relativePath: { eq: "projects/revisify/preview.png" }) {
         childImageSharp {
           fluid(maxWidth: 800, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
