@@ -39,6 +39,7 @@ const Video = styled.video`
   grid-area: preview;
   width: 100%;
   border: 8px solid #fefefe33;
+  background: fefefe33;
 `
 
 export default function RocketRiot() {
