@@ -107,6 +107,7 @@ module.exports = {
     },
     {
       resolve: "gatsby-plugin-offline",
+      precachePages: ["/about", "/blog", "/projects", "/contact"],
       options: {
         workboxConfig: {
           globPatterns: ["icons/*"],
