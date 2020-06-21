@@ -283,7 +283,7 @@ export const query = graphql`
         coverImage {
           childImageSharp {
             fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
+              ...GatsbyImageSharpFluid_withWebp
             }
             resize(width: 1200) {
               src

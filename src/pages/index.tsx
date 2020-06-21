@@ -258,7 +258,7 @@ export const query = graphql`
             coverImage {
               childImageSharp {
                 fluid(maxWidth: 300) {
-                  ...GatsbyImageSharpFluid_withWebp_noBase64
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -275,7 +275,7 @@ export const query = graphql`
     file(relativePath: { eq: "general/profile.jpg" }) {
       childImageSharp {
         fixed(width: 72, height: 72) {
-          ...GatsbyImageSharpFixed_withWebp_noBase64
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }
