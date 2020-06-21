@@ -83,7 +83,7 @@ export default function BlogPostCard(props: Props) {
       to={"/blog" + props.link}
       onClick={(event: Event) => {
         event.preventDefault()
-        const coverPhotoBounds = coverPhotoRef.current.base?.getBoundingClientRect()
+        const coverPhotoBounds = coverPhotoRef.current?.base.getBoundingClientRect()
         if (coverPhotoBounds) context.setBounds(coverPhotoBounds)
         navigate("/blog" + props.link)
       }}
