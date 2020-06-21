@@ -39,7 +39,7 @@ export default function Revisify() {
       file(relativePath: { eq: "projects/revisify/preview.png" }) {
         childImageSharp {
           fluid(maxWidth: 800, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
       }
