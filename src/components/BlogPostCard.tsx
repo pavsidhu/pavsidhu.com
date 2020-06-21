@@ -2,11 +2,10 @@ import React, { useRef, useContext } from "react"
 import Image, { FluidObject } from "gatsby-image"
 import { styled } from "linaria/react"
 import { Link, navigate } from "gatsby"
+
 import { BlogPostTransition } from "./Layout"
 
-const Container = styled(
-  React.forwardRef((props, ref) => <Link {...props} ref={ref} />)
-)`
+const Container = styled((props) => <Link {...props} />)`
   display: grid;
   width: 100%;
   grid-template-areas:
@@ -76,25 +75,24 @@ interface Props {
 }
 
 export default function BlogPostCard(props: Props) {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const coverPhotoRef = useRef<HTMLDivElement>(null)
   const context = useContext(BlogPostTransition)
 
   return (
     <Container
       to={"/blog" + props.link}
-      ref={containerRef}
       onClick={(event: Event) => {
         event.preventDefault()
-        const coverPhoto = containerRef.current?.querySelector(
-          ".gatsby-image-wrapper"
-        )
-        const coverPhotoBounds = coverPhoto?.getBoundingClientRect()
+        const coverPhotoBounds = coverPhotoRef.current?.base.getBoundingClientRect()
         if (coverPhotoBounds) context.setBounds(coverPhotoBounds)
         navigate("/blog" + props.link)
       }}
       data-clickable="square"
     >
-      <CoverPhoto fluid={props.coverImage.childImageSharp.fluid} />
+      <CoverPhoto
+        fluid={props.coverImage.childImageSharp.fluid}
+        ref={coverPhotoRef}
+      />
 
       <Meta>
         <p>{props.date}</p>
