@@ -108,7 +108,7 @@ module.exports = {
       resolve: "gatsby-plugin-offline",
       options: {
         workboxConfig: {
-          globPatterns: ["**/*"],
+          globPatterns: ["icons/*"],
           globIgnores: ["admin/*"]
         }
       }
