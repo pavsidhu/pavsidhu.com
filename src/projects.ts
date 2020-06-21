@@ -16,17 +16,6 @@ export const aida: Project = {
   link: "https://github.com/pavsidhu/aida"
 }
 
-export const feeling: Project = {
-  title: "Feeling",
-  subtitle: "A smart mood tracking app 🤗",
-  description: `
-    Feeling is a daily journaling app, aiming to increase emotional self-awareness using artificial intelligence.
-    Users can talk to a chatbot about their day and gain insight into their thoughts and feelings.
-    Created using Kotlin and Python, Feeling will be available soon.
-  `,
-  link: "https://github.com/feelingapp"
-}
-
 export const revisify: Project = {
   title: "Revisify",
   subtitle: "A simple online revision tool for students 🎓",
@@ -45,17 +34,6 @@ export const rocketRiot: Project = {
       Players take in turns moving around a grid with the aim of capturing as many planets as possible through fun minigames.
     `,
   link: "https://github.com/rocketriot/game"
-}
-
-export const waiter: Project = {
-  title: "wAIter",
-  subtitle: "Automated drone beverage delivery service 🍹",
-  description: `
-  Working in a team of four we came 1st at HackTheMidlands 2019.
-  Using an app, customers can order drinks. Through a web system, bartenders can accept them. A drone uses Bluetooth Beacons and computer vision to locate the customer's phone and deliver drinks.
-  The system was built using Kotlin, Android Jetpack, JavaScript, React, MongoDB, Python and a Raspberry Pi.
-  `,
-  link: "https://github.com/sub-standard/wAIter"
 }
 
 export const copBot: Project = {
