@@ -31,6 +31,10 @@ const Button = styled(ProjectButton)`
       transform: scale(1.05);
     }
   }
+
+  &:active {
+    transform: scale(1.05);
+  }
 `
 
 export default function Revisify() {

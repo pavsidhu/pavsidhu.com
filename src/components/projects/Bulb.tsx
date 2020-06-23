@@ -71,6 +71,10 @@ const Button = styled(ProjectButton)`
       background: #452992;
     }
   }
+
+  &:active {
+    background: #452992;
+  }
 `
 
 const Preview = styled(ProjectPreview)`

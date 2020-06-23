@@ -166,6 +166,13 @@ export const globals = css`
           }
         }
       }
+
+      &:active:not(.active) {
+        &:before {
+          transform: none;
+          opacity: 1;
+        }
+      }
     }
     
     [data-clickable="square"] {
@@ -286,6 +293,7 @@ export default function Layout(props: Props) {
     <Container>
       <Helmet
         bodyAttributes={{
+          onTouchStart: undefined,
           onContextMenu: () =>
             !window.matchMedia("(display-mode: standalone)").matches
         }}
