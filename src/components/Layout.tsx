@@ -284,7 +284,12 @@ export default function Layout(props: Props) {
 
   return (
     <Container>
-      <Helmet>
+      <Helmet
+        bodyAttributes={{
+          onContextMenu: () =>
+            !window.matchMedia("(display-mode: standalone)").matches
+        }}
+      >
         {[fontLight, fontRegular, fontMedium, fontBold].map((font, index) => (
           <link
             rel="preload"
