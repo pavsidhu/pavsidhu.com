@@ -257,7 +257,7 @@ export const query = graphql`
             date(formatString: "Do MMM YYYY")
             coverImage {
               childImageSharp {
-                fluid(maxWidth: 300) {
+                fluid(maxWidth: 300, quality: 80) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
@@ -274,7 +274,7 @@ export const query = graphql`
     }
     file(relativePath: { eq: "general/profile.jpg" }) {
       childImageSharp {
-        fixed(width: 72, height: 72) {
+        fixed(width: 72, height: 72, quality: 80) {
           ...GatsbyImageSharpFixed_withWebp
         }
       }
