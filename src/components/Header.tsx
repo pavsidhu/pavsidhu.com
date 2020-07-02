@@ -77,9 +77,10 @@ export default function Header() {
 
   useLayoutEffect(() => {
     if (containerRef.current) {
+      // +1 to take into account bottom border of header
       document.documentElement.style.setProperty(
         "--header-height",
-        containerRef.current.clientHeight + "px"
+        containerRef.current.clientHeight + 1 + "px"
       )
     }
   })
