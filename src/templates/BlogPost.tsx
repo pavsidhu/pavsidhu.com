@@ -36,7 +36,7 @@ const BackButtonContainer = styled.div`
   justify-self: center;
   z-index: 1;
   width: 100%;
-  max-width: 50ch;
+  max-width: 58ch;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), transparent);
   padding: var(--space-s) var(--space-xs);
   font-size: var(--font-m);
@@ -56,7 +56,7 @@ const BackButtonContainer = styled.div`
     border-radius: 4px;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 950px) {
     grid-area: back-button;
     background-image: none;
     padding: var(--space-s);
@@ -88,7 +88,7 @@ const CoverImageContainer = styled.div`
   grid-area: cover;
   justify-self: center;
   width: 100%;
-  max-width: 50ch;
+  max-width: 58ch;
   font-size: var(--font-m);
 `
 
@@ -109,7 +109,7 @@ const Content = styled.section`
   grid-area: content;
   justify-self: center;
   width: 100%;
-  max-width: 50ch;
+  max-width: 58ch;
   font-size: var(--font-m);
   display: grid;
   grid-auto-flow: row;
@@ -143,7 +143,7 @@ const components = {
 
   p: styled.p`
     font-size: var(--font-m);
-    line-height: 3.2rem;
+    line-height: 3.4rem;
     word-break: break-word;
 
     figcaption {
@@ -182,10 +182,6 @@ const components = {
     border-left: 4px solid var(--primary-color);
     padding-left: var(--space-s);
     color: var(--secondary-text-color);
-
-    p {
-      font-size: var(--font-s);
-    }
   `
 }
 
