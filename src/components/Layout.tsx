@@ -99,6 +99,33 @@ export const globals = css`
       user-select: none;
     }
 
+    p a {
+      display: inline-block;
+      position: relative;
+      z-index: 0;
+
+      &:before {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 4px;
+        width: 100%;
+        height: 2px;
+        z-index: 0;
+        background-color: var(--primary-color);
+        transition: transform 100ms ease-in-out;
+        transform-origin: 0%;
+        transform: scaleX(0);
+      }
+
+      &:hover {
+        &:before {
+          transform: scaleX(1);
+        }
+      }
+    }
+
     img {
       user-select: none;
       user-drag: none;
