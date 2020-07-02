@@ -169,6 +169,13 @@ export const globals = css`
           }
         }
       }
+
+      &:active:not(.active) {
+        &:before {
+          transform: none;
+          opacity: 1;
+        }
+      }
     }
     
     [data-clickable="square"] {
@@ -289,7 +296,13 @@ export default function Layout(props: Props) {
 
   return (
     <Container>
-      <Helmet>
+      <Helmet
+        bodyAttributes={{
+          onTouchStart: undefined,
+          onContextMenu: () =>
+            !window.matchMedia("(display-mode: standalone)").matches
+        }}
+      >
         {[fontLight, fontRegular, fontMedium, fontBold].map((font, index) => (
           <link
             rel="preload"

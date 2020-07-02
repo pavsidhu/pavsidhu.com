@@ -33,6 +33,10 @@ const Button = styled(ProjectButton)`
       background-color: #019b9d;
     }
   }
+
+  &:active {
+    background-color: #019b9d;
+  }
 `
 
 const Video = styled.video`

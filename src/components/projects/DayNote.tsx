@@ -53,6 +53,10 @@ const Button = styled(ProjectButton)`
     }
   }
 
+  &:active {
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12), 0 8px 8px 0 rgba(0, 0, 0, 0.24);
+  }
+
   &:focus {
     box-shadow: var(--focus-box-shadow), 0 0 8px 0 rgba(0, 0, 0, 0.12),
       0 8px 8px 0 rgba(0, 0, 0, 0.24);

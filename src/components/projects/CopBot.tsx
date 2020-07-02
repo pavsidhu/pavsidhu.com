@@ -36,6 +36,10 @@ const Button = styled(ProjectButton)`
       background: rgba(255, 255, 255, 0.3);
     }
   }
+
+  &:active {
+    background: rgba(255, 255, 255, 0.3);
+  }
 `
 
 const Preview = styled(ProjectPreview)`
