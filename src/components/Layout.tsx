@@ -84,9 +84,13 @@ export const globals = css`
     html,
     body {
       font-size: 62.5%;
-      font-family: "Orkney", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif;
+      font-family: var(--orkney-font-family);
       background: var(--background-color);
       color: var(--primary-text-color);
+    }
+
+    p {
+      font-family: var(--system-font-family);
     }
 
     a {
@@ -100,21 +104,20 @@ export const globals = css`
       user-drag: none;
     }
 
-    button,
-    label,
-    #gatsby-announcer {
-      user-select: none;
-    }
-
-    /* Fixes text not aligning properly due to the font used */
     h1,
     h2,
     h3,
     h4,
     h5,
-    h6,
-    p {
+    h6 {
       padding-top: var(--font-padding);
+      font-family: var(--orkney-font-family);
+    }
+
+    button,
+    label,
+    #gatsby-announcer {
+      user-select: none;
     }
 
     :focus {
@@ -159,7 +162,7 @@ export const globals = css`
       }
 
       @media (hover: hover) {
-        &:hover:not(.active) {
+        &:hover {
           &:before {
             transform: none;
             opacity: 1;
@@ -170,7 +173,7 @@ export const globals = css`
     
     [data-clickable="square"] {
       &:before {
-        border-radius: 8px;
+        border-radius: 12px;
         top: calc(-1 * var(--space-xs));
         left: calc(-1 * var(--space-xs));
         width: calc(100% + var(--space-s));
@@ -188,13 +191,13 @@ export const globals = css`
     }
 
     :root {
-      --primary-color: #f05f40;
-      --primary-light-color: #fff4f1;
+      --primary-color: #d83d00;
+      --primary-light-color: transparent;
       --primary-text-color: #1b1b1b;
       --secondary-text-color: #646464;
-      --background-color: #fefefe;
+      --background-color: #fffffc;
       --secondary-background-color: rgba(0, 0, 0, 0.2);
-      --hover-color: rgba(0, 0, 0, 0.075);
+      --hover-color: rgba(0, 0, 0, 0.07);
       --line-color: rgba(0, 0, 0, 0.1);
 
       --space-xs: 8px;
@@ -212,6 +215,8 @@ export const globals = css`
       --font-xxs: 1.2rem;
 
       --font-padding: 0.333em;
+      --system-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif;
+      --orkney-font-family: "Orkney", var(--system-font-family);
       --focus-box-shadow: 0 0 0 2px var(--primary-color);
     }
 

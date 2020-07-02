@@ -14,9 +14,16 @@ const Container = styled((props) => <Link {...props} />)`
     "title  "
     "excerpt";
   grid-auto-flow: row;
-  gap: var(--space-xs);
+  gap: var(--space-s);
   align-content: start;
-  border-radius: 4px;
+  border-radius: 8px;
+  transition: transform 150ms ease-in-out;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
 `
 
 const CoverPhoto = styled((props) => <Image {...props} />)`
@@ -25,7 +32,7 @@ const CoverPhoto = styled((props) => <Image {...props} />)`
   height: 0;
   padding-bottom: 60%;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 8px;
   color: transparent;
 `
 
@@ -33,30 +40,35 @@ const Meta = styled.div`
   grid-area: meta;
   display: flex;
   align-items: center;
-  font-size: var(--font-xxs);
+  font-size: var(--font-xs);
   font-weight: 500;
   color: var(--secondary-text-color);
+  padding-top: var(--font-padding);
+
+  p {
+    font-family: var(--orkney-font-family);
+  }
 `
 
 const Divider = styled.span`
   background: var(--line-color);
-  padding-bottom: 1px;
-  margin: 0 var(--space-xs) 1px;
+  padding-bottom: 2px;
+  margin: 0 var(--space-s) 3px;
   flex: 1;
 `
 
 const Title = styled.p`
   grid-area: title;
-  font-size: var(--font-m);
-  font-weight: 500;
-  color: var(--primary-color);
-  padding: 0;
+  font-size: var(--font-l);
+  font-family: var(--orkney-font-family);
+  font-weight: 600;
 `
 
 const Excerpt = styled.p`
   grid-area: excerpt;
-  font-size: var(--font-xs);
-  line-height: 2.4rem;
+  font-family: var(--system-font-family);
+  font-size: var(--font-s);
+  line-height: 2.8rem;
   padding: 0;
 `
 

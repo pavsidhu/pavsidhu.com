@@ -27,7 +27,7 @@ const Container = styled.article`
       ". cover       ."
       ". content     ."
       ". .           .";
-    row-gap: var(--space-m);
+    row-gap: var(--space-l);
   }
 `
 
@@ -53,7 +53,7 @@ const BackButtonContainer = styled.div`
   }
 
   @media (min-width: 800px) {
-    border-radius: 4px;
+    border-radius: 8px;
   }
 
   @media (min-width: 950px) {
@@ -101,7 +101,7 @@ const CoverImage = styled(Image)`
   color: transparent;
 
   @media (min-width: 800px) {
-    border-radius: 4px;
+    border-radius: 8px;
   }
 `
 
@@ -119,6 +119,7 @@ const Content = styled.section`
 
 const Title = styled.h1`
   font-size: var(--font-xl);
+  padding: 0;
 `
 
 const Meta = styled.div`
@@ -131,7 +132,7 @@ const Meta = styled.div`
 
 const Divider = styled.span`
   background: var(--line-color);
-  padding-bottom: 1px;
+  padding-bottom: 2px;
   margin: 0 var(--space-xs) 1px;
   flex: 1;
 `
@@ -142,6 +143,7 @@ const components = {
   `,
 
   p: styled.p`
+    font-family: var(--system-font-family);
     font-size: var(--font-m);
     line-height: 3.4rem;
     word-break: break-word;

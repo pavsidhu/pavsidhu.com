@@ -82,7 +82,6 @@ const SelectorItem = styled.button`
 
   &.active {
     color: var(--primary-color);
-    background: var(--primary-light-color);
   }
 `
 

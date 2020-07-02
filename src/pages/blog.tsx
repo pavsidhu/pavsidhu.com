@@ -22,7 +22,7 @@ const Container = styled.article`
     minmax(auto, var(--max-width))
     minmax(var(--space-m), 1fr);
   grid-template-rows:
-    var(--space-m)
+    var(--space-xl)
     max-content
     var(--space-s)
     max-content
@@ -32,16 +32,17 @@ const Container = styled.article`
 const Title = styled.h1`
   grid-area: title;
   font-size: var(--font-xxl);
+  justify-self: start;
 `
 
 const BlogPostCards = styled.div`
   grid-area: blog-posts;
   display: grid;
-  gap: var(--space-m);
+  gap: var(--space-l);
   justify-items: start;
 
   @media (min-width: 500px) {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
 `
 

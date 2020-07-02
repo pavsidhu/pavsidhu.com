@@ -21,8 +21,8 @@ const Container = styled.header`
     top: 0;
     left: 0;
     z-index: 10;
+    border-bottom: 1px solid var(--line-color);
     padding: var(--space-s);
-    box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px;
     background: var(--background-color);
   }
 
@@ -54,7 +54,6 @@ const NavItem = styled((props) => <Link {...props} />)`
   transition: background 100ms, color 100ms;
 
   &.active {
-    background: var(--primary-light-color);
     color: var(--primary-color);
   }
 
@@ -67,6 +66,8 @@ const NavItem = styled((props) => <Link {...props} />)`
 
 const NavItemLabel = styled.p`
   margin-left: var(--space-xs);
+  padding-top: var(--font-padding);
+  font-family: var(--orkney-font-family);
   font-size: var(--font-xs);
   font-weight: 500;
 `
