@@ -36,7 +36,7 @@ const Tab = styled((props) => <Link {...props} />)`
   justify-content: center;
   align-items: center;
   fill: currentColor;
-  padding: calc(0.8rem + 2px) 0 0.8rem;
+  padding: calc(6px + 2px) 0 6px;
   border-bottom: 2px solid var(--background-color);
   transition: background 100ms, color 100ms;
 
@@ -60,7 +60,7 @@ const Tab = styled((props) => <Link {...props} />)`
 `
 
 const TabLabel = styled.p`
-  margin-top: 4px;
+  margin-top: 2px;
   font-size: var(--font-xxs);
 `
 
