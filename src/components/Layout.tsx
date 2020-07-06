@@ -182,10 +182,10 @@ export const globals = css`
         transform: scale(0.9);
         background: var(--hover-color);
         border-radius: 10000px;
-        top: calc(-1 * 2px);
+        top: calc(-1 * 4px);
         left: calc(-1 * 4px);
         width: calc(100% + var(--space-xs));
-        height: calc(100% + 4px);
+        height: calc(100% + var(--space-xs));
       }
 
       @media (hover: hover) {
