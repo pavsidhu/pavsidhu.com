@@ -59,7 +59,7 @@ const NavItem = styled((props) => <Link {...props} />)`
 
   @media (prefers-color-scheme: dark) {
     &.active {
-      color: var(--primary-text-color);
+      color: var(--primary-color);
     }
   }
 `
