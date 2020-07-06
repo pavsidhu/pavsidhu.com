@@ -157,11 +157,6 @@ const components = {
     }
   `,
 
-  a: styled.a`
-    color: var(--primary-color);
-    user-select: auto;
-  `,
-
   ul: styled.ul`
     padding: 1.6rem;
   `,

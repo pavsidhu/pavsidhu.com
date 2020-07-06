@@ -100,11 +100,13 @@ export const globals = css`
     }
 
     p a {
+      color: var(--primary-color);
       background-image: linear-gradient(currentColor, currentColor);
       background-position: 0% 100%;
       background-repeat: no-repeat;
       background-size: 0% 2px;
       transition: background-size 160ms ease-in-out;
+      user-select: auto;
 
       &:hover {
         background-size: 100% 2px;
