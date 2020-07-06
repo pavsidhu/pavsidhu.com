@@ -21,8 +21,7 @@ const Container = styled.article`
   grid-template-columns: 1fr;
 
   @media (min-width: 600px) {
-    row-gap: 0;
-    grid-template-rows: calc(80vh - var(--header-height)) auto;
+    grid-template-rows: minmax(min-content, calc(75vh - var(--header-height))) auto;
   }
 `
 
