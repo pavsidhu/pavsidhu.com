@@ -100,29 +100,14 @@ export const globals = css`
     }
 
     p a {
-      display: inline-block;
-      position: relative;
-      z-index: 0;
-
-      &:before {
-        display: block;
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 4px;
-        width: 100%;
-        height: 2px;
-        z-index: 0;
-        background-color: var(--primary-color);
-        transition: transform 100ms ease-in-out;
-        transform-origin: 0%;
-        transform: scaleX(0);
-      }
+      background-image: linear-gradient(currentColor, currentColor);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 2px;
+      transition: background-size 160ms ease-in-out;
 
       &:hover {
-        &:before {
-          transform: scaleX(1);
-        }
+        background-size: 100% 2px;
       }
     }
 
