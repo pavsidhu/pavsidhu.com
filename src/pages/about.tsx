@@ -63,13 +63,13 @@ export default function AboutPage({ data }) {
         pursue other interests.
       </Paragraph>
       <Paragraph>
-        After finishing school, I went on to study Artificial Intelligence and
-        Computer Science at the University of Birmingham. I learnt a variety of
-        topics including machine learning, neural networks and natural language
-        processing. As part of my final year project, I built a dating chatbot
-        that matched users based on their personality. My neural network managed
-        to achieve state-of-the-art results in personality classification from
-        text.
+        After finishing school, I went on to achieve a first in Artificial
+        Intelligence and Computer Science at the University of Birmingham . I
+        learnt a variety of topics including machine learning, neural networks
+        and natural language processing. As part of my final year project, I
+        built a dating chatbot that matched users based on their personality. My
+        neural network managed to achieve excellent results in personality
+        classification from text.
       </Paragraph>
       <Paragraph>
         I’ve worked on several other projects through hackathons, self-interests
