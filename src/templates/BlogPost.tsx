@@ -79,6 +79,7 @@ const BackButton = styled.button`
   pointer-events: auto;
 
   p {
+    font-family: var(--orkney-font-family);
     padding-top: 0.4rem;
     margin-left: var(--space-xs);
   }
@@ -240,7 +241,7 @@ export default function BlogPost({ data: { mdx } }) {
       <BackButtonContainer>
         <BackButton onClick={() => navigate(-1)} data-clickable="default">
           <BackIcon />
-          <p>Back</p>
+          <p>Blog</p>
         </BackButton>
       </BackButtonContainer>
 
