@@ -19,10 +19,23 @@ const Container = styled((props) => <Link {...props} />)`
   border-radius: 8px;
   transition: transform 150ms ease-in-out;
 
-  @media (hover: hover) {
-    &:hover {
-      transform: scale(1.01);
+  @keyframes fade-in {
+    from {
+      transform: translateY(80px);
+      opacity: 0;
     }
+
+    to {
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: 720px) {
+    transform: translateY(80px);
+    opacity: 0;
+    animation: fade-in 200ms ease-out ${(props) => props.index * 50 + 100}ms
+      forwards;
   }
 `
 
@@ -84,6 +97,7 @@ interface Props {
   }
   coverImageAlt: string
   link: string
+  index: number
 }
 
 export default function BlogPostCard(props: Props) {
@@ -100,6 +114,7 @@ export default function BlogPostCard(props: Props) {
         navigate("/blog" + props.link)
       }}
       data-clickable="square"
+      index={props.index}
     >
       <CoverPhoto
         fluid={props.coverImage.childImageSharp.fluid}

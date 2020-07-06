@@ -1,255 +1,266 @@
 import React from "react"
 import Image from "gatsby-image"
 import { styled } from "linaria/react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import { BlogPostCard, Seo } from "../components"
 import { ReactComponent as TwitterIcon } from "../images/icons/twitter.svg"
 import { ReactComponent as GitHubIcon } from "../images/icons/github.svg"
 import { ReactComponent as LinkedInIcon } from "../images/icons/linkedin.svg"
+import { ReactComponent as ForwardIcon } from "../images/icons/forward.svg"
 
 const Container = styled.article`
-  @media (min-width: 900px) {
-    display: grid;
-    grid-template-columns: min-content 1fr;
-    height: 100%;
+  width: 100%;
+  padding: var(--space-m);
+  display: grid;
+  justify-items: center;
+  row-gap: var(--space-m);
+  grid-template-areas:
+    "intro"
+    "posts";
+  grid-template-columns: 1fr;
+
+  @media (min-width: 600px) {
+    row-gap: 0;
+    grid-template-rows: calc(80vh - var(--header-height)) auto;
   }
 `
 
 const Intro = styled.div`
-  border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
+  grid-area: "intro";
   display: grid;
-  padding: var(--space-m);
-  row-gap: var(--space-m);
   grid-template-areas:
-    "photo  .      greeting"
-    "desc   desc   desc    "
-    "social social social  ";
-  grid-template-columns: min-content var(--space-s) auto;
-  grid-template-rows: min-content max-content auto;
+    "photo"
+    "title"
+    "description"
+    "social";
+  row-gap: var(--space-s);
+  place-self: center;
+  justify-items: start;
 
-  @media (min-width: 500px) and (max-width: 899px) {
-    justify-content: center;
+  @media (min-width: 600px) {
     grid-template-areas:
-      "photo .    greeting . social"
-      "desc  desc desc     . social";
-    grid-template-columns: min-content var(--space-s) auto var(--space-m) min-content;
-    grid-template-rows: min-content 1fr;
-  }
-
-  @media (min-width: 900px) {
-    border-bottom: none;
-    border-right: var(--line-color) 1px solid;
-    height: calc(100vh - var(--header-height));
-    position: sticky;
-    top: var(--header-height);
+      "photo . title      "
+      "photo . description"
+      "photo . social     ";
+    grid-template-columns: 28rem var(--space-xl) auto;
+    row-gap: var(--space-m);
   }
 `
 
-const ProfilePicture = styled(Image)`
+const Photo = styled(Image)`
   grid-area: photo;
   align-self: center;
-  border-radius: 50%;
-  width: 72px;
-  height: 75px;
+  width: 100%;
+  max-width: 32rem;
+  border-radius: 8px;
+
+  @media (min-width: 600px) {
+    padding-bottom: 100%;
+    height: 0;
+  }
 `
 
-const Greeting = styled.h2`
-  grid-area: greeting;
-  align-self: center;
-  font-size: var(--font-xl);
-
-  @media (min-width: 900px) {
-    white-space: nowrap;
-  }
+const Title = styled.h1`
+  grid-area: title;
+  width: 100%;
+  font-size: clamp(100%, var(--font-l) + 2.5vw, var(--font-xxl));
 `
 
 const Description = styled.p`
-  grid-area: desc;
-  line-height: 2.4rem;
-  font-size: var(--font-s);
+  grid-area: description;
+  font-size: var(--font-m);
   font-weight: 400;
+  line-height: 2.8rem;
   max-width: 35ch;
 `
 
-const Highlight = styled.span`
+const AboutLink = styled((props) => <Link {...props} />)`
   color: var(--primary-color);
+  font-weight: 600;
 `
 
-const Social = styled.div`
+const SocialList = styled.div`
   grid-area: social;
   display: grid;
+  place-items: start;
   grid-auto-flow: column;
   gap: var(--space-s);
-  justify-content: start;
-  align-content: start;
   transform: translateX(calc(-1 * var(--space-xs)));
-
-  @media (min-width: 500px) {
-    transform: none;
-    grid-auto-flow: row;
-    gap: var(--space-xs);
-  }
-
-  @media (min-width: 800px) {
-    transform: translateX(calc(-1 * var(--space-xs)));
-    width: calc(100% + var(--space-s));
-    justify-content: initial;
-  }
 `
 
-const SocialLink = styled.a`
-  display: grid;
-  grid-template-areas: "icon";
-  grid-template-columns: var(--space-m);
+const Social = styled.a`
   padding: var(--space-xs);
   border-radius: 50%;
+  display: inline-flex;
 
-  @media (min-width: 500px) {
-    grid-template-columns: var(--space-xl) var(--space-s) 1fr;
-    grid-template-areas:
-      "icon . label "
-      "icon . handle";
-    border-radius: 40px;
-  }
-`
-
-const SocialIcon = styled.svg`
-  grid-area: icon;
-  width: 100%;
-  fill: currentColor;
-  align-self: center;
-`
-
-const SocialLabel = styled.p`
-  display: none;
-
-  @media (min-width: 500px) {
-    display: block;
-    grid-area: label;
-    font-size: var(--font-s);
-  }
-`
-
-const SocialHandle = styled.p`
-  display: none;
-
-  @media (min-width: 500px) {
-    display: block;
-    grid-area: handle;
-    font-size: var(--font-s);
-    color: var(--secondary-text-color);
+  svg {
+    width: 40px;
+    height: 40px;
+    fill: currentColor;
   }
 `
 
 const BlogPosts = styled.div`
-  justify-self: center;
+  grid-area: posts;
   width: 100%;
   display: grid;
-  justify-content: center;
-  grid-auto-flow: row;
-  grid-auto-columns: 1fr;
-  gap: var(--space-s);
-  padding: var(--space-m);
-
-  /* Max size of 4 blog post cards */
-  max-width: calc((300px * 4) + (24px * 3) + (24px * 2));
-`
-
-const BlogPostsTitle = styled.h3`
-  font-size: var(--font-l);
-`
-
-const BlogPostCards = styled.div`
-  display: grid;
   gap: var(--space-m);
-  justify-items: start;
+  grid-template-areas:
+    "blog-title"
+    "blog-list"
+    "blog-more";
+  align-items: center;
+  justify-content: center;
+
+  /* Max size of 3 blog post cards */
+  max-width: calc((420px * 3) + (24px * 2) + (24px * 2));
 
   @media (min-width: 500px) {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-areas:
+      "blog-title blog-more"
+      "blog-list  blog-list";
+    grid-template-columns: 1fr auto;
   }
 `
 
+const BlogPostsTitle = styled.h2`
+  grid-area: blog-title;
+  font-size: var(--font-xl);
+  margin-bottom: var(--space-xs);
+
+  @media (min-width: 500px) {
+    margin-bottom: 0;
+  }
+`
+
+const BlogPostsMore = styled((props) => <Link {...props} />)`
+  grid-area: blog-more;
+  display: flex;
+  justify-self: end;
+  align-items: center;
+  color: var(--primary-color);
+
+  p {
+    color: inherit;
+    font-family: var(--orkney-font-family);
+    font-size: var(--font-m);
+    font-weight: 500;
+    padding-top: 0.1em;
+    margin-right: var(--space-xs);
+  }
+
+  svg {
+    display: inline;
+    fill: currentColor;
+    transition: transform 150ms ease-in-out;
+  }
+
+  @media (hover: hover) {
+    &:hover svg {
+      transform: translateX(var(--space-xs));
+    }
+  }
+`
+
+const BlogPostsList = styled.div`
+  grid-area: blog-list;
+  display: grid;
+  gap: var(--space-l);
+  width: 100%;
+
+  @media (min-width: 500px) {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+`
+
+const socials = [
+  {
+    name: "Twitter",
+    link: "https://twitter.com/pav_sidhu",
+    renderIcon: () => <TwitterIcon />
+  },
+  {
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/pavsidhu",
+    renderIcon: () => <LinkedInIcon />
+  },
+  {
+    name: "GitHub",
+    link: "https://github.com/pavsidhu",
+    renderIcon: () => <GitHubIcon />
+  }
+]
+
 export default function IndexPage({ data }) {
   return (
-    <>
+    <Container>
       <Seo title="Home" />
-      <Container>
-        <Intro>
-          <ProfilePicture fixed={data.file.childImageSharp.fixed} />
-          <Greeting>Hey, I'm Pav</Greeting>
-          <Description>
-            I’m a developer from the UK. I like{" "}
-            <Highlight>progressive web apps</Highlight>,{" "}
-            <Highlight>neural networks</Highlight> and{" "}
-            <Highlight>designing user experiences</Highlight>.
-          </Description>
+      <Intro>
+        <Photo
+          fluid={data.file.childImageSharp.fluid}
+          width={280}
+          height={280}
+        />
+        <Title>Hey, I'm Pav</Title>
+        <Description>
+          I’m a developer from the UK. I like progressive web apps, neural
+          networks and designing user experiences.{" "}
+          <AboutLink to="/about">Learn more</AboutLink>
+        </Description>
 
-          <Social>
-            <SocialLink
-              href="https://twitter.com/pav_sidhu"
+        <SocialList>
+          {socials.map((social) => (
+            <Social
+              href={social.link}
               target="_blank"
               rel="noopener"
-              aria-label="Twitter"
+              aria-label={social.name}
               data-clickable="default"
             >
-              <SocialIcon as={TwitterIcon} />
-              <SocialLabel>Twitter</SocialLabel>
-              <SocialHandle>@pav_sidhu</SocialHandle>
-            </SocialLink>
+              {social.renderIcon()}
+            </Social>
+          ))}
+        </SocialList>
+      </Intro>
 
-            <SocialLink
-              href="https://github.com/pavsidhu"
-              target="_blank"
-              rel="noopener"
-              aria-label="GitHub"
-              data-clickable="default"
-            >
-              <SocialIcon as={GitHubIcon} />
-              <SocialLabel>GitHub</SocialLabel>
-              <SocialHandle>@pavsidhu</SocialHandle>
-            </SocialLink>
+      <BlogPosts>
+        <BlogPostsTitle>Latest Blog Posts</BlogPostsTitle>
+        <BlogPostsMore to="/blog">
+          <p>See More</p>
+          <ForwardIcon />
+        </BlogPostsMore>
 
-            <SocialLink
-              href="https://www.linkedin.com/in/pavsidhu"
-              target="_blank"
-              rel="noopener"
-              aria-label="LinkedIn"
-              data-clickable="default"
-            >
-              <SocialIcon as={LinkedInIcon} />
-              <SocialLabel>LinkedIn</SocialLabel>
-              <SocialHandle>@pavsidhu</SocialHandle>
-            </SocialLink>
-          </Social>
-        </Intro>
-
-        <BlogPosts>
-          <BlogPostsTitle>Latest Blog Posts</BlogPostsTitle>
-
-          <BlogPostCards>
-            {data.allMdx.edges.map(({ node }) => (
-              <BlogPostCard
-                title={node.frontmatter.title}
-                date={node.frontmatter.date}
-                coverImage={node.frontmatter.coverImage}
-                coverImageAlt={node.frontmatter.coverImageAlt}
-                readTime={node.timeToRead}
-                excerpt={node.excerpt}
-                link={node.fields.slug}
-                key={node.frontmatter.title}
-              />
-            ))}
-          </BlogPostCards>
-        </BlogPosts>
-      </Container>
-    </>
+        <BlogPostsList>
+          {data.allMdx.edges.map(({ node }, index) => (
+            <BlogPostCard
+              title={node.frontmatter.title}
+              date={node.frontmatter.date}
+              coverImage={node.frontmatter.coverImage}
+              coverImageAlt={node.frontmatter.coverImageAlt}
+              readTime={node.timeToRead}
+              excerpt={node.excerpt}
+              link={node.fields.slug}
+              key={node.frontmatter.title}
+              index={index}
+            />
+          ))}
+        </BlogPostsList>
+      </BlogPosts>
+    </Container>
   )
 }
 
 export const query = graphql`
   query {
-    allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
+    file(relativePath: { eq: "general/profile.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 280, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    allMdx(limit: 3, sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           frontmatter {
@@ -269,13 +280,6 @@ export const query = graphql`
           }
           timeToRead
           excerpt
-        }
-      }
-    }
-    file(relativePath: { eq: "general/profile.jpg" }) {
-      childImageSharp {
-        fixed(width: 72, height: 72, quality: 80) {
-          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }

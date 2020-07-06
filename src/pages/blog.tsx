@@ -5,8 +5,8 @@ import { graphql } from "gatsby"
 import { BlogPostCard, Seo } from "../components"
 
 const Container = styled.article`
-  /* Max size of 4 blog post cards */
-  --max-width: calc((300px * 4) + (24px * 3) + (24px * 2));
+  /* Max size of 3 blog post cards */
+  --max-width: calc((420px * 3) + (24px * 2) + (24px * 2));
 
   width: 100%;
 
@@ -42,33 +42,32 @@ const BlogPostCards = styled.div`
   justify-items: start;
 
   @media (min-width: 500px) {
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 `
 
 export default function BlogPage({ data }) {
   return (
-    <>
+    <Container>
       <Seo title="Blog" />
-      <Container>
-        <Title>Blog</Title>
+      <Title>Blog</Title>
 
-        <BlogPostCards>
-          {data.allMdx.edges.map(({ node }) => (
-            <BlogPostCard
-              title={node.frontmatter.title}
-              date={node.frontmatter.date}
-              coverImage={node.frontmatter.coverImage}
-              coverImageAlt={node.frontmatter.coverImageAlt}
-              readTime={node.timeToRead}
-              excerpt={node.excerpt}
-              link={node.fields.slug}
-              key={node.frontmatter.title}
-            />
-          ))}
-        </BlogPostCards>
-      </Container>
-    </>
+      <BlogPostCards>
+        {data.allMdx.edges.map(({ node }, index) => (
+          <BlogPostCard
+            title={node.frontmatter.title}
+            date={node.frontmatter.date}
+            coverImage={node.frontmatter.coverImage}
+            coverImageAlt={node.frontmatter.coverImageAlt}
+            readTime={node.timeToRead}
+            excerpt={node.excerpt}
+            link={node.fields.slug}
+            index={index}
+            key={index}
+          />
+        ))}
+      </BlogPostCards>
+    </Container>
   )
 }
 
