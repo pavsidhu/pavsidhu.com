@@ -143,6 +143,11 @@ export const globals = css`
       box-shadow: var(--focus-box-shadow);
     }
 
+    body:not(.loaded) *:not(article) {
+      animation-play-state: paused !important;
+      transition: none !important;
+    }
+
     /* Remove default button styles */
     button {
       font: inherit;
@@ -305,6 +310,9 @@ export default function Layout(props: Props) {
         .querySelector("meta[name=theme-color]")
         ?.setAttribute("content", event.matches ? "#292929" : "#fefefe")
     })
+
+    // Play animations once page has loaded
+    document.body.className = `${document.body.className} loaded`
   }, [])
 
   const [blogPostCardBounds, setBlogPostCardBounds] = useState<DOMRect>()
