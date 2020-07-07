@@ -43,7 +43,8 @@
     "react-swipeable-views-utils": "^0.13.9",
     "react-textarea-autosize": "^8.0.1",
     "scroll-behavior-polyfill": "^2.0.13",
-    "web-animations-js": "^2.3.2"
+    "web-animations-js": "^2.3.2",
+    "wicg-inert": "^3.0.3"
   },
   "devDependencies": {
     "@types/mdx-js__react": "^1.5.2",

@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet"
 import "focus-visible"
 import "web-animations-js"
 import "scroll-behavior-polyfill"
+import "wicg-inert"
 
 // Fonts
 import fontLight from "../fonts/Orkney-Light.woff2"

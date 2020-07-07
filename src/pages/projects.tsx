@@ -93,21 +93,6 @@ const Projects = styled(BindKeyboardSwipeableViews)`
 
   .react-swipeable-view-container {
     height: calc(100vh - var(--tab-bar-height));
-
-    /* Hacky way to prevent tabbing to project buttons when slide is inactive */
-    [aria-hidden="true"] a {
-      animation: prevent-tab 1ms 500ms forwards;
-    }
-
-    @keyframes prevent-tab {
-      from {
-        visibility: unset;
-      }
-      to {
-        visibility: hidden;
-        background: red;
-      }
-    }
   }
 
   @media (min-width: 800px) {
@@ -143,6 +128,16 @@ export default function ProjectsPage() {
       scrollToSelectorItem(index)
     }
   }, [])
+
+  useEffect(() => {
+    document
+      .querySelectorAll(".react-swipeable-view-container > div")
+      .forEach((slide, index) => {
+        index !== projectIndex
+          ? slide.setAttribute("inert", "")
+          : slide.removeAttribute("inert")
+      })
+  }, [projectIndex])
 
   function scrollToSelectorItem(index: number) {
     selectorRef.current?.childNodes[index].scrollIntoView({
