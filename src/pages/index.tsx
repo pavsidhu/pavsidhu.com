@@ -26,6 +26,18 @@ const Container = styled.article`
 `
 
 const Intro = styled.div`
+  @keyframes fade-in {
+    from {
+      transform: translateY(120px);
+      opacity: 0;
+    }
+
+    to {
+      transform: none;
+      opacity: 1;
+    }
+  }
+
   grid-area: "intro";
   display: grid;
   grid-template-areas:
@@ -36,6 +48,7 @@ const Intro = styled.div`
   row-gap: var(--space-s);
   place-self: center;
   justify-items: start;
+  animation: fade-in 500ms var(--cubic-bezier-bounce) forwards;
 
   @media (min-width: 600px) {
     grid-template-areas:
@@ -201,6 +214,7 @@ export default function IndexPage({ data }) {
           fluid={data.file.childImageSharp.fluid}
           width={280}
           height={280}
+          loading="eager"
         />
         <Title>Hey, I'm Pav</Title>
         <Description>
@@ -243,6 +257,7 @@ export default function IndexPage({ data }) {
               link={node.fields.slug}
               key={node.frontmatter.title}
               index={index}
+              delay={400}
             />
           ))}
         </BlogPostsList>

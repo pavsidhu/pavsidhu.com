@@ -157,7 +157,7 @@ export const globals = css`
     }
 
     article {
-      animation: fade-in 100ms ease-in-out;
+      animation: tab-fade-in 100ms ease-in-out;
     }
 
     [data-clickable],
@@ -208,7 +208,7 @@ export const globals = css`
       }
     }
 
-    @keyframes fade-in {
+    @keyframes tab-fade-in {
       from {
         opacity: 0.5;
       }
@@ -245,6 +245,7 @@ export const globals = css`
       --system-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif;
       --orkney-font-family: "Orkney", var(--system-font-family);
       --focus-box-shadow: 0 0 0 2px var(--primary-color);
+      --cubic-bezier-bounce: cubic-bezier(0.75, -0.5, 0, 1.75);
     }
 
     @media (prefers-color-scheme: dark) {

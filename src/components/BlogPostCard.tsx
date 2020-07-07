@@ -6,19 +6,6 @@ import { Link, navigate } from "gatsby"
 import { BlogPostTransition } from "./Layout"
 
 const Container = styled((props) => <Link {...props} />)`
-  display: grid;
-  width: 100%;
-  grid-template-areas:
-    "photo  "
-    "meta   "
-    "title  "
-    "excerpt";
-  grid-auto-flow: row;
-  gap: var(--space-s);
-  align-content: start;
-  border-radius: 8px;
-  transition: transform 150ms ease-in-out;
-
   @keyframes fade-in {
     from {
       transform: translateY(80px);
@@ -31,11 +18,23 @@ const Container = styled((props) => <Link {...props} />)`
     }
   }
 
+  display: grid;
+  width: 100%;
+  grid-template-areas:
+    "photo  "
+    "meta   "
+    "title  "
+    "excerpt";
+  grid-auto-flow: row;
+  gap: var(--space-s);
+  align-content: start;
+  border-radius: 8px;
+
   @media (min-width: 720px) {
     transform: translateY(80px);
     opacity: 0;
-    animation: fade-in 200ms ease-out ${(props) => props.index * 50 + 100}ms
-      forwards;
+    animation: fade-in 400ms var(--cubic-bezier-bounce)
+      ${(props) => props.index * 50 + props.delay}ms forwards;
   }
 `
 
@@ -98,6 +97,7 @@ interface Props {
   coverImageAlt: string
   link: string
   index: number
+  delay?: number
 }
 
 export default function BlogPostCard(props: Props) {
@@ -115,6 +115,7 @@ export default function BlogPostCard(props: Props) {
       }}
       data-clickable="square"
       index={props.index}
+      delay={props.delay || 100}
     >
       <CoverPhoto
         fluid={props.coverImage.childImageSharp.fluid}
