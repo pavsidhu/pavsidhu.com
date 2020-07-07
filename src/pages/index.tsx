@@ -139,13 +139,14 @@ const BlogPostsMore = styled((props) => <Link {...props} />)`
   justify-self: end;
   align-items: center;
   color: var(--primary-color);
+  padding: var(--space-xs);
 
   p {
     color: inherit;
     font-family: var(--orkney-font-family);
     font-size: var(--font-m);
     font-weight: 500;
-    padding-top: 0.1em;
+    padding-top: 0.2em;
     margin-right: var(--space-xs);
   }
 
@@ -157,7 +158,7 @@ const BlogPostsMore = styled((props) => <Link {...props} />)`
 
   @media (hover: hover) {
     &:hover svg {
-      transform: translateX(var(--space-xs));
+      transform: translateX(4px);
     }
   }
 `
@@ -225,7 +226,7 @@ export default function IndexPage({ data }) {
 
       <BlogPosts>
         <BlogPostsTitle>Latest Blog Posts</BlogPostsTitle>
-        <BlogPostsMore to="/blog">
+        <BlogPostsMore to="/blog" data-clickable="default">
           <p>See More</p>
           <ForwardIcon />
         </BlogPostsMore>
