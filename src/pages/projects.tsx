@@ -37,7 +37,7 @@ const Selector = styled.div`
   position: sticky;
   top: var(--space-s);
   border-radius: 40px;
-  background: var(--background-color);
+  background: rgba(255, 255, 255, 0.75);
   box-shadow: rgba(0, 0, 0, 0.05) 0 0 10px;
   z-index: 5;
 
@@ -49,6 +49,10 @@ const Selector = styled.div`
   &::-webkit-scrollbar {
     width: 0 !important;
     display: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background: rgba(0, 0, 0, 0.5);
   }
 `
 
