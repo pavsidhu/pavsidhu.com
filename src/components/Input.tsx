@@ -44,6 +44,7 @@ const Field = styled.input`
   background: rgba(0, 0, 0, 0.05);
   color: var(--default-text-color);
   padding: var(--space-s);
+  padding-bottom: calc(var(--space-s) - var(--font-padding));
   font-family: var(--font-family);
   font-size: var(--font-s);
   transition: box-shadow 80ms ease-in-out;
