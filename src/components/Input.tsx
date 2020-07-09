@@ -9,9 +9,24 @@ const Container = styled.div`
   grid-auto-flow: row;
   gap: var(--space-xxs);
 
-  &:hover,
   &:focus-within {
     color: var(--primary-text-color);
+
+    input,
+    textarea {
+      box-shadow: var(--focus-box-shadow);
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--primary-text-color);
+
+      input,
+      textarea {
+        box-shadow: var(--focus-box-shadow);
+      }
+    }
   }
 `
 
@@ -31,6 +46,7 @@ const Field = styled.input`
   padding: var(--space-s);
   font-family: var(--font-family);
   font-size: var(--font-s);
+  transition: box-shadow 80ms ease-in-out;
 
   /* If the field is a textarea */
   resize: none;
