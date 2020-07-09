@@ -66,6 +66,7 @@ const TabLabel = styled.p`
   margin-top: 2px;
   font-size: var(--font-xxs);
   font-family: var(--orkney-font-family);
+  font-weight: 500;
   padding-top: var(--font-padding);
 `
 
