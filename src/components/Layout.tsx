@@ -227,6 +227,7 @@ export const globals = css`
       --hover-color: rgba(0, 0, 0, 0.07);
       --divider-color: rgba(0, 0, 0, 0.1);
 
+      --space-xxs: 8px;
       --space-xs: 8px;
       --space-s: 16px;
       --space-m: 24px;

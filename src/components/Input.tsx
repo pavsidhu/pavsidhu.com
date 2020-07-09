@@ -3,69 +3,42 @@ import { styled } from "linaria/react"
 import TextareaAutosize from "react-textarea-autosize"
 
 const Container = styled.div`
-  display: grid;
+  width: 100%;
   color: var(--secondary-text-color);
+  display: grid;
+  grid-auto-flow: row;
+  gap: var(--space-xxs);
 
-  * {
-    grid-row: -1 / 1;
-    grid-column: -1 / 1;
-    line-height: 1;
-    padding: 1.5rem;
-    height: 5rem;
-    font-size: var(--font-s);
-  }
-`
-
-const Field = styled.input`
-  border: none;
-  background: none;
-  border-bottom: 1px solid var(--secondary-text-color);
-  color: var(--default-text-color);
-
-  /* If the field is a textarea */
-  font-family: inherit;
-  resize: none;
-
-  &::placeholder {
-    color: transparent;
-    user-select: none;
-  }
-
-  &:focus {
-    box-shadow: none;
-    border-color: var(--primary-color);
-    border-width: 1px;
-
-    & + label {
-      color: var(--primary-color);
-    }
-  }
-
-  &:focus,
-  &:not(:placeholder-shown) {
-    & + label {
-      transform: translate(0.2rem, -30%) scale(0.8);
-    }
-  }
-
-  /* Fix for Edge not supporting :placeholder-shown */
-  &:not(::-ms-input-placeholder) {
-    & + label {
-      transform: translate(0.2rem, -30%) scale(0.8);
-    }
+  &:hover,
+  &:focus-within {
+    color: var(--primary-text-color);
   }
 `
 
 const Label = styled.label`
-  z-index: 1;
-  transform-origin: 0 0;
-  transition: transform 100ms;
   user-select: none;
   pointer-events: none;
+  font-size: var(--font-xs);
+  font-weight: 500;
+  transition: color 80ms ease-in-out;
+`
+
+const Field = styled.input`
+  border: none;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--default-text-color);
+  padding: var(--space-s);
+  font-family: var(--font-family);
+  font-size: var(--font-s);
+
+  /* If the field is a textarea */
+  resize: none;
 `
 
 interface Props {
-  name: string
+  label: string
+  placeholder: string
   type?: string
   required?: boolean
   textarea?: boolean
@@ -75,17 +48,18 @@ interface Props {
 export default function Input(props: Props) {
   return (
     <Container style={props.style}>
+      <Label htmlFor={props.label}>
+        {props.label + (props.required === true ? "*" : "")}
+      </Label>
+
       <Field
-        name={props.name}
-        placeholder={props.name}
-        type={props.type ? props.name : "text"}
+        name={props.label}
+        placeholder={props.placeholder}
+        type={props.type || "text"}
         required={props.required === true}
         as={props.textarea === true ? TextareaAutosize : Field}
-        id={props.name}
+        id={props.label}
       />
-      <Label htmlFor={props.name}>
-        {props.required === true ? `${props.name}*` : props.name}
-      </Label>
     </Container>
   )
 }

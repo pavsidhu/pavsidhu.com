@@ -2,53 +2,62 @@ import React from "react"
 import { styled } from "linaria/react"
 import { Link } from "gatsby"
 
-import { Input, Seo } from "../components"
+import { Input, Seo, SocialList } from "../components"
 
 const Container = styled.article`
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(auto, 600px);
-  grid-auto-flow: row;
+  grid-template-areas:
+    "title"
+    "paragraph"
+    "social"
+    "form";
   justify-content: center;
   padding: var(--space-m);
   row-gap: var(--space-s);
+  font-size: var(--font-s);
+
+  @media (min-width: 600px) {
+    grid-template-areas:
+      "title     title"
+      "paragraph form"
+      "social    form";
+    grid-template-columns: minmax(auto, 30ch) minmax(auto, 40ch);
+    grid-template-rows: auto min-content 1fr;
+    gap: var(--space-m);
+  }
 `
 
 const Title = styled.h1`
+  grid-area: title;
   font-size: var(--font-xxl);
 `
 
 const Paragraph = styled.p`
+  grid-area: paragraph;
   font-size: var(--font-s);
   line-height: 3.2rem;
-`
 
-const Form = styled.form`
-  display: grid;
-  grid-template-areas:
-    "name   "
-    "email  "
-    "message"
-    "submit ";
-  row-gap: var(--space-m);
-  column-gap: var(--space-s);
-
-  @media (min-width: 600px) {
-    width: 100%;
-    grid-template-areas:
-      "name    email  "
-      "message message"
-      "submit  submit ";
+  a {
+    font-weight: 500;
   }
 `
 
+const Form = styled.form`
+  grid-area: form;
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: start;
+  row-gap: var(--space-m);
+  column-gap: var(--space-s);
+`
+
 const SubmitButton = styled.button`
-  grid-area: submit;
-  justify-self: center;
   padding: var(--space-s);
   padding-top: calc(var(--font-padding) + var(--space-s));
   border-radius: 40px;
-  color: var(--primary-color);
+  background: var(--primary-color);
+  color: var(--default-text-color);
   font-size: var(--font-s);
   font-weight: 500;
 `
@@ -72,25 +81,35 @@ export default function ContactPage({ location }: { location: Location }) {
   const params = new URLSearchParams(location.search)
   const success = params.get("success") === "true"
 
-  return success ? (
-    <SuccessContainer>
-      <Title>Thanks</Title>
-      <Paragraph>
-        I got your message, I'll get back to you as soon as I can!
-      </Paragraph>
-      <HomeLink to="/" data-clickable="default">
-        Go To Home
-      </HomeLink>
-    </SuccessContainer>
-  ) : (
+  if (success) {
+    return (
+      <SuccessContainer>
+        <Title>Thanks</Title>
+        <Paragraph>
+          I got your message, I'll get back to you as soon as I can!
+        </Paragraph>
+        <HomeLink to="/" data-clickable="default">
+          Go To Home
+        </HomeLink>
+      </SuccessContainer>
+    )
+  }
+
+  return (
     <Container>
       <Seo title="Contact" />
+
       <Title>Contact</Title>
 
       <Paragraph>
-        My email is always open if you want a chat. I'll respond as soon as
-        possible!
+        Feel free to get in touch if you want a chat. Pop me an email at{" "}
+        <a href="mailto:pav@pavsidhu.com?subject=Hello%20Pav!">
+          pav@pavsidhu.com
+        </a>{" "}
+        or come say hello on social media.
       </Paragraph>
+
+      <SocialList />
 
       <Form
         name="contact"
@@ -99,20 +118,20 @@ export default function ContactPage({ location }: { location: Location }) {
         data-netlify-honeypot="bot-field"
         action="/contact?success=true"
       >
-        <Input name="Name" style={{ gridArea: "name" }} required={true} />
+        <Input label="Name" placeholder="Michael Lee" required={true} />
 
         <Input
-          name="Email"
-          type="email"
-          style={{ gridArea: "email" }}
+          label="Email"
+          placeholder="hello@example.com"
           required={true}
+          type="email"
         />
 
         <Input
-          name="Message"
-          textarea={true}
-          style={{ gridArea: "message" }}
+          label="Message"
+          placeholder="I wanted to talk about..."
           required={true}
+          textarea={true}
         />
 
         <input type="hidden" name="form-name" value="contact" />

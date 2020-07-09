@@ -8,6 +8,7 @@ import Header from "./Header"
 import Input from "./Input"
 import ReadingProgress from "./ReadingProgress"
 import Seo from "./Seo"
+import SocialList from "./SocialList"
 import TabBar from "./TabBar"
 import YouTube from "./YouTube"
 
@@ -18,6 +19,7 @@ export {
   Input,
   ReadingProgress,
   Seo,
+  SocialList,
   TabBar,
   YouTube
 }
