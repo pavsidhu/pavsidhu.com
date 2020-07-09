@@ -69,7 +69,7 @@ interface Props {
   type?: string
   required?: boolean
   textarea?: boolean
-  style: object
+  style?: object
 }
 
 export default function Input(props: Props) {
