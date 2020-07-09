@@ -39,6 +39,7 @@ const Selector = styled.div`
   border-radius: 40px;
   background: rgba(255, 255, 255, 0.75);
   box-shadow: rgba(0, 0, 0, 0.05) 0 0 10px;
+  backdrop-filter: blur(8px);
   z-index: 5;
 
   /* Hide scrollbar in firefox and edge */
