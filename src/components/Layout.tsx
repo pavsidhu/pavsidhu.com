@@ -101,7 +101,7 @@ export const globals = css`
     }
 
     p a {
-      color: var(--primary-color);
+      color: var(--primary-text-color);
       background-image: linear-gradient(currentColor, currentColor);
       background-position: 0% 100%;
       background-repeat: no-repeat;
@@ -245,7 +245,7 @@ export const globals = css`
       --font-padding: 0.333em;
       --system-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif;
       --orkney-font-family: "Orkney", var(--system-font-family);
-      --focus-box-shadow: 0 0 0 2px var(--primary-color);
+      --focus-box-shadow: 0 0 0 2px var(--primary-text-color);
       --cubic-bezier-bounce: cubic-bezier(0.75, -0.5, 0, 1.75);
     }
 

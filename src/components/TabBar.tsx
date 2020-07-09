@@ -41,8 +41,8 @@ const Tab = styled((props) => <Link {...props} />)`
   transition: background 100ms, color 100ms;
 
   &.active {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
+    color: var(--primary-text-color);
+    border-bottom: 2px solid var(--primary-text-color);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -64,10 +64,10 @@ const Tab = styled((props) => <Link {...props} />)`
 
 const TabLabel = styled.p`
   margin-top: 2px;
-  font-size: var(--font-xxs);
-  font-family: var(--orkney-font-family);
-  font-weight: 500;
   padding-top: var(--font-padding);
+  font-family: var(--orkney-font-family);
+  font-size: var(--font-xxs);
+  font-weight: 500;
 `
 
 export default function TabBar() {
