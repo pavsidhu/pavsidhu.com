@@ -71,7 +71,7 @@ const SelectorItem = styled.button`
   scroll-snap-align: center;
   position: relative;
   cursor: pointer;
-  color: var(--primary-text-color);
+  color: var(--default-text-color);
 
   /* Account for overflow scroll not including right spacing of child */
   &:last-child {

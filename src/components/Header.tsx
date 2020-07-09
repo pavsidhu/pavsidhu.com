@@ -21,13 +21,13 @@ const Container = styled.header`
     top: 0;
     left: 0;
     z-index: 10;
-    border-bottom: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--divider-color);
     padding: var(--space-s);
     background: var(--background-color);
   }
 
   @media (prefers-color-scheme: dark) {
-    background: var(--secondary-background-color);
+    background: var(--navigation-background-color);
   }
 `
 
@@ -54,13 +54,7 @@ const NavItem = styled((props) => <Link {...props} />)`
   transition: background 100ms, color 100ms;
 
   &.active {
-    color: var(--primary-color);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    &.active {
-      color: var(--primary-color);
-    }
+    color: var(--primary-text-color);
   }
 `
 

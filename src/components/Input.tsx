@@ -20,7 +20,7 @@ const Field = styled.input`
   border: none;
   background: none;
   border-bottom: 1px solid var(--secondary-text-color);
-  color: var(--primary-text-color);
+  color: var(--default-text-color);
 
   /* If the field is a textarea */
   font-family: inherit;

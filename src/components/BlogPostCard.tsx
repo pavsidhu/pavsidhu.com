@@ -63,7 +63,7 @@ const Meta = styled.div`
 `
 
 const Divider = styled.span`
-  background: var(--line-color);
+  background: var(--divider-color);
   padding-bottom: 2px;
   margin: 0 var(--space-s) 3px;
   flex: 1;

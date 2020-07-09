@@ -87,7 +87,7 @@ export const globals = css`
       font-size: 62.5%;
       font-family: var(--orkney-font-family);
       background: var(--background-color);
-      color: var(--primary-text-color);
+      color: var(--default-text-color);
     }
 
     p {
@@ -218,14 +218,14 @@ export const globals = css`
     }
 
     :root {
-      --primary-color: #d83d00;
-      --primary-light-color: transparent;
-      --primary-text-color: #1b1b1b;
+      --primary-color: #ff8767;
+      --primary-text-color: #d83d00;
+      --default-text-color: #1b1b1b;
       --secondary-text-color: #646464;
       --background-color: #fffffc;
-      --secondary-background-color: rgba(0, 0, 0, 0.2);
+      --navigation-background-color: rgba(0, 0, 0, 0.2);
       --hover-color: rgba(0, 0, 0, 0.07);
-      --line-color: rgba(0, 0, 0, 0.1);
+      --divider-color: rgba(0, 0, 0, 0.1);
 
       --space-xs: 8px;
       --space-s: 16px;
@@ -251,12 +251,12 @@ export const globals = css`
     @media (prefers-color-scheme: dark) {
       :root {
         --primary-light-color: rgba(255, 255, 255, 0.25);
-        --primary-text-color: rgba(255, 255, 255, 0.9);
+        --default-text-color: rgba(255, 255, 255, 0.9);
         --secondary-text-color: rgba(255, 255, 255, 0.7);
         --background-color: #1b1b1b;
-        --secondary-background-color: #292929;
+        --navigation-background-color: #292929;
         --hover-color: rgba(255, 255, 255, 0.1);
-        --line-color: rgba(255, 255, 255, 0.1);
+        --divider-color: rgba(255, 255, 255, 0.1);
       }
 
       * {

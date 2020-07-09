@@ -25,7 +25,7 @@ const Container = styled.nav`
   }
 
   @media (prefers-color-scheme: dark) {
-    background: var(--secondary-background-color);
+    background: var(--navigation-background-color);
   }
 `
 
@@ -47,7 +47,7 @@ const Tab = styled((props) => <Link {...props} />)`
 
   @media (prefers-color-scheme: dark) {
     &.active {
-      color: var(--primary-text-color);
+      color: var(--default-text-color);
     }
   }
 
