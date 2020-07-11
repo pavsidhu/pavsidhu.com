@@ -40,7 +40,7 @@ const Label = styled.label`
 
 const Field = styled.input`
   border: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   background: rgba(0, 0, 0, 0.05);
   color: var(--default-text-color);
   padding: var(--space-s);

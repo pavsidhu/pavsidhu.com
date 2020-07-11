@@ -20,7 +20,7 @@ const Title = styled.h1`
 `
 
 const ImageOfMe = styled(Image)`
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 `
 
 const SubTitle = styled.h1`

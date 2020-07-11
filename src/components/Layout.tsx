@@ -247,6 +247,7 @@ export const globals = css`
       --orkney-font-family: "Orkney", var(--system-font-family);
       --focus-box-shadow: 0 0 0 2px var(--primary-text-color);
       --cubic-bezier-bounce: cubic-bezier(0.75, -0.5, 0, 1.75);
+      --border-radius: 8px;
     }
 
     @media (prefers-color-scheme: dark) {

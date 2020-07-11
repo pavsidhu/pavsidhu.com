@@ -71,7 +71,7 @@ const Photo = styled(Image)`
   justify-self: center;
   width: 75%;
   max-width: 240px;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 
   @media (min-width: 600px) {
     width: 100%;

@@ -28,7 +28,7 @@ const Container = styled((props) => <Link {...props} />)`
   grid-auto-flow: row;
   gap: var(--space-s);
   align-content: start;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   transition: transform 80ms ease-in-out;
 
   @media (hover: hover) {
@@ -49,7 +49,7 @@ const CoverPhoto = styled((props) => <Image {...props} />)`
   height: 0;
   padding-bottom: 60%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   color: transparent;
 `
 

@@ -53,7 +53,7 @@ const BackButtonContainer = styled.div`
   }
 
   @media (min-width: 800px) {
-    border-radius: 8px;
+    border-radius: var(--border-radius);
   }
 
   @media (min-width: 950px) {
@@ -102,7 +102,7 @@ const CoverImage = styled(Image)`
   color: transparent;
 
   @media (min-width: 800px) {
-    border-radius: 8px;
+    border-radius: var(--border-radius);
   }
 `
 
