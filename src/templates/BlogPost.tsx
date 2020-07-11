@@ -236,7 +236,7 @@ export default function BlogPost({ data: { mdx } }) {
       <BackButtonContainer>
         <BackButton onClick={() => navigate(-1)} data-clickable="default">
           <BackIcon />
-          <p>Blog</p>
+          <p>Back</p>
         </BackButton>
       </BackButtonContainer>
 
