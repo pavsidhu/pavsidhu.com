@@ -14,6 +14,7 @@ const Container = styled.article`
     "form";
   justify-content: center;
   padding: var(--space-m);
+  padding-top: var(--space-xl);
   row-gap: var(--space-s);
   font-size: var(--font-s);
 
