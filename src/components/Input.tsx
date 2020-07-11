@@ -51,6 +51,10 @@ const Field = styled.input`
 
   /* If the field is a textarea */
   resize: none;
+
+  @media (prefers-color-scheme: dark) {
+    background: rgba(255, 255, 255, 0.05);
+  }
 `
 
 interface Props {

@@ -2,7 +2,7 @@ import React from "react"
 import { styled } from "linaria/react"
 import { Link } from "gatsby"
 
-import { Input, Seo, SocialList } from "../components"
+import { Button, Input, Seo, SocialList } from "../components"
 
 const Container = styled.article`
   width: 100%;
@@ -52,7 +52,7 @@ const Form = styled.form`
   column-gap: var(--space-s);
 `
 
-const SubmitButton = styled.button`
+const SubmitButton = styled(Button)`
   padding: var(--space-s);
   padding-top: calc(var(--font-padding) + var(--space-s));
   border-radius: 40px;
@@ -60,6 +60,10 @@ const SubmitButton = styled.button`
   color: var(--default-text-color);
   font-size: var(--font-s);
   font-weight: 500;
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--background-color);
+  }
 `
 
 const SuccessContainer = styled.article`

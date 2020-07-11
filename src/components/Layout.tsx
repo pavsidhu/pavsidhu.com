@@ -251,11 +251,11 @@ export const globals = css`
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --primary-light-color: rgba(255, 255, 255, 0.25);
+        --primary-text-color: #ff8767;
         --default-text-color: rgba(255, 255, 255, 0.9);
         --secondary-text-color: rgba(255, 255, 255, 0.7);
-        --background-color: #1b1b1b;
-        --navigation-background-color: #292929;
+        --background-color: #232323;
+        --navigation-background-color: #2d2d2d;
         --hover-color: rgba(255, 255, 255, 0.1);
         --divider-color: rgba(255, 255, 255, 0.1);
       }

@@ -38,6 +38,20 @@ export const Paragraph = styled.p`
   line-height: 2.8rem;
 `
 
+export const Button = styled.button`
+  padding: var(--space-s);
+  padding-top: calc(var(--font-padding) + var(--space-s));
+  border-radius: 40px;
+  background: var(--primary-color);
+  color: var(--default-text-color);
+  font-size: var(--font-s);
+  font-weight: 500;
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--background-color);
+  }
+`
+
 export const ProjectContainer = styled.section`
   height: 100%;
   width: 100vw;
