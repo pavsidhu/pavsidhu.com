@@ -25,13 +25,13 @@ const Social = styled.a`
   display: inline-flex;
 
   svg {
-    width: 32px;
-    height: 32px;
+    width: 3.2rem;
+    height: 3.2rem;
     fill: currentColor;
 
     @media (min-width: 600px) {
-      width: 40px;
-      height: 40px;
+      width: 4rem;
+      height: 4rem;
     }
   }
 `
