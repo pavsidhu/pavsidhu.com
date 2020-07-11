@@ -125,7 +125,6 @@ export const globals = css`
     h4,
     h5,
     h6 {
-      padding-top: var(--font-padding);
       font-family: var(--orkney-font-family);
     }
 

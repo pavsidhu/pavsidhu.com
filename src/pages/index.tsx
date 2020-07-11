@@ -169,6 +169,7 @@ const BlogPosts = styled.div`
 const BlogPostsTitle = styled.h2`
   grid-area: blog-title;
   font-size: var(--font-xl);
+  padding-top: var(--font-padding);
   margin-bottom: var(--space-xs);
 
   @media (min-width: 500px) {

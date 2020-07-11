@@ -9,7 +9,7 @@ const Container = styled.article`
   width: 100%;
   max-width: 58ch;
   margin: 0 auto;
-  padding: var(--space-m);
+  padding: var(--space-xl) var(--space-m) var(--space-m);
   display: grid;
   row-gap: var(--space-m);
   font-size: var(--font-m);
