@@ -15,19 +15,18 @@ const Container = styled.article`
   display: grid;
   grid-template-areas:
     "cover cover   cover"
-    ".     content .    "
-    ".     .       .    ";
-  grid-template-columns: var(--space-m) minmax(0, 1fr) var(--space-m);
+    ".     content .    ";
+  grid-template-columns: var(--space-xs) minmax(0, 1fr) var(--space-xs);
   row-gap: var(--space-s);
   position: relative;
 
   @media (min-width: 800px) {
     grid-template-areas:
-      ". .           ."
-      ". cover       ."
-      ". content     ."
-      ". .           .";
+      ". .       ."
+      ". cover   ."
+      ". content .";
     row-gap: var(--space-l);
+    margin-bottom: -64px;
   }
 `
 
@@ -36,7 +35,7 @@ const BackButtonContainer = styled.div`
   justify-self: center;
   z-index: 1;
   width: 100%;
-  max-width: 58ch;
+  max-width: calc(58ch + (2 * var(--space-xl)));
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), transparent);
   padding: var(--space-s) var(--space-xs);
   font-size: var(--font-m);
@@ -52,11 +51,11 @@ const BackButtonContainer = styled.div`
     }
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 795px) {
     border-radius: var(--border-radius);
   }
 
-  @media (min-width: 950px) {
+  @media (min-width: 1020px) {
     grid-area: back-button;
     background-image: none;
     padding: var(--space-s);
@@ -89,7 +88,7 @@ const CoverImageContainer = styled.div`
   grid-area: cover;
   justify-self: center;
   width: 100%;
-  max-width: 58ch;
+  max-width: calc(58ch + (2 * var(--space-xl)));
   font-size: var(--font-m);
 `
 
@@ -101,21 +100,44 @@ const CoverImage = styled(Image)`
   will-change: transform;
   color: transparent;
 
-  @media (min-width: 800px) {
+  @media (min-width: 795px) {
     border-radius: var(--border-radius);
   }
 `
 
 const Content = styled.section`
+  @keyframes fade-in {
+    from {
+      transform: translateY(200px);
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
   grid-area: content;
   justify-self: center;
   width: 100%;
   max-width: 58ch;
-  font-size: var(--font-m);
+  padding: var(--space-m) var(--space-s) 0;
+  border-radius: var(--border-radius);
   display: grid;
   grid-auto-flow: row;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--space-s);
+  position: relative;
+  top: -48px;
+  font-size: var(--font-m);
+  background: var(--background-color);
+  animation: fade-in 200ms ease-in-out 50ms backwards;
+
+  @media (min-width: 600px) {
+    top: -64px;
+    padding: var(--space-m) var(--space-m) 0;
+  }
 `
 
 const Title = styled.h1`
@@ -134,7 +156,7 @@ const Meta = styled.div`
 const Divider = styled.span`
   background: var(--divider-color);
   padding-bottom: 2px;
-  margin: 0 var(--space-xs) 1px;
+  margin: 0 var(--space-xs);
   flex: 1;
 `
 
