@@ -18,7 +18,7 @@ const Container = styled(ProjectContainer)`
   color: #fefefe;
 
   @media (prefers-color-scheme: dark) {
-    background: linear-gradient(to right, #ed6ea0b3 0%, #ec8c69b3 100%);
+    background: linear-gradient(to right, #ed6ea0e6 0%, #ec8c69e6 100%);
     background-color: var(--background-color);
   }
 `
@@ -39,12 +39,6 @@ const Button = styled(ProjectButton)`
 
   &:active {
     background: rgba(255, 255, 255, 0.3);
-  }
-`
-
-const Preview = styled(ProjectPreview)`
-  @media (prefers-color-scheme: dark) {
-    filter: brightness(0.9);
   }
 `
 
@@ -79,7 +73,7 @@ export default function CopBot() {
         </Button>
       </ProjectDetails>
 
-      <Preview fluid={data.file.childImageSharp.fluid} />
+      <ProjectPreview fluid={data.file.childImageSharp.fluid} />
     </Container>
   )
 }

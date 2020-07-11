@@ -33,7 +33,7 @@ const Container = styled(ProjectContainer)`
   }
 
   @media (prefers-color-scheme: dark) {
-    background: linear-gradient(#8e92f4b3, #8e92f4b3);
+    background: linear-gradient(#8e92f4e6, #8e92f4e6);
     background-color: var(--background-color);
     color: #fefefe;
   }
@@ -88,10 +88,6 @@ const Preview = styled(ProjectPreview)`
   @media (min-width: 800px) {
     max-height: none;
     height: clamp(400px, 100vh, 70vh);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    filter: brightness(0.9);
   }
 `
 
