@@ -7,6 +7,7 @@ import { ReactComponent as AboutIcon } from "../images/icons/about.svg"
 import { ReactComponent as BlogIcon } from "../images/icons/blog.svg"
 import { ReactComponent as ProjectsIcon } from "../images/icons/projects.svg"
 import { ReactComponent as ContactIcon } from "../images/icons/contact.svg"
+import { ReactComponent as IconSvg } from "../images/favicons/favicon.svg"
 
 const Container = styled.header`
   display: none;
@@ -31,11 +32,9 @@ const Container = styled.header`
   }
 `
 
-const Title = styled((props) => <Link {...props} />)`
-  font-size: 2rem;
-  font-weight: 500;
-  padding: calc(var(--font-padding) + 4px) var(--space-xs) 4px;
-  border-radius: 20px;
+const Icon = styled(IconSvg)`
+  width: 3.2rem;
+  height: 3.2rem;
 `
 
 const Nav = styled.nav`
@@ -81,9 +80,9 @@ export default function Header() {
 
   return (
     <Container ref={containerRef}>
-      <Title to="/" data-clickable="default">
-        Pav Sidhu
-      </Title>
+      <Link to="/">
+        <Icon />
+      </Link>
 
       <Nav>
         <NavItem to="/" activeClassName="active" data-clickable="default">
