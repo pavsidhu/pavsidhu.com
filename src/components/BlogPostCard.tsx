@@ -13,8 +13,8 @@ const Container = styled((props) => <Link {...props} />)`
     }
 
     to {
-      transform: none;
       opacity: 1;
+      transform: none;
     }
   }
 
@@ -29,12 +29,17 @@ const Container = styled((props) => <Link {...props} />)`
   gap: var(--space-s);
   align-content: start;
   border-radius: 8px;
+  transition: transform 80ms ease-in-out;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.025);
+    }
+  }
 
   @media (min-width: 720px) {
-    transform: translateY(80px);
-    opacity: 0;
     animation: fade-in 400ms var(--cubic-bezier-bounce)
-      ${(props) => props.index * 50 + props.delay}ms forwards;
+      ${(props) => props.index * 50 + props.delay}ms backwards;
   }
 `
 
