@@ -155,10 +155,6 @@ export const globals = css`
       background: none;
     }
 
-    article {
-      animation: tab-fade-in 100ms ease-in-out;
-    }
-
     [data-clickable],
     [data-clickable="default"] {
       position: relative;
@@ -204,15 +200,6 @@ export const globals = css`
         left: calc(-1 * var(--space-xs));
         width: calc(100% + var(--space-s));
         height: calc(100% + var(--space-s));
-      }
-    }
-
-    @keyframes tab-fade-in {
-      from {
-        opacity: 0.5;
-      }
-      to {
-        opacity: 1;
       }
     }
 
