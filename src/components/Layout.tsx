@@ -219,7 +219,7 @@ export const globals = css`
 
     :root {
       --primary-color: #ff8767;
-      --primary-text-color: #d83d00;
+      --primary-text-color: #da3d00;
       --default-text-color: #1b1b1b;
       --secondary-text-color: #646464;
       --background-color: #fffffc;
