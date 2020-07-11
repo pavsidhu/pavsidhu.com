@@ -3,22 +3,22 @@ import Image from "gatsby-image"
 import { styled } from "linaria/react"
 import { Link, graphql } from "gatsby"
 
-import { BlogPostCard, Seo } from "../components"
-import { ReactComponent as TwitterIcon } from "../images/icons/twitter.svg"
-import { ReactComponent as GitHubIcon } from "../images/icons/github.svg"
-import { ReactComponent as LinkedInIcon } from "../images/icons/linkedin.svg"
+import { BlogPostCard, Seo, SocialList } from "../components"
 import { ReactComponent as ForwardIcon } from "../images/icons/forward.svg"
+import { ReactComponent as IntroBackgroundSvg } from "../images/general/intro-background.svg"
+import { ReactComponent as IntroBackgroundSmallSvg } from "../images/general/intro-background-small.svg"
 
 const Container = styled.article`
   width: 100%;
-  padding: var(--space-m);
+  padding: var(--space-m) 0;
   display: grid;
   justify-items: center;
-  row-gap: var(--space-m);
+  row-gap: var(--space-l);
   grid-template-areas:
-    "intro"
-    "posts";
-  grid-template-columns: 1fr;
+    ". intro ."
+    ". posts .";
+  grid-template-columns: var(--space-m) 1fr var(--space-m);
+  overflow-x: hidden;
 
   @media (min-width: 600px) {
     grid-template-rows: minmax(min-content, calc(75vh - var(--header-height))) auto;
@@ -38,7 +38,7 @@ const Intro = styled.div`
     }
   }
 
-  grid-area: "intro";
+  grid-area: intro;
   display: grid;
   grid-template-areas:
     "photo"
@@ -48,26 +48,34 @@ const Intro = styled.div`
   row-gap: var(--space-s);
   place-self: center;
   justify-items: start;
-  animation: fade-in 500ms var(--cubic-bezier-bounce) forwards;
+  z-index: 1;
 
   @media (min-width: 600px) {
     grid-template-areas:
       "photo . title      "
       "photo . description"
       "photo . social     ";
-    grid-template-columns: 28rem var(--space-xl) auto;
+    grid-template-columns: minmax(16rem, 28rem) var(--space-xl) auto;
     row-gap: var(--space-m);
+    animation: fade-in 400ms var(--cubic-bezier-bounce) forwards;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--background-color);
   }
 `
 
 const Photo = styled(Image)`
   grid-area: photo;
   align-self: center;
-  width: 100%;
-  max-width: 32rem;
+  justify-self: center;
+  width: 75%;
+  max-width: 240px;
   border-radius: 8px;
 
   @media (min-width: 600px) {
+    width: 100%;
+    max-width: initial;
     padding-bottom: 100%;
     height: 0;
   }
@@ -76,7 +84,7 @@ const Photo = styled(Image)`
 const Title = styled.h1`
   grid-area: title;
   width: 100%;
-  font-size: clamp(100%, var(--font-l) + 2.5vw, var(--font-xxl));
+  font-size: clamp(100%, var(--font-xl) + 2.5vw, var(--font-xxl));
 `
 
 const Description = styled.p`
@@ -84,32 +92,54 @@ const Description = styled.p`
   font-size: var(--font-m);
   font-weight: 400;
   line-height: 2.8rem;
-  max-width: 35ch;
+  max-width: 30ch;
+
+  @media (min-width: 600px) {
+    max-width: 35ch;
+  }
 `
 
-const AboutLink = styled((props) => <Link {...props} />)`
-  color: var(--primary-color);
-  font-weight: 600;
+const IntroBackgroundSmall = styled(IntroBackgroundSmallSvg)`
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+
+  grid-column: -1 / 1;
+  grid-row: 1 / 2;
+  height: 100%;
+  justify-self: center;
+  align-self: end;
+  fill: var(--primary-color);
+  opacity: 0;
+  animation: fade-in 200ms ease-out 300ms forwards;
+  transform: translateY(var(--space-m));
+
+  @media (min-width: 600px) {
+    display: none;
+  }
 `
 
-const SocialList = styled.div`
-  grid-area: social;
-  display: grid;
-  place-items: start;
-  grid-auto-flow: column;
-  gap: var(--space-s);
-  transform: translateX(calc(-1 * var(--space-xs)));
-`
+const IntroBackground = styled(IntroBackgroundSvg)`
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
 
-const Social = styled.a`
-  padding: var(--space-xs);
-  border-radius: 50%;
-  display: inline-flex;
+  display: none;
+  grid-column: -1 / 1;
+  grid-row: 1 / 2;
+  width: 80rem;
+  justify-self: center;
+  align-self: center;
+  fill: var(--primary-color);
+  opacity: 0;
+  animation: fade-in 200ms ease-out 300ms forwards;
 
-  svg {
-    width: 40px;
-    height: 40px;
-    fill: currentColor;
+  @media (min-width: 600px) {
+    display: block;
   }
 `
 
@@ -151,7 +181,7 @@ const BlogPostsMore = styled((props) => <Link {...props} />)`
   display: flex;
   justify-self: end;
   align-items: center;
-  color: var(--primary-color);
+  color: var(--primary-text-color);
   padding: var(--space-xs);
 
   p {
@@ -187,24 +217,6 @@ const BlogPostsList = styled.div`
   }
 `
 
-const socials = [
-  {
-    name: "Twitter",
-    link: "https://twitter.com/pav_sidhu",
-    renderIcon: () => <TwitterIcon />
-  },
-  {
-    name: "LinkedIn",
-    link: "https://www.linkedin.com/in/pavsidhu",
-    renderIcon: () => <LinkedInIcon />
-  },
-  {
-    name: "GitHub",
-    link: "https://github.com/pavsidhu",
-    renderIcon: () => <GitHubIcon />
-  }
-]
-
 export default function IndexPage({ data }) {
   return (
     <Container>
@@ -219,24 +231,13 @@ export default function IndexPage({ data }) {
         <Title>Hey, I'm Pav</Title>
         <Description>
           I’m a developer from the UK. I like progressive web apps, neural
-          networks and designing user experiences.{" "}
-          <AboutLink to="/about">Learn more</AboutLink>
+          networks and designing user experiences.
         </Description>
-
-        <SocialList>
-          {socials.map((social) => (
-            <Social
-              href={social.link}
-              target="_blank"
-              rel="noopener"
-              aria-label={social.name}
-              data-clickable="default"
-            >
-              {social.renderIcon()}
-            </Social>
-          ))}
-        </SocialList>
+        <SocialList />
       </Intro>
+
+      <IntroBackground />
+      <IntroBackgroundSmall />
 
       <BlogPosts>
         <BlogPostsTitle>Latest Blog Posts</BlogPostsTitle>
@@ -257,7 +258,7 @@ export default function IndexPage({ data }) {
               link={node.fields.slug}
               key={node.frontmatter.title}
               index={index}
-              delay={400}
+              delay={300}
             />
           ))}
         </BlogPostsList>
