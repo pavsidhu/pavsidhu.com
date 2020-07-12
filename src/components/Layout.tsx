@@ -209,7 +209,6 @@ export const globals = css`
       --default-text-color: #1b1b1b;
       --secondary-text-color: #646464;
       --background-color: #fffffc;
-      --navigation-background-color: rgba(0, 0, 0, 0.2);
       --hover-color: rgba(0, 0, 0, 0.07);
       --divider-color: rgba(0, 0, 0, 0.1);
 

@@ -56,11 +56,58 @@ const NavItem = styled((props) => <Link {...props} />)`
   align-items: center;
   padding: var(--space-xs) var(--space-s);
   border-radius: 20px;
-  fill: currentColor;
   transition: background 100ms, color 100ms;
+
+  svg {
+    * {
+      transition: fill 100ms;
+    }
+
+    #outline {
+      fill: var(--default-text-color);
+    }
+
+    #fill {
+      fill: #ebebeb;
+    }
+  }
 
   &.active {
     color: var(--primary-text-color);
+
+    svg #fill {
+      fill: var(--primary-color);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    svg {
+      * {
+        transition: fill 100ms;
+      }
+
+      #outline {
+        fill: var(--default-text-color);
+      }
+
+      #fill {
+        fill: var(--navigation-background-color);
+      }
+    }
+
+    &.active {
+      color: var(--primary-text-color);
+
+      svg {
+        #fill {
+          fill: var(--navigation-background-color);
+        }
+
+        #outline {
+          fill: var(--primary-text-color);
+        }
+      }
+    }
   }
 `
 

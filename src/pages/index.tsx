@@ -4,7 +4,7 @@ import { styled } from "linaria/react"
 import { Link, graphql } from "gatsby"
 
 import { BlogPostCard, Seo, SocialList } from "../components"
-import { ReactComponent as ForwardIcon } from "../images/icons/forward.svg"
+import { ReactComponent as ArrowIcon } from "../images/icons/arrow.svg"
 import { ReactComponent as IntroBackgroundSvg } from "../images/general/intro-background.svg"
 import { ReactComponent as IntroBackgroundSmallSvg } from "../images/general/intro-background-small.svg"
 
@@ -244,7 +244,7 @@ export default function IndexPage({ data }) {
         <BlogPostsTitle>Latest Blog Posts</BlogPostsTitle>
         <BlogPostsMore to="/blog" data-clickable="default">
           <p>See More</p>
-          <ForwardIcon />
+          <ArrowIcon />
         </BlogPostsMore>
 
         <BlogPostsList>

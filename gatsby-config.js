@@ -14,13 +14,18 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-svgr`,
     `gatsby-remark-images`,
     `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: require.resolve(`./src/components/Layout.tsx`)
+      }
+    },
+    {
+      resolve: `gatsby-plugin-svgr`,
+      options: {
+        svgo: false
       }
     },
     {

@@ -8,7 +8,7 @@ import { navigate } from "@reach/router"
 
 import { BlogPostTransition } from "../components/Layout"
 import { Seo, CodeBlock, ReadingProgress } from "../components"
-import { ReactComponent as BackIcon } from "../images/icons/back.svg"
+import { ReactComponent as ArrowIconSvg } from "../images/icons/arrow.svg"
 
 const Container = styled.article`
   width: 100%;
@@ -82,6 +82,10 @@ const BackButton = styled.button`
     padding-top: 0.4rem;
     margin-left: var(--space-xs);
   }
+`
+
+const ArrowIcon = styled(ArrowIconSvg)`
+  transform: scaleX(-1);
 `
 
 const CoverImageContainer = styled.div`
@@ -257,7 +261,7 @@ export default function BlogPost({ data: { mdx } }) {
 
       <BackButtonContainer>
         <BackButton onClick={() => navigate(-1)} data-clickable="default">
-          <BackIcon />
+          <ArrowIcon />
           <p>Back</p>
         </BackButton>
       </BackButtonContainer>
