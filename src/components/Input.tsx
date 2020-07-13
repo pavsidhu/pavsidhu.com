@@ -17,17 +17,6 @@ const Container = styled.div`
       box-shadow: var(--focus-box-shadow);
     }
   }
-
-  @media (hover: hover) {
-    &:hover {
-      color: var(--primary-text-color);
-
-      input,
-      textarea {
-        box-shadow: var(--focus-box-shadow);
-      }
-    }
-  }
 `
 
 const Label = styled.label`
