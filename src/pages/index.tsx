@@ -167,10 +167,18 @@ const BlogPosts = styled.div`
 `
 
 const BlogPostsTitle = styled.h2`
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+
   grid-area: blog-title;
   font-size: var(--font-xl);
   padding-top: var(--font-padding);
   margin-bottom: var(--space-xs);
+  opacity: 0;
+  animation: fade-in 200ms ease-out 300ms forwards;
 
   @media (min-width: 500px) {
     margin-bottom: 0;
@@ -178,12 +186,20 @@ const BlogPostsTitle = styled.h2`
 `
 
 const BlogPostsMore = styled((props) => <Link {...props} />)`
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+
   grid-area: blog-more;
   display: flex;
   justify-self: end;
   align-items: center;
   color: var(--primary-text-color);
   padding: var(--space-xs);
+  opacity: 0;
+  animation: fade-in 200ms ease-out 300ms forwards;
 
   p {
     color: inherit;
