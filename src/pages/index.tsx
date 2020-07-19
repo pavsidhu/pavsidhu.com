@@ -243,7 +243,7 @@ export default function IndexPage({ data }) {
       <BlogPosts>
         <BlogPostsTitle>Latest Blog Posts</BlogPostsTitle>
         <BlogPostsMore to="/blog" data-clickable="default">
-          <p>See More</p>
+          <p>See More Posts</p>
           <ArrowIcon />
         </BlogPostsMore>
 
