@@ -40,15 +40,57 @@ const Tab = styled((props) => <Link {...props} />)`
   border-bottom: 2px solid var(--background-color);
   transition: background 100ms, color 100ms;
 
+  svg {
+    * {
+      transition: fill 100ms;
+    }
+
+    #outline {
+      fill: var(--default-text-color);
+    }
+
+    #fill {
+      fill: #ebebeb;
+    }
+  }
+
   &.active {
     color: var(--primary-text-color);
-    border-bottom: 2px solid var(--primary-text-color);
+
+    svg #fill {
+      fill: var(--primary-color);
+    }
   }
 
   @media (prefers-color-scheme: dark) {
-    &.active {
-      color: var(--default-text-color);
+    svg {
+      * {
+        transition: fill 100ms;
+      }
+
+      #outline {
+        fill: var(--default-text-color);
+      }
+
+      #fill {
+        fill: var(--navigation-background-color);
+      }
     }
+
+    &.active {
+      color: var(--primary-text-color);
+
+      svg {
+        #fill {
+          fill: var(--navigation-background-color);
+        }
+
+        #outline {
+          fill: var(--primary-text-color);
+        }
+      }
+    }
+  }
   }
 
   @media (hover: hover) {
