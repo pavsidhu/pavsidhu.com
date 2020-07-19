@@ -35,7 +35,7 @@ const Container = styled.header`
 const Icon = styled(IconSvg)`
   width: 3.2rem;
   height: 3.2rem;
-  transition: transform 80ms ease-in-out;
+  transition: transform 120ms ease-in-out;
 
   @media (hover: hover) {
     &:hover {

@@ -206,7 +206,7 @@ const BlogPostsMore = styled((props) => <Link {...props} />)`
     font-family: var(--orkney-font-family);
     font-size: var(--font-m);
     font-weight: 500;
-    padding-top: 0.2em;
+    padding-top: 0.1em;
     margin-right: var(--space-xs);
   }
 
