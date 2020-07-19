@@ -218,6 +218,7 @@ export const globals = css`
       --space-m: 24px;
       --space-l: 32px;
       --space-xl: 40px;
+      --space-xxl: 48px;
 
       --font-xxl: 5.6rem;
       --font-xl: 3.2rem;

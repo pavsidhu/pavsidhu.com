@@ -13,7 +13,7 @@ const Container = styled.article`
   padding: var(--space-m) 0;
   display: grid;
   justify-items: center;
-  row-gap: var(--space-l);
+  row-gap: var(--space-xxl);
   grid-template-areas:
     ". intro ."
     ". posts .";
@@ -158,7 +158,7 @@ const BlogPosts = styled.div`
   /* Max size of 3 blog post cards */
   max-width: calc((420px * 3) + (24px * 2) + (24px * 2));
 
-  @media (min-width: 500px) {
+  @media (min-width: 600px) {
     grid-template-areas:
       "blog-title blog-more"
       "blog-list  blog-list";
