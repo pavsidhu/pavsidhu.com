@@ -100,20 +100,12 @@ const Description = styled.p`
 `
 
 const IntroBackgroundSmall = styled(IntroBackgroundSmallSvg)`
-  @keyframes fade-in {
-    to {
-      opacity: 1;
-    }
-  }
-
   grid-column: -1 / 1;
   grid-row: 1 / 2;
   height: 100%;
   justify-self: center;
   align-self: end;
   fill: var(--primary-color);
-  opacity: 0;
-  animation: fade-in 200ms ease-out 300ms forwards;
   transform: translateY(var(--space-m));
 
   @media (min-width: 600px) {
@@ -177,11 +169,11 @@ const BlogPostsTitle = styled.h2`
   font-size: var(--font-xl);
   padding-top: var(--font-padding);
   margin-bottom: var(--space-xs);
-  opacity: 0;
-  animation: fade-in 200ms ease-out 300ms forwards;
 
-  @media (min-width: 500px) {
+  @media (min-width: 600px) {
     margin-bottom: 0;
+    opacity: 0;
+    animation: fade-in 200ms ease-out 300ms forwards;
   }
 `
 
@@ -198,8 +190,6 @@ const BlogPostsMore = styled((props) => <Link {...props} />)`
   align-items: center;
   color: var(--primary-text-color);
   padding: var(--space-xs);
-  opacity: 0;
-  animation: fade-in 200ms ease-out 300ms forwards;
 
   p {
     color: inherit;
@@ -220,6 +210,11 @@ const BlogPostsMore = styled((props) => <Link {...props} />)`
     &:hover svg {
       transform: translateX(4px);
     }
+  }
+
+  @media (min-width: 600px) {
+    opacity: 0;
+    animation: fade-in 200ms ease-out 300ms forwards;
   }
 `
 
