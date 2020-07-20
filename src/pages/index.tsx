@@ -21,7 +21,7 @@ const Container = styled.article`
   overflow-x: hidden;
 
   @media (min-width: 600px) {
-    grid-template-rows: minmax(min-content, calc(75vh - var(--header-height))) auto;
+    grid-template-rows: 75vh auto;
   }
 `
 
