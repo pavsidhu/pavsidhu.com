@@ -301,7 +301,7 @@ export default function Layout(props: Props) {
     })
 
     // Play animations once page has loaded
-    document.body.className = `${document.body.className} loaded`
+    document.body.className = "loaded"
   }, [])
 
   const [blogPostCardBounds, setBlogPostCardBounds] = useState<DOMRect>()
