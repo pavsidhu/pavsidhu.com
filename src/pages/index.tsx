@@ -19,12 +19,14 @@ const Container = styled.article`
     ". posts .";
   grid-template-columns: var(--space-m) 1fr var(--space-m);
   overflow-x: hidden;
-
-  @media (min-width: 600px) {
-    grid-template-rows: 75vh auto;
-  }
 `
 
+const IntroContainer = styled.div`
+  min-height: calc(100vh - var(--header-height) - 200px);
+  grid-area: intro;
+  display: grid;
+  place-content: center;
+`
 const Intro = styled.div`
   @keyframes fade-in {
     from {
@@ -38,7 +40,6 @@ const Intro = styled.div`
     }
   }
 
-  grid-area: intro;
   display: grid;
   grid-template-areas:
     "photo"
@@ -46,8 +47,9 @@ const Intro = styled.div`
     "description"
     "social";
   row-gap: var(--space-s);
-  place-self: center;
+  /* place-self: center; */
   justify-items: start;
+  align-items: start;
   z-index: 1;
 
   @media (min-width: 600px) {
@@ -233,20 +235,22 @@ export default function IndexPage({ data }) {
   return (
     <Container>
       <Seo title="Home" />
-      <Intro>
-        <Photo
-          fluid={data.file.childImageSharp.fluid}
-          width={280}
-          height={280}
-          loading="eager"
-        />
-        <Title>Hey, I'm Pav</Title>
-        <Description>
-          I’m a developer from the UK. I like progressive web apps, neural
-          networks and designing user experiences.
-        </Description>
-        <SocialList />
-      </Intro>
+      <IntroContainer>
+        <Intro>
+          <Photo
+            fluid={data.file.childImageSharp.fluid}
+            width={280}
+            height={280}
+            loading="eager"
+          />
+          <Title>Hey, I'm Pav</Title>
+          <Description>
+            I’m a developer from the UK. I like progressive web apps, neural
+            networks and designing user experiences.
+          </Description>
+          <SocialList />
+        </Intro>
+      </IntroContainer>
 
       <IntroBackground />
       <IntroBackgroundSmall />
