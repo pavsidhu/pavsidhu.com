@@ -31,7 +31,7 @@ const Intro = styled.div`
   @keyframes fade-in {
     from {
       transform: translateY(120px);
-      opacity: 0;
+      /* opacity: 0; */
     }
 
     to {
@@ -59,7 +59,7 @@ const Intro = styled.div`
       "photo . social     ";
     grid-template-columns: minmax(16rem, 28rem) var(--space-xl) auto;
     row-gap: var(--space-m);
-    animation: fade-in 400ms var(--cubic-bezier-bounce) forwards;
+    /* animation: fade-in 400ms var(--cubic-bezier-bounce) forwards; */
   }
 
   @media (prefers-color-scheme: dark) {
@@ -129,8 +129,8 @@ const IntroBackground = styled(IntroBackgroundSvg)`
   justify-self: center;
   align-self: center;
   fill: var(--primary-color);
-  opacity: 0;
-  animation: fade-in 200ms ease-out 300ms forwards;
+  /* opacity: 0; */
+  /* animation: fade-in 200ms ease-out 300ms forwards; */
 
   @media (min-width: 600px) {
     display: block;
@@ -174,8 +174,8 @@ const BlogPostsTitle = styled.h2`
 
   @media (min-width: 600px) {
     margin-bottom: 0;
-    opacity: 0;
-    animation: fade-in 200ms ease-out 300ms forwards;
+    /* opacity: 0; */
+    /* animation: fade-in 200ms ease-out 300ms forwards; */
   }
 `
 
@@ -215,8 +215,8 @@ const BlogPostsMore = styled((props) => <Link {...props} />)`
   }
 
   @media (min-width: 600px) {
-    opacity: 0;
-    animation: fade-in 200ms ease-out 300ms forwards;
+    /* opacity: 0; */
+    /* animation: fade-in 200ms ease-out 300ms forwards; */
   }
 `
 
