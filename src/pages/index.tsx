@@ -162,6 +162,9 @@ const BlogPosts = styled.div`
 
 const BlogPostsTitle = styled.h2`
   @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
     to {
       opacity: 1;
     }
@@ -174,7 +177,6 @@ const BlogPostsTitle = styled.h2`
 
   @media (min-width: 600px) {
     margin-bottom: 0;
-    opacity: 0;
     animation: fade-in 200ms ease-out 300ms forwards;
   }
 `
