@@ -7,11 +7,6 @@ import { BlogPostTransition } from "./Layout"
 
 const Container = styled((props) => <Link {...props} />)`
   @keyframes fade-in {
-    from {
-      transform: translateY(80px);
-      opacity: 0;
-    }
-
     to {
       opacity: 1;
       transform: none;
@@ -30,6 +25,8 @@ const Container = styled((props) => <Link {...props} />)`
   align-content: start;
   border-radius: var(--border-radius);
   transition: transform 80ms ease-in-out;
+  transform: translateY(80px);
+  opacity: 0;
 
   @media (hover: hover) {
     &:hover {
@@ -39,7 +36,7 @@ const Container = styled((props) => <Link {...props} />)`
 
   @media (min-width: 720px) {
     animation: fade-in 400ms var(--cubic-bezier-bounce)
-      ${(props) => props.index * 50 + props.delay}ms backwards;
+      ${(props) => props.index * 50 + props.delay}ms forwards;
   }
 `
 
