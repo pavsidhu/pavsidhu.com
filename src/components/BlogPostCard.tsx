@@ -19,6 +19,8 @@ const Container = styled((props) => <Link {...props} />)`
 
   display: grid;
   width: 100%;
+  max-width: 480px;
+  justify-self: center;
   grid-template-areas:
     "photo  "
     "meta   "
