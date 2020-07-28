@@ -11,35 +11,29 @@ import { ReactComponent as IntroBackgroundSmallSvg } from "../images/general/int
 const Container = styled.article`
   width: 100%;
   padding: var(--space-m) 0;
-  display: grid;
-  justify-items: center;
-  row-gap: var(--space-xxl);
-  grid-template-areas:
-    ". intro ."
-    ". posts .";
-  grid-template-columns: var(--space-m) 1fr var(--space-m);
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
-const IntroContainer = styled.div`
-  min-height: calc(100vh - var(--header-height) - 200px);
-  grid-area: intro;
+const Hero = styled.div`
+  min-height: calc(100vh - 300px);
   display: grid;
-  place-content: center;
+  place-items: center;
+  grid-template-areas: "intro";
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
 `
 const Intro = styled.div`
   @keyframes fade-in {
-    from {
-      transform: translateY(120px);
-      opacity: 0;
-    }
-
     to {
-      transform: none;
+      transform: translateY(0);
       opacity: 1;
     }
   }
 
+  grid-area: intro;
   display: grid;
   grid-template-areas:
     "photo"
@@ -47,10 +41,13 @@ const Intro = styled.div`
     "description"
     "social";
   row-gap: var(--space-s);
-  /* place-self: center; */
   justify-items: start;
-  align-items: start;
+  align-items: center;
   z-index: 1;
+  padding: var(--space-m);
+  transform: translateY(120px);
+  opacity: 0;
+  animation: fade-in 400ms var(--cubic-bezier-bounce) forwards;
 
   @media (min-width: 600px) {
     grid-template-areas:
@@ -59,7 +56,6 @@ const Intro = styled.div`
       "photo . social     ";
     grid-template-columns: minmax(16rem, 28rem) var(--space-xl) auto;
     row-gap: var(--space-m);
-    animation: fade-in 400ms var(--cubic-bezier-bounce) forwards;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -102,13 +98,22 @@ const Description = styled.p`
 `
 
 const IntroBackgroundSmall = styled(IntroBackgroundSmallSvg)`
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+
   grid-column: -1 / 1;
-  grid-row: 1 / 2;
-  height: 100%;
+  grid-row: -1 / 1;
+  min-width: 100%;
+  height: 85%;
+  transform-origin: 50% 100%;
   justify-self: center;
   align-self: end;
   fill: var(--primary-color);
-  transform: translateY(var(--space-m));
+  opacity: 0;
+  animation: fade-in 200ms ease-out 300ms forwards;
 
   @media (min-width: 600px) {
     display: none;
@@ -124,8 +129,9 @@ const IntroBackground = styled(IntroBackgroundSvg)`
 
   display: none;
   grid-column: -1 / 1;
-  grid-row: 1 / 2;
-  width: 80rem;
+  grid-row: 1 / -1;
+  width: 120%;
+  max-width: 80rem;
   justify-self: center;
   align-self: center;
   fill: var(--primary-color);
@@ -138,10 +144,11 @@ const IntroBackground = styled(IntroBackgroundSvg)`
 `
 
 const BlogPosts = styled.div`
-  grid-area: posts;
   width: 100%;
   display: grid;
   gap: var(--space-m);
+  margin-top: var(--space-xl);
+  padding: 0 var(--space-m);
   grid-template-areas:
     "blog-title"
     "blog-list"
@@ -235,7 +242,7 @@ export default function IndexPage({ data }) {
   return (
     <Container>
       <Seo title="Home" />
-      <IntroContainer>
+      <Hero>
         <Intro>
           <Photo
             fluid={data.file.childImageSharp.fluid}
@@ -250,10 +257,10 @@ export default function IndexPage({ data }) {
           </Description>
           <SocialList />
         </Intro>
-      </IntroContainer>
 
-      <IntroBackground />
-      <IntroBackgroundSmall />
+        <IntroBackground />
+        <IntroBackgroundSmall />
+      </Hero>
 
       <BlogPosts>
         <BlogPostsTitle>Latest Blog Posts</BlogPostsTitle>
