@@ -5,9 +5,10 @@ import { Link } from "gatsby"
 import { Seo } from "../components"
 
 const Container = styled.article`
+  height: 100%;
   display: grid;
-  justify-items: center;
-  align-content: center;
+  place-items: center;
+  place-content: center;
   gap: var(--space-s);
   padding: var(--space-m);
 `
@@ -22,10 +23,17 @@ const Paragraph = styled.p`
 `
 
 const HomeLink = styled((props) => <Link {...props} />)`
-  font-size: var(--font-m);
-  color: var(--primary-color);
-  padding: var(--space-xs);
-  padding-top: calc(var(--font-padding) + var(--space-xs));
+  padding: var(--space-s);
+  padding-top: calc(var(--font-padding) + var(--space-s));
+  border-radius: 40px;
+  background: var(--primary-color);
+  color: var(--default-text-color);
+  font-size: var(--font-s);
+  font-weight: 500;
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--background-color);
+  }
 `
 
 export default function NotFoundPage() {
