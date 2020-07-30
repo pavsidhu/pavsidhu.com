@@ -23,11 +23,6 @@ const Container = styled.nav`
   @media (min-width: 800px) {
     display: none;
   }
-
-  @supports (backdrop-filter: blur(10px)) {
-    background: var(--navigation-background-blur-color);
-    backdrop-filter: blur(10px);
-  }
 `
 
 const Tab = styled((props) => <Link {...props} />)`
