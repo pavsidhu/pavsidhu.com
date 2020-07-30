@@ -24,11 +24,12 @@ const Container = styled.header`
     z-index: 10;
     border-bottom: 1px solid var(--divider-color);
     padding: var(--space-s);
-    background: var(--background-color);
+    background: var(--navigation-background-color);
   }
 
-  @media (prefers-color-scheme: dark) {
-    background: var(--navigation-background-color);
+  @supports (backdrop-filter: blur(10px)) {
+    background: var(--navigation-background-blur-color);
+    backdrop-filter: blur(10px);
   }
 `
 
@@ -68,7 +69,7 @@ const NavItem = styled((props) => <Link {...props} />)`
     }
 
     #fill {
-      fill: #ebebeb;
+      fill: var(--navigation-background-color);
     }
   }
 
@@ -81,23 +82,7 @@ const NavItem = styled((props) => <Link {...props} />)`
   }
 
   @media (prefers-color-scheme: dark) {
-    svg {
-      * {
-        transition: fill 100ms;
-      }
-
-      #outline {
-        fill: var(--default-text-color);
-      }
-
-      #fill {
-        fill: var(--navigation-background-color);
-      }
-    }
-
     &.active {
-      color: var(--primary-text-color);
-
       svg {
         #fill {
           fill: var(--navigation-background-color);

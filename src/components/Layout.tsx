@@ -221,6 +221,8 @@ export const globals = css`
       --default-text-color: #1b1b1b;
       --secondary-text-color: #646464;
       --background-color: #fffffc;
+      --navigation-background-color: #fffffc;
+      --navigation-background-blur-color: #fffffcd9;
       --hover-color: rgba(0, 0, 0, 0.07);
       --divider-color: rgba(0, 0, 0, 0.1);
 
@@ -255,6 +257,7 @@ export const globals = css`
         --secondary-text-color: rgba(255, 255, 255, 0.7);
         --background-color: #232323;
         --navigation-background-color: #2d2d2d;
+        --navigation-background-blur-color: #2d2d2df2;
         --hover-color: rgba(255, 255, 255, 0.1);
         --divider-color: rgba(255, 255, 255, 0.1);
       }

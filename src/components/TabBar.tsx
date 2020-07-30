@@ -13,7 +13,7 @@ const Container = styled.nav`
   display: flex;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
-  background: var(--background-color);
+  background: var(--navigation-background-color);
   position: sticky;
   z-index: 10;
   left: 0;
@@ -24,8 +24,9 @@ const Container = styled.nav`
     display: none;
   }
 
-  @media (prefers-color-scheme: dark) {
-    background: var(--navigation-background-color);
+  @supports (backdrop-filter: blur(10px)) {
+    background: var(--navigation-background-blur-color);
+    backdrop-filter: blur(10px);
   }
 `
 
@@ -50,7 +51,7 @@ const Tab = styled((props) => <Link {...props} />)`
     }
 
     #fill {
-      fill: #ebebeb;
+      fill: var(--navigation-background-color);
     }
   }
 
@@ -63,23 +64,7 @@ const Tab = styled((props) => <Link {...props} />)`
   }
 
   @media (prefers-color-scheme: dark) {
-    svg {
-      * {
-        transition: fill 100ms;
-      }
-
-      #outline {
-        fill: var(--default-text-color);
-      }
-
-      #fill {
-        fill: var(--navigation-background-color);
-      }
-    }
-
     &.active {
-      color: var(--primary-text-color);
-
       svg {
         #fill {
           fill: var(--navigation-background-color);
@@ -90,7 +75,6 @@ const Tab = styled((props) => <Link {...props} />)`
         }
       }
     }
-  }
   }
 
   @media (hover: hover) {
