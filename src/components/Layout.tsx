@@ -109,8 +109,10 @@ export const globals = css`
       transition: background-size 160ms ease-in-out;
       user-select: auto;
 
-      &:hover {
-        background-size: 100% 2px;
+      @media (hover: hover) {
+        &:hover {
+          background-size: 100% 2px;
+        }
       }
     }
 
