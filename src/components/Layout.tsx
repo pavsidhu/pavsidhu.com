@@ -142,10 +142,10 @@ export const globals = css`
       box-shadow: var(--focus-box-shadow);
     }
 
-    /* body:not(.loaded) *:not(article) {
+    body:not(.loaded) *:not(article) {
       animation-play-state: paused !important;
       transition: none !important;
-    } */
+    }
 
     /* Remove default button styles */
     button {
@@ -153,6 +153,18 @@ export const globals = css`
       cursor: pointer;
       border: none;
       background: none;
+    }
+    
+    /* Remove default textarea styles */
+    textarea {
+      font-family: inherit;
+      font-size: inherit;
+
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     [data-clickable],

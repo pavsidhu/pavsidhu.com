@@ -19,7 +19,8 @@ const Container = styled.article`
 const Hero = styled.div`
   min-height: calc(100vh - 300px);
   display: grid;
-  place-items: center;
+  justify-items: center;
+  align-items: center;
   grid-template-areas: "intro";
   width: 100%;
   max-width: 100vw;
@@ -28,7 +29,7 @@ const Hero = styled.div`
 const Intro = styled.div`
   @keyframes fade-in {
     to {
-      transform: translateY(0);
+      transform: translateY(-10px);
       opacity: 1;
     }
   }

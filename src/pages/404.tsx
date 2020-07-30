@@ -7,8 +7,10 @@ import { Seo } from "../components"
 const Container = styled.article`
   height: 100%;
   display: grid;
-  place-items: center;
-  place-content: center;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
   gap: var(--space-s);
   padding: var(--space-m);
 `

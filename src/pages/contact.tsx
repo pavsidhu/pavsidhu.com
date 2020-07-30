@@ -40,7 +40,7 @@ const Paragraph = styled.p`
   line-height: 3.2rem;
 
   a {
-    font-weight: 500;
+    font-weight: 600;
   }
 `
 

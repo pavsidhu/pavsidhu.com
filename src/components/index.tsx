@@ -63,7 +63,7 @@ export const ProjectContainer = styled.section`
     "content"
     "preview";
   grid-template-rows: repeat(2, max-content);
-  padding: calc(var(--space-s) + var(--project-selector-height)) var(--space-m);
+  padding: calc(var(--space-xl) + var(--project-selector-height)) var(--space-m);
   row-gap: var(--space-m);
   align-items: center;
 
@@ -83,6 +83,12 @@ export const ProjectContainer = styled.section`
       max-content
       minmax(var(--space-m), 1fr);
     gap: 0;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
   }
 `
 

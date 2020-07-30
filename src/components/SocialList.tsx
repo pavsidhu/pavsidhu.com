@@ -9,7 +9,8 @@ const Container = styled.div`
   grid-area: social;
   display: grid;
   justify-self: start;
-  place-items: start;
+  justify-items: start;
+  align-items: start;
   grid-auto-flow: column;
   gap: var(--space-xs);
   transform: translateX(calc(-1 * var(--space-xs)));
