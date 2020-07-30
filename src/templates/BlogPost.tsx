@@ -79,12 +79,15 @@ const BackButton = styled.button`
   fill: currentColor;
   transition: color 100ms;
   pointer-events: auto;
-  background: var(--background-color);
 
   p {
     font-family: var(--orkney-font-family);
     padding-top: 0.4rem;
     margin-left: var(--space-xs);
+  }
+
+  @media (min-width: 1020px) {
+    background: var(--background-color);
   }
 `
 
