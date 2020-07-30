@@ -45,6 +45,9 @@ const BackButtonContainer = styled.div`
   color: #fefefe;
   pointer-events: none;
 
+  /* Fix for edge */
+  position: relative;
+
   @keyframes fadeIn {
     to {
       opacity: 1;
@@ -94,6 +97,9 @@ const CoverImageContainer = styled.div`
   width: 100%;
   max-width: calc(58ch + (2 * var(--space-xl)));
   font-size: var(--font-m);
+
+  /* Fix for edge */
+  position: relative;
 `
 
 const CoverImage = styled(Image)`

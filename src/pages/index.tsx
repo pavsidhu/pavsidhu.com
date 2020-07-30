@@ -50,6 +50,9 @@ const Intro = styled.div`
   opacity: 0;
   animation: fade-in 400ms var(--cubic-bezier-bounce) forwards;
 
+  /* Fix for edge */
+  position: relative;
+
   @media (min-width: 600px) {
     grid-template-areas:
       "photo . title      "

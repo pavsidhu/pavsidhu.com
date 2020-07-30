@@ -101,6 +101,9 @@ export const ProjectDetails = styled.div`
   grid-auto-flow: row;
   gap: var(--space-s);
   z-index: 1;
+
+  /* Fix for edge for the moon in bulb */
+  position: relative;
 `
 
 export const ProjectPreview = styled((props) => (
