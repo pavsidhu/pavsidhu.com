@@ -111,7 +111,7 @@ const IntroBackgroundSmall = styled(IntroBackgroundSmallSvg)`
   grid-column: -1 / 1;
   grid-row: -1 / 1;
   min-width: 100%;
-  height: 85%;
+  transform: scale(1.35);
   transform-origin: 50% 100%;
   justify-self: center;
   align-self: end;
