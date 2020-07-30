@@ -157,11 +157,14 @@ const Title = styled.h1`
 `
 
 const Meta = styled.div`
-  font-size: var(--font-xs);
-  font-weight: 500;
   display: flex;
   align-items: center;
-  color: var(--secondary-text-color);
+
+  p {
+    font-size: var(--font-xs);
+    font-weight: 500;
+    color: var(--secondary-text-color);
+  }
 `
 
 const Divider = styled.span`
