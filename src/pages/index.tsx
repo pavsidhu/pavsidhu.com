@@ -240,6 +240,12 @@ const BlogPostsList = styled.div`
   @media (min-width: 500px) {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
+
+  @media (min-width: 1072px) {
+    > :nth-child(4) {
+      display: none;
+    }
+  }
 `
 
 export default function IndexPage({ data }) {
@@ -303,7 +309,7 @@ export const query = graphql`
         }
       }
     }
-    allMdx(limit: 3, sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMdx(limit: 4, sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           frontmatter {
