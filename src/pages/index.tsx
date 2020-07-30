@@ -83,7 +83,7 @@ const Photo = styled(Image)`
 const Title = styled.h1`
   grid-area: title;
   width: 100%;
-  font-size: clamp(100%, var(--font-xl) + 2.5vw, var(--font-xxl));
+  font-size: 4.8rem;
 `
 
 const Description = styled.p`
