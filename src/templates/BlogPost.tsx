@@ -79,6 +79,7 @@ const BackButton = styled.button`
   fill: currentColor;
   transition: color 100ms;
   pointer-events: auto;
+  background: var(--background-color);
 
   p {
     font-family: var(--orkney-font-family);
