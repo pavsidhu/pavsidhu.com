@@ -284,6 +284,7 @@ export default function BlogPost({ data: { mdx } }) {
           ref={coverImageRef}
           fluid={mdx.frontmatter.coverImage.childImageSharp.fluid}
           alt={mdx.frontmatter.coverImageAlt}
+          loading="eager"
         />
       </CoverImageContainer>
 
