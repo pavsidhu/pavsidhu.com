@@ -69,7 +69,7 @@ const NavItem = styled((props) => <Link {...props} />)`
     }
 
     #fill {
-      fill: var(--navigation-background-color);
+      fill: transparent;
     }
   }
 
@@ -85,7 +85,7 @@ const NavItem = styled((props) => <Link {...props} />)`
     &.active {
       svg {
         #fill {
-          fill: var(--navigation-background-color);
+          fill: transparent;
         }
 
         #outline {

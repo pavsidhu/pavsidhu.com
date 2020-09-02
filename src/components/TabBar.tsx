@@ -46,7 +46,7 @@ const Tab = styled((props) => <Link {...props} />)`
     }
 
     #fill {
-      fill: var(--navigation-background-color);
+      fill: transparent;
     }
   }
 
@@ -62,7 +62,7 @@ const Tab = styled((props) => <Link {...props} />)`
     &.active {
       svg {
         #fill {
-          fill: var(--navigation-background-color);
+          fill: transparent;
         }
 
         #outline {
