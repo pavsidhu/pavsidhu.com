@@ -21,6 +21,7 @@ import favicon16 from "../images/favicons/favicon-16.png"
 import favicon32 from "../images/favicons/favicon-32.png"
 import favicon48 from "../images/favicons/favicon-48.png"
 
+import background from "../images/general/background.svg"
 import { Header, TabBar } from "../components"
 
 export const globals = css`
@@ -86,8 +87,10 @@ export const globals = css`
     body {
       font-size: 62.5%;
       font-family: var(--orkney-font-family);
-      background: var(--background-color);
       color: var(--default-text-color);
+      background-color: var(--background-color);
+      background-image: url('${background}');
+      background-size: 50px;
     }
 
     p {
@@ -286,7 +289,6 @@ const Container = styled.div`
 const Main = styled.main`
   grid-area: main;
   width: 100%;
-  background: var(--background-color);
 `
 
 export const BlogPostTransition = React.createContext<{
