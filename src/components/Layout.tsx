@@ -28,7 +28,8 @@ export const globals = css`
   :global() {
     @font-face {
       font-family: "Orkney";
-      src: url("${fontLight}") format("woff2"), url("${fontLight}") format("woff");
+      src: url("${fontLight}") format("woff2"),
+        url("${fontLight}") format("woff");
       font-weight: 300;
       font-style: normal;
       font-display: block;
@@ -36,7 +37,8 @@ export const globals = css`
 
     @font-face {
       font-family: "Orkney";
-      src: url("${fontRegular}") format("woff2"), url("${fontRegular}") format("woff");
+      src: url("${fontRegular}") format("woff2"),
+        url("${fontRegular}") format("woff");
       font-weight: normal;
       font-style: normal;
       font-display: block;
@@ -44,7 +46,8 @@ export const globals = css`
 
     @font-face {
       font-family: "Orkney";
-      src: url("${fontMedium}") format("woff2"), url("${fontMedium}") format("woff");
+      src: url("${fontMedium}") format("woff2"),
+        url("${fontMedium}") format("woff");
       font-weight: 500;
       font-style: normal;
       font-display: block;
@@ -89,7 +92,7 @@ export const globals = css`
       font-family: var(--orkney-font-family);
       color: var(--default-text-color);
       background-color: var(--background-color);
-      background-image: url('${background}');
+      background-image: url("${background}");
       background-size: 50px;
     }
 
@@ -159,7 +162,7 @@ export const globals = css`
       border: none;
       background: none;
     }
-    
+
     /* Remove default textarea styles */
     textarea {
       font-family: inherit;
@@ -209,7 +212,7 @@ export const globals = css`
         }
       }
     }
-    
+
     [data-clickable="square"] {
       &:before {
         border-radius: 12px;
@@ -229,7 +232,7 @@ export const globals = css`
       --navigation-background-color: #fffffc;
       --navigation-background-blur-color: #fffffcd9;
       --hover-color: rgba(0, 0, 0, 0.07);
-      --divider-color: rgba(0, 0, 0, 0.1);
+      --divider-color: #f2f2ef;
 
       --space-xxs: 8px;
       --space-xs: 8px;
@@ -248,7 +251,9 @@ export const globals = css`
       --font-xxs: 1.2rem;
 
       --font-padding: 0.333em;
-      --system-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif;
+      --system-font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell,
+        sans-serif;
       --orkney-font-family: "Orkney", var(--system-font-family);
       --focus-box-shadow: 0 0 0 2px var(--primary-text-color);
       --cubic-bezier-bounce: cubic-bezier(0.75, -0.5, 0, 1.75);
@@ -264,7 +269,7 @@ export const globals = css`
         --navigation-background-color: #2d2d2d;
         --navigation-background-blur-color: #2d2d2df2;
         --hover-color: rgba(255, 255, 255, 0.1);
-        --divider-color: rgba(255, 255, 255, 0.1);
+        --divider-color: #393939;
       }
 
       * {

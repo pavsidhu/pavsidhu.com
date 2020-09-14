@@ -30,7 +30,7 @@ const Label = styled.label`
 const Field = styled.input`
   border: none;
   border-radius: var(--border-radius);
-  background: rgba(0, 0, 0, 0.05);
+  background: #f2f2ef;
   color: var(--default-text-color);
   padding: var(--space-s);
   padding-bottom: calc(var(--space-s) - var(--font-padding));
@@ -42,7 +42,7 @@ const Field = styled.input`
   resize: none;
 
   @media (prefers-color-scheme: dark) {
-    background: rgba(255, 255, 255, 0.05);
+    background: #353535;
   }
 `
 
