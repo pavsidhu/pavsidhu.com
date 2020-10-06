@@ -64,7 +64,7 @@ export default function AboutPage({ data }) {
       </Paragraph>
       <Paragraph>
         After finishing school, I went on to achieve a first in Artificial
-        Intelligence and Computer Science at the University of Birmingham . I
+        Intelligence and Computer Science at the University of Birmingham. I
         learnt a variety of topics including machine learning, neural networks
         and natural language processing. As part of my final year project, I
         built a dating chatbot that matched users based on their personality. My
