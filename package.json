@@ -69,5 +69,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/pavsidhu/pavsidhu.com"
-  }
+  },
+  "browserslist": ["defaults"]
 }
