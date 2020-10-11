@@ -21,7 +21,8 @@ import favicon16 from "../images/favicons/favicon-16.png"
 import favicon32 from "../images/favicons/favicon-32.png"
 import favicon48 from "../images/favicons/favicon-48.png"
 
-import background from "../images/general/background.svg"
+import backgroundLight from "../images/general/background-light.svg"
+import backgroundDark from "../images/general/background-dark.svg"
 import { Header, TabBar } from "../components"
 
 export const globals = css`
@@ -92,7 +93,7 @@ export const globals = css`
       font-family: var(--orkney-font-family);
       color: var(--default-text-color);
       background-color: var(--background-color);
-      background-image: url("${background}");
+      background-image: url("${backgroundLight}");
       background-size: 50px;
     }
 
@@ -274,6 +275,10 @@ export const globals = css`
 
       * {
         box-shadow: none;
+      }
+
+      body {
+        background-image: url("${backgroundDark}");
       }
     }
   }
