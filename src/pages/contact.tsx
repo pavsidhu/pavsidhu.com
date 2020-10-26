@@ -67,7 +67,7 @@ const SubmitButton = styled(Button)`
   }
 `
 
-const SuccessContainer = styled.article`
+const SuccessContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
