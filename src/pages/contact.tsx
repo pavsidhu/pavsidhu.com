@@ -68,11 +68,14 @@ const SubmitButton = styled(Button)`
 `
 
 const SuccessContainer = styled.article`
-  display: grid;
-  justify-items: center;
-  align-content: center;
-  gap: var(--space-s);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: var(--space-m);
+
+  *:not(:last-child) {
+    margin-bottom: var(--space-s);
+  }
 `
 
 const HomeLink = styled((props) => <Link {...props} />)`
