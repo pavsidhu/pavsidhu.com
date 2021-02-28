@@ -109,18 +109,8 @@ export const globals = css`
 
     p a {
       color: var(--primary-text-color);
-      background-image: linear-gradient(currentColor, currentColor);
-      background-position: 0% 100%;
-      background-repeat: no-repeat;
-      background-size: 0% 2px;
-      transition: background-size 160ms ease-in-out;
       user-select: auto;
-
-      @media (hover: hover) {
-        &:hover {
-          background-size: 100% 2px;
-        }
-      }
+      text-decoration: underline;
     }
 
     img {
