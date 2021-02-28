@@ -6,7 +6,6 @@ import BlogPostCard from "./BlogPostCard"
 import CodeBlock from "./CodeBlock"
 import Header from "./Header"
 import Input from "./Input"
-import ReadingProgress from "./ReadingProgress"
 import Seo from "./Seo"
 import SocialList from "./SocialList"
 import TabBar from "./TabBar"
@@ -17,7 +16,6 @@ export {
   CodeBlock,
   Header,
   Input,
-  ReadingProgress,
   Seo,
   SocialList,
   TabBar,

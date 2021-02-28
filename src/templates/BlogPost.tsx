@@ -7,8 +7,8 @@ import { graphql } from "gatsby"
 import { navigate } from "@reach/router"
 
 import { BlogPostTransition } from "../components/Layout"
-import { Seo, CodeBlock, ReadingProgress } from "../components"
 import { ReactComponent as ArrowIconSvg } from "../images/icons/arrow.svg"
+import { Seo, CodeBlock } from "../components"
 
 const Container = styled.article`
   width: 100%;
@@ -269,8 +269,6 @@ export default function BlogPost({ data: { mdx } }) {
         description={mdx.excerpt}
         image={mdx.frontmatter.coverImage.childImageSharp.resize.src}
       />
-
-      <ReadingProgress target={containerRef} />
 
       <BackButtonContainer>
         <BackButton onClick={() => navigate(-1)} data-clickable="default">
