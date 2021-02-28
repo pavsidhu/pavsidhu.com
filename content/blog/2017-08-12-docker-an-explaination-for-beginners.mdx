@@ -42,7 +42,7 @@ Once you’ve found the container that you want, you’ll want to be able to cus
 
 A Dockerfile, in short, explains how you want Docker to set up your container when it first loads. This is how a basic Dockerfile for a Node.js application might look like:
 
-```text
+```bash
 # Use the official Node.js runtime as a base image
 FROM node:alpine
 
@@ -76,8 +76,8 @@ Why? It makes your application more modular. If your application grows in the fu
 
 Yup. That’s why Docker created another tool called Docker Compose. It allows you to specify the configuration of Docker containers that rely on each other in one file. A Docker Compose file (docker-compose.yml) may look something like this:
 
-```text
-version: '2'
+```yaml
+version: "2"
 services:
   server:
     build: .

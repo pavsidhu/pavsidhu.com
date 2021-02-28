@@ -43,13 +43,13 @@ query BlogPostByPath($path: String!) {
 Using this query, I access the data through my props like so:
 
 ```jsx
-  const BlogPost = ({ props: { data: { markdownRemark } } }) => (
-    <div>
-      <h1>{markdownRemark.title}</h1>
-      <p>{markdownRemark.date}<p>
-      <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
-    </div>
-  )
+const BlogPost = ({ props: { data: { markdownRemark } } }) => (
+  <div>
+    <h1>{markdownRemark.title}</h1>
+    <p>{markdownRemark.date}<p>
+    <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+  </div>
+)
 ```
 
 If you understand GraphQL, accessing data from Markdown using Gatsby feels right at home. If GraphQL is new to you, it does add yet another thing to learn, however, the documentation on using GraphQL with Gatsby has plenty of information and code snippets that you can use.
