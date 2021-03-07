@@ -4,122 +4,11 @@ import { styled } from "linaria/react"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"
-import { navigate } from "@reach/router"
 
 import { BlogPostTransition } from "../components/Layout"
-import { ReactComponent as ArrowIconSvg } from "../images/icons/arrow.svg"
 import { Seo, CodeBlock } from "../components"
 
 const Container = styled.article`
-  width: 100%;
-  display: grid;
-  grid-template-areas:
-    "cover cover   cover"
-    ".     content .    ";
-  grid-template-columns: var(--space-xs) minmax(0, 1fr) var(--space-xs);
-  row-gap: var(--space-s);
-  position: relative;
-
-  @media (min-width: 800px) {
-    grid-template-areas:
-      ". .       ."
-      ". cover   ."
-      ". content .";
-    row-gap: var(--space-l);
-    margin-bottom: -64px;
-  }
-`
-
-const BackButtonContainer = styled.div`
-  grid-area: cover;
-  justify-self: center;
-  z-index: 1;
-  width: 100%;
-  max-width: calc(58ch + (2 * var(--space-xl)));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), transparent);
-  padding: var(--space-s) var(--space-xs);
-  font-size: var(--font-m);
-  font-weight: 500;
-  opacity: 0;
-  animation: fadeIn 100ms 100ms forwards;
-  color: #fefefe;
-  pointer-events: none;
-
-  /* Fix for edge */
-  position: relative;
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-
-  @media (min-width: 795px) {
-    border-radius: var(--border-radius);
-  }
-
-  @media (min-width: 1020px) {
-    grid-area: back-button;
-    background-image: none;
-    padding: var(--space-s);
-    position: absolute;
-    color: inherit;
-    top: 0;
-    left: 0;
-  }
-`
-
-const BackButton = styled.button`
-  display: flex;
-  align-self: start;
-  align-items: center;
-  padding: var(--space-xs);
-  border-radius: 20px;
-  color: inherit;
-  fill: currentColor;
-  transition: color 100ms;
-  pointer-events: auto;
-
-  p {
-    font-family: var(--orkney-font-family);
-    padding-top: 0.4rem;
-    margin-left: var(--space-xs);
-  }
-
-  @media (min-width: 1020px) {
-    background: var(--background-color);
-  }
-`
-
-const ArrowIcon = styled(ArrowIconSvg)`
-  transform: scaleX(-1);
-`
-
-const CoverImageContainer = styled.div`
-  grid-area: cover;
-  justify-self: center;
-  width: 100%;
-  max-width: calc(58ch + (2 * var(--space-xl)));
-  font-size: var(--font-m);
-
-  /* Fix for edge */
-  position: relative;
-`
-
-const CoverImage = styled(Image)`
-  width: 100%;
-  height: 0;
-  padding-bottom: 60%;
-  transform-origin: top left;
-  will-change: transform;
-  color: transparent;
-
-  @media (min-width: 795px) {
-    border-radius: var(--border-radius);
-  }
-`
-
-const Content = styled.section`
   @keyframes fade-in {
     from {
       transform: translateY(200px);
@@ -132,60 +21,68 @@ const Content = styled.section`
     }
   }
 
-  grid-area: content;
-  justify-self: center;
-  width: 100%;
-  max-width: 58ch;
-  padding: var(--space-m) var(--space-s) 0;
-  border-radius: var(--border-radius);
   display: grid;
   grid-auto-flow: row;
   grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-s);
-  position: relative;
-  top: -48px;
+  gap: var(--space-m);
+
+  margin: 0 auto;
+  padding: var(--space-m);
+  width: 100%;
+  max-width: 60ch;
+
   font-size: var(--font-m);
   background: var(--background-color);
   animation: fade-in 200ms ease-in-out 50ms backwards;
+`
 
-  @media (min-width: 600px) {
-    top: -64px;
-    padding: var(--space-m) var(--space-m) 0;
+const CoverImageContainer = styled.div`
+  width: calc(100% + var(--space-m) + var(--space-m));
+  margin: calc(-1 * var(--space-m));
+  margin-bottom: 0;
+
+  @media (min-width: 700px) {
+    width: 100%;
+    margin: 0;
+  }
+`
+
+const CoverImage = styled(Image)`
+  width: 100%;
+  height: 0;
+  padding-bottom: 60%;
+  transform-origin: top left;
+  will-change: transform;
+
+  @media (min-width: 700px) {
+    border-radius: var(--border-radius);
   }
 `
 
 const Title = styled.h1`
   font-size: var(--font-xl);
+  line-height: 1.6;
+  text-align: center;
   padding: 0;
 `
 
 const Meta = styled.div`
-  display: flex;
-  align-items: center;
-
-  p {
-    font-size: var(--font-xs);
-    font-weight: 500;
-    color: var(--secondary-text-color);
-  }
-`
-
-const Divider = styled.span`
-  background: var(--divider-color);
-  padding-bottom: 2px;
-  margin: 0 var(--space-xs);
-  flex: 1;
+  text-align: center;
+  font-size: var(--font-s);
+  font-weight: 500;
+  color: var(--secondary-text-color);
 `
 
 const components = {
   h2: styled.h2`
     font-size: var(--font-l);
+    margin-top: var(--space-m);
   `,
 
   p: styled.p`
     font-family: var(--system-font-family);
     font-size: var(--font-m);
-    line-height: 3.4rem;
+    line-height: 1.9;
     word-break: break-word;
 
     figcaption {
@@ -197,11 +94,11 @@ const components = {
   `,
 
   ul: styled.ul`
-    padding: 1.6rem;
+    padding: 0 1.6rem;
   `,
 
   ol: styled.ol`
-    padding: 1.6rem;
+    padding: 0 1.6rem;
   `,
 
   li: styled.li`
@@ -217,8 +114,15 @@ const components = {
 
   blockquote: styled.blockquote`
     border-left: 4px solid var(--primary-color);
-    padding-left: var(--space-s);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    padding: var(--space-s);
     color: var(--secondary-text-color);
+    background: rgba(0, 0, 0, 0.025);
+
+    @media (prefers-color-scheme: dark) {
+      background: rgba(255, 255, 255, 0.05);
+    }
   `
 }
 
@@ -270,13 +174,6 @@ export default function BlogPost({ data: { mdx } }) {
         image={mdx.frontmatter.coverImage.childImageSharp.resize.src}
       />
 
-      <BackButtonContainer>
-        <BackButton onClick={() => navigate(-1)} data-clickable="default">
-          <ArrowIcon />
-          <p>Back</p>
-        </BackButton>
-      </BackButtonContainer>
-
       <CoverImageContainer>
         <CoverImage
           ref={coverImageRef}
@@ -286,19 +183,14 @@ export default function BlogPost({ data: { mdx } }) {
         />
       </CoverImageContainer>
 
-      <Content>
-        <Title>{mdx.frontmatter.title}</Title>
+      <Title>{mdx.frontmatter.title}</Title>
+      <Meta>
+        {mdx.frontmatter.date} • {mdx.frontmatter.tag}
+      </Meta>
 
-        <Meta>
-          <p>{mdx.frontmatter.date}</p>
-          <Divider />
-          <p>{mdx.timeToRead} Minute Read</p>
-        </Meta>
-
-        <MDXProvider components={components}>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-        </MDXProvider>
-      </Content>
+      <MDXProvider components={components}>
+        <MDXRenderer>{mdx.body}</MDXRenderer>
+      </MDXProvider>
     </Container>
   )
 }
@@ -311,7 +203,8 @@ export const query = graphql`
       timeToRead
       frontmatter {
         title
-        date(formatString: "Do MMM YYYY")
+        date(formatString: "Do MMMM YYYY")
+        tag
         coverImage {
           childImageSharp {
             fluid(maxWidth: 800, quality: 80) {

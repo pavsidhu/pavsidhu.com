@@ -81,7 +81,7 @@ export default function validate(fieldName, value) {
 
 Since I want every single TextInput to have validation, it would make sense to create a custom component which contained a TextInput and an error message. Here is a stripped down version:
 
-```javascript
+```jsx
 import React from "react"
 import { View, TextInput, Text } from "react-native"
 
@@ -101,7 +101,7 @@ The example below demonstrates how I validate forms in practice. I keep all the 
 
 When the button to send off the form is pressed, it calls a function to validate all the fields. If there are no errors, then the form can be submitted.
 
-```javascript
+```jsx
 import React, { Component } from "react"
 import { View, Button } from "react-native"
 
