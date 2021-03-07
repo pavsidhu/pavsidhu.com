@@ -203,7 +203,6 @@ export const query = graphql`
     mdx(fields: { slug: { eq: $slug } }) {
       body
       excerpt(pruneLength: 160)
-      timeToRead
       frontmatter {
         title
         date(formatString: "Do MMMM YYYY")

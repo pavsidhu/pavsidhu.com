@@ -17,15 +17,11 @@ const Container = styled((props) => <Link {...props} />)`
     }
   }
 
+  background: var(--background-color);
   display: grid;
   width: 100%;
   max-width: 480px;
   justify-self: center;
-  grid-template-areas:
-    "photo  "
-    "meta   "
-    "title  "
-    "excerpt";
   grid-auto-flow: row;
   gap: var(--space-s);
   align-content: start;
@@ -45,7 +41,6 @@ const Container = styled((props) => <Link {...props} />)`
 `
 
 const CoverPhoto = styled((props) => <Image {...props} />)`
-  grid-area: photo;
   width: 100%;
   height: 0;
   padding-bottom: 60%;
@@ -55,9 +50,6 @@ const CoverPhoto = styled((props) => <Image {...props} />)`
 `
 
 const Meta = styled.div`
-  grid-area: meta;
-  display: flex;
-  align-items: center;
   font-size: var(--font-xs);
   font-weight: 500;
   color: var(--secondary-text-color);
@@ -68,32 +60,23 @@ const Meta = styled.div`
   }
 `
 
-const Divider = styled.span`
-  background: var(--divider-color);
-  padding-bottom: 2px;
-  margin: 0 var(--space-s) 3px;
-  flex: 1;
-`
-
 const Title = styled.p`
-  grid-area: title;
   font-size: var(--font-l);
   font-family: var(--orkney-font-family);
+  padding-top: var(--font-padding);
   font-weight: 600;
 `
 
 const Excerpt = styled.p`
-  grid-area: excerpt;
   font-family: var(--system-font-family);
   font-size: var(--font-s);
   line-height: 2.8rem;
-  padding: 0;
 `
 
 interface Props {
   title: string
   date: string
-  readTime: string
+  tag: string
   excerpt: string
   coverImage: {
     childImageSharp: {
@@ -110,15 +93,19 @@ export default function BlogPostCard(props: Props) {
   const coverPhotoRef = useRef<HTMLDivElement>(null)
   const context = useContext(BlogPostTransition)
 
+  function handleClick(event: Event) {
+    event.preventDefault()
+
+    const coverPhotoBounds = coverPhotoRef.current?.base.getBoundingClientRect()
+    if (coverPhotoBounds) context.setBounds(coverPhotoBounds)
+
+    navigate("/blog" + props.link)
+  }
+
   return (
     <Container
       to={"/blog" + props.link}
-      onClick={(event: Event) => {
-        event.preventDefault()
-        const coverPhotoBounds = coverPhotoRef.current?.base.getBoundingClientRect()
-        if (coverPhotoBounds) context.setBounds(coverPhotoBounds)
-        navigate("/blog" + props.link)
-      }}
+      onClick={handleClick}
       data-clickable="square"
       index={props.index}
       delay={props.delay || 100}
@@ -127,15 +114,10 @@ export default function BlogPostCard(props: Props) {
         fluid={props.coverImage.childImageSharp.fluid}
         ref={coverPhotoRef}
       />
-
-      <Meta>
-        <p>{props.date}</p>
-        <Divider />
-        <p>{props.readTime} Minute Read</p>
-      </Meta>
-
       <Title>{props.title}</Title>
-
+      <Meta>
+        {props.date} • {props.tag}
+      </Meta>
       <Excerpt>{props.excerpt}</Excerpt>
     </Container>
   )

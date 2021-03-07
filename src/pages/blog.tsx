@@ -59,7 +59,7 @@ export default function BlogPage({ data }) {
             date={node.frontmatter.date}
             coverImage={node.frontmatter.coverImage}
             coverImageAlt={node.frontmatter.coverImageAlt}
-            readTime={node.timeToRead}
+            tag={node.frontmatter.tag}
             excerpt={node.excerpt}
             link={node.fields.slug}
             index={index}
@@ -78,6 +78,7 @@ export const query = graphql`
         node {
           frontmatter {
             title
+            tag
             date(formatString: "Do MMM YYYY")
             coverImage {
               childImageSharp {
@@ -91,7 +92,6 @@ export const query = graphql`
           fields {
             slug
           }
-          timeToRead
           excerpt
         }
       }

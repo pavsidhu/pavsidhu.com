@@ -286,7 +286,7 @@ export default function IndexPage({ data }) {
               date={node.frontmatter.date}
               coverImage={node.frontmatter.coverImage}
               coverImageAlt={node.frontmatter.coverImageAlt}
-              readTime={node.timeToRead}
+              tag={node.frontmatter.tag}
               excerpt={node.excerpt}
               link={node.fields.slug}
               key={node.frontmatter.title}
@@ -315,6 +315,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "Do MMM YYYY")
+            tag
             coverImage {
               childImageSharp {
                 fluid(maxWidth: 300, quality: 80) {
@@ -327,7 +328,6 @@ export const query = graphql`
           fields {
             slug
           }
-          timeToRead
           excerpt
         }
       }
