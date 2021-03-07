@@ -24,10 +24,6 @@ pre[class*="language-"] {
   }
 }
 
-.token.script.language-javascript {
-  color: #ffffffe6;
-}
-
 .token.comment,
 .token.block-comment,
 .token.prolog,
