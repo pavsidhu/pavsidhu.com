@@ -7,12 +7,13 @@ import { Seo } from "../components"
 
 const Container = styled.article`
   width: 100%;
-  max-width: 58ch;
+  max-width: 60ch;
   margin: 0 auto;
   padding: var(--space-xl) var(--space-m) var(--space-m);
   display: grid;
   row-gap: var(--space-m);
   font-size: var(--font-m);
+  background: var(--background-color);
 `
 
 const Title = styled.h1`
