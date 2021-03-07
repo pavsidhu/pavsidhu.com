@@ -8,6 +8,29 @@ import { graphql } from "gatsby"
 import { BlogPostTransition } from "../components/Layout"
 import { Seo, CodeBlock } from "../components"
 
+const CoverImageContainer = styled.div`
+  width: calc(100% + var(--space-m) + var(--space-m));
+  margin: calc(-1 * var(--space-m));
+  margin-bottom: 0;
+
+  @media (min-width: 700px) {
+    width: 100%;
+    margin: 0;
+  }
+`
+
+const CoverImage = styled(Image)`
+  width: 100%;
+  height: 0;
+  padding-bottom: 60%;
+  transform-origin: top left;
+  will-change: transform;
+
+  @media (min-width: 700px) {
+    border-radius: var(--border-radius);
+  }
+`
+
 const Container = styled.article`
   @keyframes fade-in {
     from {
@@ -33,29 +56,9 @@ const Container = styled.article`
 
   font-size: var(--font-m);
   background: var(--background-color);
-  animation: fade-in 200ms ease-in-out 50ms backwards;
-`
 
-const CoverImageContainer = styled.div`
-  width: calc(100% + var(--space-m) + var(--space-m));
-  margin: calc(-1 * var(--space-m));
-  margin-bottom: 0;
-
-  @media (min-width: 700px) {
-    width: 100%;
-    margin: 0;
-  }
-`
-
-const CoverImage = styled(Image)`
-  width: 100%;
-  height: 0;
-  padding-bottom: 60%;
-  transform-origin: top left;
-  will-change: transform;
-
-  @media (min-width: 700px) {
-    border-radius: var(--border-radius);
+  > :not(${CoverImageContainer}) {
+    animation: fade-in 200ms ease-in-out 50ms backwards;
   }
 `
 
