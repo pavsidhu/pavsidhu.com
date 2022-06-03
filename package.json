@@ -16,7 +16,7 @@
     "gatsby-plugin-layout": "^1.8.0",
     "gatsby-plugin-linaria": "^2.2.0",
     "gatsby-plugin-manifest": "^2.10.0",
-    "gatsby-plugin-mdx": "^1.8.0",
+    "gatsby-plugin-mdx": "^2.14.1",
     "gatsby-plugin-netlify-cms": "^4.8.0",
     "gatsby-plugin-nprogress": "^2.8.0",
     "gatsby-plugin-offline": "^3.8.0",
