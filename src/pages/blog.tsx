@@ -50,7 +50,7 @@ export default function BlogPage({ data }) {
   return (
     <Container>
       <Seo title="Blog" />
-      <Title>Blog</Title>
+      <Title>Archive</Title>
 
       <BlogPostCards>
         {data.allMdx.edges.map(({ node }, index) => (

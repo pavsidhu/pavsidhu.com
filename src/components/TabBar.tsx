@@ -112,7 +112,7 @@ export default function TabBar() {
 
       <Tab to="/blog" activeClassName="active" partiallyActive={true}>
         <BlogIcon aria-hidden="true" />
-        <TabLabel>Blog</TabLabel>
+        <TabLabel>Archive</TabLabel>
       </Tab>
 
       <Tab to="/contact" activeClassName="active" partiallyActive={true}>

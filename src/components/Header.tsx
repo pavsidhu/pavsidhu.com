@@ -128,16 +128,7 @@ export default function Header() {
           <HomeIcon aria-hidden="true" />
           <NavItemLabel>Home</NavItemLabel>
         </NavItem>
-
-        <NavItem
-          to="/about"
-          activeClassName="active"
-          partiallyActive={true}
-          data-clickable="default"
-        >
-          <AboutIcon aria-hidden="true" />
-          <NavItemLabel>About</NavItemLabel>
-        </NavItem>
+ 
 
         <NavItem
           to="/blog"
@@ -146,19 +137,10 @@ export default function Header() {
           data-clickable="default"
         >
           <BlogIcon aria-hidden="true" />
-          <NavItemLabel>Blog</NavItemLabel>
+          <NavItemLabel>Archive</NavItemLabel>
         </NavItem>
 
-        <NavItem
-          to="/projects"
-          activeClassName="active"
-          partiallyActive={true}
-          data-clickable="default"
-        >
-          <ProjectsIcon aria-hidden="true" />
-          <NavItemLabel>Projects</NavItemLabel>
-        </NavItem>
-
+  
         <NavItem
           to="/contact"
           activeClassName="active"
