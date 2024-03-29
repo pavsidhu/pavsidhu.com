@@ -161,8 +161,8 @@ export default function IndexPage({ data }) {
           />
           <Title>Hey, I'm Pav</Title>
           <Description>
-            I’m a developer from the UK. I like crafting user experiences,
-            health and fitness, and the colour orange.
+            I’m a Software Engineer living in London, UK. I like crafting user
+            experiences, health and fitness, and the colour orange.
           </Description>
           <SocialList />
         </Intro>
