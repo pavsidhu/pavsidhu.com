@@ -110,19 +110,9 @@ export default function TabBar() {
         <TabLabel>Home</TabLabel>
       </Tab>
 
-      <Tab to="/about" activeClassName="active" partiallyActive={true}>
-        <AboutIcon aria-hidden="true" />
-        <TabLabel>About</TabLabel>
-      </Tab>
-
       <Tab to="/blog" activeClassName="active" partiallyActive={true}>
         <BlogIcon aria-hidden="true" />
         <TabLabel>Blog</TabLabel>
-      </Tab>
-
-      <Tab to="/projects" activeClassName="active" partiallyActive={true}>
-        <ProjectsIcon aria-hidden="true" />
-        <TabLabel>Projects</TabLabel>
       </Tab>
 
       <Tab to="/contact" activeClassName="active" partiallyActive={true}>

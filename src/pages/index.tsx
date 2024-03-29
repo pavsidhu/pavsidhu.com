@@ -147,107 +147,6 @@ const IntroBackground = styled(IntroBackgroundSvg)`
   }
 `
 
-const BlogPosts = styled.div`
-  width: 100%;
-  display: grid;
-  gap: var(--space-m);
-  margin-top: var(--space-xl);
-  padding: 0 var(--space-m);
-  grid-template-areas:
-    "blog-title"
-    "blog-list"
-    "blog-more";
-  align-items: center;
-  justify-content: center;
-
-  /* Max size of 3 blog post cards */
-  max-width: calc((420px * 3) + (24px * 2) + (24px * 2));
-
-  @media (min-width: 600px) {
-    grid-template-areas:
-      "blog-title blog-more"
-      "blog-list  blog-list";
-    grid-template-columns: 1fr auto;
-  }
-`
-
-const BlogPostsTitle = styled.h2`
-  @keyframes fade-in {
-    to {
-      opacity: 1;
-    }
-  }
-
-  grid-area: blog-title;
-  font-size: var(--font-xl);
-  padding-top: var(--font-padding);
-  margin-bottom: var(--space-xs);
-
-  @media (min-width: 600px) {
-    margin-bottom: 0;
-    opacity: 0;
-    animation: fade-in 200ms ease-out 300ms forwards;
-  }
-`
-
-const BlogPostsMore = styled((props) => <Link {...props} />)`
-  @keyframes fade-in {
-    to {
-      opacity: 1;
-    }
-  }
-
-  grid-area: blog-more;
-  display: flex;
-  justify-self: end;
-  align-items: center;
-  color: var(--primary-text-color);
-  padding: var(--space-xs);
-
-  p {
-    color: inherit;
-    font-family: var(--orkney-font-family);
-    font-size: var(--font-m);
-    font-weight: 500;
-    padding-top: 0.1em;
-    margin-right: var(--space-xs);
-  }
-
-  svg {
-    display: inline;
-    fill: currentColor;
-    transition: transform 150ms ease-in-out;
-  }
-
-  @media (hover: hover) {
-    &:hover svg {
-      transform: translateX(4px);
-    }
-  }
-
-  @media (min-width: 600px) {
-    opacity: 0;
-    animation: fade-in 200ms ease-out 300ms forwards;
-  }
-`
-
-const BlogPostsList = styled.div`
-  grid-area: blog-list;
-  display: grid;
-  gap: var(--space-l);
-  width: 100%;
-
-  @media (min-width: 500px) {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  }
-
-  @media (min-width: 1072px) {
-    > :nth-child(4) {
-      display: none;
-    }
-  }
-`
-
 export default function IndexPage({ data }) {
   return (
     <Container>
@@ -262,8 +161,8 @@ export default function IndexPage({ data }) {
           />
           <Title>Hey, I'm Pav</Title>
           <Description>
-            I’m a developer from the UK. I like progressive web apps, neural
-            networks and designing user experiences.
+            I’m a developer from the UK. I like crafting user experiences,
+            health and fitness, and the colour orange.
           </Description>
           <SocialList />
         </Intro>
@@ -271,31 +170,6 @@ export default function IndexPage({ data }) {
         <IntroBackground />
         <IntroBackgroundSmall />
       </Hero>
-
-      <BlogPosts>
-        <BlogPostsTitle>Latest Blog Posts</BlogPostsTitle>
-        <BlogPostsMore to="/blog" data-clickable="default">
-          <p>See More Posts</p>
-          <ArrowIcon />
-        </BlogPostsMore>
-
-        <BlogPostsList>
-          {data.allMdx.edges.map(({ node }, index) => (
-            <BlogPostCard
-              title={node.frontmatter.title}
-              date={node.frontmatter.date}
-              coverImage={node.frontmatter.coverImage}
-              coverImageAlt={node.frontmatter.coverImageAlt}
-              tag={node.frontmatter.tag}
-              excerpt={node.excerpt}
-              link={node.fields.slug}
-              key={node.frontmatter.title}
-              index={index}
-              delay={300}
-            />
-          ))}
-        </BlogPostsList>
-      </BlogPosts>
     </Container>
   )
 }
@@ -306,29 +180,6 @@ export const query = graphql`
       childImageSharp {
         fluid(maxWidth: 280, quality: 80) {
           ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    allMdx(limit: 4, sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          frontmatter {
-            title
-            date(formatString: "Do MMM YYYY")
-            tag
-            coverImage {
-              childImageSharp {
-                fluid(maxWidth: 300, quality: 80) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-            coverImageAlt
-          }
-          fields {
-            slug
-          }
-          excerpt
         }
       }
     }
