@@ -6,10 +6,9 @@
   --color-muted: var(--muted);
   --color-primary: var(--primary);
   --color-accent: var(--accent);
-  --color-blob-soft: var(--blob-soft);
-  --color-blob-deep: var(--blob-deep);
-  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans:
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
 }
 
 :root {
@@ -18,9 +17,7 @@
   --fg: #1b1b1b;
   --muted: #646464;
   --primary: #ff8767;
-  --accent: #da3d00;
-  --blob-soft: #ff8767;
-  --blob-deep: #da3d00;
+  --accent: #ff8767;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,8 +28,6 @@
     --muted: #a8a8a8;
     --primary: #ff8767;
     --accent: #ff8767;
-    --blob-soft: #8b3a22;
-    --blob-deep: #5c2200;
   }
 }
 

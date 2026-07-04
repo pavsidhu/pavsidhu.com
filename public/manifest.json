@@ -1,0 +1,16 @@
+{
+  "short_name": "Pav Sidhu",
+  "name": "Pav Sidhu",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable any"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#fefefe",
+  "background_color": "#fefefe"
+}

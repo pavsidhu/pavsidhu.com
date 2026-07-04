@@ -1,55 +1,6 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router"
 
-export const Route = createFileRoute('/')({ component: Home })
-
-function BlobField() {
-  return (
-    <div
-      className="pointer-events-none absolute inset-0 overflow-hidden"
-      aria-hidden="true"
-    >
-      <svg
-        className="absolute -top-[18%] -left-[12%] h-[52vmin] w-[52vmin] text-blob-soft opacity-[0.28] dark:opacity-[0.22]"
-        viewBox="0 0 400 400"
-        fill="currentColor"
-      >
-        <path d="M320 42C368 78 392 132 384 192C376 252 332 302 272 328C212 354 140 352 88 312C36 272 8 204 24 140C40 76 96 28 164 14C232 0 272 6 320 42Z" />
-      </svg>
-
-      <svg
-        className="absolute -top-[8%] -right-[16%] h-[44vmin] w-[44vmin] text-blob-deep opacity-[0.18] dark:opacity-[0.16]"
-        viewBox="0 0 400 400"
-        fill="currentColor"
-      >
-        <path d="M298 28C346 52 378 98 388 154C398 210 384 272 338 312C292 352 218 368 158 352C98 336 54 286 38 226C22 166 36 98 82 58C128 18 198 4 250 12C302 20 250 4 298 28Z" />
-      </svg>
-
-      <svg
-        className="absolute -bottom-[22%] -left-[10%] h-[48vmin] w-[48vmin] text-blob-deep opacity-[0.14] dark:opacity-[0.12]"
-        viewBox="0 0 400 400"
-        fill="currentColor"
-      >
-        <path d="M48 248C28 198 38 138 78 96C118 54 188 34 248 48C308 62 356 108 372 168C388 228 368 292 318 328C268 364 188 372 128 348C68 324 68 298 48 248Z" />
-      </svg>
-
-      <svg
-        className="absolute -bottom-[14%] -right-[8%] h-[40vmin] w-[40vmin] text-blob-soft opacity-[0.22] dark:opacity-[0.18]"
-        viewBox="0 0 400 400"
-        fill="currentColor"
-      >
-        <path d="M352 268C382 312 378 368 338 392C298 416 228 408 172 382C116 356 74 312 58 258C42 204 52 140 98 104C144 68 226 60 282 78C338 96 322 224 352 268Z" />
-      </svg>
-
-      <svg
-        className="absolute top-[38%] -left-[20%] h-[28vmin] w-[28vmin] text-blob-soft opacity-[0.1] dark:opacity-[0.08]"
-        viewBox="0 0 300 300"
-        fill="currentColor"
-      >
-        <path d="M228 58C262 82 282 124 274 168C266 212 230 248 186 262C142 276 92 266 62 232C32 198 24 142 48 102C72 62 122 34 168 32C214 30 194 34 228 58Z" />
-      </svg>
-    </div>
-  )
-}
+export const Route = createFileRoute("/")({ component: Home })
 
 function XIcon() {
   return (
@@ -77,55 +28,45 @@ function EmailIcon() {
 
 const workingOn = [
   {
-    name: 'Bubbles',
-    href: 'https://bubbles.build',
-    description: 'A multiplayer agent platform.',
+    name: "Bubbles",
+    href: "https://bubbles.build",
+    description: "A multiplayer agent platform."
   },
   {
-    name: 'Dishy',
-    href: 'https://dishy.so',
-    description: 'An all-in-one platform for recipe creators to make money.',
-  },
+    name: "Dishy",
+    href: "https://dishy.so",
+    description: "An all-in-one platform for recipe creators to make money."
+  }
 ] as const
 
 const socialLinks = [
   {
-    label: 'X (Twitter)',
-    href: 'https://x.com/pav_sidhu',
-    icon: XIcon,
+    label: "X (Twitter)",
+    href: "https://x.com/pav_sidhu",
+    icon: XIcon
   },
   {
-    label: 'GitHub',
-    href: 'https://github.com/pavsidhu',
-    icon: GitHubIcon,
+    label: "GitHub",
+    href: "https://github.com/pavsidhu",
+    icon: GitHubIcon
   },
   {
-    label: 'Email',
-    href: 'mailto:pav@pavsidhu.com',
-    icon: EmailIcon,
-  },
+    label: "Email",
+    href: "mailto:pav@pavsidhu.com",
+    icon: EmailIcon
+  }
 ] as const
 
 function Home() {
   return (
     <main className="relative min-h-dvh overflow-x-hidden bg-background text-foreground">
-      <BlobField />
-
-      <div className="relative z-10 mx-auto flex min-h-dvh max-w-xl flex-col items-center justify-center gap-10 px-6 py-12 sm:gap-12 sm:px-8">
-        <header className="text-center">
-          <h1 className="text-[clamp(2.75rem,8vw,4.5rem)] leading-[0.95] font-semibold tracking-[-0.04em]">
-            Pav Sidhu
-          </h1>
-          <p className="mt-3 text-lg text-muted sm:text-xl">Software Engineer</p>
+      <div className="relative mx-auto flex min-h-dvh max-w-xl flex-col items-start justify-center gap-10 px-6 py-12 sm:px-8">
+        <header>
+          <h1 className="text-xl font-bold tracking-tight sm:text-2xl">Pav Sidhu</h1>
+          <p className="mt-1 text-lg text-muted sm:text-xl">Software Engineer</p>
         </header>
 
-        <section aria-labelledby="working-on-heading" className="w-full">
-          <h2
-            id="working-on-heading"
-            className="mb-4 text-xs font-medium tracking-[0.18em] text-muted uppercase"
-          >
-            Working on
-          </h2>
+        <section className="w-full">
           <ul className="space-y-3">
             {workingOn.map((item) => (
               <li key={item.name} className="leading-relaxed">
@@ -133,7 +74,7 @@ function Home() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-foreground underline decoration-primary/40 underline-offset-[5px] hover:text-accent hover:decoration-accent"
+                  className="font-medium text-foreground underline decoration-primary/40 underline-offset-[5px] transition-[color,text-decoration-color] duration-100 hover:text-accent hover:decoration-[color-mix(in_oklab,var(--color-accent)_100%,transparent)]"
                 >
                   {item.name}
                 </a>
@@ -144,16 +85,16 @@ function Home() {
         </section>
 
         <nav aria-label="Social and contact links">
-          <ul className="flex items-center gap-5">
+          <ul className="-ml-[11px] flex items-center gap-2">
             {socialLinks.map(({ label, href, icon: Icon }) => (
               <li key={label}>
                 <a
                   href={href}
                   aria-label={label}
-                  {...(href.startsWith('http')
-                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                  {...(href.startsWith("http")
+                    ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full text-muted hover:text-accent"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full text-muted transition-colors duration-100 hover:text-accent"
                 >
                   <Icon />
                 </a>

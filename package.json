@@ -1,75 +1,68 @@
 {
   "name": "pavsidhu.com",
-  "description": "My personal website 💛",
-  "version": "2.0.0",
-  "author": "Pav Sidhu <pav@pavsidhu.com>",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#/*": "./src/*"
+  },
+  "scripts": {
+    "dev": "vite dev --port 3000",
+    "generate-routes": "tsr generate",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "prepare": "husky",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "precommit": "lint-staged && vitest run --passWithNoTests"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": [
+      "oxlint --fix",
+      "oxfmt"
+    ],
+    "*.{json,jsonc,css,md,yml,yaml,toml}": "oxfmt"
+  },
   "dependencies": {
-    "@mdx-js/mdx": "^1.6.22",
-    "@mdx-js/react": "^1.6.22",
-    "@reach/router": "^1.3.4",
-    "@svgr/webpack": "^5.5.0",
-    "dotenv": "^8.2.0",
-    "focus-visible": "^5.2.0",
-    "gatsby": "^2.30.1",
-    "gatsby-image": "^2.9.0",
-    "gatsby-plugin-google-analytics": "^2.9.0",
-    "gatsby-plugin-layout": "^1.8.0",
-    "gatsby-plugin-linaria": "^2.2.0",
-    "gatsby-plugin-manifest": "^2.10.0",
-    "gatsby-plugin-mdx": "^1.8.0",
-    "gatsby-plugin-netlify-cms": "^4.8.0",
-    "gatsby-plugin-nprogress": "^2.8.0",
-    "gatsby-plugin-offline": "^3.8.0",
-    "gatsby-plugin-preact": "^4.5.0",
-    "gatsby-plugin-react-helmet": "^3.8.0",
-    "gatsby-plugin-sharp": "^2.12.0",
-    "gatsby-plugin-svgr": "^2.1.0",
-    "gatsby-plugin-typescript": "^2.10.0",
-    "gatsby-remark-external-links": "0.0.4",
-    "gatsby-remark-images": "^3.9.0",
-    "gatsby-remark-images-medium-zoom": "^1.7.0",
-    "gatsby-source-filesystem": "^2.9.0",
-    "gatsby-transformer-sharp": "^2.10.0",
-    "linaria": "^2.0.2",
-    "netlify-cms-app": "^2.14.10",
-    "preact": "^10.5.9",
-    "preact-render-to-string": "^5.1.12",
-    "prism-react-renderer": "^1.1.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "react-swipeable-views": "^0.13.9",
-    "react-swipeable-views-utils": "^0.13.9",
-    "react-textarea-autosize": "^8.3.0",
-    "scroll-behavior-polyfill": "^2.0.13",
-    "web-animations-js": "^2.3.2",
-    "wicg-inert": "^3.1.0"
+    "@posthog/react": "^1.7.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "@tanstack/react-devtools": "latest",
+    "@tanstack/react-router": "latest",
+    "@tanstack/react-router-devtools": "latest",
+    "@tanstack/react-router-ssr-query": "latest",
+    "@tanstack/react-start": "latest",
+    "@tanstack/router-plugin": "^1.132.0",
+    "lucide-react": "^0.545.0",
+    "posthog-js": "^1.358.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "@types/mdx-js__react": "^1.5.3",
-    "@types/reach__router": "^1.3.6",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@types/react-helmet": "^6.1.0",
-    "@types/react-swipeable-views": "^0.13.0",
-    "@types/react-swipeable-views-utils": "^0.13.2",
-    "@types/web-animations-js": "^2.2.11",
-    "prettier": "^2.2.1"
+    "@tailwindcss/typography": "^0.5.16",
+    "@tanstack/devtools-vite": "latest",
+    "@tanstack/router-cli": "^1.132.0",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.0.1",
+    "husky": "^9.1.7",
+    "jsdom": "^28.1.0",
+    "lint-staged": "^17.0.8",
+    "oxfmt": "^0.57.0",
+    "oxlint": "^1.72.0",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.0",
+    "vitest": "^4.1.5"
   },
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop --host 0.0.0.0",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pavsidhu/pavsidhu.com"
-  },
-  "browserslist": [
-    "defaults"
-  ]
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "lightningcss"
+    ]
+  }
 }
