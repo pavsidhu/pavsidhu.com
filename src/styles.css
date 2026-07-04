@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-blob-soft: var(--blob-soft);
+  --color-blob-deep: var(--blob-deep);
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+:root {
+  color-scheme: light;
+  --bg: #fffffc;
+  --fg: #1b1b1b;
+  --muted: #646464;
+  --primary: #ff8767;
+  --accent: #da3d00;
+  --blob-soft: #ff8767;
+  --blob-deep: #da3d00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #1b1b1b;
+    --fg: #f5f3f0;
+    --muted: #a8a8a8;
+    --primary: #ff8767;
+    --accent: #ff8767;
+    --blob-soft: #8b3a22;
+    --blob-deep: #5c2200;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
