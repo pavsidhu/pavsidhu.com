@@ -2,92 +2,75 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({ component: Home })
 
-function BlobTopLeft() {
+function BlobField() {
   return (
-    <svg
+    <div
+      className="pointer-events-none absolute inset-0 overflow-hidden"
       aria-hidden="true"
-      className="pointer-events-none absolute -left-[20%] -top-[24%] h-[58vh] w-[58vw] max-h-[540px] max-w-[540px] text-blob-soft opacity-[0.52] dark:opacity-[0.34]"
-      viewBox="0 0 520 520"
-      fill="currentColor"
     >
-      <path d="M438 72C402 8 316 -18 224 6C120 34 38 118 14 228C-10 338 42 448 142 492C242 536 382 518 452 438C522 358 474 136 438 72Z" />
-    </svg>
+      <svg
+        className="absolute -top-[18%] -left-[12%] h-[52vmin] w-[52vmin] text-blob-soft opacity-[0.28] dark:opacity-[0.22]"
+        viewBox="0 0 400 400"
+        fill="currentColor"
+      >
+        <path d="M320 42C368 78 392 132 384 192C376 252 332 302 272 328C212 354 140 352 88 312C36 272 8 204 24 140C40 76 96 28 164 14C232 0 272 6 320 42Z" />
+      </svg>
+
+      <svg
+        className="absolute -top-[8%] -right-[16%] h-[44vmin] w-[44vmin] text-blob-deep opacity-[0.18] dark:opacity-[0.16]"
+        viewBox="0 0 400 400"
+        fill="currentColor"
+      >
+        <path d="M298 28C346 52 378 98 388 154C398 210 384 272 338 312C292 352 218 368 158 352C98 336 54 286 38 226C22 166 36 98 82 58C128 18 198 4 250 12C302 20 250 4 298 28Z" />
+      </svg>
+
+      <svg
+        className="absolute -bottom-[22%] -left-[10%] h-[48vmin] w-[48vmin] text-blob-deep opacity-[0.14] dark:opacity-[0.12]"
+        viewBox="0 0 400 400"
+        fill="currentColor"
+      >
+        <path d="M48 248C28 198 38 138 78 96C118 54 188 34 248 48C308 62 356 108 372 168C388 228 368 292 318 328C268 364 188 372 128 348C68 324 68 298 48 248Z" />
+      </svg>
+
+      <svg
+        className="absolute -bottom-[14%] -right-[8%] h-[40vmin] w-[40vmin] text-blob-soft opacity-[0.22] dark:opacity-[0.18]"
+        viewBox="0 0 400 400"
+        fill="currentColor"
+      >
+        <path d="M352 268C382 312 378 368 338 392C298 416 228 408 172 382C116 356 74 312 58 258C42 204 52 140 98 104C144 68 226 60 282 78C338 96 322 224 352 268Z" />
+      </svg>
+
+      <svg
+        className="absolute top-[38%] -left-[20%] h-[28vmin] w-[28vmin] text-blob-soft opacity-[0.1] dark:opacity-[0.08]"
+        viewBox="0 0 300 300"
+        fill="currentColor"
+      >
+        <path d="M228 58C262 82 282 124 274 168C266 212 230 248 186 262C142 276 92 266 62 232C32 198 24 142 48 102C72 62 122 34 168 32C214 30 194 34 228 58Z" />
+      </svg>
+    </div>
   )
 }
 
-function BlobTopRight() {
+function XIcon() {
   return (
-    <svg
-      aria-hidden="true"
-      className="pointer-events-none absolute -right-[14%] -top-[10%] h-[36vh] w-[36vw] max-h-[340px] max-w-[340px] text-blob-deep opacity-[0.2] dark:opacity-[0.42]"
-      viewBox="0 0 380 380"
-      fill="currentColor"
-    >
-      <path d="M322 88C298 28 236 -6 168 8C88 26 22 94 6 174C-10 254 28 342 98 368C168 394 278 376 332 318C386 260 346 148 322 88Z" />
-    </svg>
-  )
-}
-
-function BlobBottomLeft() {
-  return (
-    <svg
-      aria-hidden="true"
-      className="pointer-events-none absolute -bottom-[16%] -left-[12%] h-[44vh] w-[44vw] max-h-[420px] max-w-[420px] text-blob-deep opacity-[0.16] dark:opacity-[0.38]"
-      viewBox="0 0 440 440"
-      fill="currentColor"
-    >
-      <path d="M52 328C18 256 32 162 92 98C152 34 262 8 342 42C422 76 462 178 442 262C422 346 332 418 232 432C132 446 86 400 52 328Z" />
-      <path
-        d="M118 298C94 248 108 188 152 148C196 108 272 98 322 128C372 158 392 228 368 278C344 328 278 362 218 358C158 354 142 348 118 298Z"
-        className="opacity-45"
-      />
-    </svg>
-  )
-}
-
-function BlobBottomRight() {
-  return (
-    <svg
-      aria-hidden="true"
-      className="pointer-events-none absolute -bottom-[22%] -right-[18%] h-[52vh] w-[52vw] max-h-[500px] max-w-[500px] text-blob-soft opacity-[0.48] dark:opacity-[0.3]"
-      viewBox="0 0 500 500"
-      fill="currentColor"
-    >
-      <path d="M448 372C482 296 466 196 402 128C338 60 222 32 142 68C62 104 18 208 24 296C30 384 108 462 198 482C288 502 414 448 448 372Z" />
-    </svg>
-  )
-}
-
-function IconX() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className="h-[18px] w-[18px]">
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-[18px] w-[18px]">
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
     </svg>
   )
 }
 
-function IconGitHub() {
+function GitHubIcon() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className="h-[18px] w-[18px]">
-      <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-[18px] w-[18px]">
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.111.82-.261.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.083-.729.083-.729 1.205.082 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.565 22.092 24 17.592 24 12c0-6.63-5.373-12-12-12z" />
     </svg>
   )
 }
 
-function IconMail() {
+function EmailIcon() {
   return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.75"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-[18px] w-[18px]"
-    >
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="m22 7-8.97 6.48a2 2 0 0 1-2.06 0L2 7" />
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-[18px] w-[18px]">
+      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
     </svg>
   )
 }
@@ -106,52 +89,55 @@ const workingOn = [
 ] as const
 
 const socialLinks = [
-  { label: 'X (Twitter)', href: 'https://x.com/pav_sidhu', icon: IconX },
-  { label: 'GitHub', href: 'https://github.com/pavsidhu', icon: IconGitHub },
-  { label: 'Email', href: 'mailto:pav@pavsidhu.com', icon: IconMail },
+  {
+    label: 'X (Twitter)',
+    href: 'https://x.com/pav_sidhu',
+    icon: XIcon,
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/pavsidhu',
+    icon: GitHubIcon,
+  },
+  {
+    label: 'Email',
+    href: 'mailto:pav@pavsidhu.com',
+    icon: EmailIcon,
+  },
 ] as const
 
 function Home() {
   return (
-    <div className="relative min-h-dvh overflow-hidden bg-background text-foreground">
-      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <BlobTopLeft />
-        <BlobTopRight />
-        <BlobBottomLeft />
-        <BlobBottomRight />
-      </div>
+    <main className="relative min-h-dvh overflow-x-hidden bg-background text-foreground">
+      <BlobField />
 
-      <main className="relative z-10 mx-auto flex min-h-dvh max-w-xl flex-col justify-center px-6 py-12 sm:px-8">
-        <header className="mb-10 sm:mb-12">
-          <h1 className="text-[clamp(2.75rem,8vw,4.5rem)] font-semibold leading-[1.05] tracking-[-0.03em]">
+      <div className="relative z-10 mx-auto flex min-h-dvh max-w-xl flex-col items-center justify-center gap-10 px-6 py-12 sm:gap-12 sm:px-8">
+        <header className="text-center">
+          <h1 className="text-[clamp(2.75rem,8vw,4.5rem)] leading-[0.95] font-semibold tracking-[-0.04em]">
             Pav Sidhu
           </h1>
-          <p className="mt-2 text-lg text-muted sm:text-xl">Software Engineer</p>
+          <p className="mt-3 text-lg text-muted sm:text-xl">Software Engineer</p>
         </header>
 
-        <div className="mb-10 h-px w-12 bg-primary sm:mb-12" aria-hidden="true" />
-
-        <section aria-labelledby="working-on-heading" className="mb-10 sm:mb-12">
+        <section aria-labelledby="working-on-heading" className="w-full">
           <h2
             id="working-on-heading"
-            className="mb-4 text-xs font-medium uppercase tracking-[0.14em] text-muted"
+            className="mb-4 text-xs font-medium tracking-[0.18em] text-muted uppercase"
           >
             Working on
           </h2>
           <ul className="space-y-3">
             {workingOn.map((item) => (
-              <li key={item.name}>
+              <li key={item.name} className="leading-relaxed">
                 <a
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block rounded-sm focus-visible:outline-offset-4"
+                  className="font-medium text-foreground underline decoration-primary/40 underline-offset-[5px] hover:text-accent hover:decoration-accent"
                 >
-                  <span className="font-medium underline decoration-primary/30 underline-offset-[5px] group-hover:decoration-primary group-hover:text-primary">
-                    {item.name}
-                  </span>
-                  <span className="text-muted"> — {item.description}</span>
+                  {item.name}
                 </a>
+                <span className="text-muted"> — {item.description}</span>
               </li>
             ))}
           </ul>
@@ -164,8 +150,10 @@ function Home() {
                 <a
                   href={href}
                   aria-label={label}
-                  className="inline-flex items-center justify-center rounded-sm p-1 text-muted hover:text-primary"
-                  {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  {...(href.startsWith('http')
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full text-muted hover:text-accent"
                 >
                   <Icon />
                 </a>
@@ -173,7 +161,7 @@ function Home() {
             ))}
           </ul>
         </nav>
-      </main>
-    </div>
+      </div>
+    </main>
   )
 }
