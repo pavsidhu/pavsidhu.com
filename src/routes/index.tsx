@@ -28,8 +28,8 @@ function EmailIcon() {
 
 const workingOn = [
   {
-    name: "Bubbles",
-    href: "https://bubbles.build",
+    name: "Tuft",
+    href: "https://tuft.so",
     description: "A multiplayer agent platform."
   },
   {
