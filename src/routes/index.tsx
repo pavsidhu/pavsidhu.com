@@ -42,7 +42,7 @@ const workingOn = [
 const socialLinks = [
   {
     label: "X (Twitter)",
-    href: "https://x.com/pav_sidhu",
+    href: "https://x.com/pavsidhu",
     icon: XIcon
   },
   {
