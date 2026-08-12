@@ -28,11 +28,6 @@ function EmailIcon() {
 
 const workingOn = [
   {
-    name: "Tuft",
-    href: "https://tuft.so",
-    description: "A multiplayer agent platform."
-  },
-  {
     name: "Dishy",
     href: "https://dishy.so",
     description: "An all-in-one platform for recipe creators to make money."

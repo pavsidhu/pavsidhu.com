@@ -21,7 +21,7 @@ export const Route = createRootRoute({
       },
       {
         name: "description",
-        content: "Pav Sidhu — Software Engineer working on Tuft and Dishy."
+        content: "Pav Sidhu — Software Engineer working on Dishy."
       }
     ],
     links: [
